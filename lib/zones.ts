@@ -1,3 +1,5 @@
+import { provinciasConPlanes } from "@/lib/zonas";
+
 export const ageOptions = [
   { meses: 2, label: "2 meses" },
   { meses: 6, label: "6 meses" },
@@ -31,15 +33,17 @@ export const coverageFilters = [
   { id: "internacional", label: "Internacional", test: /internacional/i },
 ] as const;
 
-/** Páginas de provincia publicadas. Un href vacío no se enlaza: Buenos Aires entra cuando exista la ruta. */
-export const paginasProvincia = [
-  { label: "Córdoba", href: "/cordoba" },
-  { label: "Veterinarias con plan en Córdoba", href: "/cordoba/veterinarias-con-plan" },
-  { label: "Buenos Aires", href: "" },
-] as const;
+export function rutaProvincia(slug: string) {
+  return slug === "cordoba" ? "/cordoba" : `/${slug}`;
+}
 
-export function enlacesPorProvincia() {
-  return paginasProvincia.filter((item) => item.href);
+export function enlacesPorProvincia(plans: { zonas: { provincia: string }[] }[]) {
+  const links: { label: string; href: string }[] = provinciasConPlanes(plans).map((item) => ({
+    label: item.label,
+    href: rutaProvincia(item.slug),
+  }));
+  links.push({ label: "Veterinarias con plan en Córdoba", href: "/cordoba/veterinarias-con-plan" });
+  return links;
 }
 
 export const sortOptions = [

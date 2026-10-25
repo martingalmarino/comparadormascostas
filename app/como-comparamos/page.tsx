@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQ } from "@/components/FAQ";
+import { JsonLd } from "@/components/JsonLd";
 import { requireEntry } from "@/lib/seo-copy";
-import { pageMetadata } from "@/lib/seo";
+import { aboutPageJsonLd, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
 
 const seo = requireEntry("/como-comparamos");
@@ -15,7 +17,8 @@ export default function Page() {
       <h1 className="mt-4 text-3xl font-bold text-gray-900">{seo.h1}</h1>
       <div className="prose-mc mt-4" id="datos-de-ejemplo">
         <p>
-          {siteConfig.siteName} es un sitio independiente de Argentina. Ordenamos obras sociales, planes de salud y seguros para perros y gatos en todo el país. El filtro de zona es la provincia: muestra los planes de esa provincia y los de cobertura nacional. No vendemos seguros ni intermediamos en la contratación. Si dejás tus datos, se los compartimos a la marca que elegiste para que ella te contacte.
+          {siteConfig.siteName} es un sitio independiente de Argentina. Ordenamos obras sociales, planes de salud y seguros para perros y gatos en todo el país. El filtro de zona es la provincia: muestra los planes de esa provincia y los de cobertura nacional. No vendemos seguros ni intermediamos en la contratación. Si dejás tus datos, se los compartimos a la marca que elegiste para que ella te contacte. Quién lo hace y cómo se financia está en{" "}
+          <Link href="/sobre-nosotros">sobre nosotros</Link>.
         </p>
         <h2>Carencias y preexistencias</h2>
         <p>
@@ -31,7 +34,7 @@ export default function Page() {
         </p>
         <h2>Cuándo un dato se pone viejo</h2>
         <p>
-          Si la fecha de verificación tiene más de 45 días, el plan se muestra como desactualizado aunque el archivo diga otra cosa. Si un dato está en revisión o la marca no publica el precio, también hay un aviso visible.
+          Si la fecha de verificación tiene más de 45 días, el plan se muestra como precio vencido aunque el archivo diga otra cosa. Ese monto no entra como oferta. Si un dato está en revisión o la marca no publica el precio, también hay un aviso visible.
         </p>
         <h2>Actualización</h2>
         <p>
@@ -54,6 +57,7 @@ export default function Page() {
           },
         ]}
       />
+      <JsonLd data={aboutPageJsonLd()} />
     </div>
   );
 }

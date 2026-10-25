@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SpeciesPlans } from "@/components/SpeciesPlans";
 import { getReferenceDate } from "@/lib/dates";
+import { faqsEspecie, respuestaDirecta } from "@/lib/geo";
 import { requireEntry } from "@/lib/seo-copy";
 import { pageMetadata } from "@/lib/seo";
 
@@ -17,16 +18,8 @@ export default async function Page() {
       heading={seo.h1}
       crumb="Seguro para perros"
       intro="Un seguro o una obra social para perros suele cubrir accidentes y, según el plan, consultas, vacunas o cirugías. Conviene cruzar el precio publicado con la edad tope, la carencia y si la clínica que usás está en la cartilla."
-      faqs={[
-        {
-          q: "¿Cubre perros mayores?",
-          a: "Depende del tope de edad que publique la fuente. En el relevamiento hay planes que cortan a los 8 o 9 años y otros que llegan más lejos. Más abajo está cómo leer ese tope.",
-        },
-        {
-          q: "¿Hay carencia en los accidentes?",
-          a: "Solo si la ficha lo trae de la fuente. Si no detalla días, pedí el condicionado a la marca antes de darlo por inmediato.",
-        },
-      ]}
+      answer={respuestaDirecta({ tipo: "especie", today, especie: "perro" })}
+      faqs={faqsEspecie("perro", today)}
     >
       <section className="mt-12 max-w-3xl">
         <h2 className="text-2xl font-bold text-gray-900">Perros mayores</h2>

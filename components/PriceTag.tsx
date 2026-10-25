@@ -30,9 +30,11 @@ export function PriceTag({
 
   const sizeClass = size === "lg" ? "text-4xl" : "text-2xl";
   const color = tone === "primary" ? "text-indigo-600" : "text-gray-900";
+  const vencido = estado === "desactualizado";
 
   return (
     <div className={alignClass}>
+      {vencido ? <p className="text-sm font-semibold text-amber-800">Precio vencido</p> : null}
       <div className={`flex flex-wrap items-center gap-1.5 ${justifyClass}`}>
         <p className={`font-mono font-medium tabular-nums ${sizeClass} ${color}`}>
           <span className="sr-only">{plan.es_ejemplo ? "Precio mensual de ejemplo " : "Precio mensual "}</span>

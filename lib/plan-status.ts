@@ -9,20 +9,22 @@ export function daysBetween(fromIso: string, toIso: string) {
 }
 
 export function displayEstado(plan: Pick<Plan, "estado" | "fecha_verificacion">, todayIso: string): PlanEstado {
-  if (plan.estado === "consultar" || plan.estado === "sin_precio_publico" || plan.estado === "requiere_revision") {
-    return plan.estado;
-  }
-  if (daysBetween(plan.fecha_verificacion, todayIso) > siteConfig.priceStaleDays) {
-    return "desactualizado";
-  }
+  if (plan.estado === "consultar" || plan.estado === "sin_precio_publico") return plan.estado;
+  if (daysBetween(plan.fecha_verificacion, todayIso) > siteConfig.priceStaleDays) return "desactualizado";
   return plan.estado;
+}
+
+export function precioVigente(plan: Pick<Plan, "estado" | "es_ejemplo" | "precio" | "fecha_verificacion" | "precio_texto_original">, todayIso: string) {
+  const desde = plan.precio_texto_original?.toLowerCase().includes("desde") ?? false;
+  const stale = daysBetween(plan.fecha_verificacion, todayIso) > siteConfig.priceStaleDays;
+  return plan.estado === "verificado" && !plan.es_ejemplo && plan.precio != null && !desde && !stale;
 }
 
 export const estadoAviso: Record<Exclude<PlanEstado, "verificado">, string> = {
   requiere_revision: "Este dato está en revisión. No lo tomes como un precio vigente.",
   consultar: "La marca no publica el precio. Hay que consultarlo.",
   sin_precio_publico: "La marca no publica el precio. Podés pedir que te contacten.",
-  desactualizado: "La última verificación tiene más de 45 días. Puede estar desactualizado.",
+  desactualizado: "Precio vencido: la última verificación tiene más de 45 días.",
 };
 
 export function planAvisos(plan: Pick<Plan, "estado" | "fecha_verificacion">, todayIso: string) {

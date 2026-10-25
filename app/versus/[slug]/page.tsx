@@ -90,9 +90,9 @@ async function VersusDetail({ params }: { params: Promise<{ slug: string }> }) {
           <caption className="sr-only">Diferencias de cobertura</caption>
           <thead className="bg-gray-50 text-xs uppercase text-gray-500">
             <tr>
-              <th className="px-4 py-3">Cobertura</th>
-              <th className="px-4 py-3">{left.marca}</th>
-              <th className="px-4 py-3">{right.marca}</th>
+              <th scope="col" className="px-4 py-3">Cobertura</th>
+              <th scope="col" className="px-4 py-3">{left.marca}</th>
+              <th scope="col" className="px-4 py-3">{right.marca}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">

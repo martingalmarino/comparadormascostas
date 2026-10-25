@@ -1,7 +1,13 @@
+import { coversZona } from "@/lib/filters";
 import { formatArs, formatDate, formatMonthYear } from "@/lib/format";
 import { getMarcas, getPlans, getPlansByMarca, hasVerifiedPrice, newestVerification, versusPairs } from "@/lib/plans";
 import type { Plan } from "@/lib/plan-schema";
+import { precioVigente } from "@/lib/plan-status";
 import { SITE } from "@/site.config";
+import { rutaProvincia } from "@/lib/zones";
+import { provinciasConPlanes } from "@/lib/zonas";
+
+export { respuestaDirecta } from "@/lib/geo";
 
 export type SeoEntry = {
   path: string;
@@ -43,6 +49,12 @@ function verifiedPrices(plans: Plan[]) {
 
 function minPrice(plans: Plan[]) {
   const priced = verifiedPrices(plans);
+  if (!priced.length) return null;
+  return Math.min(...priced.map((plan) => plan.precio as number));
+}
+
+function freshMin(plans: Plan[], today: string) {
+  const priced = plans.filter((plan) => precioVigente(plan, today));
   if (!priced.length) return null;
   return Math.min(...priced.map((plan) => plan.precio as number));
 }
@@ -150,7 +162,18 @@ export function versusEntry(aSlug: string, bSlug: string): SeoEntry | undefined 
 function speciesStats(especie: "perro" | "gato") {
   const plans = getPlans().filter((plan) => plan.especies.includes(especie));
   const price = minPrice(plans);
-  return { count: plans.length, price: price == null ? null : formatArs(price) };
+  return { plans, count: plans.length, price: price == null ? null : formatArs(price) };
+}
+
+function provinceDescription(label: string, total: number, named: number, price: string | null, fecha: string) {
+  const precio = price ? `desde ${price}/mes` : "sin mínimo vigente publicado";
+  return pick(label, [
+    `Planes en ${label}: ${total} opciones para perros y gatos. ${named} nombran la provincia y el resto es cobertura nacional, ${precio}. Datos al ${fecha}.`,
+    `Planes en ${label}: ${total} opciones para perros y gatos, ${named} con la provincia en la fuente. El resto es nacional, ${precio}. Fecha ${fecha}.`,
+    `En ${label} hay ${total} planes para perros y gatos. ${named} citan la provincia y los demás son nacionales, ${precio}. Verificado al ${fecha}.`,
+    `Compará ${total} planes para mascotas en ${label}. ${named} mencionan la provincia; el resto cubre el país, ${precio}. Al ${fecha}.`,
+    `${label}: ${total} planes para perros y gatos. ${named} nombran la provincia y el resto es nacional, ${precio}. Cada precio tiene fecha ${fecha}.`,
+  ]);
 }
 
 export function getSeoCatalog(): SeoEntry[] {
@@ -161,6 +184,10 @@ export function getSeoCatalog(): SeoEntry[] {
   const min = minPrice(plans);
   const perros = speciesStats("perro");
   const gatos = speciesStats("gato");
+  const cordobaPlans = plans.filter((plan) => coversZona(plan, "cordoba"));
+  const cordobaNamed = cordobaPlans.filter((plan) => plan.zonas.some((zona) => zona.provincia === "cordoba")).length;
+  const cordobaFecha = formatDate(newestVerification(cordobaPlans));
+  const cordobaMin = freshMin(cordobaPlans, updated);
 
   const staticEntries: SeoEntry[] = [
     remember({
@@ -213,7 +240,7 @@ export function getSeoCatalog(): SeoEntry[] {
       ]),
       h1: "Seguro y obra social para perros: planes y precios",
       index: true,
-      lastModified: updated,
+      lastModified: newestVerification(perros.plans),
     }),
     remember({
       path: "/seguro-para-gatos",
@@ -228,17 +255,21 @@ export function getSeoCatalog(): SeoEntry[] {
       ]),
       h1: "Obra social y seguro para gatos: planes y precios",
       index: true,
-      lastModified: updated,
+      lastModified: newestVerification(gatos.plans),
     }),
     remember({
       path: "/cordoba",
       title: "Obra social para mascotas en Córdoba",
-      description: pick("cordoba", [
-        "Planes para perros y gatos con cobertura en Córdoba Capital, Río Cuarto, Villa María y Sierras Chicas. Compará precios, red de veterinarias y carencias.",
-      ]),
+      description: provinceDescription(
+        "Córdoba",
+        cordobaPlans.length,
+        cordobaNamed,
+        cordobaMin == null ? null : formatArs(cordobaMin),
+        cordobaFecha,
+      ),
       h1: "Obra social para mascotas en Córdoba",
       index: true,
-      lastModified: updated,
+      lastModified: newestVerification(cordobaPlans),
     }),
     remember({
       path: "/cordoba/veterinarias-con-plan",
@@ -257,6 +288,18 @@ export function getSeoCatalog(): SeoEntry[] {
         "Nuestra metodología: fuentes oficiales, fecha de verificación de cada precio, regla de 45 días y por qué no vendemos seguros. Transparencia total.",
       ]),
       h1: "Cómo comparamos los planes de salud para mascotas",
+      index: true,
+      lastModified: updated,
+    }),
+    remember({
+      path: "/sobre-nosotros",
+      title: "Sobre nosotros",
+      description: pick("sobre", [
+        "Cuidalo lo hace Martín Galmarino. Es un comparador independiente: no vende seguros. Se financia con consultas que el usuario consiente y con publicidad.",
+        "Martín Galmarino hace Cuidalo, un comparador independiente. No vende seguros. Se financia con consultas que el usuario consiente y con publicidad.",
+        "Quién hace Cuidalo: Martín Galmarino. El sitio es independiente, no vende seguros y se financia con leads consentidos y con publicidad.",
+      ]),
+      h1: "Quién hace Cuidalo",
       index: true,
       lastModified: updated,
     }),
@@ -292,12 +335,29 @@ export function getSeoCatalog(): SeoEntry[] {
     }),
   ];
 
+  const provinces = provinciasConPlanes(plans)
+    .filter((item) => item.slug !== "cordoba")
+    .map((item) => {
+      const covering = plans.filter((plan) => coversZona(plan, item.slug));
+      const named = covering.filter((plan) => plan.zonas.some((zona) => zona.provincia === item.slug)).length;
+      const fecha = formatDate(newestVerification(covering));
+      const price = freshMin(covering, updated);
+      return remember({
+        path: rutaProvincia(item.slug),
+        title: `Planes para mascotas en ${item.label}`,
+        description: provinceDescription(item.label, covering.length, named, price == null ? null : formatArs(price), fecha),
+        h1: `Planes de salud para mascotas en ${item.label}`,
+        index: true,
+        lastModified: newestVerification(covering),
+      });
+    });
+
   const brands = getMarcas().map((marca) => brandEntry(marca.slug)).filter((entry): entry is SeoEntry => Boolean(entry));
   const versus = versusPairs()
     .map((pair) => versusEntry(pair.a, pair.b))
     .filter((entry): entry is SeoEntry => Boolean(entry));
 
-  const entries = [...staticEntries, ...brands, ...versus];
+  const entries = [...staticEntries, ...provinces, ...brands, ...versus];
   const titles = new Map<string, string>();
   const descriptions = new Map<string, string>();
   for (const entry of entries) {

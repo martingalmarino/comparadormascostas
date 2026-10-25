@@ -1,5 +1,6 @@
 import { PawPrint } from "lucide-react";
 import Link from "next/link";
+import { getPlans } from "@/lib/plans";
 import { enlacesPorProvincia } from "@/lib/zones";
 import { siteConfig } from "@/site.config";
 
@@ -12,7 +13,7 @@ const comparar = [
 ];
 
 const cuidalo = [
-  { label: "Sobre nosotros", href: "" },
+  { label: "Sobre nosotros", href: "/sobre-nosotros" },
   { label: "Cómo comparamos", href: "/como-comparamos" },
   { label: "Contacto", href: "/contacto" },
 ];
@@ -42,7 +43,7 @@ function Columna({ titulo, enlaces }: { titulo: string; enlaces: { label: string
 }
 
 export function Footer({ year }: { year: string }) {
-  const provincias = enlacesPorProvincia();
+  const provincias = enlacesPorProvincia(getPlans());
   const sobreCuidalo = cuidalo.filter((item) => item.href);
 
   return (

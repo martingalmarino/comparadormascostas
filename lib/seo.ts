@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { siteConfig } from "@/site.config";
+import { founder } from "@/lib/geo";
 import type { Plan } from "@/lib/plan-schema";
+import { precioVigente } from "@/lib/plan-status";
 import { tipoOptions } from "@/lib/zones";
+import { siteConfig } from "@/site.config";
 
 export function pageMetadata({
   title,
@@ -46,6 +48,12 @@ export function organizationJsonLd() {
     name: siteConfig.siteName,
     url: siteConfig.domain,
     description: siteConfig.description,
+    logo: `${siteConfig.domain}/logo.svg`,
+    founder: {
+      "@type": "Person",
+      name: founder.name,
+      email: founder.email,
+    },
     areaServed: {
       "@type": "Country",
       name: "Argentina",
@@ -91,30 +99,85 @@ export function itemListJsonLd(plans: Plan[]) {
   };
 }
 
-export function productJsonLd(plan: Plan) {
+export function productNode(plan: Plan, today: string) {
   const tipo = tipoOptions.find((item) => item.id === plan.tipo)?.label ?? plan.tipo;
+  const url = `${siteConfig.domain}/planes/${plan.marca_slug}#${plan.id}`;
   const data: Record<string, unknown> = {
-    "@context": "https://schema.org",
     "@type": "Product",
     name: `${plan.marca} ${plan.nombre}`,
     description: plan.resumen || `${tipo} para mascotas de ${plan.marca}.`,
     brand: { "@type": "Brand", name: plan.marca },
     category: tipo,
-    url: `${siteConfig.domain}/planes/${plan.marca_slug}#${plan.id}`,
+    url,
   };
-  const desde = plan.precio_texto_original?.toLowerCase().includes("desde") ?? false;
-  const verified = plan.estado === "verificado" && !plan.es_ejemplo && plan.precio != null && !desde;
-  if (verified) {
+  if (precioVigente(plan, today)) {
     const until = new Date(`${plan.fecha_verificacion}T00:00:00Z`);
-    until.setUTCDate(until.getUTCDate() + 45);
+    until.setUTCDate(until.getUTCDate() + siteConfig.priceStaleDays);
     data.offers = {
       "@type": "Offer",
       priceCurrency: "ARS",
       price: plan.precio,
-      url: plan.fuente_url.startsWith("http") ? plan.fuente_url : `${siteConfig.domain}${plan.fuente_url}`,
+      url,
       priceValidUntil: until.toISOString().slice(0, 10),
       availability: "https://schema.org/InStock",
     };
   }
   return data;
+}
+
+export function productJsonLd(plan: Plan, today: string) {
+  return { "@context": "https://schema.org", ...productNode(plan, today) };
+}
+
+export function offersItemListJsonLd(plans: Plan[], today: string, name: string, dateModified?: string) {
+  const list = {
+    "@type": "ItemList",
+    name,
+    itemListElement: plans.map((plan, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: productNode(plan, today),
+    })),
+  };
+  if (!dateModified) return { "@context": "https://schema.org", ...list };
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        name,
+        dateModified,
+        mainEntity: list,
+      },
+    ],
+  };
+}
+
+export function webPageJsonLd({ url, name, dateModified }: { url: string; name: string; dateModified: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url,
+    name,
+    dateModified,
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.siteName,
+      url: siteConfig.domain,
+    },
+  };
+}
+
+export function aboutPageJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    url: `${siteConfig.domain}/como-comparamos`,
+    name: "Cómo comparamos",
+    author: {
+      "@type": "Person",
+      name: founder.name,
+      email: founder.email,
+    },
+  };
 }

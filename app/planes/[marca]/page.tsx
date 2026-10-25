@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { Badge } from "@/components/Badge";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { DirectAnswer } from "@/components/DirectAnswer";
 import { CoverageList } from "@/components/CoverageList";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -18,12 +19,13 @@ import { WaitingPeriods } from "@/components/WaitingPeriods";
 import { getReferenceDate } from "@/lib/dates";
 import { logoSize } from "@/lib/logo";
 import { especieLabel } from "@/lib/format";
-import { getMarcas, getPlansByMarca, versusPairs } from "@/lib/plans";
+import { respuestaDirecta } from "@/lib/geo";
+import { getMarcas, getPlansByMarca, newestVerification, versusPairs } from "@/lib/plans";
 import { brandEntry } from "@/lib/seo-copy";
-import { pageMetadata, productJsonLd } from "@/lib/seo";
+import { pageMetadata, productJsonLd, webPageJsonLd } from "@/lib/seo";
+import { siteConfig } from "@/site.config";
 import { tipoOptions } from "@/lib/zones";
 import { PROVINCIA_TODAS, jurisdiccionLabel } from "@/lib/zonas";
-import { siteConfig } from "@/site.config";
 
 export function generateStaticParams() {
   return getMarcas().map((marca) => ({ marca: marca.slug }));
@@ -66,6 +68,14 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Comparador", path: "/comparar" }, { name: brand, path: `/planes/${marca}` }]} />
+      <DirectAnswer text={respuestaDirecta({ tipo: "marca", today, slug: marca })} />
+      <JsonLd
+        data={webPageJsonLd({
+          url: `${siteConfig.domain}/planes/${marca}`,
+          name: seo?.h1 ?? brand,
+          dateModified: newestVerification(plans),
+        })}
+      />
       <div className="mt-6 overflow-hidden rounded-2xl bg-indigo-600 px-5 py-6 text-white sm:px-8">
         <Link href="/comparar" className="inline-flex items-center gap-2 text-sm text-indigo-100 hover:text-white">
           <ArrowLeft className="size-4" aria-hidden="true" />
@@ -145,7 +155,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
                 <div className="mt-4">
                   <ProsCons plan={plan} />
                 </div>
-                <JsonLd data={productJsonLd(plan)} />
+                <JsonLd data={productJsonLd(plan, today)} />
               </article>
             ))}
           </div>
