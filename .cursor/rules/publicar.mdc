@@ -1,0 +1,13 @@
+---
+description: Al terminar un cambio pedido, commitear y subir a main
+alwaysApply: true
+---
+
+# Publicar al terminar
+
+Cuando un cambio pedido queda listo, commitealo y subilo a `origin/main` sin esperar otro pedido de publicar.
+
+- Seguí el protocolo de git del proyecto: no cambies la config, no hagas force push ni amend, y no saltees hooks.
+- No incluyas secretos ni archivos ajenos al cambio.
+- El mensaje va en español y explica el porqué.
+- Si el push a `main` pide autorización, pedila y reintentá.
