@@ -27,6 +27,10 @@ export function formatArs(value: number) {
   return `$${formatted}`;
 }
 
+export function formatPrecioMes(value: number) {
+  return `${formatArs(value)}/mes`;
+}
+
 export function formatDate(iso: string) {
   const [year, month, day] = iso.slice(0, 10).split("-");
   if (!year || !month || !day) return iso;

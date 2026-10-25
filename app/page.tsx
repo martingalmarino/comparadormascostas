@@ -3,11 +3,10 @@ import { BrandStrip } from "@/components/BrandStrip";
 import { FAQ } from "@/components/FAQ";
 import { HomeZonaProvider } from "@/components/HomeZona";
 import { JsonLd } from "@/components/JsonLd";
-import { PlanCard } from "@/components/PlanCard";
+import { LowestPrices } from "@/components/LowestPrices";
 import { SearchBox } from "@/components/SearchBox";
 import { TrustBar } from "@/components/TrustBar";
 import { getReferenceDate } from "@/lib/dates";
-import { applyFilters } from "@/lib/filters";
 import { formatDate } from "@/lib/format";
 import { getMarcasHome, getPlans, newestVerification } from "@/lib/plans";
 import { provinciasConPlanes } from "@/lib/zonas";
@@ -44,7 +43,6 @@ export default async function HomePage() {
   const today = await getReferenceDate();
   const plans = getPlans();
   const zonas = provinciasConPlanes(plans);
-  const preview = applyFilters(plans, { cob: [], ids: [], orden: "precio" }).slice(0, 3);
   const updated = newestVerification(plans);
 
   return (
@@ -98,17 +96,7 @@ export default async function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
-        <div className="mb-4 flex items-end justify-between gap-4">
-          <h2 className="text-2xl font-bold text-gray-900">Los de menor precio publicado</h2>
-          <Link href="/comparar" className="text-sm font-bold text-indigo-700 hover:underline">
-            Ver todos
-          </Link>
-        </div>
-        <div className="grid gap-4 lg:grid-cols-3">
-          {preview.map((plan) => (
-            <PlanCard key={plan.id} plan={plan} today={today} />
-          ))}
-        </div>
+        <LowestPrices plans={plans} today={today} />
         <div className="mt-8 flex flex-wrap gap-3 text-sm font-semibold">
           <Link className="rounded-full border border-gray-200 bg-white px-4 py-2 hover:border-indigo-200" href="/seguro-para-perros">Seguro para perros</Link>
           <Link className="rounded-full border border-gray-200 bg-white px-4 py-2 hover:border-indigo-200" href="/seguro-para-gatos">Seguro para gatos</Link>
