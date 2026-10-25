@@ -50,7 +50,10 @@ export function Footer({ year }: { year: string }) {
           </ul>
         </div>
       </div>
-      <p className="mx-auto mt-12 max-w-7xl px-4 text-center text-[11px] uppercase tracking-widest text-gray-400 sm:px-6">
+      <p className="mx-auto mt-12 max-w-7xl px-4 text-center text-xs leading-relaxed text-gray-500 sm:px-6">
+        Las marcas y logos pertenecen a sus respectivos dueños y no implican asociación con Cuidalo.
+      </p>
+      <p className="mx-auto mt-3 max-w-7xl px-4 text-center text-[11px] uppercase tracking-widest text-gray-400 sm:px-6">
         © {year} {siteConfig.siteName}
         {siteConfig.showProvisionalBadge ? ` (${siteConfig.siteNameNote.toLowerCase()})` : ""} · Argentina
       </p>

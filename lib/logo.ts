@@ -1,7 +1,7 @@
 const sizes: Record<string, { width: number; height: number }> = {
   "/logos/answer-seguros.svg": { width: 135, height: 40 },
   "/logos/avsim.png": { width: 342, height: 107 },
-  "/logos/bbva-seguros.png": { width: 270, height: 270 },
+  "/logos/bbva-seguros.svg": { width: 107, height: 32 },
   "/logos/companion.png": { width: 1077, height: 178 },
   "/logos/federacion-patronal-via-mascotaleal.png": { width: 1500, height: 249 },
   "/logos/ike-mascotas.svg": { width: 601, height: 241 },
@@ -9,7 +9,8 @@ const sizes: Record<string, { width: number; height: number }> = {
   "/logos/pet-society.png": { width: 409, height: 79 },
   "/logos/provincia-seguros-banco-provincia.png": { width: 145, height: 48 },
   "/logos/puppis-one.svg": { width: 490, height: 200 },
-  "/logos/qualia-seguros.png": { width: 577, height: 176 },
+  "/logos/fielpet.png": { width: 155, height: 58 },
+  "/logos/qualia-seguros.png": { width: 141, height: 31 },
   "/logos/rus-seguros.svg": { width: 567, height: 165 },
 };
 

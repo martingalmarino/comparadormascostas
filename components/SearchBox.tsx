@@ -49,7 +49,7 @@ export function SearchBox() {
           </select>
         </label>
         <label>
-          <span className={labelClass}>Zona de Córdoba</span>
+          <span className={labelClass}>Zona</span>
           <select name="zona" className={fieldClass} defaultValue="cordoba-capital">
             {zones.map((zone) => (
               <option key={zone.slug} value={zone.slug}>

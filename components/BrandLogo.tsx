@@ -28,7 +28,11 @@ export function BrandLogo({
         </span>
       );
     }
-    return <span className={`font-bold text-gray-500 transition hover:text-indigo-700 group-hover:text-indigo-700 ${className ?? ""}`}>{nombre}</span>;
+    return (
+      <span className={`inline-flex h-8 items-center text-base font-semibold text-gray-500 transition hover:text-indigo-700 group-hover:text-indigo-700 ${className ?? ""}`}>
+        {nombre}
+      </span>
+    );
   }
 
   return (

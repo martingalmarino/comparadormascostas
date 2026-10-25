@@ -19,7 +19,7 @@ const seo = requireEntry("/");
 export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 const steps = [
-  ["1", "Cargás los datos", "Especie, edad y, si estás en Córdoba, la zona."],
+  ["1", "Cargás los datos", "Especie, edad y tu zona."],
   ["2", "Comparás coberturas", "Precio, carencias, topes y qué deja afuera cada plan."],
   ["3", "Elegís sin presión", "Te derivamos a la marca. No cobramos comisión ni vendemos el seguro."],
 ];
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: "¿Sirve en todo el país?",
-    a: "El comparador es de Argentina. Córdoba es la primera ciudad con filtro de zona: Capital, Río Cuarto, Villa María y Sierras Chicas. Si la fuente no confirma una zona, el plan no entra cuando filtrás por ese lugar.",
+    a: "Sí. El comparador cubre Argentina. Elegí tu zona para ver los planes que la fuente confirma ahí. Si una marca no publica la zona, ese plan no entra cuando filtrás por lugar.",
   },
 ];
 
@@ -66,30 +66,43 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-        <h2 className="text-center text-xs font-bold uppercase tracking-widest text-gray-400">Comparamos estas marcas</h2>
-        <ul className="mt-6 grid grid-cols-3 items-center gap-x-4 gap-y-6 sm:grid-cols-4 lg:grid-cols-7">
-          {getMarcas().map((marca) => {
-            const size = marca.logo ? logoSize(marca.logo) : undefined;
-            return (
-              <li key={marca.slug} className="flex justify-center">
-                <Link href={`/planes/${marca.slug}`} className="group flex h-12 w-full items-center justify-center">
-                  <BrandLogo nombre={marca.nombre} logo={marca.logo} width={size?.width} height={size?.height} />
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {steps.map(([number, title, text]) => (
-            <div key={number} className="flex gap-4">
-              <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-indigo-100 font-bold text-indigo-700">{number}</div>
-              <div>
-                <h3 className="font-semibold text-gray-900">{title}</h3>
-                <p className="mt-1 text-sm text-gray-600">{text}</p>
+      <section className="py-12 md:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="text-center text-xs font-bold uppercase tracking-widest text-gray-400">Comparamos estas marcas</h2>
+          <ul className="mt-8 grid grid-cols-3 items-center gap-x-4 gap-y-6 sm:grid-cols-4 lg:grid-cols-7">
+            {getMarcas().map((marca) => {
+              const size = marca.logo ? logoSize(marca.logo) : undefined;
+              return (
+                <li key={marca.slug} className="flex justify-center">
+                  <Link href={`/planes/${marca.slug}`} className="group flex h-12 w-full items-center justify-center">
+                    <BrandLogo nombre={marca.nombre} logo={marca.logo} width={size?.width} height={size?.height} />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6" aria-hidden="true">
+        <div className="h-px bg-gray-200" />
+      </div>
+
+      <section className="bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="text-center text-xs font-bold uppercase tracking-widest text-gray-400">Cómo funciona</h2>
+          <p className="mx-auto mt-3 max-w-xl text-center text-sm text-gray-600">Tres pasos para comparar planes, sin que te vendan el seguro.</p>
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
+            {steps.map(([number, title, text]) => (
+              <div key={number} className="flex gap-4">
+                <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-indigo-100 font-bold text-indigo-700">{number}</div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">{title}</h3>
+                  <p className="mt-1 text-sm text-gray-600">{text}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

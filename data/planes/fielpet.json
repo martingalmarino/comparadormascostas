@@ -54,7 +54,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional, cualquier veterinario"
+    "resumen": "Nacional, cualquier veterinario",
+    "logo": "/logos/fielpet.png",
+    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp"
   },
   {
     "id": "fielpet-plan-2",
@@ -111,7 +113,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional, cualquier veterinario"
+    "resumen": "Nacional, cualquier veterinario",
+    "logo": "/logos/fielpet.png",
+    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp"
   },
   {
     "id": "fielpet-plan-3",
@@ -168,7 +172,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional, cualquier veterinario"
+    "resumen": "Nacional, cualquier veterinario",
+    "logo": "/logos/fielpet.png",
+    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp"
   },
   {
     "id": "fielpet-plan-4",
@@ -225,7 +231,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional, cualquier veterinario"
+    "resumen": "Nacional, cualquier veterinario",
+    "logo": "/logos/fielpet.png",
+    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp"
   },
   {
     "id": "fielpet-plan-5",
@@ -282,6 +290,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional, cualquier veterinario"
+    "resumen": "Nacional, cualquier veterinario",
+    "logo": "/logos/fielpet.png",
+    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp"
   }
 ]
