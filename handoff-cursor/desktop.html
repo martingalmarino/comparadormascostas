@@ -1,0 +1,580 @@
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MascoCompara - El comparador de salud animal en Córdoba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+        
+        :root {
+            --indigo-main: #4F46E5;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .tabular-nums {
+            font-family: 'IBM Plex Mono', monospace;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .glass-nav {
+            background-color: white;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .filter-shadow {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen bg-[#F9FAFB] text-[#111827]" data-sd-id="1">
+        
+        <!-- (1) HOME SECTION -->
+        <header class="bg-white border-b border-gray-200 sticky top-0 z-50" data-sd-id="2">
+            <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between" data-sd-id="3">
+                <div class="flex items-center gap-2" data-sd-id="4">
+                    <div class="bg-[#4F46E5] p-1.5 rounded-lg" data-sd-id="5">
+                        <iconify-icon icon="lucide:paw-print" class="text-white text-xl"></iconify-icon>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-gray-900" data-sd-id="6">Masco<span class="text-[#4F46E5]" data-sd-id="7">Compara</span></span>
+                    <span class="ml-2 text-[10px] font-bold bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded border border-gray-200 uppercase tracking-widest" data-sd-id="8">Nombre Provisorio</span>
+                </div>
+                <nav class="flex gap-8 text-sm font-medium text-gray-600" data-sd-id="9">
+                    <a href="#" id="nav-home" class="text-[#4F46E5]" data-sd-id="10">Inicio</a>
+                    <a href="#" id="nav-comparador" class="hover:text-[#4F46E5]" data-sd-id="11">Comparador</a>
+                    <a href="#" id="nav-guias" class="hover:text-[#4F46E5]" data-sd-id="12">Guías de Salud</a>
+                </nav>
+            </div>
+        </header>
+
+        <section class="pt-16 pb-24 bg-white" data-sd-id="13">
+            <div class="max-w-[1440px] mx-auto px-6 text-center" data-sd-id="14">
+                <h1 class="text-5xl font-bold tracking-tight text-gray-900 mb-6" data-sd-id="15">
+                    Compará precios actualizados de <span class="text-[#4F46E5]" data-sd-id="16">obras sociales</span> para tu mascota en Córdoba
+                </h1>
+                <p class="text-lg text-gray-500 mb-12 max-w-2xl mx-auto" data-sd-id="17">
+                    Analizamos los planes de salud y seguros de las principales prestadoras de la provincia para que ahorres sin descuidar a tu mejor amigo.
+                </p>
+
+                <!-- Buscador Horizontal -->
+                <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-4 flex flex-wrap lg:flex-nowrap gap-4 items-end max-w-5xl mx-auto mb-16" data-sd-id="18">
+                    <div class="flex-1 text-left" data-sd-id="19">
+                        <label class="block text-xs font-bold text-gray-400 mb-1.5 uppercase ml-1" data-sd-id="20">Especie</label>
+                        <select class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4F46E5]/20" data-sd-id="21">
+                            <option data-sd-id="22">Perro</option>
+                            <option data-sd-id="23">Gato</option>
+                        </select>
+                    </div>
+                    <div class="flex-1 text-left" data-sd-id="24">
+                        <label class="block text-xs font-bold text-gray-400 mb-1.5 uppercase ml-1" data-sd-id="25">Edad (años)</label>
+                        <input type="number" placeholder="Ej: 3" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4F46E5]/20" data-sd-id="26">
+                    </div>
+                    <div class="flex-1 text-left" data-sd-id="27">
+                        <label class="block text-xs font-bold text-gray-400 mb-1.5 uppercase ml-1" data-sd-id="28">Zona de Córdoba</label>
+                        <select class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4F46E5]/20" data-sd-id="29">
+                            <option data-sd-id="30">Córdoba Capital</option>
+                            <option data-sd-id="31">Villa Carlos Paz</option>
+                            <option data-sd-id="32">Río Cuarto</option>
+                            <option data-sd-id="33">Villa María</option>
+                            <option data-sd-id="34">Sierras Chicas</option>
+                        </select>
+                    </div>
+                    <div class="flex-1 text-left" data-sd-id="35">
+                        <label class="block text-xs font-bold text-gray-400 mb-1.5 uppercase ml-1" data-sd-id="36">Tipo de Plan</label>
+                        <select class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4F46E5]/20" data-sd-id="37">
+                            <option data-sd-id="38">Todos los planes</option>
+                            <option data-sd-id="39">Básico (Accidentes)</option>
+                            <option data-sd-id="40">Intermedio</option>
+                            <option data-sd-id="41">Completo</option>
+                        </select>
+                    </div>
+                    <button id="hero-cta-search" class="bg-[#4F46E5] hover:bg-[#4338CA] text-white font-bold py-3.5 px-10 rounded-xl transition-all shadow-lg shadow-indigo-200 whitespace-nowrap" data-sd-id="42">
+                        Ver precios
+                    </button>
+                </div>
+
+                <!-- Sellos de Confianza -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-100 pt-12" data-sd-id="43">
+                    <div class="flex flex-col items-center gap-2" data-sd-id="44">
+                        <iconify-icon icon="lucide:check-circle-2" class="text-2xl text-emerald-500"></iconify-icon>
+                        <span class="text-sm font-semibold text-gray-600" data-sd-id="45">Precios verificados</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2" data-sd-id="46">
+                        <iconify-icon icon="lucide:link-2" class="text-2xl text-blue-500"></iconify-icon>
+                        <span class="text-sm font-semibold text-gray-600" data-sd-id="47">Fuentes citadas</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2" data-sd-id="48">
+                        <iconify-icon icon="lucide:shield-check" class="text-2xl text-[#4F46E5]"></iconify-icon>
+                        <span class="text-sm font-semibold text-gray-600" data-sd-id="49">Independencia total</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2" data-sd-id="50">
+                        <iconify-icon icon="lucide:info" class="text-2xl text-amber-500"></iconify-icon>
+                        <span class="text-sm font-semibold text-gray-600" data-sd-id="51">No vendemos seguros</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- (2) COMPARADOR SECTION -->
+        <section class="max-w-[1440px] mx-auto px-6 py-16" data-sd-id="52">
+            <div class="flex items-center justify-between mb-8" data-sd-id="53">
+                <h2 class="text-2xl font-bold flex items-center gap-3" data-sd-id="54">
+                    <iconify-icon icon="lucide:bar-chart-2" class="text-[#4F46E5]"></iconify-icon>
+                    Resultados en Córdoba <span class="text-gray-400 font-normal" data-sd-id="55">(14 opciones encontradas)</span>
+                </h2>
+                <div class="flex items-center gap-3" data-sd-id="56">
+                    <span class="text-sm text-gray-500" data-sd-id="57">Ordenar por:</span>
+                    <select class="bg-white border border-gray-200 rounded-lg px-3 py-1.5 text-sm font-medium focus:outline-none" data-sd-id="58">
+                        <option data-sd-id="59">Menor precio</option>
+                        <option data-sd-id="60">Mayor cobertura</option>
+                        <option data-sd-id="61">Más populares</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="flex gap-8" data-sd-id="62">
+                <!-- Sidebar Filtros -->
+                <aside class="w-72 flex-shrink-0" data-sd-id="63">
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 sticky top-24" data-sd-id="64">
+                        <div class="flex items-center justify-between mb-6" data-sd-id="65">
+                            <h3 class="font-bold" data-sd-id="66">Filtros</h3>
+                            <button class="text-xs font-semibold text-[#4F46E5] hover:underline uppercase" data-sd-id="67">Limpiar</button>
+                        </div>
+
+                        <div class="space-y-6" data-sd-id="68">
+                            <div data-sd-id="69">
+                                <label class="block text-xs font-bold text-gray-400 mb-3 uppercase" data-sd-id="70">Tipo de Plan</label>
+                                <div class="space-y-2" data-sd-id="71">
+                                    <label class="flex items-center gap-2 cursor-pointer group" data-sd-id="72">
+                                        <div class="w-5 h-5 rounded border border-[#4F46E5] bg-[#4F46E5] flex items-center justify-center" data-sd-id="73">
+                                            <iconify-icon icon="lucide:check" class="text-white text-sm"></iconify-icon>
+                                        </div>
+                                        <span class="text-sm text-gray-700 font-medium" data-sd-id="74">Intermedio</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer group" data-sd-id="75">
+                                        <div class="w-5 h-5 rounded border border-gray-300" data-sd-id="76"></div>
+                                        <span class="text-sm text-gray-600" data-sd-id="77">Completo</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer group" data-sd-id="78">
+                                        <div class="w-5 h-5 rounded border border-gray-300" data-sd-id="79"></div>
+                                        <span class="text-sm text-gray-600" data-sd-id="80">Sólo Accidentes</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div data-sd-id="81">
+                                <label class="block text-xs font-bold text-gray-400 mb-3 uppercase" data-sd-id="82">Rango de Precio (Mensual)</label>
+                                <input type="range" class="w-full accent-[#4F46E5]" data-sd-id="83">
+                                <div class="flex justify-between mt-2 text-xs text-gray-500 font-mono items-center" data-sd-id="84">
+                                    <span data-sd-id="85">$5.000</span>
+                                    <span class="text-[9px] font-black bg-gray-900 text-white px-1 py-0.5 rounded uppercase leading-none">Ejemplo</span>
+                                    <span data-sd-id="86">$45.000+</span>
+                                </div>
+                            </div>
+
+                            <div data-sd-id="87">
+                                <label class="block text-xs font-bold text-gray-400 mb-3 uppercase" data-sd-id="88">Coberturas Clave</label>
+                                <div class="space-y-2" data-sd-id="89">
+                                    <label class="flex items-center gap-2 cursor-pointer" data-sd-id="90">
+                                        <input type="checkbox" checked="" class="w-4 h-4 accent-[#4F46E5]" data-sd-id="91">
+                                        <span class="text-sm text-gray-700" data-sd-id="92">Vacunación anual</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer" data-sd-id="93">
+                                        <input type="checkbox" class="w-4 h-4 accent-[#4F46E5]" data-sd-id="94">
+                                        <span class="text-sm text-gray-700" data-sd-id="95">Cirugías incluidas</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer" data-sd-id="96">
+                                        <input type="checkbox" class="w-4 h-4 accent-[#4F46E5]" data-sd-id="97">
+                                        <span class="text-sm text-gray-700" data-sd-id="98">Fallecimiento</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Tabla de Resultados -->
+                <div class="flex-1" data-sd-id="99">
+                    <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden mb-8" data-sd-id="100">
+                        <table class="w-full text-left" data-sd-id="101">
+                            <thead class="bg-gray-50 border-b border-gray-200" data-sd-id="102">
+                                <tr data-sd-id="103">
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase" data-sd-id="104">Prestadora / Plan</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase" data-sd-id="105">Destacados</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase text-center" data-sd-id="106">Precio Mensual</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase" data-sd-id="107"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100" data-sd-id="108">
+                                <!-- Petit Salud -->
+                                <tr class="hover:bg-gray-50 transition-colors" data-sd-id="109">
+                                    <td class="px-6 py-6" data-sd-id="110">
+                                        <div class="flex items-center gap-4" data-sd-id="111">
+                                            <div class="w-12 h-12 bg-[#F3F4F6] rounded-xl flex items-center justify-center font-bold text-[#4F46E5]" data-sd-id="112">PS</div>
+                                            <div data-sd-id="113">
+                                                <p class="font-bold text-gray-900" data-sd-id="114">Petit Salud</p>
+                                                <p class="text-xs text-gray-500" data-sd-id="115">Plan Integral Plus</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6" data-sd-id="116">
+                                        <div class="flex flex-wrap gap-2" data-sd-id="117">
+                                            <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase" data-sd-id="118">Mejor Precio</span>
+                                            <span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase" data-sd-id="119">Sin Carencia</span>
+                                        </div>
+                                        <p class="text-xs text-gray-400 mt-2" data-sd-id="120">Verificado 20/10/2026 · Fuente: sitio oficial</p>
+                                    </td>
+                                    <td class="px-6 py-6 text-center" data-sd-id="121">
+                                        <div class="flex flex-col items-center" data-sd-id="122">
+                                            <span class="text-2xl font-bold tabular-nums text-gray-900" data-sd-id="123">$8.450</span>
+                                            <span class="text-[10px] font-black bg-gray-900 text-white px-1.5 py-0.5 rounded mt-1 uppercase tracking-tighter" data-sd-id="124">Ejemplo</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 text-right" data-sd-id="125">
+                                        <a href="#ficha-petit" id="btn-detail-petit" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2.5 px-6 rounded-lg text-sm inline-block transition-colors" data-sd-id="126">
+                                            Ver detalle
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!-- AVSIM -->
+                                <tr class="hover:bg-gray-50 transition-colors" data-sd-id="127">
+                                    <td class="px-6 py-6" data-sd-id="128">
+                                        <div class="flex items-center gap-4" data-sd-id="129">
+                                            <div class="w-12 h-12 bg-[#F3F4F6] rounded-xl flex items-center justify-center font-bold text-[#4F46E5]" data-sd-id="130">AV</div>
+                                            <div data-sd-id="131">
+                                                <p class="font-bold text-gray-900" data-sd-id="132">AVSIM</p>
+                                                <p class="text-xs text-gray-500" data-sd-id="133">Plan Oro Mascotas</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6" data-sd-id="134">
+                                        <div class="flex flex-wrap gap-2" data-sd-id="135">
+                                            <span class="bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase" data-sd-id="136">Más Cobertura</span>
+                                        </div>
+                                        <p class="text-xs text-gray-400 mt-2 text-wrap" data-sd-id="137">Verificado 20/10/2026 · Fuente: sitio oficial</p>
+                                    </td>
+                                    <td class="px-6 py-6 text-center" data-sd-id="138">
+                                        <div class="flex flex-col items-center" data-sd-id="139">
+                                            <span class="text-2xl font-bold tabular-nums text-gray-900" data-sd-id="140">$12.900</span>
+                                            <span class="text-[10px] font-black bg-gray-900 text-white px-1.5 py-0.5 rounded mt-1 uppercase tracking-tighter" data-sd-id="141">Ejemplo</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 text-right" data-sd-id="142">
+                                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2.5 px-6 rounded-lg text-sm transition-colors" data-sd-id="143">Ver detalle</button>
+                                    </td>
+                                </tr>
+                                <!-- IKE -->
+                                <tr class="hover:bg-gray-50 transition-colors" data-sd-id="144">
+                                    <td class="px-6 py-6" data-sd-id="145">
+                                        <div class="flex items-center gap-4" data-sd-id="146">
+                                            <div class="w-12 h-12 bg-[#F3F4F6] rounded-xl flex items-center justify-center font-bold text-[#4F46E5]" data-sd-id="147">IK</div>
+                                            <div data-sd-id="148">
+                                                <p class="font-bold text-gray-900" data-sd-id="149">IKE Mascotas</p>
+                                                <p class="text-xs text-gray-500" data-sd-id="150">Plan Global</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6" data-sd-id="151">
+                                        <div class="flex flex-wrap gap-2" data-sd-id="152">
+                                            <span class="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase" data-sd-id="153">Internacional</span>
+                                        </div>
+                                        <p class="text-xs text-gray-400 mt-2" data-sd-id="154">Verificado 20/10/2026 · Fuente: sitio oficial</p>
+                                    </td>
+                                    <td class="px-6 py-6 text-center" data-sd-id="155">
+                                        <div class="flex flex-col items-center" data-sd-id="156">
+                                            <span class="text-2xl font-bold tabular-nums text-gray-900" data-sd-id="157">$9.100</span>
+                                            <span class="text-[10px] font-black bg-gray-900 text-white px-1.5 py-0.5 rounded mt-1 uppercase tracking-tighter" data-sd-id="158">Ejemplo</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 text-right" data-sd-id="159">
+                                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2.5 px-6 rounded-lg text-sm transition-colors" data-sd-id="160">Ver detalle</button>
+                                    </td>
+                                </tr>
+                                <!-- Companion -->
+                                <tr class="hover:bg-gray-50 transition-colors" data-sd-id="161">
+                                    <td class="px-6 py-6" data-sd-id="162">
+                                        <div class="flex items-center gap-4" data-sd-id="163">
+                                            <div class="w-12 h-12 bg-[#F3F4F6] rounded-xl flex items-center justify-center font-bold text-[#4F46E5]" data-sd-id="164">CO</div>
+                                            <div data-sd-id="165">
+                                                <p class="font-bold text-gray-900" data-sd-id="166">Companion</p>
+                                                <p class="text-xs text-gray-500" data-sd-id="167">Base Protege</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6" data-sd-id="168">
+                                        <p class="text-xs text-gray-400" data-sd-id="169">Verificado 20/10/2026 · Fuente: sitio oficial</p>
+                                    </td>
+                                    <td class="px-6 py-6 text-center" data-sd-id="170">
+                                        <div class="flex flex-col items-center" data-sd-id="171">
+                                            <span class="text-2xl font-bold tabular-nums text-gray-900" data-sd-id="172">$7.200</span>
+                                            <span class="text-[10px] font-black bg-gray-900 text-white px-1.5 py-0.5 rounded mt-1 uppercase tracking-tighter" data-sd-id="173">Ejemplo</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 text-right" data-sd-id="174">
+                                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2.5 px-6 rounded-lg text-sm transition-colors" data-sd-id="175">Ver detalle</button>
+                                    </td>
+                                </tr>
+                                <!-- FielPet -->
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-6">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-[#F3F4F6] rounded-xl flex items-center justify-center font-bold text-[#4F46E5]">FP</div>
+                                            <div>
+                                                <p class="font-bold text-gray-900">FielPet</p>
+                                                <p class="text-xs text-gray-500">Plan Esencial</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6">
+                                        <p class="text-xs text-gray-400">Verificado 20/10/2026 · Fuente: sitio oficial</p>
+                                    </td>
+                                    <td class="px-6 py-6 text-center">
+                                        <div class="flex flex-col items-center">
+                                            <span class="text-2xl font-bold tabular-nums text-gray-900">$6.800</span>
+                                            <span class="text-[10px] font-black bg-gray-900 text-white px-1.5 py-0.5 rounded mt-1 uppercase tracking-tighter">Ejemplo</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 text-right">
+                                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2.5 px-6 rounded-lg text-sm transition-colors">Ver detalle</button>
+                                    </td>
+                                </tr>
+                                <!-- OSMASC -->
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-6">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-[#F3F4F6] rounded-xl flex items-center justify-center font-bold text-[#4F46E5]">OM</div>
+                                            <div>
+                                                <p class="font-bold text-gray-900">OSMASC</p>
+                                                <p class="text-xs text-gray-500">Plan Familiar</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6">
+                                        <p class="text-xs text-gray-400">Verificado 20/10/2026 · Fuente: sitio oficial</p>
+                                    </td>
+                                    <td class="px-6 py-6 text-center">
+                                        <div class="flex flex-col items-center">
+                                            <span class="text-2xl font-bold tabular-nums text-gray-900">$10.500</span>
+                                            <span class="text-[10px] font-black bg-gray-900 text-white px-1.5 py-0.5 rounded mt-1 uppercase tracking-tighter">Ejemplo</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-6 text-right">
+                                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2.5 px-6 rounded-lg text-sm transition-colors">Ver detalle</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Bloque AdSense Lateral -->
+                <div class="w-48 flex-shrink-0" data-sd-id="176">
+                    <div class="bg-gray-100 border border-gray-200 rounded-xl h-[600px] flex flex-col items-center justify-center p-4" data-sd-id="177">
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4" data-sd-id="178">Publicidad</span>
+                        <div class="w-full h-full border border-dashed border-gray-300 rounded-lg" data-sd-id="179"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- (3) FICHA TÉCNICA (PETIT SALUD) -->
+        <section id="ficha-petit" class="max-w-[1440px] mx-auto px-6 py-24 border-t border-gray-200" data-sd-id="180">
+            <div class="grid grid-cols-12 gap-12" data-sd-id="181">
+                <!-- Contenido Principal Ficha -->
+                <div class="col-span-8" data-sd-id="182">
+                    <div class="flex items-start justify-between mb-10" data-sd-id="183">
+                        <div data-sd-id="184">
+                            <div class="flex items-center gap-3 mb-2" data-sd-id="185">
+                                <span class="bg-[#4F46E5]/10 text-[#4F46E5] text-xs font-bold px-2 py-1 rounded" data-sd-id="186">PETIT SALUD</span>
+                                <h2 class="text-4xl font-bold text-gray-900" data-sd-id="187">Plan Integral Plus</h2>
+                            </div>
+                            <p class="text-gray-500" data-sd-id="188">El plan más equilibrado para perros y gatos adultos en Córdoba Capital y Gran Córdoba.</p>
+                            <p class="text-xs text-gray-400 mt-4" data-sd-id="189">Verificado 20/10/2026 · Fuente: sitio oficial oficialpetitsalud.com.ar</p>
+                        </div>
+                        <div class="text-right" data-sd-id="190">
+                            <div class="flex flex-col items-end" data-sd-id="191">
+                                <span class="text-4xl font-bold tabular-nums text-gray-900" data-sd-id="192">$8.450</span>
+                                <span class="text-[10px] font-black bg-gray-900 text-white px-2 py-1 rounded mt-2 uppercase" data-sd-id="193">Ejemplo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-8 mb-12" data-sd-id="194">
+                        <div class="bg-white border border-gray-200 rounded-2xl p-6" data-sd-id="195">
+                            <h4 class="font-bold mb-4 flex items-center gap-2 text-emerald-600" data-sd-id="196">
+                                <iconify-icon icon="lucide:plus-circle"></iconify-icon>
+                                Coberturas Incluidas
+                            </h4>
+                            <ul class="space-y-3" data-sd-id="197">
+                                <li class="flex items-center gap-2 text-sm text-gray-700" data-sd-id="198">
+                                    <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                                    Consulta veterinaria en consultorio (100%)
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-700" data-sd-id="199">
+                                    <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                                    Vacunación anual (Séxtuple/Quíntuple y Antirrábica)
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-700" data-sd-id="200">
+                                    <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                                    Desparasitación interna bimestral
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-700" data-sd-id="201">
+                                    <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                                    Urgencias 24hs en clínicas adheridas
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-700" data-sd-id="202">
+                                    <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                                    Ecografías y análisis de sangre básicos
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-2xl p-6" data-sd-id="203">
+                            <h4 class="font-bold mb-4 flex items-center gap-2 text-amber-600" data-sd-id="204">
+                                <iconify-icon icon="lucide:clock"></iconify-icon>
+                                Carencias (Espera)
+                            </h4>
+                            <ul class="space-y-3" data-sd-id="205">
+                                <li class="flex items-center gap-2 text-sm text-gray-700" data-sd-id="206">
+                                    <span class="w-16 font-mono text-[10px] bg-gray-100 py-0.5 text-center rounded" data-sd-id="207">Inmediata</span>
+                                    Urgencias por accidente
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-700" data-sd-id="208">
+                                    <span class="w-16 font-mono text-[10px] bg-gray-100 py-0.5 text-center rounded" data-sd-id="209">15 Días</span>
+                                    Consultas clínicas
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-700" data-sd-id="210">
+                                    <span class="w-16 font-mono text-[10px] bg-gray-100 py-0.5 text-center rounded" data-sd-id="211">60 Días</span>
+                                    Ecografías y Rayos X
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-700" data-sd-id="212">
+                                    <span class="w-16 font-mono text-[10px] bg-gray-100 py-0.5 text-center rounded" data-sd-id="213">180 Días</span>
+                                    Cirugías programadas
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-8 mb-16" data-sd-id="214">
+                        <div class="bg-emerald-50/50 border border-emerald-100 rounded-2xl p-6" data-sd-id="215">
+                            <p class="text-sm font-bold text-emerald-800 mb-3" data-sd-id="216">Puntos a favor</p>
+                            <p class="text-sm text-emerald-700 leading-relaxed" data-sd-id="217">
+                                Excelente red de veterinarias en Nueva Córdoba y General Paz. La cobertura de vacunación es la más completa por este rango de precio.
+                            </p>
+                        </div>
+                        <div class="bg-red-50/50 border border-red-100 rounded-2xl p-6" data-sd-id="218">
+                            <p class="text-sm font-bold text-red-800 mb-3" data-sd-id="219">A tener en cuenta</p>
+                            <p class="text-sm text-red-700 leading-relaxed" data-sd-id="220">
+                                No incluye cobertura de sepelio ni eutanasia en este plan. El reintegro por medicamentos fuera de red tiene un tope bajo.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- AdSense Pie -->
+                    <div class="w-full bg-gray-50 border border-gray-200 rounded-xl p-8 flex flex-col items-center justify-center h-32" data-sd-id="221">
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2" data-sd-id="222">Publicidad</span>
+                        <div class="w-3/4 h-4 bg-gray-200 rounded-full" data-sd-id="223"></div>
+                    </div>
+                </div>
+
+                <!-- Columna Sticky Formulario Lead -->
+                <aside class="col-span-4" data-sd-id="224">
+                    <div class="sticky top-24 bg-white border-2 border-[#4F46E5] rounded-3xl p-8 shadow-2xl shadow-indigo-100" data-sd-id="225">
+                        <h3 class="text-xl font-bold mb-2" data-sd-id="226">Quiero que me contacten</h3>
+                        <p class="text-sm text-gray-500 mb-6" data-sd-id="227">Dejanos tus datos para que un asesor de Petit Salud te brinde atención personalizada.</p>
+                        
+                        <form class="space-y-4" data-sd-id="228">
+                            <div data-sd-id="229">
+                                <label class="block text-xs font-bold text-gray-400 mb-1.5 uppercase ml-1" data-sd-id="230">Tu Nombre</label>
+                                <input type="text" placeholder="Ej: Juan Pérez" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4F46E5]/20" data-sd-id="231">
+                            </div>
+                            <div data-sd-id="232">
+                                <label class="block text-xs font-bold text-gray-400 mb-1.5 uppercase ml-1" data-sd-id="233">WhatsApp</label>
+                                <input type="tel" placeholder="Ej: 351 1234567" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4F46E5]/20" data-sd-id="234">
+                            </div>
+                            <div data-sd-id="235">
+                                <label class="block text-xs font-bold text-gray-400 mb-1.5 uppercase ml-1" data-sd-id="236">Tu Mascota</label>
+                                <select class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4F46E5]/20" data-sd-id="237">
+                                    <option data-sd-id="238">Perro</option>
+                                    <option data-sd-id="239">Gato</option>
+                                </select>
+                            </div>
+                            <button id="form-submit-lead" type="button" class="w-full bg-[#4F46E5] hover:bg-[#4338CA] text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-indigo-200 mt-4" data-sd-id="240">
+                                Solicitar contacto gratuito
+                            </button>
+                        </form>
+
+                        <div class="mt-8 pt-6 border-t border-gray-100 text-center" data-sd-id="241">
+                            <div class="flex items-center justify-center gap-2 mb-2 text-gray-400" data-sd-id="242">
+                                <iconify-icon icon="lucide:info" class="text-lg"></iconify-icon>
+                                <span class="text-xs font-semibold uppercase" data-sd-id="243">Aviso importante</span>
+                            </div>
+                            <p class="text-[11px] text-gray-400 leading-tight" data-sd-id="244">
+                                MascoCompara es un comparador independiente. Al enviar tus datos, te derivamos directamente a la marca elegida; <span class="font-bold" data-sd-id="245">nosotros no vendemos seguros ni cobramos comisiones</span>.
+                            </p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-white border-t border-gray-200 pt-16 pb-8" data-sd-id="246">
+            <div class="max-w-[1440px] mx-auto px-6" data-sd-id="247">
+                <div class="grid grid-cols-4 gap-12 mb-12" data-sd-id="248">
+                    <div class="col-span-1" data-sd-id="249">
+                        <div class="flex items-center gap-2 mb-4" data-sd-id="250">
+                            <div class="bg-[#4F46E5] p-1 rounded-lg" data-sd-id="251">
+                                <iconify-icon icon="lucide:paw-print" class="text-white text-lg"></iconify-icon>
+                            </div>
+                            <span class="font-bold text-lg tracking-tight" data-sd-id="252">MascoCompara</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-sd-id="253">
+                            El primer comparador especializado en salud animal para Córdoba. Datos abiertos, transparencia total y compromiso con el bienestar de tu mascota.
+                        </p>
+                    </div>
+                    <div data-sd-id="254">
+                        <h5 class="text-sm font-bold text-gray-900 mb-4" data-sd-id="255">Córdoba</h5>
+                        <ul class="text-xs text-gray-500 space-y-2" data-sd-id="256">
+                            <li data-sd-id="257">Cartillas en Capital</li>
+                            <li data-sd-id="258">Cobertura en Interior</li>
+                            <li data-sd-id="259">Clínicas 24 Horas</li>
+                        </ul>
+                    </div>
+                    <div data-sd-id="260">
+                        <h5 class="text-sm font-bold text-gray-900 mb-4" data-sd-id="261">Prestadoras</h5>
+                        <ul class="text-xs text-gray-500 space-y-2" data-sd-id="262">
+                            <li data-sd-id="263">Petit Salud</li>
+                            <li data-sd-id="264">AVSIM</li>
+                            <li data-sd-id="265">IKE Mascotas</li>
+                            <li data-sd-id="266">Companion</li>
+                        </ul>
+                    </div>
+                    <div data-sd-id="267">
+                        <h5 class="text-sm font-bold text-gray-900 mb-4" data-sd-id="268">Legal</h5>
+                        <ul class="text-xs text-gray-500 space-y-2" data-sd-id="269">
+                            <li data-sd-id="270">Términos y condiciones</li>
+                            <li data-sd-id="271">Política de privacidad</li>
+                            <li data-sd-id="272">Fuentes de información</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-100 pt-8 text-center" data-sd-id="273">
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest" data-sd-id="274">
+                        © 2026 MascoCompara (nombre provisorio) - Córdoba, Argentina. Hecho con ❤️ para bicheros.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body></html>

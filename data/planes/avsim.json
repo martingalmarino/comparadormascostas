@@ -1,0 +1,78 @@
+[
+  {
+    "id": "avsim-oro",
+    "marca": "AVSIM",
+    "marca_slug": "avsim",
+    "nombre": "Plan Oro Mascotas",
+    "tipo": "plan_salud",
+    "especies": ["perro", "gato"],
+    "edad_min_meses": 3,
+    "edad_max_anios": 9,
+    "zonas": ["cordoba-capital", "rio-cuarto"],
+    "precio": 12900,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-10-20",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "verificado",
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "Sin límite de ejemplo en cartilla" },
+      { "item": "Vacunación anual", "valor": "Incluida" },
+      { "item": "Cirugías programadas", "valor": "Incluidas con tope" },
+      { "item": "Urgencias 24 h", "valor": "Guardia en red" },
+      { "item": "Internación", "valor": "Hasta 5 días de ejemplo" },
+      { "item": "Estudios de laboratorio", "valor": "80% bonificado" },
+      { "item": "Desparasitación", "valor": "Dos tomas al año" }
+    ],
+    "carencias": [
+      { "item": "Urgencias por accidente", "dias": 0 },
+      { "item": "Consultas clínicas", "dias": 30 },
+      { "item": "Cirugías programadas", "dias": 90 }
+    ],
+    "pros": [
+      "Es el ejemplo con más ítems de cobertura del comparador.",
+      "Figura tanto para Córdoba Capital como para Río Cuarto."
+    ],
+    "contras": [
+      "La cuota de ejemplo es de las más altas.",
+      "El tope de edad de este ejemplo corta a los 9 años."
+    ],
+    "badges": ["mas_cobertura"],
+    "lead": { "modo": "form" },
+    "resumen": "Ejemplo de plan amplio para perros y gatos en Capital y Río Cuarto."
+  },
+  {
+    "id": "avsim-plata",
+    "marca": "AVSIM",
+    "marca_slug": "avsim",
+    "nombre": "Plan Plata",
+    "tipo": "seguro",
+    "especies": ["perro"],
+    "edad_min_meses": 2,
+    "edad_max_anios": 8,
+    "zonas": ["cordoba-capital"],
+    "precio": 9800,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-10-18",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "requiere_revision",
+    "precio_detectado": 10200,
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "4 consultas de ejemplo al año" },
+      { "item": "Urgencias 24 h", "valor": "Solo accidentes" },
+      { "item": "Vacunación anual", "valor": "Antirrábica" }
+    ],
+    "carencias": [
+      { "item": "Accidentes", "dias": 5 },
+      { "item": "Consultas clínicas", "dias": 30 }
+    ],
+    "pros": ["Ejemplo acotado a accidentes y consultas, más fácil de leer."],
+    "contras": [
+      "Está en revisión: no lo tomes como precio vigente.",
+      "En este ejemplo no cubre gatos."
+    ],
+    "lead": { "modo": "form" },
+    "resumen": "Ejemplo de seguro para perros. El dato está marcado para revisión."
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "userAgent": "MascoComparaBot/0.1 (comparador independiente de planes para mascotas; +http://localhost:3000/como-comparamos)",
+  "umbral_cambio": 0.15,
+  "marcas": [
+    { "plan_id": "petit-salud-vital-plus", "url": "", "enabled": false, "selector": "", "notas": "Completar url y selector solo si el robots.txt y los términos del sitio permiten el acceso automatizado." },
+    { "plan_id": "petit-salud-integral-plus", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
+    { "plan_id": "avsim-oro", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
+    { "plan_id": "avsim-plata", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
+    { "plan_id": "ike-global", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
+    { "plan_id": "ike-local", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
+    { "plan_id": "companion-integral-cba", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
+    { "plan_id": "companion-base-protege", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
+    { "plan_id": "fielpet-esencial", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
+    { "plan_id": "fielpet-premium", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
+    { "plan_id": "osmasc-familiar", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
+    { "plan_id": "osmasc-senior", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." }
+  ]
+}

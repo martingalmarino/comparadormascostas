@@ -1,0 +1,25 @@
+import { CalendarCheck } from "lucide-react";
+import { formatDate } from "@/lib/format";
+import type { Plan } from "@/lib/plan-schema";
+
+export function VerifiedLine({ plan }: { plan: Plan }) {
+  const external = plan.fuente_url.startsWith("http");
+  const sourceLabel = plan.es_ejemplo ? "dato de ejemplo" : "sitio oficial";
+  return (
+    <p className="flex items-start gap-1.5 text-xs text-gray-500">
+      <CalendarCheck className="mt-0.5 size-3.5 shrink-0 text-indigo-500" aria-hidden="true" />
+      <span>
+        Verificado el {formatDate(plan.fecha_verificacion)}
+        {" · "}
+        Fuente:{" "}
+        <a
+          href={plan.fuente_url}
+          className="underline decoration-gray-300 underline-offset-2 hover:text-indigo-700"
+          {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        >
+          {sourceLabel}
+        </a>
+      </span>
+    </p>
+  );
+}

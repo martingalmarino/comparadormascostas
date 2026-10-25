@@ -1,0 +1,71 @@
+[
+  {
+    "id": "ike-global",
+    "marca": "IKE Mascotas",
+    "marca_slug": "ike-mascotas",
+    "nombre": "Plan Global",
+    "tipo": "seguro",
+    "especies": ["perro", "gato"],
+    "edad_min_meses": 6,
+    "edad_max_anios": 8,
+    "zonas": ["cordoba-capital", "gran-cordoba", "rio-cuarto", "villa-maria"],
+    "precio": 9100,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-10-20",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "verificado",
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "En red nacional de ejemplo" },
+      { "item": "Urgencias 24 h", "valor": "Accidentes y guardia" },
+      { "item": "Cobertura internacional", "valor": "Viajes de hasta 30 días" },
+      { "item": "Vacunación anual", "valor": "Reintegro parcial" }
+    ],
+    "carencias": [
+      { "item": "Accidentes", "dias": 0 },
+      { "item": "Consultas clínicas", "dias": 20 },
+      { "item": "Cobertura internacional", "dias": 60 }
+    ],
+    "pros": [
+      "Es el único ejemplo del comparador con cobertura internacional.",
+      "La zona de ejemplo abarca Capital, Gran Córdoba, Río Cuarto y Villa María."
+    ],
+    "contras": [
+      "En este ejemplo la mascota tiene que tener al menos 6 meses.",
+      "El tramo internacional es ilustrativo y hay que leerlo en la póliza real."
+    ],
+    "badges": ["internacional"],
+    "lead": { "modo": "link", "destino": "/contacto?plan=ike-global" },
+    "resumen": "Ejemplo de seguro con tramo internacional para perros y gatos."
+  },
+  {
+    "id": "ike-local",
+    "marca": "IKE Mascotas",
+    "marca_slug": "ike-mascotas",
+    "nombre": "Plan Local Gatos",
+    "tipo": "plan_salud",
+    "especies": ["gato"],
+    "edad_min_meses": 2,
+    "edad_max_anios": 12,
+    "zonas": ["cordoba-capital"],
+    "precio": null,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-10-12",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "sin_precio_publico",
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "Cartilla de ejemplo para gatos" },
+      { "item": "Vacunación anual", "valor": "Triple felina de ejemplo" },
+      { "item": "Urgencias 24 h", "valor": "Consultar con la marca" }
+    ],
+    "carencias": [
+      { "item": "Consultas clínicas", "dias": 15 },
+      { "item": "Cirugías programadas", "dias": 120 }
+    ],
+    "pros": ["Ejemplo armado solo para gatos en Córdoba Capital."],
+    "contras": ["La marca no publica el precio en esta ficha: hay que consultarlo."],
+    "lead": { "modo": "form" },
+    "resumen": "Ejemplo sin precio público, solo para gatos."
+  }
+]

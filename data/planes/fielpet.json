@@ -1,0 +1,79 @@
+[
+  {
+    "id": "fielpet-esencial",
+    "marca": "FielPet",
+    "marca_slug": "fielpet",
+    "nombre": "Plan Esencial",
+    "tipo": "seguro",
+    "especies": ["perro", "gato"],
+    "edad_min_meses": 2,
+    "edad_max_anios": 8,
+    "zonas": ["cordoba-capital", "gran-cordoba"],
+    "precio": 6800,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-10-21",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "verificado",
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "3 consultas de ejemplo al año" },
+      { "item": "Vacunación anual", "valor": "Antirrábica y séxtuple o triple" },
+      { "item": "Urgencias 24 h", "valor": "Solo accidentes" }
+    ],
+    "carencias": [
+      { "item": "Accidentes", "dias": 0 },
+      { "item": "Consultas clínicas", "dias": 10 },
+      { "item": "Vacunación", "dias": 30 }
+    ],
+    "pros": [
+      "Es el precio de ejemplo más bajo del comparador.",
+      "Sirve para perros y gatos en Capital y Gran Córdoba."
+    ],
+    "contras": [
+      "La cobertura de ejemplo es corta: no incluye cirugías.",
+      "El tope de edad ilustrativo es 8 años."
+    ],
+    "badges": ["mejor_precio"],
+    "lead": { "modo": "form" },
+    "resumen": "Ejemplo de seguro esencial y de menor precio ilustrativo."
+  },
+  {
+    "id": "fielpet-premium",
+    "marca": "FielPet",
+    "marca_slug": "fielpet",
+    "nombre": "Plan Premium",
+    "tipo": "plan_salud",
+    "especies": ["perro", "gato"],
+    "edad_min_meses": 2,
+    "edad_max_anios": 14,
+    "zonas": ["cordoba-capital", "villa-carlos-paz"],
+    "precio": 15400,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-10-21",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "verificado",
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "Sin tope de ejemplo en cartilla" },
+      { "item": "Vacunación anual", "valor": "Incluida" },
+      { "item": "Cirugías programadas", "valor": "Incluidas hasta un tope" },
+      { "item": "Urgencias 24 h", "valor": "Guardia completa" },
+      { "item": "Estudios de laboratorio", "valor": "Análisis básicos" }
+    ],
+    "carencias": [
+      { "item": "Accidentes", "dias": 0 },
+      { "item": "Consultas clínicas", "dias": 30 },
+      { "item": "Cirugías programadas", "dias": 120 }
+    ],
+    "pros": [
+      "El ejemplo admite mascotas de hasta 14 años.",
+      "Suma Villa Carlos Paz a Córdoba Capital."
+    ],
+    "contras": [
+      "Es la cuota de ejemplo más alta.",
+      "Las preexistencias no están cubiertas en esta ficha ilustrativa."
+    ],
+    "lead": { "modo": "form" },
+    "resumen": "Ejemplo de plan alto, útil para comparar perfiles de mascota mayor."
+  }
+]

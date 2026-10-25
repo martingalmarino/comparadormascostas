@@ -1,0 +1,79 @@
+[
+  {
+    "id": "petit-salud-vital-plus",
+    "marca": "Petit Salud",
+    "marca_slug": "petit-salud",
+    "nombre": "Plan Vital Plus",
+    "tipo": "obra_social",
+    "especies": ["perro", "gato"],
+    "edad_min_meses": 2,
+    "edad_max_anios": 10,
+    "zonas": ["cordoba-capital", "gran-cordoba"],
+    "precio": 8450,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-10-20",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "verificado",
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "100% en consultorio" },
+      { "item": "Vacunación anual", "valor": "50% de reintegro" },
+      { "item": "Estudios de laboratorio", "valor": "80% bonificado" }
+    ],
+    "carencias": [
+      { "item": "Urgencias por accidente", "dias": 0 },
+      { "item": "Consultas clínicas", "dias": 15 },
+      { "item": "Cirugías programadas", "dias": 180 }
+    ],
+    "pros": [
+      "En este ejemplo, el precio de entrada queda en la franja baja del comparador.",
+      "Incluye vacunación, que suele ser el gasto más frecuente el primer año."
+    ],
+    "contras": [
+      "La ficha es ilustrativa: la cartilla de clínicas hay que confirmarla con la marca.",
+      "Las cirugías programadas tienen una espera larga en este ejemplo."
+    ],
+    "lead": { "modo": "form" },
+    "resumen": "Ejemplo de obra social para perros y gatos en Córdoba Capital y Gran Córdoba."
+  },
+  {
+    "id": "petit-salud-integral-plus",
+    "marca": "Petit Salud",
+    "marca_slug": "petit-salud",
+    "nombre": "Plan Integral Plus",
+    "tipo": "plan_salud",
+    "especies": ["perro", "gato"],
+    "edad_min_meses": 2,
+    "edad_max_anios": 12,
+    "zonas": ["cordoba-capital", "nueva-cordoba", "general-paz"],
+    "precio": 11800,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-10-20",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "verificado",
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "100% en consultorio" },
+      { "item": "Vacunación anual", "valor": "Séxtuple, quíntuple y antirrábica" },
+      { "item": "Urgencias 24 h", "valor": "En clínicas adheridas" },
+      { "item": "Cirugías programadas", "valor": "Con tope anual de ejemplo" },
+      { "item": "Estudios de laboratorio", "valor": "Análisis y ecografía básica" }
+    ],
+    "carencias": [
+      { "item": "Urgencias por accidente", "dias": 0 },
+      { "item": "Consultas clínicas", "dias": 15 },
+      { "item": "Ecografías y rayos X", "dias": 60 },
+      { "item": "Cirugías programadas", "dias": 180 }
+    ],
+    "pros": [
+      "Ejemplo pensado para quien quiere consultas, vacunas y urgencias en la misma cuota.",
+      "La zona de ejemplo prioriza Nueva Córdoba y General Paz."
+    ],
+    "contras": [
+      "No uses este monto como tarifa vigente: está marcado como ejemplo.",
+      "El reintegro de medicamentos fuera de red no está publicado en esta ficha."
+    ],
+    "lead": { "modo": "form" },
+    "resumen": "Ejemplo de plan de salud para adultos en Nueva Córdoba y General Paz."
+  }
+]

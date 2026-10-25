@@ -1,0 +1,72 @@
+[
+  {
+    "id": "osmasc-familiar",
+    "marca": "OSMASC",
+    "marca_slug": "osmasc",
+    "nombre": "Plan Familiar",
+    "tipo": "obra_social",
+    "especies": ["perro", "gato"],
+    "edad_min_meses": 2,
+    "edad_max_anios": 10,
+    "zonas": ["cordoba-capital", "centro", "alberdi"],
+    "precio": 10500,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-08-01",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "verificado",
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "En cartilla de ejemplo" },
+      { "item": "Vacunación anual", "valor": "Calendario básico" },
+      { "item": "Estudios de laboratorio", "valor": "Con copago de ejemplo" }
+    ],
+    "carencias": [
+      { "item": "Consultas clínicas", "dias": 30 },
+      { "item": "Cirugías programadas", "dias": 180 }
+    ],
+    "pros": ["Ejemplo de obra social para más de una mascota en el mismo grupo familiar."],
+    "contras": [
+      "La fecha de verificación superó los 45 días: se muestra como desactualizado.",
+      "No hay urgencias 24 h en esta ficha de ejemplo."
+    ],
+    "lead": { "modo": "form" },
+    "resumen": "Ejemplo de obra social con verificación vieja, a propósito, para mostrar el aviso."
+  },
+  {
+    "id": "osmasc-senior",
+    "marca": "OSMASC",
+    "marca_slug": "osmasc",
+    "nombre": "Plan Senior",
+    "tipo": "plan_salud",
+    "especies": ["perro", "gato"],
+    "edad_min_meses": 96,
+    "edad_max_anios": 16,
+    "zonas": ["cordoba-capital", "villa-maria"],
+    "precio": 13200,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-10-15",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "verificado",
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "Controles de mascota mayor" },
+      { "item": "Estudios de laboratorio", "valor": "Perfil geriátrico de ejemplo" },
+      { "item": "Cirugías programadas", "valor": "Con recargo de ejemplo" },
+      { "item": "Urgencias 24 h", "valor": "Accidentes" }
+    ],
+    "carencias": [
+      { "item": "Consultas clínicas", "dias": 45 },
+      { "item": "Cirugías programadas", "dias": 180 }
+    ],
+    "pros": [
+      "Es el ejemplo pensado para mascotas de 8 años o más.",
+      "Incluye Villa María además de la Capital."
+    ],
+    "contras": [
+      "No aplica a cachorros: la edad mínima de ejemplo es 8 años.",
+      "La carencia de consultas es más larga que en los planes de ejemplo jóvenes."
+    ],
+    "lead": { "modo": "form" },
+    "resumen": "Ejemplo de plan para perros y gatos mayores en Capital y Villa María."
+  }
+]

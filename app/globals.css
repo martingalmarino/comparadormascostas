@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f9fafb;
+  color: #111827;
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+.font-mono {
+  font-variant-numeric: tabular-nums;
+}
+
+.prose-mc {
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.prose-mc h2,
+.prose-mc h3,
+.prose-mc h4 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: #111827;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.prose-mc h2 {
+  font-size: 1.5rem;
+}
+
+.prose-mc h3 {
+  font-size: 1.25rem;
+}
+
+.prose-mc p,
+.prose-mc ul,
+.prose-mc ol,
+.prose-mc blockquote {
+  margin-top: 0.75rem;
+}
+
+.prose-mc ul,
+.prose-mc ol {
+  padding-left: 1.25rem;
+}
+
+.prose-mc ul {
+  list-style: disc;
+}
+
+.prose-mc ol {
+  list-style: decimal;
+}
+
+.prose-mc a {
+  color: #4338ca;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-mc strong {
+  color: #111827;
+}
+
+.prose-mc blockquote {
+  border-left: 3px solid #c7d2fe;
+  padding-left: 0.9rem;
+  color: #4b5563;
+}

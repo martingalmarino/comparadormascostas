@@ -1,0 +1,77 @@
+[
+  {
+    "id": "companion-integral-cba",
+    "marca": "Companion",
+    "marca_slug": "companion",
+    "nombre": "Plan Integral CBA",
+    "tipo": "plan_salud",
+    "especies": ["perro", "gato"],
+    "edad_min_meses": 2,
+    "edad_max_anios": 11,
+    "zonas": ["cordoba-capital", "sierras-chicas"],
+    "precio": 12200,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-10-19",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "verificado",
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "Red de clínicas 24 h" },
+      { "item": "Cirugías programadas", "valor": "Incluidas con autorización" },
+      { "item": "Urgencias 24 h", "valor": "Guardia y accidentes" },
+      { "item": "Vacunación anual", "valor": "Incluida" },
+      { "item": "Internación", "valor": "Hasta 3 días de ejemplo" }
+    ],
+    "carencias": [
+      { "item": "Urgencias por accidente", "dias": 0 },
+      { "item": "Consultas clínicas", "dias": 15 },
+      { "item": "Cirugías programadas", "dias": 90 }
+    ],
+    "pros": [
+      "Ejemplo con red de urgencias y cirugías en la misma cuota.",
+      "Incluye Sierras Chicas además de Córdoba Capital."
+    ],
+    "contras": [
+      "El monto es de ejemplo y puede no coincidir con la cotización real.",
+      "La autorización previa de cirugías hay que leerla en el condicionado."
+    ],
+    "lead": { "modo": "form" },
+    "resumen": "Ejemplo de plan integral para Capital y Sierras Chicas."
+  },
+  {
+    "id": "companion-base-protege",
+    "marca": "Companion",
+    "marca_slug": "companion",
+    "nombre": "Base Protege",
+    "tipo": "seguro",
+    "especies": ["perro"],
+    "edad_min_meses": 2,
+    "edad_max_anios": 8,
+    "zonas": ["cordoba-capital", "gran-cordoba"],
+    "precio": 7200,
+    "moneda": "ARS",
+    "es_ejemplo": true,
+    "fecha_verificacion": "2026-10-19",
+    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "estado": "verificado",
+    "coberturas": [
+      { "item": "Consultas veterinarias", "valor": "2 consultas de ejemplo" },
+      { "item": "Urgencias 24 h", "valor": "Accidentes" }
+    ],
+    "carencias": [
+      { "item": "Accidentes", "dias": 0 },
+      { "item": "Consultas clínicas", "dias": 0 }
+    ],
+    "pros": [
+      "En este ejemplo no hay días de carencia.",
+      "La cuota ilustrativa es de las más bajas para perros."
+    ],
+    "contras": [
+      "Cubre poco: no incluye vacunas ni cirugías en esta ficha.",
+      "Solo figura para perros."
+    ],
+    "badges": ["sin_carencia"],
+    "lead": { "modo": "whatsapp" },
+    "resumen": "Ejemplo de seguro básico para perros, sin carencia publicada."
+  }
+]

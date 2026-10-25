@@ -1,0 +1,64 @@
+import Link from "next/link";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { PriceTag } from "@/components/PriceTag";
+import { StatusNotice } from "@/components/StatusNotice";
+import { getReferenceDate } from "@/lib/dates";
+import { formatDate, formatMonth } from "@/lib/format";
+import { getPlans, newestVerification } from "@/lib/plans";
+import { pageMetadata } from "@/lib/seo";
+import { tipoOptions } from "@/lib/zones";
+
+export const metadata = pageMetadata({
+  title: "Seguro de mascotas: precios del mes",
+  description: "Precios de ejemplo de obras sociales y seguros para mascotas en Córdoba, con fecha de verificación y fuente.",
+  path: "/precios",
+});
+
+export default async function PreciosPage() {
+  const today = await getReferenceDate();
+  const plans = [...getPlans()].sort((a, b) => (a.precio ?? Number.MAX_SAFE_INTEGER) - (b.precio ?? Number.MAX_SAFE_INTEGER));
+  const updated = newestVerification(plans);
+
+  return (
+    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+      <Breadcrumbs items={[{ name: "Precios", path: "/precios" }]} />
+      <h1 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">Precios de {formatMonth(today)}</h1>
+      <p className="mt-3 max-w-3xl text-gray-600">
+        Tabla de ejemplo actualizada con la carga del {formatDate(updated)}. Ningún monto de esta lista es una tarifa vigente mientras tenga el badge EJEMPLO.
+      </p>
+      <div className="mt-8 overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+        <table className="w-full min-w-[40rem] text-left text-sm">
+          <caption className="sr-only">Precios de ejemplo del mes</caption>
+          <thead className="bg-gray-50 text-xs uppercase text-gray-500">
+            <tr>
+              <th className="px-4 py-3">Plan</th>
+              <th className="px-4 py-3">Tipo</th>
+              <th className="px-4 py-3">Precio mensual</th>
+              <th className="px-4 py-3">Verificación</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-100">
+            {plans.map((plan) => (
+              <tr key={plan.id}>
+                <td className="px-4 py-4">
+                  <Link href={`/planes/${plan.marca_slug}#${plan.id}`} className="font-semibold text-gray-900 hover:text-indigo-700">
+                    {plan.marca}
+                  </Link>
+                  <p className="text-gray-500">{plan.nombre}</p>
+                </td>
+                <td className="px-4 py-4 text-gray-600">{tipoOptions.find((item) => item.id === plan.tipo)?.label}</td>
+                <td className="px-4 py-4">
+                  <PriceTag plan={plan} today={today} />
+                </td>
+                <td className="px-4 py-4">
+                  <p className="text-gray-600">{formatDate(plan.fecha_verificacion)}</p>
+                  <StatusNotice plan={plan} today={today} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
