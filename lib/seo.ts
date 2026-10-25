@@ -50,7 +50,7 @@ export function organizationJsonLd() {
       "@type": "Country",
       name: "Argentina",
     },
-    email: siteConfig.contactEmail,
+    ...(siteConfig.contactEmail ? { email: siteConfig.contactEmail } : {}),
   };
 }
 

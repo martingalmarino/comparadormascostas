@@ -31,6 +31,17 @@ export const coverageFilters = [
   { id: "internacional", label: "Internacional", test: /internacional/i },
 ] as const;
 
+/** Páginas de provincia publicadas. Un href vacío no se enlaza: Buenos Aires entra cuando exista la ruta. */
+export const paginasProvincia = [
+  { label: "Córdoba", href: "/cordoba" },
+  { label: "Veterinarias con plan en Córdoba", href: "/cordoba/veterinarias-con-plan" },
+  { label: "Buenos Aires", href: "" },
+] as const;
+
+export function enlacesPorProvincia() {
+  return paginasProvincia.filter((item) => item.href);
+}
+
 export const sortOptions = [
   { id: "precio", label: "Menor precio" },
   { id: "cobertura", label: "Más cobertura" },

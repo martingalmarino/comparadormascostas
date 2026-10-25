@@ -20,7 +20,8 @@ export default function PrivacidadPage() {
         <p>Esta política aplica al sitio {siteConfig.siteName} ({siteConfig.domain}). Última actualización: 24 de octubre de 2026.</p>
         <h2>Responsable</h2>
         <p>
-          El responsable del tratamiento de los datos que cargás en los formularios es quien opere {siteConfig.siteName}. Contacto: {siteConfig.contactEmail}. Antes del lanzamiento hay que completar la razón social, el domicilio en Argentina y el medio real de contacto.
+          El responsable del tratamiento de los datos que cargás en los formularios es quien opere {siteConfig.siteName}.
+          {siteConfig.contactEmail ? ` Contacto: ${siteConfig.contactEmail}.` : ""} Antes del lanzamiento hay que completar la razón social, el domicilio en Argentina y el medio real de contacto.
         </p>
         <h2>Qué datos pedimos</h2>
         <ul>
@@ -43,7 +44,8 @@ export default function PrivacidadPage() {
         <p>Guardamos la consulta el tiempo necesario para derivarla y para atender un reclamo sobre ese consentimiento. Después se suprime o se anonimiza.</p>
         <h2>Derechos</h2>
         <p>
-          Podés pedir acceso, rectificación y supresión de tus datos, y la actualización cuando corresponda, en los términos de los artículos 14, 15 y 16 de la Ley 25.326. Escribinos a {siteConfig.contactEmail}. El acceso es gratuito en los plazos de la ley.
+          Podés pedir acceso, rectificación y supresión de tus datos, y la actualización cuando corresponda, en los términos de los artículos 14, 15 y 16 de la Ley 25.326.
+          {siteConfig.contactEmail ? ` Escribinos a ${siteConfig.contactEmail}.` : ""} El acceso es gratuito en los plazos de la ley.
         </p>
         <h2>Cookies, medición y publicidad</h2>
         <p>

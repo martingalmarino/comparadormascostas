@@ -127,7 +127,7 @@ export async function POST(request: Request) {
   const stored = await persistLead(record);
   if (!stored.saved) {
     return Response.json(
-      { ok: false, error: `No pudimos guardar la consulta. Escribinos a ${siteConfig.contactEmail}.` },
+      { ok: false, error: siteConfig.contactEmail ? `No pudimos guardar la consulta. Escribinos a ${siteConfig.contactEmail}.` : "No pudimos guardar la consulta." },
       { status: 503 },
     );
   }

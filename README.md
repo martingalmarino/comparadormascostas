@@ -1,8 +1,8 @@
-# MascoCompara
+# cuidalo
 
 Comparador independiente de obras sociales, planes de salud y seguros para mascotas en Córdoba, Argentina.
 
-**El nombre "MascoCompara" es provisorio** y se centraliza en `site.config.ts` para cambiarlo fácilmente.
+El nombre **cuidalo** se centraliza en `site.config.ts`.
 
 ## Inicio rápido
 

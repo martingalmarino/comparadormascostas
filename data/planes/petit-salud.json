@@ -53,7 +53,8 @@
       "modo": "form"
     },
     "resumen": "Córdoba, Mendoza y San Juan",
-    "precio_por_zona": false
+    "precio_por_zona": false,
+    "logo": null
   },
   {
     "id": "petit-salud-madurando",
@@ -110,7 +111,8 @@
       "modo": "form"
     },
     "resumen": "Córdoba, Mendoza y San Juan",
-    "precio_por_zona": false
+    "precio_por_zona": false,
+    "logo": null
   },
   {
     "id": "petit-salud-adultos",
@@ -166,7 +168,8 @@
       "modo": "form"
     },
     "resumen": "Córdoba, Mendoza y San Juan",
-    "precio_por_zona": false
+    "precio_por_zona": false,
+    "logo": null
   },
   {
     "id": "petit-salud-felinos-conejos-y-aves",
@@ -223,6 +226,7 @@
       "modo": "form"
     },
     "resumen": "Córdoba, Mendoza y San Juan",
-    "precio_por_zona": false
+    "precio_por_zona": false,
+    "logo": null
   }
 ]

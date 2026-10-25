@@ -8,7 +8,7 @@ import { logoSize } from "@/lib/logo";
 export type MarcaHome = {
   slug: string;
   nombre: string;
-  logo?: string;
+  logo?: string | null;
   provincias: string[];
   nacional: boolean;
 };

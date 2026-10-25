@@ -43,6 +43,8 @@
       "url": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda",
       "metodo": "html_estatico",
       "selector": "Adicional mascota en Seguro de Vivienda"
-    }
+    },
+    "logo": "/logos/santander.png",
+    "logo_fuente": "santander.com.ar"
   }
 ]

@@ -18,7 +18,16 @@ const sizes: Record<string, { width: number; height: number }> = {
   "/logos/omint-mascotas.svg": { width: 2000, height: 620 },
   "/logos/galicia.png": { width: 2581, height: 367 },
   "/logos/macro.png": { width: 1500, height: 335 },
+  "/logos/naranja-x.png": { width: 240, height: 74 },
+  "/logos/santander.png": { width: 332, height: 60 },
 };
+
+const compactLogos = new Set(["/logos/naranja-x.png", "/logos/santander.png"]);
+
+export function logoMaxBox(src: string, natural: { width: number; height: number }) {
+  if (!compactLogos.has(src)) return { height: 32, maxWidthPx: undefined as number | undefined };
+  return { height: Math.min(28, natural.height), maxWidthPx: natural.width };
+}
 
 export function logoSize(src: string) {
   return sizes[src] ?? { width: 160, height: 40 };

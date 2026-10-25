@@ -56,7 +56,7 @@ export function getPlan(id: string) {
 
 export function getMarcas() {
   const seen = new Set<string>();
-  const marcas: { slug: string; nombre: string; logo?: string; logoFuente?: string }[] = [];
+  const marcas: { slug: string; nombre: string; logo?: string | null; logoFuente?: string }[] = [];
   for (const plan of getPlans()) {
     if (seen.has(plan.marca_slug)) continue;
     seen.add(plan.marca_slug);
@@ -71,7 +71,7 @@ export function getMarcas() {
 }
 
 export function getMarcasHome() {
-  const order: { slug: string; nombre: string; logo?: string; provincias: string[]; nacional: boolean }[] = [];
+  const order: { slug: string; nombre: string; logo?: string | null; provincias: string[]; nacional: boolean }[] = [];
   const bySlug = new Map<string, (typeof order)[number]>();
   for (const plan of getPlans()) {
     let marca = bySlug.get(plan.marca_slug);

@@ -45,9 +45,9 @@ export function PlanTable({ plans, today }: { plans: Plan[]; today: string }) {
                     nombre={plan.marca}
                     logo={plan.logo}
                     slug={plan.marca_slug}
-                    fallback="iniciales"
+                    fallback="nombre"
                     maxWidth="8.5rem"
-                    {...(plan.logo ? logoSize(plan.logo) : {})}
+                    {...(plan.logo ? logoSize(plan.logo) : { width: 160, height: 32 })}
                   />
                   <div className="min-w-0">
                     <p className="font-bold text-gray-900">{plan.marca}</p>

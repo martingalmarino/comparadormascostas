@@ -24,7 +24,7 @@ export const siteConfig = {
   domain: SITE.url,
   description:
     "Compará obras sociales, prepagas y seguros para perros y gatos en Argentina. Precios con fecha y fuente de cada marca. Elegí tu plan en minutos, gratis.",
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hola@example.com",
+  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "",
   priceStaleDays: 45,
   gaId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "",
   turnstileSiteKey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "",

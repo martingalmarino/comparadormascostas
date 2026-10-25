@@ -15,7 +15,8 @@ export default function ContactoPage() {
         <Breadcrumbs items={[{ name: "Contacto", path: "/contacto" }]} />
         <h1 className="mt-4 text-3xl font-bold text-gray-900">Contacto</h1>
         <p className="mt-3 text-gray-600">
-          Este formulario nos escribe a nosotros, no a una marca. Si querés que te contacte una prestadora, entrá a su ficha. También podés escribir a {siteConfig.contactEmail}.
+          Este formulario nos escribe a nosotros, no a una marca. Si querés que te contacte una prestadora, entrá a su ficha.
+          {siteConfig.contactEmail ? ` También podés escribir a ${siteConfig.contactEmail}.` : ""}
         </p>
       </div>
       <LeadForm marca="Consulta general" />

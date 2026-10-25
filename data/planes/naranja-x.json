@@ -47,6 +47,8 @@
       "url": "https://www.naranjax.com/seguros/mascotas",
       "metodo": "html_estatico",
       "selector": "Asistencia para Mascotas"
-    }
+    },
+    "logo": "/logos/naranja-x.png",
+    "logo_fuente": "naranjax.com"
   }
 ]

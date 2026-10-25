@@ -15,11 +15,12 @@ export function PlanCard({ plan, today }: { plan: Plan; today: string }) {
       <div className="p-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            {plan.logo ? (
-              <BrandLogo nombre={plan.marca} logo={plan.logo} maxWidth="9rem" {...logoSize(plan.logo)} />
-            ) : (
-              <p className="text-[10px] font-bold uppercase tracking-widest text-indigo-600">{plan.marca}</p>
-            )}
+            <BrandLogo
+              nombre={plan.marca}
+              logo={plan.logo}
+              maxWidth="9rem"
+              {...(plan.logo ? logoSize(plan.logo) : { width: 160, height: 32 })}
+            />
             <h3 className="text-lg font-bold text-gray-900">{plan.nombre}</h3>
           </div>
           <PriceTag plan={plan} today={today} />
