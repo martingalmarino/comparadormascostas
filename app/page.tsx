@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { BrandStrip } from "@/components/BrandStrip";
-import { DirectAnswer } from "@/components/DirectAnswer";
 import { FAQ } from "@/components/FAQ";
 import { HomeZonaProvider } from "@/components/HomeZona";
 import { JsonLd } from "@/components/JsonLd";
@@ -10,7 +9,6 @@ import { TrustBar } from "@/components/TrustBar";
 import { getReferenceDate } from "@/lib/dates";
 import { formatDate } from "@/lib/format";
 import { getMarcasHome, getPlans, newestVerification } from "@/lib/plans";
-import { respuestaDirecta } from "@/lib/geo";
 import { provinciasConPlanes } from "@/lib/zonas";
 import { requireEntry } from "@/lib/seo-copy";
 import { organizationJsonLd, pageMetadata, websiteJsonLd } from "@/lib/seo";
@@ -55,7 +53,6 @@ export default async function HomePage() {
           <h1 className="mx-auto mt-3 max-w-4xl text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
             Obra social para mascotas: compará <span className="text-indigo-600">planes y precios</span> en Argentina
           </h1>
-          <DirectAnswer align="center" text={respuestaDirecta({ tipo: "home", today })} />
           <div className="mx-auto mt-8 max-w-5xl">
             <SearchBox zonas={zonas} />
           </div>

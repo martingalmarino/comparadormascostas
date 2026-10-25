@@ -54,7 +54,7 @@ const extras = [
 
 export function respuestaDirecta(
   scope:
-    | { tipo: "home" | "precios"; today: string }
+    | { tipo: "precios"; today: string }
     | { tipo: "especie"; today: string; especie: Especie }
     | { tipo: "marca"; today: string; slug: string }
     | { tipo: "provincia"; today: string; slug: string },
@@ -67,9 +67,7 @@ export function respuestaDirecta(
         ? all.filter((plan) => plan.marca_slug === scope.slug)
         : scope.tipo === "provincia"
           ? all.filter((plan) => coversZona(plan, scope.slug))
-          : scope.tipo === "home"
-            ? all.filter((plan) => plan.especies.includes("perro"))
-            : all;
+          : all;
   const updated = newestVerification(plans.length ? plans : all);
   const [mes, anio] = formatMonthYear(updated).split(" ");
   const donde =
@@ -79,9 +77,7 @@ export function respuestaDirecta(
         ? `de ${plans[0]?.marca ?? "esta marca"}`
         : scope.tipo === "especie"
           ? `para ${scope.especie === "perro" ? "perros" : "gatos"} en Argentina`
-          : scope.tipo === "home"
-            ? "para perros en Argentina"
-            : "en Argentina";
+          : "en Argentina";
   const best = cheapest(plans, scope.today);
   const n = plans.length;
   const m = brandCount(plans);
