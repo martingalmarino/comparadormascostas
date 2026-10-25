@@ -21,7 +21,7 @@ export default function CordobaPage() {
           En Córdoba el mismo plan puede servir en Nueva Córdoba y no tener clínicas en Sierras Chicas, o al revés. Por eso el comparador filtra por zona y no mezcla Capital con el interior como si fuera la misma cartilla.
         </p>
         <p>
-          Los barrios y ciudades de abajo son los que podés elegir en el buscador. Si un plan de ejemplo dice que cubre Córdoba Capital, también aparece cuando filtrás un barrio de la ciudad. Si solo declara Villa María, no entra en una búsqueda de Nueva Córdoba.
+          Los barrios y ciudades de abajo son los que podés elegir en el buscador. Si la fuente dice que el plan cubre Córdoba, también aparece cuando filtrás un barrio de la Capital. Si no confirma presencia en la provincia, no entra en ese filtro.
         </p>
       </div>
       <ul className="mt-6 flex flex-wrap gap-2">
@@ -48,7 +48,7 @@ export default function CordobaPage() {
           },
           {
             q: "¿Hay precios distintos por barrio?",
-            a: "En los ejemplos, el precio es uno por plan. Lo que cambia por barrio es la cartilla, y eso hay que confirmarlo con la marca.",
+            a: "El relevamiento trae un precio por plan, no uno por barrio. Lo que cambia por barrio es la cartilla, y eso hay que confirmarlo con la marca.",
           },
         ]}
       />

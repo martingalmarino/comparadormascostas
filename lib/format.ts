@@ -5,6 +5,21 @@ const siglas: Record<string, string> = {
   companion: "CO",
   fielpet: "FP",
   osmasc: "OM",
+  "puppis-one": "PU",
+  "pet-society": "PT",
+  "qualia-seguros": "QU",
+  "rus-seguros": "RU",
+  "answer-seguros": "AN",
+  "provincia-seguros-banco-provincia": "BP",
+  "federacion-patronal-via-mascotaleal": "ML",
+  "bbva-seguros": "BB",
+};
+
+const especieNombres: Record<string, string> = {
+  perro: "Perro",
+  gato: "Gato",
+  conejo: "Conejo",
+  ave: "Ave",
 };
 
 export function formatArs(value: number) {
@@ -31,8 +46,7 @@ export function marcaIniciales(marcaSlug: string, marca: string) {
   return `${parts[0][0] ?? ""}${parts[1][0] ?? ""}`.toUpperCase();
 }
 
-export function especieLabel(especie: "perro" | "gato" | undefined) {
-  if (especie === "perro") return "Perro";
-  if (especie === "gato") return "Gato";
-  return "Perro o gato";
+export function especieLabel(especie: string | undefined) {
+  if (!especie) return "Perro o gato";
+  return especieNombres[especie] ?? especie;
 }

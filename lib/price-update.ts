@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import * as cheerio from "cheerio";
 import { z } from "zod";
@@ -84,7 +84,7 @@ function robotsAllow(robots: string, userAgent: string, pathname: string) {
 function loadPlans() {
   const dir = path.join(process.cwd(), "data", "planes");
   const files = new Map<string, { file: string; plans: Plan[] }>();
-  for (const file of ["petit-salud.json", "avsim.json", "ike-mascotas.json", "companion.json", "fielpet.json", "osmasc.json"]) {
+  for (const file of readdirSync(dir).filter((name) => name.endsWith(".json")).sort()) {
     const full = path.join(dir, file);
     const plans = planSchema.array().parse(JSON.parse(readFileSync(full, "utf8")));
     for (const plan of plans) files.set(plan.id, { file: full, plans });

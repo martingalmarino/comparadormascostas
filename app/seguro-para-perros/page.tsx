@@ -14,15 +14,15 @@ export default async function Page() {
     <SpeciesPlans
       especie="perro"
       today={today}
-      intro="Un seguro para perros suele cubrir accidentes y, según el plan, consultas, vacunas o cirugías. En Córdoba conviene cruzar el precio de ejemplo con la edad tope, la carencia y si la clínica de tu barrio está en la cartilla. Los montos de esta página son ilustrativos."
+      intro="Un seguro para perros suele cubrir accidentes y, según el plan, consultas, vacunas o cirugías. En Córdoba conviene cruzar el precio publicado con la edad tope, la carencia y si la clínica de tu barrio está en la cartilla."
       faqs={[
         {
           q: "¿Cubre perros mayores?",
-          a: "Depende del tope de edad del plan. En los ejemplos, algunos cortan a los 8 o 10 años y otros llegan más lejos. Mirá la guía de perros mayores.",
+          a: "Depende del tope de edad que publique la fuente. En el relevamiento hay planes que cortan a los 8 o 9 años y otros que llegan más lejos. Mirá la guía de perros mayores.",
         },
         {
           q: "¿Hay carencia en los accidentes?",
-          a: "En varios ejemplos el accidente es inmediato y la consulta o la cirugía esperan semanas. Confirmalo en el condicionado de la marca.",
+          a: "Solo si la ficha lo trae de la fuente. Si no detalla días, pedí el condicionado a la marca antes de darlo por inmediato.",
         },
       ]}
     />

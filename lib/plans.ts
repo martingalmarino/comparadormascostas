@@ -28,8 +28,8 @@ function loadPlans() {
       if (plan.marca_slug !== expectedSlug) {
         throw new Error(`${plan.id} está en ${file} pero su marca_slug es ${plan.marca_slug}`);
       }
-      if (plan.estado === "sin_precio_publico" && plan.precio !== null) {
-        throw new Error(`${plan.id}: sin_precio_publico exige precio null`);
+      if ((plan.estado === "sin_precio_publico" || plan.estado === "consultar") && plan.precio !== null) {
+        throw new Error(`${plan.id}: ${plan.estado} exige precio null`);
       }
     }
     return parsed.data;
@@ -69,7 +69,7 @@ export function getPlansByMarca(slug: string) {
 }
 
 export function flagship(plans: Plan[]) {
-  const priced = plans.filter((plan) => plan.precio != null && plan.estado !== "sin_precio_publico");
+  const priced = plans.filter((plan) => plan.precio != null && plan.estado !== "sin_precio_publico" && plan.estado !== "consultar");
   const pool = priced.length ? priced : plans;
   return [...pool].sort((a, b) => (a.precio ?? Number.MAX_SAFE_INTEGER) - (b.precio ?? Number.MAX_SAFE_INTEGER))[0];
 }

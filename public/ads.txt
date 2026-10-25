@@ -1,2 +1,0 @@
-# Completá esta línea con el publisher de Google AdSense antes de poner NEXT_PUBLIC_ADS_ENABLED=true.
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

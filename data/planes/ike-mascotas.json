@@ -1,71 +1,239 @@
 [
   {
-    "id": "ike-global",
-    "marca": "IKE Mascotas",
+    "id": "ike-mascotas-emergencias",
+    "marca": "Iké Mascotas",
     "marca_slug": "ike-mascotas",
-    "nombre": "Plan Global",
-    "tipo": "seguro",
-    "especies": ["perro", "gato"],
-    "edad_min_meses": 6,
-    "edad_max_anios": 8,
-    "zonas": ["cordoba-capital", "gran-cordoba", "rio-cuarto", "villa-maria"],
-    "precio": 9100,
+    "nombre": "Emergencias",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional, más de 300 prestadores",
+    "incluye_cordoba": true,
+    "precio": 27900,
+    "precio_texto_original": "$ 27.900",
     "moneda": "ARS",
-    "es_ejemplo": true,
-    "fecha_verificacion": "2026-10-20",
-    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://planes.ikeargentina.com.ar/mascotasonline/",
     "estado": "verificado",
     "coberturas": [
-      { "item": "Consultas veterinarias", "valor": "En red nacional de ejemplo" },
-      { "item": "Urgencias 24 h", "valor": "Accidentes y guardia" },
-      { "item": "Cobertura internacional", "valor": "Viajes de hasta 30 días" },
-      { "item": "Vacunación anual", "valor": "Reintegro parcial" }
+      {
+        "item": "Guardia 24h"
+      },
+      {
+        "item": "Análisis y estudios"
+      },
+      {
+        "item": "Cirugía e internación"
+      },
+      {
+        "item": "Traslados"
+      },
+      {
+        "item": "Descuento en medicamentos"
+      }
     ],
-    "carencias": [
-      { "item": "Accidentes", "dias": 0 },
-      { "item": "Consultas clínicas", "dias": 20 },
-      { "item": "Cobertura internacional", "dias": 60 }
-    ],
-    "pros": [
-      "Es el único ejemplo del comparador con cobertura internacional.",
-      "La zona de ejemplo abarca Capital, Gran Córdoba, Río Cuarto y Villa María."
-    ],
-    "contras": [
-      "En este ejemplo la mascota tiene que tener al menos 6 meses.",
-      "El tramo internacional es ilustrativo y hay que leerlo en la póliza real."
-    ],
-    "badges": ["internacional"],
-    "lead": { "modo": "link", "destino": "/contacto?plan=ike-global" },
-    "resumen": "Ejemplo de seguro con tramo internacional para perros y gatos."
+    "carencias": [],
+    "notas": "Los planes Esencial/Plus/Ultra citados en notas de 2024-2025 ya no figuran.",
+    "scraping": {
+      "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+      "metodo": "html_estatico",
+      "selector": "Bloques 'Plan' > h3 nombre > '$ x'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional, más de 300 prestadores"
   },
   {
-    "id": "ike-local",
-    "marca": "IKE Mascotas",
+    "id": "ike-mascotas-cachorro",
+    "marca": "Iké Mascotas",
     "marca_slug": "ike-mascotas",
-    "nombre": "Plan Local Gatos",
-    "tipo": "plan_salud",
-    "especies": ["gato"],
-    "edad_min_meses": 2,
-    "edad_max_anios": 12,
-    "zonas": ["cordoba-capital"],
-    "precio": null,
+    "nombre": "Cachorro",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_max_anios": 1,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional, más de 300 prestadores",
+    "incluye_cordoba": true,
+    "precio": 56900,
+    "precio_texto_original": "$ 56.900",
     "moneda": "ARS",
-    "es_ejemplo": true,
-    "fecha_verificacion": "2026-10-12",
-    "fuente_url": "/como-comparamos#datos-de-ejemplo",
-    "estado": "sin_precio_publico",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+    "estado": "verificado",
     "coberturas": [
-      { "item": "Consultas veterinarias", "valor": "Cartilla de ejemplo para gatos" },
-      { "item": "Vacunación anual", "valor": "Triple felina de ejemplo" },
-      { "item": "Urgencias 24 h", "valor": "Consultar con la marca" }
+      {
+        "item": "Guardia 24h"
+      },
+      {
+        "item": "Análisis y estudios"
+      },
+      {
+        "item": "Cirugía e internación"
+      },
+      {
+        "item": "Traslados"
+      },
+      {
+        "item": "Descuento en medicamentos"
+      },
+      {
+        "item": "Consultas"
+      }
     ],
-    "carencias": [
-      { "item": "Consultas clínicas", "dias": 15 },
-      { "item": "Cirugías programadas", "dias": 120 }
+    "carencias": [],
+    "notas": "Los planes Esencial/Plus/Ultra citados en notas de 2024-2025 ya no figuran.",
+    "scraping": {
+      "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+      "metodo": "html_estatico",
+      "selector": "Bloques 'Plan' > h3 nombre > '$ x'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional, más de 300 prestadores"
+  },
+  {
+    "id": "ike-mascotas-adulto",
+    "marca": "Iké Mascotas",
+    "marca_slug": "ike-mascotas",
+    "nombre": "Adulto",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
     ],
-    "pros": ["Ejemplo armado solo para gatos en Córdoba Capital."],
-    "contras": ["La marca no publica el precio en esta ficha: hay que consultarlo."],
-    "lead": { "modo": "form" },
-    "resumen": "Ejemplo sin precio público, solo para gatos."
+    "edad_min_meses": 12,
+    "edad_max_anios": 7,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional, más de 300 prestadores",
+    "incluye_cordoba": true,
+    "precio": 51900,
+    "precio_texto_original": "$ 51.900",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Guardia 24h"
+      },
+      {
+        "item": "Análisis y estudios"
+      },
+      {
+        "item": "Cirugía e internación"
+      },
+      {
+        "item": "Traslados"
+      },
+      {
+        "item": "Descuento en medicamentos"
+      },
+      {
+        "item": "Consultas"
+      }
+    ],
+    "carencias": [],
+    "notas": "Los planes Esencial/Plus/Ultra citados en notas de 2024-2025 ya no figuran.",
+    "scraping": {
+      "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+      "metodo": "html_estatico",
+      "selector": "Bloques 'Plan' > h3 nombre > '$ x'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional, más de 300 prestadores"
+  },
+  {
+    "id": "ike-mascotas-senior",
+    "marca": "Iké Mascotas",
+    "marca_slug": "ike-mascotas",
+    "nombre": "Senior",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 84,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional, más de 300 prestadores",
+    "incluye_cordoba": true,
+    "precio": 70900,
+    "precio_texto_original": "$ 70.900",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Guardia 24h"
+      },
+      {
+        "item": "Análisis y estudios"
+      },
+      {
+        "item": "Cirugía e internación"
+      },
+      {
+        "item": "Traslados"
+      },
+      {
+        "item": "Descuento en medicamentos"
+      },
+      {
+        "item": "Consultas"
+      }
+    ],
+    "carencias": [],
+    "notas": "Los planes Esencial/Plus/Ultra citados en notas de 2024-2025 ya no figuran.",
+    "scraping": {
+      "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+      "metodo": "html_estatico",
+      "selector": "Bloques 'Plan' > h3 nombre > '$ x'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional, más de 300 prestadores"
   }
 ]

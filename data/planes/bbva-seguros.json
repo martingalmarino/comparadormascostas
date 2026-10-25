@@ -1,0 +1,61 @@
+[
+  {
+    "id": "bbva-seguros-seguro-de-mascotas",
+    "marca": "BBVA Seguros",
+    "marca_slug": "bbva-seguros",
+    "nombre": "Seguro de Mascotas",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 3,
+    "edad_max_anios": 14,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": null,
+    "precio_texto_original": "Cotizador no disponible",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.bbvaseguros.com.ar/seguros-personas/seguro-para-mascotas/",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "Gastos veterinarios y farmacéuticos (3 eventos/año)"
+      },
+      {
+        "item": "RC"
+      },
+      {
+        "item": "Fallecimiento"
+      },
+      {
+        "item": "Último adiós"
+      },
+      {
+        "item": "Guardería por hospitalización del dueño"
+      }
+    ],
+    "carencias": [],
+    "carencias_texto": "Enfermedad 30 días; accidente 72 h",
+    "notas": "curl devuelve 403; página vista con WebFetch sin precios.",
+    "scraping": {
+      "url": "https://www.bbvaseguros.com.ar/seguros-personas/seguro-para-mascotas/",
+      "metodo": "manual",
+      "selector": ""
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  }
+]

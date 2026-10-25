@@ -13,9 +13,7 @@ export const siteConfig = {
     "Comparador independiente de obras sociales, planes de salud y seguros para perros y gatos en Córdoba, Argentina. No vendemos seguros.",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hola@example.com",
   priceStaleDays: 45,
-  adsEnabled: process.env.NEXT_PUBLIC_ADS_ENABLED === "true",
   gaId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "",
-  adsenseClient: process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "",
   turnstileSiteKey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "",
 } as const;
 

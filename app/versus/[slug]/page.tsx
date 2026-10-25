@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!a || !b) return { title: "Comparación" };
   return pageMetadata({
     title: `${a.marca} vs ${b.marca}`,
-    description: `Comparación de ejemplo entre ${a.marca} ${a.nombre} y ${b.marca} ${b.nombre}: precio, coberturas y carencias.`,
+    description: `Comparación entre ${a.marca} ${a.nombre} y ${b.marca} ${b.nombre}: precio, coberturas y carencias.`,
     path: `/versus/${[left, right].sort().join("-vs-")}`,
   });
 }
@@ -78,7 +78,7 @@ async function VersusDetail({ params }: { params: Promise<{ slug: string }> }) {
         {left.marca} vs {right.marca}
       </h1>
       <p className="mt-2 text-gray-600">
-        Comparación directa de los planes de ejemplo {left.nombre} y {right.nombre}. No es una recomendación de contratación.
+        Comparación directa de {left.nombre} y {right.nombre}. No es una recomendación de contratación.
       </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         <section className="rounded-2xl border border-gray-200 bg-white p-5">

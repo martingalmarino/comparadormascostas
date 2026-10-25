@@ -2,7 +2,6 @@ import { ArrowLeft, Check } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { AdSlot } from "@/components/AdSlot";
 import { Badge } from "@/components/Badge";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CoverageList } from "@/components/CoverageList";
@@ -16,6 +15,7 @@ import { StickyLeadCTA } from "@/components/StickyLeadCTA";
 import { VerifiedLine } from "@/components/VerifiedLine";
 import { WaitingPeriods } from "@/components/WaitingPeriods";
 import { getReferenceDate } from "@/lib/dates";
+import { especieLabel } from "@/lib/format";
 import { getMarcas, getPlansByMarca, versusPairs } from "@/lib/plans";
 import { pageMetadata, productJsonLd } from "@/lib/seo";
 import { tipoOptions } from "@/lib/zones";
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ marca: st
   if (!plans.length) return { title: "Marca no encontrada" };
   return pageMetadata({
     title: `${plans[0].marca}: precio y coberturas`,
-    description: `Ficha de ${plans[0].marca} en Córdoba: planes de ejemplo, carencias y cómo pedir que te contacten. No vendemos seguros.`,
+    description: `Ficha de ${plans[0].marca}: precios relevados, fuente, carencias y cómo pedir que te contacten. No vendemos seguros.`,
     path: `/planes/${marca}`,
   });
 }
@@ -50,7 +50,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
   const faqs = [
     {
       q: `¿${brand} publica estos precios?`,
-      a: "No todavía. Los montos de esta ficha son ejemplos y llevan el badge EJEMPLO. La fecha y la fuente están al lado de cada precio.",
+      a: "Cada precio muestra la fecha y el enlace a la fuente. Si dice “Consultar precio”, no hay monto publicado. Si está en revisión o la fecha supera los 45 días, no lo tomes como tarifa cerrada.",
     },
     {
       q: "¿Qué pasa si pido que me contacten?",
@@ -58,7 +58,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
     },
     {
       q: "¿Las carencias son las de la póliza?",
-      a: "Son las de este ejemplo. Antes de contratar, pedile a la marca el condicionado vigente, sobre todo si tu mascota ya tiene un diagnóstico.",
+      a: "Mostramos el texto que trajo la fuente. Antes de contratar, pedile a la marca el condicionado vigente, sobre todo si tu mascota ya tiene un diagnóstico.",
     },
   ];
 
@@ -89,6 +89,14 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
                     <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">{plan.marca}</p>
                     <h2 className="text-2xl font-bold text-gray-900">{plan.nombre}</h2>
                     {plan.resumen ? <p className="mt-1 text-sm text-gray-600">{plan.resumen}</p> : null}
+                    <p className="mt-2 text-sm text-gray-600">
+                      {plan.especies.map((especie) => especieLabel(especie)).join(", ")}
+                      {plan.edad_min_meses != null ? ` · desde ${plan.edad_min_meses} meses` : ""}
+                      {plan.edad_max_anios != null ? ` · hasta ${plan.edad_max_anios} años` : ""}
+                    </p>
+                    {plan.incluye_cordoba === false || plan.incluye_cordoba === null ? (
+                      <p className="mt-1 text-sm text-amber-800">Presencia en Córdoba no confirmada en la fuente.</p>
+                    ) : null}
                   </div>
                   <PriceTag plan={plan} today={today} size="lg" tone="primary" />
                 </div>
@@ -120,6 +128,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
                     </div>
                   </section>
                 </div>
+                {plan.notas ? <p className="mt-4 text-sm text-gray-700">{plan.notas}</p> : null}
                 <div className="mt-4">
                   <ProsCons plan={plan} />
                 </div>
@@ -142,9 +151,6 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
             </section>
           ) : null}
           <FAQ items={faqs} />
-          <div className="mt-10">
-            <AdSlot variant="banner" />
-          </div>
         </div>
         <aside className="mt-8 lg:col-span-4 lg:mt-0">
           <div id="quiero-que-me-contacten" className="scroll-mt-24 lg:sticky lg:top-24">

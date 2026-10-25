@@ -48,7 +48,7 @@ export default function PrivacidadPage() {
         </p>
         <h2>Cookies, medición y publicidad</h2>
         <p>
-          El sitio puede usar Vercel Analytics y, si lo aceptás en el banner, Google Analytics 4 y anuncios de Google AdSense. Esos scripts no se cargan hasta que aceptás. El espacio de publicidad está marcado como “Publicidad” y no imita una ficha de plan. Podés rechazar medición y anuncios y seguir usando el comparador.
+          El sitio puede usar Vercel Analytics y, si lo aceptás en el banner, Google Analytics 4. Ese script no se carga hasta que aceptás. No hay bloques de publicidad en las páginas. Podés rechazar la medición y seguir usando el comparador.
         </p>
         <h2>Leyenda de la AAIP</h2>
         <p>

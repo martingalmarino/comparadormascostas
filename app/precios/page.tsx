@@ -10,7 +10,7 @@ import { tipoOptions } from "@/lib/zones";
 
 export const metadata = pageMetadata({
   title: "Seguro de mascotas: precios del mes",
-  description: "Precios de ejemplo de obras sociales y seguros para mascotas en Córdoba, con fecha de verificación y fuente.",
+  description: "Precios relevados de obras sociales y seguros para mascotas en Córdoba, con fecha de verificación y fuente.",
   path: "/precios",
 });
 
@@ -24,11 +24,11 @@ export default async function PreciosPage() {
       <Breadcrumbs items={[{ name: "Precios", path: "/precios" }]} />
       <h1 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">Precios de {formatMonth(today)}</h1>
       <p className="mt-3 max-w-3xl text-gray-600">
-        Tabla de ejemplo actualizada con la carga del {formatDate(updated)}. Ningún monto de esta lista es una tarifa vigente mientras tenga el badge EJEMPLO.
+        Precios del relevamiento cargado el {formatDate(updated)}. Cada fila muestra la fecha de verificación. Consultar precio significa que la fuente no publicó un monto.
       </p>
       <div className="mt-8 overflow-x-auto rounded-2xl border border-gray-200 bg-white">
         <table className="w-full min-w-[40rem] text-left text-sm">
-          <caption className="sr-only">Precios de ejemplo del mes</caption>
+          <caption className="sr-only">Precios relevados del mes</caption>
           <thead className="bg-gray-50 text-xs uppercase text-gray-500">
             <tr>
               <th className="px-4 py-3">Plan</th>

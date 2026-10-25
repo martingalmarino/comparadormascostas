@@ -1,0 +1,63 @@
+[
+  {
+    "id": "federacion-patronal-via-mascotaleal-mascota-protegida",
+    "marca": "Federación Patronal (vía MascotaLeal)",
+    "marca_slug": "federacion-patronal-via-mascotaleal",
+    "nombre": "Mascota Protegida",
+    "tipo": "seguro",
+    "especies": [
+      "perro"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": null,
+    "precio_texto_original": "Prima según raza, edad, sexo y localidad",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://mascotaleal.com/",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "RC $5M a $20M"
+      },
+      {
+        "item": "Sacrificio"
+      },
+      {
+        "item": "Robo"
+      },
+      {
+        "item": "Muerte por accidente o enfermedad"
+      },
+      {
+        "item": "Asistencia veterinaria accidente/enfermedad"
+      },
+      {
+        "item": "Extravío"
+      },
+      {
+        "item": "Estancia en residencia"
+      }
+    ],
+    "carencias": [],
+    "notas": "Cotización vía productor por WhatsApp. Incluye perros potencialmente peligrosos (Ley 4078 CABA).",
+    "scraping": {
+      "url": "https://mascotaleal.com/",
+      "metodo": "manual",
+      "selector": ""
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  }
+]

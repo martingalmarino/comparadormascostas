@@ -163,7 +163,7 @@ function Fields({ filters, update }: { filters: FilterState; update: (partial: P
             </option>
           ))}
         </select>
-        <span className="mt-1 block text-xs text-gray-500">Los topes filtran precios de ejemplo.</span>
+        <span className="mt-1 block text-xs text-gray-500">Los planes sin precio publicado no entran en el tope.</span>
       </label>
       <fieldset>
         <legend className={labelClass}>Coberturas clave</legend>

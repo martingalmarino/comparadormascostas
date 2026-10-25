@@ -31,11 +31,11 @@ const faqs = [
   },
   {
     q: "¿Los precios son reales?",
-    a: "Mientras veas el badge EJEMPLO, el monto es ilustrativo y no es una tarifa vigente. Cada precio muestra fecha de verificación y fuente. Si pasaron más de 45 días, lo marcamos como desactualizado.",
+    a: "Cada precio muestra fecha de verificación y fuente. Si dice Consultar precio, la marca no lo publicó. Si está en revisión o pasaron más de 45 días, no lo tomes como tarifa cerrada. El badge EJEMPLO queda solo para un dato que todavía no tiene fuente.",
   },
   {
     q: "¿Sirve solo para Córdoba?",
-    a: "El foco es Córdoba Capital, Gran Córdoba y algunas ciudades de la provincia. El filtro de zona muestra los planes de ejemplo que declaran cobertura en ese lugar.",
+    a: "El foco es Córdoba Capital, Gran Córdoba y algunas ciudades de la provincia. El filtro de zona muestra los planes cuya fuente declara cobertura en Córdoba. Si la presencia no está confirmada, el plan no entra en ese filtro.",
   },
 ];
 
@@ -54,12 +54,12 @@ export default async function HomePage() {
             Compará precios actualizados de <span className="text-indigo-600">obras sociales</span> para tu mascota en Córdoba
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-gray-600 sm:text-lg">
-            {siteConfig.siteName} ordena planes de salud y seguros para perros y gatos. Los montos con badge EJEMPLO todavía no están verificados en el sitio de la marca.
+            {siteConfig.siteName} ordena planes de salud y seguros para perros y gatos. Cada monto muestra la fecha y la fuente del relevamiento.
           </p>
           <div className="mx-auto mt-8 max-w-5xl">
             <SearchBox />
           </div>
-          <p className="mt-4 text-center text-sm text-gray-500">Datos de ejemplo cargados el {formatDate(updated)}.</p>
+          <p className="mt-4 text-center text-sm text-gray-500">Relevamiento cargado el {formatDate(updated)}.</p>
           <div className="mt-10">
             <TrustBar />
           </div>
@@ -92,7 +92,7 @@ export default async function HomePage() {
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
         <div className="mb-4 flex items-end justify-between gap-4">
-          <h2 className="text-2xl font-bold text-gray-900">Los ejemplos de menor precio</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Los de menor precio publicado</h2>
           <Link href="/comparar" className="text-sm font-bold text-indigo-700 hover:underline">
             Ver todos
           </Link>

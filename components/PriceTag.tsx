@@ -8,27 +8,40 @@ export function PriceTag({
   today,
   size = "md",
   tone = "ink",
+  align = "end",
 }: {
   plan: Plan;
   today: string;
   size?: "md" | "lg";
   tone?: "ink" | "primary";
+  align?: "end" | "center";
 }) {
   const estado = displayEstado(plan, today);
-  if (plan.precio == null || estado === "sin_precio_publico") {
-    return <p className="text-sm font-semibold text-gray-800">Precio no publicado · Consultar</p>;
+  const alignClass = align === "center" ? "text-center" : "text-right";
+  const justifyClass = align === "center" ? "justify-center" : "justify-end";
+  if (plan.precio == null || estado === "consultar" || estado === "sin_precio_publico") {
+    return (
+      <div className={alignClass}>
+        <p className="text-sm font-semibold text-gray-800">Consultar precio</p>
+        {plan.precio_texto_original ? <p className="mt-1 text-xs text-gray-500">{plan.precio_texto_original}</p> : null}
+      </div>
+    );
   }
 
   const sizeClass = size === "lg" ? "text-4xl" : "text-2xl";
   const color = tone === "primary" ? "text-indigo-600" : "text-gray-900";
+  const desde = plan.precio_texto_original?.toLowerCase().startsWith("desde") ?? false;
 
   return (
-    <div className="flex flex-wrap items-center justify-end gap-1.5">
-      <p className={`font-mono font-medium tabular-nums ${sizeClass} ${color}`}>
-        <span className="sr-only">Precio mensual de ejemplo </span>
-        {formatArs(plan.precio)}
-      </p>
-      {plan.es_ejemplo ? <Badge kind="ejemplo" /> : null}
+    <div className={alignClass}>
+      <div className={`flex flex-wrap items-center gap-1.5 ${justifyClass}`}>
+        <p className={`font-mono font-medium tabular-nums ${sizeClass} ${color}`}>
+          <span className="sr-only">{plan.es_ejemplo ? "Precio mensual de ejemplo " : desde ? "Precio mensual desde " : "Precio mensual "}</span>
+          {formatArs(plan.precio)}
+        </p>
+        {plan.es_ejemplo ? <Badge kind="ejemplo" /> : null}
+      </div>
+      {plan.precio_texto_original ? <p className="mt-1 text-xs text-gray-500">{plan.precio_texto_original}</p> : null}
     </div>
   );
 }

@@ -1,79 +1,287 @@
 [
   {
-    "id": "fielpet-esencial",
+    "id": "fielpet-plan-1",
     "marca": "FielPet",
     "marca_slug": "fielpet",
-    "nombre": "Plan Esencial",
+    "nombre": "Plan 1",
     "tipo": "seguro",
-    "especies": ["perro", "gato"],
-    "edad_min_meses": 2,
-    "edad_max_anios": 8,
-    "zonas": ["cordoba-capital", "gran-cordoba"],
-    "precio": 6800,
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_max_anios": 18,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional, cualquier veterinario",
+    "incluye_cordoba": true,
+    "precio": 19047,
+    "precio_texto_original": "$19.047 Mensual",
     "moneda": "ARS",
-    "es_ejemplo": true,
-    "fecha_verificacion": "2026-10-21",
-    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.fielpet.com.ar/",
     "estado": "verificado",
     "coberturas": [
-      { "item": "Consultas veterinarias", "valor": "3 consultas de ejemplo al año" },
-      { "item": "Vacunación anual", "valor": "Antirrábica y séxtuple o triple" },
-      { "item": "Urgencias 24 h", "valor": "Solo accidentes" }
+      {
+        "item": "Cobertura anual enfermedad y accidente $500.000"
+      },
+      {
+        "item": "Responsabilidad civil $5.000.000"
+      },
+      {
+        "item": "Vacunas $85.000"
+      },
+      {
+        "item": "Guardería $200.000"
+      },
+      {
+        "item": "Telemedicina 3 consultas/mes"
+      }
     ],
-    "carencias": [
-      { "item": "Accidentes", "dias": 0 },
-      { "item": "Consultas clínicas", "dias": 10 },
-      { "item": "Vacunación", "dias": 30 }
-    ],
-    "pros": [
-      "Es el precio de ejemplo más bajo del comparador.",
-      "Sirve para perros y gatos en Capital y Gran Córdoba."
-    ],
-    "contras": [
-      "La cobertura de ejemplo es corta: no incluye cirugías.",
-      "El tope de edad ilustrativo es 8 años."
-    ],
-    "badges": ["mejor_precio"],
-    "lead": { "modo": "form" },
-    "resumen": "Ejemplo de seguro esencial y de menor precio ilustrativo."
+    "carencias": [],
+    "notas": "Precio base (hasta 10 años). 10-13 años: $28.619; 13-18 años: $32.591 (visto hoy en modal del sitio).",
+    "scraping": {
+      "url": "https://www.fielpet.com.ar/",
+      "metodo": "html_estatico",
+      "selector": ".pricing-card; recargos por edad en modal"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional, cualquier veterinario"
   },
   {
-    "id": "fielpet-premium",
+    "id": "fielpet-plan-2",
     "marca": "FielPet",
     "marca_slug": "fielpet",
-    "nombre": "Plan Premium",
-    "tipo": "plan_salud",
-    "especies": ["perro", "gato"],
-    "edad_min_meses": 2,
-    "edad_max_anios": 14,
-    "zonas": ["cordoba-capital", "villa-carlos-paz"],
-    "precio": 15400,
+    "nombre": "Plan 2",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_max_anios": 18,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional, cualquier veterinario",
+    "incluye_cordoba": true,
+    "precio": 26216,
+    "precio_texto_original": "$26.216 Mensual",
     "moneda": "ARS",
-    "es_ejemplo": true,
-    "fecha_verificacion": "2026-10-21",
-    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.fielpet.com.ar/",
     "estado": "verificado",
     "coberturas": [
-      { "item": "Consultas veterinarias", "valor": "Sin tope de ejemplo en cartilla" },
-      { "item": "Vacunación anual", "valor": "Incluida" },
-      { "item": "Cirugías programadas", "valor": "Incluidas hasta un tope" },
-      { "item": "Urgencias 24 h", "valor": "Guardia completa" },
-      { "item": "Estudios de laboratorio", "valor": "Análisis básicos" }
+      {
+        "item": "Cobertura anual enfermedad y accidente $700.000"
+      },
+      {
+        "item": "Responsabilidad civil $5.000.000"
+      },
+      {
+        "item": "Vacunas $85.000"
+      },
+      {
+        "item": "Guardería $200.000"
+      },
+      {
+        "item": "Telemedicina 3 consultas/mes"
+      }
     ],
-    "carencias": [
-      { "item": "Accidentes", "dias": 0 },
-      { "item": "Consultas clínicas", "dias": 30 },
-      { "item": "Cirugías programadas", "dias": 120 }
+    "carencias": [],
+    "notas": "Precio base (hasta 10 años). 10-13 años: $39.617; 13-18 años: $45.177 (visto hoy en modal del sitio).",
+    "scraping": {
+      "url": "https://www.fielpet.com.ar/",
+      "metodo": "html_estatico",
+      "selector": ".pricing-card; recargos por edad en modal"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional, cualquier veterinario"
+  },
+  {
+    "id": "fielpet-plan-3",
+    "marca": "FielPet",
+    "marca_slug": "fielpet",
+    "nombre": "Plan 3",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
     ],
-    "pros": [
-      "El ejemplo admite mascotas de hasta 14 años.",
-      "Suma Villa Carlos Paz a Córdoba Capital."
+    "edad_max_anios": 18,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
     ],
-    "contras": [
-      "Es la cuota de ejemplo más alta.",
-      "Las preexistencias no están cubiertas en esta ficha ilustrativa."
+    "zona_detalle": "Nacional, cualquier veterinario",
+    "incluye_cordoba": true,
+    "precio": 36970,
+    "precio_texto_original": "$36.970 Mensual",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.fielpet.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Cobertura anual enfermedad y accidente $1.000.000"
+      },
+      {
+        "item": "Responsabilidad civil $5.000.000"
+      },
+      {
+        "item": "Vacunas $85.000"
+      },
+      {
+        "item": "Guardería $200.000"
+      },
+      {
+        "item": "Telemedicina 3 consultas/mes"
+      }
     ],
-    "lead": { "modo": "form" },
-    "resumen": "Ejemplo de plan alto, útil para comparar perfiles de mascota mayor."
+    "carencias": [],
+    "notas": "Precio base (hasta 10 años). 10-13 años: $56.114; 13-18 años: $64.057 (visto hoy en modal del sitio).",
+    "scraping": {
+      "url": "https://www.fielpet.com.ar/",
+      "metodo": "html_estatico",
+      "selector": ".pricing-card; recargos por edad en modal"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional, cualquier veterinario"
+  },
+  {
+    "id": "fielpet-plan-4",
+    "marca": "FielPet",
+    "marca_slug": "fielpet",
+    "nombre": "Plan 4",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_max_anios": 18,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional, cualquier veterinario",
+    "incluye_cordoba": true,
+    "precio": 54892,
+    "precio_texto_original": "$54.892 Mensual",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.fielpet.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Cobertura anual enfermedad y accidente $1.500.000"
+      },
+      {
+        "item": "Responsabilidad civil $5.000.000"
+      },
+      {
+        "item": "Vacunas $85.000"
+      },
+      {
+        "item": "Guardería $200.000"
+      },
+      {
+        "item": "Telemedicina 3 consultas/mes"
+      }
+    ],
+    "carencias": [],
+    "notas": "Precio base (hasta 10 años). 10-13 años: $83.609; 13-18 años: $95.524 (visto hoy en modal del sitio).",
+    "scraping": {
+      "url": "https://www.fielpet.com.ar/",
+      "metodo": "html_estatico",
+      "selector": ".pricing-card; recargos por edad en modal"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional, cualquier veterinario"
+  },
+  {
+    "id": "fielpet-plan-5",
+    "marca": "FielPet",
+    "marca_slug": "fielpet",
+    "nombre": "Plan 5",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_max_anios": 18,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional, cualquier veterinario",
+    "incluye_cordoba": true,
+    "precio": 72815,
+    "precio_texto_original": "$72.815 Mensual",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.fielpet.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Cobertura anual enfermedad y accidente $2.000.000"
+      },
+      {
+        "item": "Responsabilidad civil $5.000.000"
+      },
+      {
+        "item": "Vacunas $85.000"
+      },
+      {
+        "item": "Guardería $200.000"
+      },
+      {
+        "item": "Telemedicina 3 consultas/mes"
+      }
+    ],
+    "carencias": [],
+    "notas": "Precio base (hasta 10 años). 10-13 años: $111.104; 13-18 años: $126.990 (visto hoy en modal del sitio).",
+    "scraping": {
+      "url": "https://www.fielpet.com.ar/",
+      "metodo": "html_estatico",
+      "selector": ".pricing-card; recargos por edad en modal"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional, cualquier veterinario"
   }
 ]

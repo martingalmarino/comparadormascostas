@@ -1,0 +1,287 @@
+[
+  {
+    "id": "qualia-seguros-plan-1",
+    "marca": "Qualia Seguros",
+    "marca_slug": "qualia-seguros",
+    "nombre": "Plan 1",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": 9700,
+    "precio_texto_original": "$9.700 /mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Responsabilidad civil $2.595.000"
+      },
+      {
+        "item": "Gastos por enfermedad o accidente (Plan 2: $559.500)"
+      },
+      {
+        "item": "Fallecimiento y entierro"
+      },
+      {
+        "item": "Veterinario en línea 24h"
+      },
+      {
+        "item": "50% reintegro en vacunas, pipetas, castración, belleza"
+      }
+    ],
+    "carencias": [],
+    "carencias_texto": "Enfermedad: 6 meses (según comparativa de terceros; no confirmado en la página oficial)",
+    "notas": "En HTML estático solo aparece el Plan 1; el resto se renderiza con JS. Requiere tarjeta de crédito.",
+    "scraping": {
+      "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "metodo": "html_estatico",
+      "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  },
+  {
+    "id": "qualia-seguros-plan-2",
+    "marca": "Qualia Seguros",
+    "marca_slug": "qualia-seguros",
+    "nombre": "Plan 2",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": 14600,
+    "precio_texto_original": "$14.600 /mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Responsabilidad civil $3.892.500"
+      },
+      {
+        "item": "Gastos por enfermedad o accidente (Plan 2: $559.500)"
+      },
+      {
+        "item": "Fallecimiento y entierro"
+      },
+      {
+        "item": "Veterinario en línea 24h"
+      },
+      {
+        "item": "50% reintegro en vacunas, pipetas, castración, belleza"
+      }
+    ],
+    "carencias": [],
+    "carencias_texto": "Enfermedad: 6 meses (según comparativa de terceros; no confirmado en la página oficial)",
+    "notas": "En HTML estático solo aparece el Plan 1; el resto se renderiza con JS. Requiere tarjeta de crédito.",
+    "scraping": {
+      "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "metodo": "js_render",
+      "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  },
+  {
+    "id": "qualia-seguros-plan-3",
+    "marca": "Qualia Seguros",
+    "marca_slug": "qualia-seguros",
+    "nombre": "Plan 3",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": 19400,
+    "precio_texto_original": "$19.400 /mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Responsabilidad civil $5.190.000"
+      },
+      {
+        "item": "Gastos por enfermedad o accidente (Plan 2: $559.500)"
+      },
+      {
+        "item": "Fallecimiento y entierro"
+      },
+      {
+        "item": "Veterinario en línea 24h"
+      },
+      {
+        "item": "50% reintegro en vacunas, pipetas, castración, belleza"
+      }
+    ],
+    "carencias": [],
+    "carencias_texto": "Enfermedad: 6 meses (según comparativa de terceros; no confirmado en la página oficial)",
+    "notas": "En HTML estático solo aparece el Plan 1; el resto se renderiza con JS. Requiere tarjeta de crédito.",
+    "scraping": {
+      "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "metodo": "js_render",
+      "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  },
+  {
+    "id": "qualia-seguros-plan-4",
+    "marca": "Qualia Seguros",
+    "marca_slug": "qualia-seguros",
+    "nombre": "Plan 4",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": 24300,
+    "precio_texto_original": "$24.300 /mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Responsabilidad civil $6.487.500"
+      },
+      {
+        "item": "Gastos por enfermedad o accidente (Plan 2: $559.500)"
+      },
+      {
+        "item": "Fallecimiento y entierro"
+      },
+      {
+        "item": "Veterinario en línea 24h"
+      },
+      {
+        "item": "50% reintegro en vacunas, pipetas, castración, belleza"
+      }
+    ],
+    "carencias": [],
+    "carencias_texto": "Enfermedad: 6 meses (según comparativa de terceros; no confirmado en la página oficial)",
+    "notas": "En HTML estático solo aparece el Plan 1; el resto se renderiza con JS. Requiere tarjeta de crédito.",
+    "scraping": {
+      "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "metodo": "js_render",
+      "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  },
+  {
+    "id": "qualia-seguros-plan-5",
+    "marca": "Qualia Seguros",
+    "marca_slug": "qualia-seguros",
+    "nombre": "Plan 5",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": 29100,
+    "precio_texto_original": "$29.100 /mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Responsabilidad civil $7.785.000"
+      },
+      {
+        "item": "Gastos por enfermedad o accidente (Plan 2: $559.500)"
+      },
+      {
+        "item": "Fallecimiento y entierro"
+      },
+      {
+        "item": "Veterinario en línea 24h"
+      },
+      {
+        "item": "50% reintegro en vacunas, pipetas, castración, belleza"
+      }
+    ],
+    "carencias": [],
+    "carencias_texto": "Enfermedad: 6 meses (según comparativa de terceros; no confirmado en la página oficial)",
+    "notas": "En HTML estático solo aparece el Plan 1; el resto se renderiza con JS. Requiere tarjeta de crédito.",
+    "scraping": {
+      "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "metodo": "js_render",
+      "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  }
+]

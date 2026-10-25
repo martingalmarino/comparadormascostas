@@ -1,0 +1,203 @@
+[
+  {
+    "id": "provincia-seguros-banco-provincia-plan-esencial",
+    "marca": "Provincia Seguros (Banco Provincia)",
+    "marca_slug": "provincia-seguros-banco-provincia",
+    "nombre": "Plan Esencial",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 3,
+    "edad_max_anios": 9,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional; venta a clientes del banco",
+    "incluye_cordoba": true,
+    "precio": 12948,
+    "precio_texto_original": "Premio mensual $ Pesos 12.948",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "RC $1.000.000"
+      },
+      {
+        "item": "Asistencia veterinaria por accidente $300.000"
+      },
+      {
+        "item": "Asistencia veterinaria por enfermedad $300.000"
+      },
+      {
+        "item": "Extravío $60.000"
+      },
+      {
+        "item": "Fallecimiento $50.000"
+      },
+      {
+        "item": "Vacunación $30.000/año"
+      },
+      {
+        "item": "Castración $125.000"
+      },
+      {
+        "item": "Veterinario online"
+      }
+    ],
+    "carencias": [],
+    "notas": "Precio 'paquetizado': $11.005. Edad de ingreso 3 meses a 9 años.",
+    "scraping": {
+      "url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
+      "metodo": "js_render",
+      "selector": "Tabla fila 'Premio mensual' (no aparece en HTML de curl; usar navegador)"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional; venta a clientes del banco"
+  },
+  {
+    "id": "provincia-seguros-banco-provincia-plan-plus",
+    "marca": "Provincia Seguros (Banco Provincia)",
+    "marca_slug": "provincia-seguros-banco-provincia",
+    "nombre": "Plan Plus",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 3,
+    "edad_max_anios": 9,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional; venta a clientes del banco",
+    "incluye_cordoba": true,
+    "precio": 15454,
+    "precio_texto_original": "Premio mensual $ Pesos 15.454",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "RC $2.000.000"
+      },
+      {
+        "item": "Asistencia veterinaria por accidente $400.000"
+      },
+      {
+        "item": "Asistencia veterinaria por enfermedad $400.000"
+      },
+      {
+        "item": "Extravío $60.000"
+      },
+      {
+        "item": "Fallecimiento $50.000"
+      },
+      {
+        "item": "Vacunación $30.000/año"
+      },
+      {
+        "item": "Castración $125.000"
+      },
+      {
+        "item": "Veterinario online"
+      }
+    ],
+    "carencias": [],
+    "notas": "Precio 'paquetizado': $13.136. Edad de ingreso 3 meses a 9 años.",
+    "scraping": {
+      "url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
+      "metodo": "js_render",
+      "selector": "Tabla fila 'Premio mensual' (no aparece en HTML de curl; usar navegador)"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional; venta a clientes del banco"
+  },
+  {
+    "id": "provincia-seguros-banco-provincia-plan-premium",
+    "marca": "Provincia Seguros (Banco Provincia)",
+    "marca_slug": "provincia-seguros-banco-provincia",
+    "nombre": "Plan Premium",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 3,
+    "edad_max_anios": 9,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional; venta a clientes del banco",
+    "incluye_cordoba": true,
+    "precio": 20083,
+    "precio_texto_original": "Premio mensual $ Pesos 20.083",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "RC $3.000.000"
+      },
+      {
+        "item": "Asistencia veterinaria por accidente $500.000"
+      },
+      {
+        "item": "Asistencia veterinaria por enfermedad $500.000"
+      },
+      {
+        "item": "Extravío $60.000"
+      },
+      {
+        "item": "Fallecimiento $50.000"
+      },
+      {
+        "item": "Vacunación $30.000/año"
+      },
+      {
+        "item": "Castración $125.000"
+      },
+      {
+        "item": "Veterinario online"
+      }
+    ],
+    "carencias": [],
+    "notas": "Precio 'paquetizado': $17.071. Edad de ingreso 3 meses a 9 años.",
+    "scraping": {
+      "url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
+      "metodo": "js_render",
+      "selector": "Tabla fila 'Premio mensual' (no aparece en HTML de curl; usar navegador)"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional; venta a clientes del banco"
+  }
+]

@@ -25,16 +25,18 @@ export const ageOptions = [
 ] as const;
 
 export const priceOptions = [
-  { max: 10000, label: "Hasta $10.000" },
   { max: 15000, label: "Hasta $15.000" },
-  { max: 25000, label: "Hasta $25.000" },
-  { max: 45000, label: "Hasta $45.000" },
+  { max: 30000, label: "Hasta $30.000" },
+  { max: 50000, label: "Hasta $50.000" },
+  { max: 80000, label: "Hasta $80.000" },
 ] as const;
 
 export const tipoOptions = [
   { id: "obra_social", label: "Obra social" },
   { id: "plan_salud", label: "Plan de salud" },
   { id: "seguro", label: "Seguro" },
+  { id: "plan_veterinaria", label: "Plan de veterinaria" },
+  { id: "club_beneficios", label: "Club de beneficios" },
 ] as const;
 
 export const coverageFilters = [

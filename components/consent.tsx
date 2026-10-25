@@ -66,18 +66,6 @@ export function ConsentProvider({ children }: { children: React.ReactNode }) {
     dataLayer.push(["config", siteConfig.gaId, { anonymize_ip: true }]);
   }, [snap]);
 
-  useEffect(() => {
-    if (!snap.startsWith("{") || !siteConfig.adsEnabled || !siteConfig.adsenseClient || document.getElementById("adsense")) return;
-    const parsed = JSON.parse(snap) as Choice;
-    if (!parsed.ads) return;
-    const script = document.createElement("script");
-    script.id = "adsense";
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsenseClient}`;
-    document.head.appendChild(script);
-  }, [snap]);
-
   function save(next: Choice) {
     writeConsentSnap(next);
   }
@@ -89,7 +77,7 @@ export function ConsentProvider({ children }: { children: React.ReactNode }) {
         <div className="fixed inset-x-0 bottom-0 z-50 border-t border-gray-200 bg-white p-4 shadow-lg">
           <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-gray-700">
-              Usamos cookies de medición y, si lo aceptás, publicidad de Google. Los datos del formulario se tratan aparte, según la{" "}
+              Usamos cookies de medición si lo aceptás. Los datos del formulario se tratan aparte, según la{" "}
               <a className="font-semibold text-indigo-700 underline" href="/privacidad">
                 Política de privacidad
               </a>
@@ -121,6 +109,5 @@ export function ConsentProvider({ children }: { children: React.ReactNode }) {
 declare global {
   interface Window {
     dataLayer?: unknown[];
-    adsbygoogle?: unknown[];
   }
 }

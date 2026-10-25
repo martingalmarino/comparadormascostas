@@ -1,0 +1,61 @@
+[
+  {
+    "id": "answer-seguros-seguro-de-mascotas",
+    "marca": "Answer Seguros",
+    "marca_slug": "answer-seguros",
+    "nombre": "Seguro de Mascotas",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": 6135,
+    "precio_texto_original": "$6.135/mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://answerseguros.com.ar/new/pets/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Gastos veterinarios (consultas, vacunas, medicamentos)"
+      },
+      {
+        "item": "Videollamadas veterinarias"
+      },
+      {
+        "item": "Accidentes"
+      },
+      {
+        "item": "Sacrificio"
+      },
+      {
+        "item": "Robo o extravío"
+      },
+      {
+        "item": "Responsabilidad civil"
+      }
+    ],
+    "carencias": [],
+    "notas": "Precio de entrada; el plan final se cotiza online. Mayores de 12 años se evalúan caso por caso.",
+    "scraping": {
+      "url": "https://answerseguros.com.ar/new/pets/",
+      "metodo": "html_estatico",
+      "selector": "Texto '$x/mes' en hero"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  }
+]

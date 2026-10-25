@@ -1,77 +1,167 @@
 [
   {
-    "id": "companion-integral-cba",
+    "id": "companion-plan-60",
     "marca": "Companion",
     "marca_slug": "companion",
-    "nombre": "Plan Integral CBA",
-    "tipo": "plan_salud",
-    "especies": ["perro", "gato"],
-    "edad_min_meses": 2,
-    "edad_max_anios": 11,
-    "zonas": ["cordoba-capital", "sierras-chicas"],
-    "precio": 12200,
+    "nombre": "Plan 60",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional; cualquier veterinario matriculado (reintegro)",
+    "incluye_cordoba": true,
+    "precio": 39000,
+    "precio_texto_original": "Desde $39.000",
     "moneda": "ARS",
-    "es_ejemplo": true,
-    "fecha_verificacion": "2026-10-19",
-    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://companion.com.ar/",
     "estado": "verificado",
     "coberturas": [
-      { "item": "Consultas veterinarias", "valor": "Red de clínicas 24 h" },
-      { "item": "Cirugías programadas", "valor": "Incluidas con autorización" },
-      { "item": "Urgencias 24 h", "valor": "Guardia y accidentes" },
-      { "item": "Vacunación anual", "valor": "Incluida" },
-      { "item": "Internación", "valor": "Hasta 3 días de ejemplo" }
+      {
+        "item": "Reintegro 60% servicios veterinarios (consultas, guardia 24h, especialistas, estudios, cirugías, internación)"
+      },
+      {
+        "item": "40% medicamentos y vacunas"
+      },
+      {
+        "item": "40% bienestar (baño, peluquería, guardería)"
+      },
+      {
+        "item": "40% terapias alternativas"
+      }
     ],
-    "carencias": [
-      { "item": "Urgencias por accidente", "dias": 0 },
-      { "item": "Consultas clínicas", "dias": 15 },
-      { "item": "Cirugías programadas", "dias": 90 }
-    ],
-    "pros": [
-      "Ejemplo con red de urgencias y cirugías en la misma cuota.",
-      "Incluye Sierras Chicas además de Córdoba Capital."
-    ],
-    "contras": [
-      "El monto es de ejemplo y puede no coincidir con la cotización real.",
-      "La autorización previa de cirugías hay que leerla en el condicionado."
-    ],
-    "lead": { "modo": "form" },
-    "resumen": "Ejemplo de plan integral para Capital y Sierras Chicas."
+    "carencias": [],
+    "notas": "Precio 'desde': puede variar según mascota. Descuento multimascota (20% con 2).",
+    "scraping": {
+      "url": "https://companion.com.ar/",
+      "metodo": "html_estatico",
+      "selector": "Texto 'Desde $' junto a encabezados 'Plan 60/80/100'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional; cualquier veterinario matriculado (reintegro)"
   },
   {
-    "id": "companion-base-protege",
+    "id": "companion-plan-80",
     "marca": "Companion",
     "marca_slug": "companion",
-    "nombre": "Base Protege",
-    "tipo": "seguro",
-    "especies": ["perro"],
-    "edad_min_meses": 2,
-    "edad_max_anios": 8,
-    "zonas": ["cordoba-capital", "gran-cordoba"],
-    "precio": 7200,
+    "nombre": "Plan 80",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional; cualquier veterinario matriculado (reintegro)",
+    "incluye_cordoba": true,
+    "precio": 52000,
+    "precio_texto_original": "Desde $52.000",
     "moneda": "ARS",
-    "es_ejemplo": true,
-    "fecha_verificacion": "2026-10-19",
-    "fuente_url": "/como-comparamos#datos-de-ejemplo",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://companion.com.ar/",
     "estado": "verificado",
     "coberturas": [
-      { "item": "Consultas veterinarias", "valor": "2 consultas de ejemplo" },
-      { "item": "Urgencias 24 h", "valor": "Accidentes" }
+      {
+        "item": "Reintegro 80% servicios veterinarios (consultas, guardia 24h, especialistas, estudios, cirugías, internación)"
+      },
+      {
+        "item": "40% medicamentos y vacunas"
+      },
+      {
+        "item": "40% bienestar (baño, peluquería, guardería)"
+      },
+      {
+        "item": "40% terapias alternativas"
+      },
+      {
+        "item": "20% alimento hasta $10.000/mes"
+      }
     ],
-    "carencias": [
-      { "item": "Accidentes", "dias": 0 },
-      { "item": "Consultas clínicas", "dias": 0 }
+    "carencias": [],
+    "notas": "Precio 'desde': puede variar según mascota. Descuento multimascota (20% con 2).",
+    "scraping": {
+      "url": "https://companion.com.ar/",
+      "metodo": "html_estatico",
+      "selector": "Texto 'Desde $' junto a encabezados 'Plan 60/80/100'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional; cualquier veterinario matriculado (reintegro)"
+  },
+  {
+    "id": "companion-plan-100",
+    "marca": "Companion",
+    "marca_slug": "companion",
+    "nombre": "Plan 100",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
     ],
-    "pros": [
-      "En este ejemplo no hay días de carencia.",
-      "La cuota ilustrativa es de las más bajas para perros."
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
     ],
-    "contras": [
-      "Cubre poco: no incluye vacunas ni cirugías en esta ficha.",
-      "Solo figura para perros."
+    "zona_detalle": "Nacional; cualquier veterinario matriculado (reintegro)",
+    "incluye_cordoba": true,
+    "precio": 78000,
+    "precio_texto_original": "Desde $78.000",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://companion.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Reintegro 100% servicios veterinarios (consultas, guardia 24h, especialistas, estudios, cirugías, internación)"
+      },
+      {
+        "item": "40% medicamentos y vacunas"
+      },
+      {
+        "item": "40% bienestar (baño, peluquería, guardería)"
+      },
+      {
+        "item": "40% terapias alternativas"
+      },
+      {
+        "item": "20% alimento hasta $10.000/mes"
+      }
     ],
-    "badges": ["sin_carencia"],
-    "lead": { "modo": "whatsapp" },
-    "resumen": "Ejemplo de seguro básico para perros, sin carencia publicada."
+    "carencias": [],
+    "notas": "Precio 'desde': puede variar según mascota. Descuento multimascota (20% con 2).",
+    "scraping": {
+      "url": "https://companion.com.ar/",
+      "metodo": "html_estatico",
+      "selector": "Texto 'Desde $' junto a encabezados 'Plan 60/80/100'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional; cualquier veterinario matriculado (reintegro)"
   }
 ]

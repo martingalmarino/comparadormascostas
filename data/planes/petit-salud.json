@@ -1,79 +1,196 @@
 [
   {
-    "id": "petit-salud-vital-plus",
+    "id": "petit-salud-primeros-pasos",
     "marca": "Petit Salud",
     "marca_slug": "petit-salud",
-    "nombre": "Plan Vital Plus",
+    "nombre": "Primeros Pasos",
     "tipo": "obra_social",
-    "especies": ["perro", "gato"],
-    "edad_min_meses": 2,
-    "edad_max_anios": 10,
-    "zonas": ["cordoba-capital", "gran-cordoba"],
-    "precio": 8450,
+    "especies": [
+      "perro"
+    ],
+    "edad_max_anios": 5,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Córdoba, Mendoza y San Juan",
+    "incluye_cordoba": true,
+    "precio": 28000,
+    "precio_texto_original": "$28.000 por mes (InfoNegocios. 25/04/2025)",
     "moneda": "ARS",
-    "es_ejemplo": true,
-    "fecha_verificacion": "2026-10-20",
-    "fuente_url": "/como-comparamos#datos-de-ejemplo",
-    "estado": "verificado",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2025-04-25",
+    "fuente_url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+    "estado": "requiere_revision",
     "coberturas": [
-      { "item": "Consultas veterinarias", "valor": "100% en consultorio" },
-      { "item": "Vacunación anual", "valor": "50% de reintegro" },
-      { "item": "Estudios de laboratorio", "valor": "80% bonificado" }
+      {
+        "item": "100% consultas, vacunas, urgencias y análisis de rutina"
+      },
+      {
+        "item": "70% internación, ecografía, cirugía, inyectables"
+      }
     ],
-    "carencias": [
-      { "item": "Urgencias por accidente", "dias": 0 },
-      { "item": "Consultas clínicas", "dias": 15 },
-      { "item": "Cirugías programadas", "dias": 180 }
-    ],
-    "pros": [
-      "En este ejemplo, el precio de entrada queda en la franja baja del comparador.",
-      "Incluye vacunación, que suele ser el gasto más frecuente el primer año."
-    ],
-    "contras": [
-      "La ficha es ilustrativa: la cartilla de clínicas hay que confirmarla con la marca.",
-      "Las cirugías programadas tienen una espera larga en este ejemplo."
-    ],
-    "lead": { "modo": "form" },
-    "resumen": "Ejemplo de obra social para perros y gatos en Córdoba Capital y Gran Córdoba."
+    "carencias": [],
+    "carencias_texto": "No cubre preexistencias",
+    "notas": "El sitio oficial no publica precios; dato de terceros de abril 2025.",
+    "scraping": {
+      "url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+      "metodo": "manual",
+      "selector": "Sitio sin precios; consultar por WhatsApp"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Córdoba, Mendoza y San Juan"
   },
   {
-    "id": "petit-salud-integral-plus",
+    "id": "petit-salud-madurando",
     "marca": "Petit Salud",
     "marca_slug": "petit-salud",
-    "nombre": "Plan Integral Plus",
-    "tipo": "plan_salud",
-    "especies": ["perro", "gato"],
-    "edad_min_meses": 2,
-    "edad_max_anios": 12,
-    "zonas": ["cordoba-capital", "nueva-cordoba", "general-paz"],
-    "precio": 11800,
+    "nombre": "Madurando",
+    "tipo": "obra_social",
+    "especies": [
+      "perro"
+    ],
+    "edad_min_meses": 60,
+    "edad_max_anios": 10,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Córdoba, Mendoza y San Juan",
+    "incluye_cordoba": true,
+    "precio": 33000,
+    "precio_texto_original": "$33.000 por mes (InfoNegocios. 25/04/2025)",
     "moneda": "ARS",
-    "es_ejemplo": true,
-    "fecha_verificacion": "2026-10-20",
-    "fuente_url": "/como-comparamos#datos-de-ejemplo",
-    "estado": "verificado",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2025-04-25",
+    "fuente_url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+    "estado": "requiere_revision",
     "coberturas": [
-      { "item": "Consultas veterinarias", "valor": "100% en consultorio" },
-      { "item": "Vacunación anual", "valor": "Séxtuple, quíntuple y antirrábica" },
-      { "item": "Urgencias 24 h", "valor": "En clínicas adheridas" },
-      { "item": "Cirugías programadas", "valor": "Con tope anual de ejemplo" },
-      { "item": "Estudios de laboratorio", "valor": "Análisis y ecografía básica" }
+      {
+        "item": "100% consultas, vacunas, urgencias y análisis de rutina"
+      },
+      {
+        "item": "70% internación, ecografía, cirugía, inyectables"
+      }
     ],
-    "carencias": [
-      { "item": "Urgencias por accidente", "dias": 0 },
-      { "item": "Consultas clínicas", "dias": 15 },
-      { "item": "Ecografías y rayos X", "dias": 60 },
-      { "item": "Cirugías programadas", "dias": 180 }
+    "carencias": [],
+    "carencias_texto": "No cubre preexistencias",
+    "notas": "El sitio oficial no publica precios; dato de terceros de abril 2025.",
+    "scraping": {
+      "url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+      "metodo": "manual",
+      "selector": "Sitio sin precios; consultar por WhatsApp"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Córdoba, Mendoza y San Juan"
+  },
+  {
+    "id": "petit-salud-adultos",
+    "marca": "Petit Salud",
+    "marca_slug": "petit-salud",
+    "nombre": "Adultos",
+    "tipo": "obra_social",
+    "especies": [
+      "perro"
     ],
-    "pros": [
-      "Ejemplo pensado para quien quiere consultas, vacunas y urgencias en la misma cuota.",
-      "La zona de ejemplo prioriza Nueva Córdoba y General Paz."
+    "edad_min_meses": 120,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
     ],
-    "contras": [
-      "No uses este monto como tarifa vigente: está marcado como ejemplo.",
-      "El reintegro de medicamentos fuera de red no está publicado en esta ficha."
+    "zona_detalle": "Córdoba, Mendoza y San Juan",
+    "incluye_cordoba": true,
+    "precio": 38000,
+    "precio_texto_original": "$38.000 por mes (InfoNegocios. 25/04/2025)",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2025-04-25",
+    "fuente_url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+    "estado": "requiere_revision",
+    "coberturas": [
+      {
+        "item": "100% consultas, vacunas, urgencias y análisis de rutina"
+      },
+      {
+        "item": "70% internación, ecografía, cirugía, inyectables"
+      }
     ],
-    "lead": { "modo": "form" },
-    "resumen": "Ejemplo de plan de salud para adultos en Nueva Córdoba y General Paz."
+    "carencias": [],
+    "carencias_texto": "No cubre preexistencias",
+    "notas": "El sitio oficial no publica precios; dato de terceros de abril 2025.",
+    "scraping": {
+      "url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+      "metodo": "manual",
+      "selector": "Sitio sin precios; consultar por WhatsApp"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Córdoba, Mendoza y San Juan"
+  },
+  {
+    "id": "petit-salud-felinos-conejos-y-aves",
+    "marca": "Petit Salud",
+    "marca_slug": "petit-salud",
+    "nombre": "Felinos, conejos y aves",
+    "tipo": "obra_social",
+    "especies": [
+      "gato",
+      "conejo",
+      "ave"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Córdoba, Mendoza y San Juan",
+    "incluye_cordoba": true,
+    "precio": 28000,
+    "precio_texto_original": "$28.000 por mes (InfoNegocios. 25/04/2025)",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2025-04-25",
+    "fuente_url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+    "estado": "requiere_revision",
+    "coberturas": [
+      {
+        "item": "100% consultas, vacunas, urgencias y análisis de rutina"
+      },
+      {
+        "item": "70% internación, ecografía, cirugía, inyectables"
+      }
+    ],
+    "carencias": [],
+    "carencias_texto": "No cubre preexistencias",
+    "notas": "El sitio oficial no publica precios; dato de terceros de abril 2025.",
+    "scraping": {
+      "url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+      "metodo": "manual",
+      "selector": "Sitio sin precios; consultar por WhatsApp"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Córdoba, Mendoza y San Juan"
   }
 ]

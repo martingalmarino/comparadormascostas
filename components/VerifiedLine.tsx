@@ -4,11 +4,19 @@ import type { Plan } from "@/lib/plan-schema";
 
 export function VerifiedLine({ plan }: { plan: Plan }) {
   const external = plan.fuente_url.startsWith("http");
-  const sourceLabel = plan.es_ejemplo ? "dato de ejemplo" : "sitio oficial";
+  let sourceLabel = "fuente";
+  if (plan.es_ejemplo) sourceLabel = "dato de ejemplo";
+  else if (external) {
+    try {
+      sourceLabel = new URL(plan.fuente_url).hostname.replace(/^www\./, "");
+    } catch {
+      sourceLabel = "fuente";
+    }
+  }
   return (
     <p className="flex items-start gap-1.5 text-xs text-gray-500">
       <CalendarCheck className="mt-0.5 size-3.5 shrink-0 text-indigo-500" aria-hidden="true" />
-      <span>
+      <span className="min-w-0 break-words">
         Verificado el {formatDate(plan.fecha_verificacion)}
         {" · "}
         Fuente:{" "}

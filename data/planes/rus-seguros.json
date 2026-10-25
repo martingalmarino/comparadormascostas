@@ -1,0 +1,219 @@
+[
+  {
+    "id": "rus-seguros-petcare-simple",
+    "marca": "RUS Seguros",
+    "marca_slug": "rus-seguros",
+    "nombre": "PetCare Simple",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 3,
+    "edad_max_anios": 17,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": 7000,
+    "precio_texto_original": "$ 7.000 /mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.rus.com.ar/productos/mascotas/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "RC $5.000.000"
+      },
+      {
+        "item": "Veterinario virtual 24h"
+      },
+      {
+        "item": "Atención en centro/domicilio $70.000"
+      },
+      {
+        "item": "Baño y peluquería $35.000"
+      }
+    ],
+    "carencias": [],
+    "scraping": {
+      "url": "https://www.rus.com.ar/productos/mascotas/",
+      "metodo": "html_estatico",
+      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  },
+  {
+    "id": "rus-seguros-petcare-esencial",
+    "marca": "RUS Seguros",
+    "marca_slug": "rus-seguros",
+    "nombre": "PetCare Esencial",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 3,
+    "edad_max_anios": 8,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": 15000,
+    "precio_texto_original": "$ 15.000 /mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.rus.com.ar/productos/mascotas/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "RC $5.000.000"
+      },
+      {
+        "item": "Atención $70.000"
+      },
+      {
+        "item": "Laboratorio e imágenes $70.000"
+      },
+      {
+        "item": "40% medicamentos hasta $35.000"
+      }
+    ],
+    "carencias": [],
+    "scraping": {
+      "url": "https://www.rus.com.ar/productos/mascotas/",
+      "metodo": "html_estatico",
+      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  },
+  {
+    "id": "rus-seguros-petcare-integral",
+    "marca": "RUS Seguros",
+    "marca_slug": "rus-seguros",
+    "nombre": "PetCare Integral",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 3,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": 25000,
+    "precio_texto_original": "$ 25.000 /mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.rus.com.ar/productos/mascotas/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "RC $5.000.000"
+      },
+      {
+        "item": "Vacunas $35.000"
+      },
+      {
+        "item": "Cirugía e internación $150.000"
+      },
+      {
+        "item": "Cremación $50.000"
+      }
+    ],
+    "carencias": [],
+    "scraping": {
+      "url": "https://www.rus.com.ar/productos/mascotas/",
+      "metodo": "html_estatico",
+      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  },
+  {
+    "id": "rus-seguros-petcare-superior",
+    "marca": "RUS Seguros",
+    "marca_slug": "rus-seguros",
+    "nombre": "PetCare Superior",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 3,
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Nacional",
+    "incluye_cordoba": true,
+    "precio": 35000,
+    "precio_texto_original": "$ 35.000 /mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.rus.com.ar/productos/mascotas/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "Todo Integral"
+      },
+      {
+        "item": "Castración $100.000"
+      },
+      {
+        "item": "Especialistas $70.000"
+      },
+      {
+        "item": "Guardería $100.000"
+      },
+      {
+        "item": "Desparasitación $35.000"
+      }
+    ],
+    "carencias": [],
+    "scraping": {
+      "url": "https://www.rus.com.ar/productos/mascotas/",
+      "metodo": "html_estatico",
+      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Nacional"
+  }
+]

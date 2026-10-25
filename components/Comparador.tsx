@@ -1,5 +1,4 @@
 import { redirect } from "next/navigation";
-import { AdSlot } from "@/components/AdSlot";
 import { Filters } from "@/components/Filters";
 import { JsonLd } from "@/components/JsonLd";
 import { PlanCard } from "@/components/PlanCard";
@@ -48,36 +47,27 @@ export async function Comparador({
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">Planes en {place}</h1>
       <p className="mt-2 max-w-3xl text-sm text-gray-600">
-        Compará obras sociales, planes de salud y seguros para mascotas. Cada precio muestra la fecha y la fuente. Si dice EJEMPLO, no es una tarifa vigente.
+        Compará obras sociales, planes de salud y seguros para mascotas. Cada precio muestra la fecha y la fuente. Si no hay monto publicado, la ficha dice Consultar precio.
       </p>
-      <div className="mt-6 lg:grid lg:grid-cols-[16rem_minmax(0,1fr)] lg:items-start lg:gap-8 xl:grid-cols-[16rem_minmax(0,1fr)_12rem]">
+      <div className="mt-6 lg:grid lg:grid-cols-[16rem_minmax(0,1fr)] lg:items-start lg:gap-8">
         <Filters filters={filters} total={plans.length} />
         <div className="min-w-0">
           {plans.length === 0 ? (
             <p className="rounded-2xl border border-dashed border-gray-300 bg-white px-4 py-10 text-center text-gray-600">
-              Ningún plan de ejemplo coincide con esos filtros. Probá limpiarlos.
+              Ningún plan coincide con esos filtros. Probá limpiarlos.
             </p>
           ) : (
             <>
               <div className="space-y-4 lg:hidden">
-                {plans.map((plan, index) => (
-                  <div key={plan.id} className="space-y-4">
-                    <PlanCard plan={plan} today={today} />
-                    {index === 1 ? <AdSlot variant="inline" /> : null}
-                  </div>
+                {plans.map((plan) => (
+                  <PlanCard key={plan.id} plan={plan} today={today} />
                 ))}
-                {plans.length < 2 ? <AdSlot variant="inline" /> : null}
               </div>
               <div className="hidden lg:block">
                 <PlanTable plans={plans} today={today} />
               </div>
             </>
           )}
-        </div>
-        <div className="hidden xl:block">
-          <div className="sticky top-24">
-            <AdSlot variant="sidebar" />
-          </div>
         </div>
       </div>
       {hasNarrowingFilters(filters) ? null : <JsonLd data={itemListJsonLd(plans)} />}

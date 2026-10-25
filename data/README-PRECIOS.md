@@ -1,6 +1,6 @@
 # Precios de planes para mascotas — relevamiento 24/10/2026
 
-Archivo: `planes.json`. Tiene 41 planes de 14 marcas, con montos en ARS por mes.
+La app lee `data/planes/<marca>.json`: 41 planes de 14 marcas, con montos en ARS por mes. El archivo único `planes.json` se migró a esa carpeta y se borró para que no queden dos fuentes.
 
 **Estados:** 28 `verificado`, 8 `consultar` y 5 `requiere_revision`.
 

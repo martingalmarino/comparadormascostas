@@ -1,0 +1,98 @@
+[
+  {
+    "id": "puppis-one-one",
+    "marca": "Puppis One",
+    "marca_slug": "puppis-one",
+    "nombre": "ONE",
+    "tipo": "plan_veterinaria",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [],
+    "zona_detalle": "Locales Puppis; no se verificó presencia en Córdoba",
+    "incluye_cordoba": null,
+    "precio": null,
+    "precio_texto_original": "Precio a consultar (0810-220-0010)",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://one.puppis.com.ar/customers/plans",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "100% consultas, controles y vacunas"
+      },
+      {
+        "item": "Certificado de salud y plan nutricional"
+      },
+      {
+        "item": "10% alimento, 15% farmacia, 20% accesorios y microchip"
+      },
+      {
+        "item": "Coproparasitológico cada 4 meses"
+      }
+    ],
+    "carencias": [],
+    "notas": "La página remite a teléfono/WhatsApp para precios.",
+    "scraping": {
+      "url": "https://one.puppis.com.ar/customers/plans",
+      "metodo": "manual",
+      "selector": ""
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Locales Puppis; no se verificó presencia en Córdoba"
+  },
+  {
+    "id": "puppis-one-one-plus",
+    "marca": "Puppis One",
+    "marca_slug": "puppis-one",
+    "nombre": "ONE PLUS",
+    "tipo": "plan_veterinaria",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [],
+    "zona_detalle": "Locales Puppis; no se verificó presencia en Córdoba",
+    "incluye_cordoba": null,
+    "precio": null,
+    "precio_texto_original": "Precio a consultar (0810-220-0010)",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://one.puppis.com.ar/customers/plans",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "100% consultas, controles y vacunas"
+      },
+      {
+        "item": "Certificado de salud y plan nutricional"
+      },
+      {
+        "item": "10% alimento, 15% farmacia, 20% accesorios y microchip"
+      },
+      {
+        "item": "Coproparasitológico cada 4 meses"
+      }
+    ],
+    "carencias": [],
+    "notas": "La página remite a teléfono/WhatsApp para precios.",
+    "scraping": {
+      "url": "https://one.puppis.com.ar/customers/plans",
+      "metodo": "manual",
+      "selector": ""
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Locales Puppis; no se verificó presencia en Córdoba"
+  }
+]

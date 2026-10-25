@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { AdSlot } from "@/components/AdSlot";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQ } from "@/components/FAQ";
 import { Markdown } from "@/components/Markdown";
@@ -38,9 +37,6 @@ async function GuideDetail({ params }: { params: Promise<{ slug: string }> }) {
         <Markdown source={guide.body} />
       </div>
       <FAQ items={guide.faq} />
-      <div className="mt-10">
-        <AdSlot variant="banner" />
-      </div>
     </article>
   );
 }

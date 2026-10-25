@@ -5,7 +5,7 @@ import { siteConfig } from "@/site.config";
 
 export const metadata = pageMetadata({
   title: "Cómo comparamos",
-  description: "Metodología de MascoCompara: fuentes, precios de ejemplo, regla de 45 días y qué no hacemos.",
+  description: "Metodología de MascoCompara: fuentes, relevamiento del 24/10/2026, regla de 45 días y qué no hacemos.",
   path: "/como-comparamos",
 });
 
@@ -20,11 +20,11 @@ export default function Page() {
         </p>
         <h2>Qué entra en una ficha</h2>
         <p>
-          Cada plan vive en un JSON del repositorio: precio en pesos, especie, edad, zona, coberturas, carencias, fecha de verificación y URL de la fuente. Si no hay precio público, la ficha dice “Precio no publicado · Consultar”. No completamos huecos con un promedio.
+          Cada plan vive en un JSON por marca: precio en pesos, especie, edad, zona, coberturas, carencias, fecha de verificación y URL de la fuente. Si no hay precio público, la ficha dice “Consultar precio”. No completamos huecos con un promedio. El relevamiento vigente es el del 24/10/2026.
         </p>
         <h2>Datos de ejemplo</h2>
         <p>
-          Hasta verificar un monto en la página oficial de la marca, <strong>es_ejemplo</strong> queda en verdadero y la interfaz muestra el badge EJEMPLO. La línea de fuente dice “dato de ejemplo” y apunta a esta sección. Esos números sirven para probar el comparador. No son tarifas vigentes.
+          Si un monto todavía no tiene fuente, <strong>es_ejemplo</strong> queda en verdadero y la interfaz muestra el badge EJEMPLO. La carga actual no usa ese badge: cada precio verificado enlaza la página de donde salió. Un dato en revisión o más viejo que 45 días lleva aviso y no se presenta como tarifa cerrada.
         </p>
         <h2>Cuándo un dato se pone viejo</h2>
         <p>

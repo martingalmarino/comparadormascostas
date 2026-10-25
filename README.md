@@ -26,19 +26,16 @@ Toda la documentación de partida para construir el proyecto:
 
 ### 📊 Datos (`/data`)
 
-Datos reales relevados para el comparador:
+La app lee una sola fuente: **`data/planes/*.json`**, un archivo por marca. Son los **41 planes** de **14 marcas** del relevamiento del **24/10/2026** (Companion, OSMASC, FielPet, Qualia, RUS, Answer, Pet Society, Provincia Seguros, Iké, AVSIM, Puppis One, Federación Patronal/MascotaLeal, BBVA y Petit Salud).
 
-- **`data/planes.json`** — **41 planes reales** de 14 marcas (Companion, OSMASC, FielPet, Qualia, RUS, Answer, Pet Society, Provincia Seguros, Iké, AVSIM, Puppis One, Federación Patronal/MascotaLeal, BBVA, Petit Salud) relevados el **24/10/2026**. Incluye precios verificados en ARS, coberturas, carencias, pros/contras y URLs de fuente.
-- **`data/README-PRECIOS.md`** — Explicación del relevamiento: estados de verificación, fuentes, precios consultados manualmente, y notas sobre scraping.
-- `data/scrapers.json` — Configuración de scrapers (existente).
-- `data/planes/*.json` — Planes por marca en archivos individuales (existente).
+- **`data/README-PRECIOS.md`** — Cómo se relevó: estados, fuentes y qué se puede scrapear.
+- **`data/scrapers.json`** — Pista de scraping por plan. Todos arrancan apagados.
 
 ### 🛠️ Precios y verificación
 
-Los precios en `planes.json` están marcados con:
-- `es_ejemplo: true` → mostrar badge "EJEMPLO" hasta verificarlos con fuente y fecha.
-- `estado`: `"verificado"`, `"requiere_revision"`, `"consultar"` o `"sin_precio_publico"`.
-- Si `fecha_verificacion` > 45 días → marcar como "desactualizado".
+- `estado`: `"verificado"`, `"requiere_revision"` o `"consultar"`. Si el precio es `null`, la ficha dice “Consultar precio”.
+- `es_ejemplo: true` muestra el badge EJEMPLO. La carga actual está en `false`: el número sale de la fuente citada.
+- Si `fecha_verificacion` supera los 45 días, la interfaz avisa que está desactualizado.
 
 El workflow `.github/workflows/update-prices.yml` no publica cambios grandes automáticamente: los deja en `requiere_revision` y abre un pull request.
 

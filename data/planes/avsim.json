@@ -1,78 +1,223 @@
 [
   {
-    "id": "avsim-oro",
+    "id": "avsim-plan-105",
     "marca": "AVSIM",
     "marca_slug": "avsim",
-    "nombre": "Plan Oro Mascotas",
-    "tipo": "plan_salud",
-    "especies": ["perro", "gato"],
-    "edad_min_meses": 3,
-    "edad_max_anios": 9,
-    "zonas": ["cordoba-capital", "rio-cuarto"],
-    "precio": 12900,
+    "nombre": "Plan 105",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
+    "incluye_cordoba": true,
+    "precio": null,
+    "precio_texto_original": "Precio por provincia en mapa interactivo",
     "moneda": "ARS",
-    "es_ejemplo": true,
-    "fecha_verificacion": "2026-10-20",
-    "fuente_url": "/como-comparamos#datos-de-ejemplo",
-    "estado": "verificado",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.avsim.com.ar/",
+    "estado": "consultar",
     "coberturas": [
-      { "item": "Consultas veterinarias", "valor": "Sin límite de ejemplo en cartilla" },
-      { "item": "Vacunación anual", "valor": "Incluida" },
-      { "item": "Cirugías programadas", "valor": "Incluidas con tope" },
-      { "item": "Urgencias 24 h", "valor": "Guardia en red" },
-      { "item": "Internación", "valor": "Hasta 5 días de ejemplo" },
-      { "item": "Estudios de laboratorio", "valor": "80% bonificado" },
-      { "item": "Desparasitación", "valor": "Dos tomas al año" }
+      {
+        "item": "Consultas 100% (9/año)"
+      },
+      {
+        "item": "Controles 100% (6/año)"
+      },
+      {
+        "item": "Vacunas e inyectables (2/año)"
+      },
+      {
+        "item": "Estudios y análisis"
+      },
+      {
+        "item": "Cirugía con tope"
+      },
+      {
+        "item": "5% dto. pet shop"
+      }
     ],
-    "carencias": [
-      { "item": "Urgencias por accidente", "dias": 0 },
-      { "item": "Consultas clínicas", "dias": 30 },
-      { "item": "Cirugías programadas", "dias": 90 }
-    ],
-    "pros": [
-      "Es el ejemplo con más ítems de cobertura del comparador.",
-      "Figura tanto para Córdoba Capital como para Río Cuarto."
-    ],
-    "contras": [
-      "La cuota de ejemplo es de las más altas.",
-      "El tope de edad de este ejemplo corta a los 9 años."
-    ],
-    "badges": ["mas_cobertura"],
-    "lead": { "modo": "form" },
-    "resumen": "Ejemplo de plan amplio para perros y gatos en Capital y Río Cuarto."
+    "carencias": [],
+    "notas": "Precios no visibles en HTML; dependen de la zona elegida en el mapa.",
+    "scraping": {
+      "url": "https://www.avsim.com.ar/",
+      "metodo": "manual",
+      "selector": "Sección 'Verificá cobertura y precios en tu provincia'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro"
   },
   {
-    "id": "avsim-plata",
+    "id": "avsim-plan-210",
     "marca": "AVSIM",
     "marca_slug": "avsim",
-    "nombre": "Plan Plata",
-    "tipo": "seguro",
-    "especies": ["perro"],
-    "edad_min_meses": 2,
-    "edad_max_anios": 8,
-    "zonas": ["cordoba-capital"],
-    "precio": 9800,
+    "nombre": "Plan 210",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
+    "incluye_cordoba": true,
+    "precio": null,
+    "precio_texto_original": "Precio por provincia en mapa interactivo",
     "moneda": "ARS",
-    "es_ejemplo": true,
-    "fecha_verificacion": "2026-10-18",
-    "fuente_url": "/como-comparamos#datos-de-ejemplo",
-    "estado": "requiere_revision",
-    "precio_detectado": 10200,
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.avsim.com.ar/",
+    "estado": "consultar",
     "coberturas": [
-      { "item": "Consultas veterinarias", "valor": "4 consultas de ejemplo al año" },
-      { "item": "Urgencias 24 h", "valor": "Solo accidentes" },
-      { "item": "Vacunación anual", "valor": "Antirrábica" }
+      {
+        "item": "Consultas 100% (12/año)"
+      },
+      {
+        "item": "Domicilio y urgencias"
+      },
+      {
+        "item": "Rx y ecografías"
+      },
+      {
+        "item": "Internación 25%"
+      },
+      {
+        "item": "10% dto. pet shop"
+      }
     ],
-    "carencias": [
-      { "item": "Accidentes", "dias": 5 },
-      { "item": "Consultas clínicas", "dias": 30 }
+    "carencias": [],
+    "notas": "Precios no visibles en HTML; dependen de la zona elegida en el mapa.",
+    "scraping": {
+      "url": "https://www.avsim.com.ar/",
+      "metodo": "manual",
+      "selector": "Sección 'Verificá cobertura y precios en tu provincia'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro"
+  },
+  {
+    "id": "avsim-plan-315",
+    "marca": "AVSIM",
+    "marca_slug": "avsim",
+    "nombre": "Plan 315",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
     ],
-    "pros": ["Ejemplo acotado a accidentes y consultas, más fácil de leer."],
-    "contras": [
-      "Está en revisión: no lo tomes como precio vigente.",
-      "En este ejemplo no cubre gatos."
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
     ],
-    "lead": { "modo": "form" },
-    "resumen": "Ejemplo de seguro para perros. El dato está marcado para revisión."
+    "zona_detalle": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
+    "incluye_cordoba": true,
+    "precio": null,
+    "precio_texto_original": "Precio por provincia en mapa interactivo",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.avsim.com.ar/",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "Consultas 100% (15/año)"
+      },
+      {
+        "item": "Vacunas (4/año)"
+      },
+      {
+        "item": "Odontología (3/año)"
+      },
+      {
+        "item": "Internación 30%"
+      },
+      {
+        "item": "15% dto. pet shop"
+      }
+    ],
+    "carencias": [],
+    "notas": "Precios no visibles en HTML; dependen de la zona elegida en el mapa.",
+    "scraping": {
+      "url": "https://www.avsim.com.ar/",
+      "metodo": "manual",
+      "selector": "Sección 'Verificá cobertura y precios en tu provincia'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro"
+  },
+  {
+    "id": "avsim-plan-global",
+    "marca": "AVSIM",
+    "marca_slug": "avsim",
+    "nombre": "Plan Global",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      "cordoba-capital",
+      "gran-cordoba",
+      "rio-cuarto",
+      "villa-maria"
+    ],
+    "zona_detalle": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
+    "incluye_cordoba": true,
+    "precio": null,
+    "precio_texto_original": "Precio por provincia en mapa interactivo",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-24",
+    "fuente_url": "https://www.avsim.com.ar/",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "Reintegro en cualquier veterinaria del país"
+      },
+      {
+        "item": "Urgencias 24h"
+      },
+      {
+        "item": "Estudios y cirugías con tope"
+      }
+    ],
+    "carencias": [],
+    "notas": "Precios no visibles en HTML; dependen de la zona elegida en el mapa.",
+    "scraping": {
+      "url": "https://www.avsim.com.ar/",
+      "metodo": "manual",
+      "selector": "Sección 'Verificá cobertura y precios en tu provincia'"
+    },
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "form"
+    },
+    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro"
   }
 ]

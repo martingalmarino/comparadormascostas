@@ -95,7 +95,8 @@ export function productJsonLd(plan: Plan) {
     category: tipo,
     url: `${siteConfig.domain}/planes/${plan.marca_slug}#${plan.id}`,
   };
-  const verified = plan.estado === "verificado" && !plan.es_ejemplo && plan.precio != null;
+  const desde = plan.precio_texto_original?.toLowerCase().includes("desde") ?? false;
+  const verified = plan.estado === "verificado" && !plan.es_ejemplo && plan.precio != null && !desde;
   if (verified) {
     const until = new Date(`${plan.fecha_verificacion}T00:00:00Z`);
     until.setUTCDate(until.getUTCDate() + 45);

@@ -2,17 +2,292 @@
   "userAgent": "MascoComparaBot/0.1 (comparador independiente de planes para mascotas; +http://localhost:3000/como-comparamos)",
   "umbral_cambio": 0.15,
   "marcas": [
-    { "plan_id": "petit-salud-vital-plus", "url": "", "enabled": false, "selector": "", "notas": "Completar url y selector solo si el robots.txt y los términos del sitio permiten el acceso automatizado." },
-    { "plan_id": "petit-salud-integral-plus", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
-    { "plan_id": "avsim-oro", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
-    { "plan_id": "avsim-plata", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
-    { "plan_id": "ike-global", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
-    { "plan_id": "ike-local", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
-    { "plan_id": "companion-integral-cba", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
-    { "plan_id": "companion-base-protege", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
-    { "plan_id": "fielpet-esencial", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
-    { "plan_id": "fielpet-premium", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
-    { "plan_id": "osmasc-familiar", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." },
-    { "plan_id": "osmasc-senior", "url": "", "enabled": false, "selector": "", "notas": "Desactivado." }
+    {
+      "plan_id": "answer-seguros-seguro-de-mascotas",
+      "url": "https://answerseguros.com.ar/new/pets/",
+      "enabled": false,
+      "selector": "Texto '$x/mes' en hero",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "avsim-plan-105",
+      "url": "https://www.avsim.com.ar/",
+      "enabled": false,
+      "selector": "Sección 'Verificá cobertura y precios en tu provincia'",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "avsim-plan-210",
+      "url": "https://www.avsim.com.ar/",
+      "enabled": false,
+      "selector": "Sección 'Verificá cobertura y precios en tu provincia'",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "avsim-plan-315",
+      "url": "https://www.avsim.com.ar/",
+      "enabled": false,
+      "selector": "Sección 'Verificá cobertura y precios en tu provincia'",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "avsim-plan-global",
+      "url": "https://www.avsim.com.ar/",
+      "enabled": false,
+      "selector": "Sección 'Verificá cobertura y precios en tu provincia'",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "bbva-seguros-seguro-de-mascotas",
+      "url": "https://www.bbvaseguros.com.ar/seguros-personas/seguro-para-mascotas/",
+      "enabled": false,
+      "selector": "",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "companion-plan-60",
+      "url": "https://companion.com.ar/",
+      "enabled": false,
+      "selector": "Texto 'Desde $' junto a encabezados 'Plan 60/80/100'",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "companion-plan-80",
+      "url": "https://companion.com.ar/",
+      "enabled": false,
+      "selector": "Texto 'Desde $' junto a encabezados 'Plan 60/80/100'",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "companion-plan-100",
+      "url": "https://companion.com.ar/",
+      "enabled": false,
+      "selector": "Texto 'Desde $' junto a encabezados 'Plan 60/80/100'",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "federacion-patronal-via-mascotaleal-mascota-protegida",
+      "url": "https://mascotaleal.com/",
+      "enabled": false,
+      "selector": "",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "fielpet-plan-1",
+      "url": "https://www.fielpet.com.ar/",
+      "enabled": false,
+      "selector": ".pricing-card; recargos por edad en modal",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "fielpet-plan-2",
+      "url": "https://www.fielpet.com.ar/",
+      "enabled": false,
+      "selector": ".pricing-card; recargos por edad en modal",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "fielpet-plan-3",
+      "url": "https://www.fielpet.com.ar/",
+      "enabled": false,
+      "selector": ".pricing-card; recargos por edad en modal",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "fielpet-plan-4",
+      "url": "https://www.fielpet.com.ar/",
+      "enabled": false,
+      "selector": ".pricing-card; recargos por edad en modal",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "fielpet-plan-5",
+      "url": "https://www.fielpet.com.ar/",
+      "enabled": false,
+      "selector": ".pricing-card; recargos por edad en modal",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "ike-mascotas-emergencias",
+      "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+      "enabled": false,
+      "selector": "Bloques 'Plan' > h3 nombre > '$ x'",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "ike-mascotas-cachorro",
+      "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+      "enabled": false,
+      "selector": "Bloques 'Plan' > h3 nombre > '$ x'",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "ike-mascotas-adulto",
+      "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+      "enabled": false,
+      "selector": "Bloques 'Plan' > h3 nombre > '$ x'",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "ike-mascotas-senior",
+      "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+      "enabled": false,
+      "selector": "Bloques 'Plan' > h3 nombre > '$ x'",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "osmasc-plan-alfa",
+      "url": "https://www.osmasc.com/",
+      "enabled": false,
+      "selector": "Bloque 'PLAN ALFA', último $ del bloque",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "osmasc-plan-omega-premium",
+      "url": "https://www.osmasc.com/",
+      "enabled": false,
+      "selector": "Bloque 'PLAN OMEGA PREMIUM'",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "pet-society-plan-individual",
+      "url": "https://petsociety.ar/",
+      "enabled": false,
+      "selector": "Texto 'ARS x /mes' bajo 'Plan Individual'",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "pet-society-plan-familiar",
+      "url": "https://petsociety.ar/",
+      "enabled": false,
+      "selector": "Texto 'ARS x /mes' bajo 'Plan Familiar'",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "petit-salud-primeros-pasos",
+      "url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+      "enabled": false,
+      "selector": "Sitio sin precios; consultar por WhatsApp",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "petit-salud-madurando",
+      "url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+      "enabled": false,
+      "selector": "Sitio sin precios; consultar por WhatsApp",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "petit-salud-adultos",
+      "url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+      "enabled": false,
+      "selector": "Sitio sin precios; consultar por WhatsApp",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "petit-salud-felinos-conejos-y-aves",
+      "url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
+      "enabled": false,
+      "selector": "Sitio sin precios; consultar por WhatsApp",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "provincia-seguros-banco-provincia-plan-esencial",
+      "url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
+      "enabled": false,
+      "selector": "Tabla fila 'Premio mensual' (no aparece en HTML de curl; usar navegador)",
+      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "provincia-seguros-banco-provincia-plan-plus",
+      "url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
+      "enabled": false,
+      "selector": "Tabla fila 'Premio mensual' (no aparece en HTML de curl; usar navegador)",
+      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "provincia-seguros-banco-provincia-plan-premium",
+      "url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
+      "enabled": false,
+      "selector": "Tabla fila 'Premio mensual' (no aparece en HTML de curl; usar navegador)",
+      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "puppis-one-one",
+      "url": "https://one.puppis.com.ar/customers/plans",
+      "enabled": false,
+      "selector": "",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "puppis-one-one-plus",
+      "url": "https://one.puppis.com.ar/customers/plans",
+      "enabled": false,
+      "selector": "",
+      "notas": "manual. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "qualia-seguros-plan-1",
+      "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "enabled": false,
+      "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "qualia-seguros-plan-2",
+      "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "enabled": false,
+      "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'",
+      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "qualia-seguros-plan-3",
+      "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "enabled": false,
+      "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'",
+      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "qualia-seguros-plan-4",
+      "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "enabled": false,
+      "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'",
+      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "qualia-seguros-plan-5",
+      "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "enabled": false,
+      "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'",
+      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "rus-seguros-petcare-simple",
+      "url": "https://www.rus.com.ar/productos/mascotas/",
+      "enabled": false,
+      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "rus-seguros-petcare-esencial",
+      "url": "https://www.rus.com.ar/productos/mascotas/",
+      "enabled": false,
+      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "rus-seguros-petcare-integral",
+      "url": "https://www.rus.com.ar/productos/mascotas/",
+      "enabled": false,
+      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    },
+    {
+      "plan_id": "rus-seguros-petcare-superior",
+      "url": "https://www.rus.com.ar/productos/mascotas/",
+      "enabled": false,
+      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar",
+      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+    }
   ]
 }

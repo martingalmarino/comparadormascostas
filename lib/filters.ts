@@ -1,4 +1,4 @@
-import type { Especie, Plan, PlanTipo } from "@/lib/plan-schema";
+import { planTipos, type Especie, type Plan, type PlanTipo } from "@/lib/plan-schema";
 import { coverageFilters, isKnownZone, zones } from "@/lib/zones";
 
 export type SortKey = "precio" | "cobertura" | "actualizado";
@@ -33,7 +33,7 @@ export function parseFilters(search: RawSearch): Filters {
     especie: especie === "perro" || especie === "gato" ? especie : undefined,
     meses: Number.isFinite(meses) && meses > 0 ? meses : undefined,
     zona: zona && isKnownZone(zona) ? zona : undefined,
-    tipo: tipo === "obra_social" || tipo === "plan_salud" || tipo === "seguro" ? tipo : undefined,
+    tipo: planTipos.includes(tipo as PlanTipo) ? (tipo as PlanTipo) : undefined,
     max: Number.isFinite(max) && max > 0 ? max : undefined,
     cob: (first(search.cob) ?? "")
       .split(",")
@@ -128,7 +128,7 @@ export function applyFilters(plans: Plan[], filters: Filters) {
     if (filters.meses != null && !matchesAge(plan, filters.meses)) return false;
     if (filters.zona && !zoneMatches(plan.zonas, filters.zona)) return false;
     if (filters.max != null) {
-      if (plan.precio == null || plan.estado === "sin_precio_publico") return false;
+      if (plan.precio == null || plan.estado === "sin_precio_publico" || plan.estado === "consultar") return false;
       if (plan.precio > filters.max) return false;
     }
     if (filters.cob.length) {
