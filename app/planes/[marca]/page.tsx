@@ -8,6 +8,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { DirectAnswer } from "@/components/DirectAnswer";
 import { CoverageList } from "@/components/CoverageList";
 import { FAQ } from "@/components/FAQ";
+import { HogarNotice } from "@/components/HogarNotice";
 import { JsonLd } from "@/components/JsonLd";
 import { LeadForm } from "@/components/LeadForm";
 import { PriceTag } from "@/components/PriceTag";
@@ -53,7 +54,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
   const faqs = [
     {
       q: `¿${brand} publica estos precios?`,
-      a: "Cada precio muestra la fecha y el enlace a la fuente. Si dice “Consultar precio”, no hay monto publicado. Si está en revisión o la fecha supera los 45 días, no lo tomes como tarifa cerrada.",
+      a: "Cada precio muestra la fecha y el enlace a la fuente. Si dice “Precio a consultar”, no hay monto publicado. Si está en revisión o la fecha supera los 45 días, no lo tomes como tarifa cerrada.",
     },
     {
       q: "¿Qué pasa si pido que me contacten?",
@@ -104,6 +105,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
                   <div>
                     <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">{plan.marca}</p>
                     <h2 className="text-2xl font-bold text-gray-900">{plan.nombre}</h2>
+                    <HogarNotice slug={plan.marca_slug} />
                     {plan.resumen ? <p className="mt-1 text-sm text-gray-600">{plan.resumen}</p> : null}
                     <p className="mt-2 text-sm text-gray-600">
                       {plan.especies.map((especie) => especieLabel(especie)).join(", ")}
@@ -155,7 +157,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
                 <div className="mt-4">
                   <ProsCons plan={plan} />
                 </div>
-                <JsonLd data={productJsonLd(plan, today)} />
+                {plan.estado !== "consultar" && plan.precio != null ? <JsonLd data={productJsonLd(plan, today)} /> : null}
               </article>
             ))}
           </div>

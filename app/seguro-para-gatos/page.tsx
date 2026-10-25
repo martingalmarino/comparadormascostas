@@ -16,7 +16,7 @@ export default async function Page() {
       today={today}
       heading={seo.h1}
       crumb="Seguro para gatos"
-      intro="No todos los planes de perro aceptan gatos. En esta página quedan los que declaran cobertura para gatos. Si el precio dice “Consultar precio”, la fuente no lo publicó y el número no lo inventamos."
+      intro="No todos los planes de perro aceptan gatos. En esta página quedan los que declaran cobertura para gatos. Si el precio dice “Precio a consultar”, la fuente no lo publicó y el número no lo inventamos."
       answer={respuestaDirecta({ tipo: "especie", today, especie: "gato" })}
       faqs={faqsEspecie("gato", today)}
     />

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "nacion-seguros-hogar-mascotas",
+    "marca": "Nación Seguros",
+    "marca_slug": "nacion-seguros",
+    "nombre": "Asistencia 'Cuidado de animales domésticos' en Seguro de Hogar",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "todas",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "Sin precio publicado",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.nacion-seguros.com.ar/hogar/",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "cuidado de animales domésticos (asistencia del seguro de hogar)"
+      }
+    ],
+    "carencias": [],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://www.nacion-seguros.com.ar/hogar/"
+    },
+    "notas": "No hay seguro de mascotas independiente en el sitio oficial ni en BNA; solo una asistencia dentro del Seguro de Hogar, sin detalle de topes. Planes 'Nación Mascota' que aparecen en comparadores de terceros NO verificados.",
+    "scraping": {
+      "url": "https://www.nacion-seguros.com.ar/hogar/",
+      "metodo": "html_estatico",
+      "selector": "Asistencia 'Cuidado de animales domésticos' en Seguro de Hogar"
+    },
+    "logo": "/logos/nacion-seguros.png",
+    "logo_fuente": "nacion-seguros.com.ar"
+  }
+]

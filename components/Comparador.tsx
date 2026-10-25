@@ -48,7 +48,7 @@ export async function Comparador({
     <div className="mx-auto max-w-7xl px-4 pb-8 sm:px-6">
       <p className="mt-2 max-w-3xl text-sm text-gray-600">
         {place ? `Resultados para ${place}. ` : ""}
-        Compará obras sociales, planes de salud y seguros para mascotas. Cada precio muestra la fecha y la fuente. Si no hay monto publicado, la ficha dice Consultar precio.
+        Compará obras sociales, planes de salud y seguros para mascotas. Cada precio muestra la fecha y la fuente. Si no hay monto publicado, la ficha dice Precio a consultar.
       </p>
       <div className="mt-6 lg:grid lg:grid-cols-[16rem_minmax(0,1fr)] lg:items-start lg:gap-8">
         <Filters filters={filters} total={plans.length} zonas={zonas} />

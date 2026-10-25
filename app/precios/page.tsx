@@ -19,7 +19,9 @@ export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 export default async function PreciosPage() {
   const today = await getReferenceDate();
-  const plans = [...getPlans()].sort((a, b) => (a.precio ?? Number.MAX_SAFE_INTEGER) - (b.precio ?? Number.MAX_SAFE_INTEGER));
+  const plans = getPlans()
+    .filter((plan) => plan.precio != null && plan.estado !== "consultar" && plan.estado !== "sin_precio_publico")
+    .sort((a, b) => (a.precio ?? Number.MAX_SAFE_INTEGER) - (b.precio ?? Number.MAX_SAFE_INTEGER));
   const updated = newestVerification(plans);
 
   return (
@@ -29,7 +31,7 @@ export default async function PreciosPage() {
       <h1 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">{seo.h1}</h1>
       <DirectAnswer text={respuestaDirecta({ tipo: "precios", today })} />
       <p className="mt-3 max-w-3xl text-gray-600">
-        Cada fila muestra la fecha de verificación. Consultar precio significa que la fuente no publicó un monto.
+        Cada fila muestra un monto publicado y su fecha de verificación. Si la marca no publicó precio, la ficha dice Precio a consultar y no entra en esta tabla.
       </p>
       <div className="mt-8 overflow-x-auto rounded-2xl border border-gray-200 bg-white">
         <table className="w-full min-w-[40rem] text-left text-sm">

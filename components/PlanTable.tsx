@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Badge } from "@/components/Badge";
 import { BrandLogo } from "@/components/BrandLogo";
 import { CompareToggle } from "@/components/compare";
+import { HogarNotice } from "@/components/HogarNotice";
 import { PriceTag } from "@/components/PriceTag";
 import { StatusNotice } from "@/components/StatusNotice";
 import { VerifiedLine } from "@/components/VerifiedLine";
@@ -52,6 +53,7 @@ export function PlanTable({ plans, today }: { plans: Plan[]; today: string }) {
                   <div className="min-w-0">
                     <p className="font-bold text-gray-900">{plan.marca}</p>
                     <p className="text-sm text-gray-500">{plan.nombre}</p>
+                    <HogarNotice slug={plan.marca_slug} />
                     <p className="mt-1 text-xs text-gray-400">{tipoOptions.find((item) => item.id === plan.tipo)?.label}</p>
                   </div>
                 </div>

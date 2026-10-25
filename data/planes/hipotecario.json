@@ -1,0 +1,269 @@
+[
+  {
+    "id": "hipotecario-mascotas-1",
+    "marca": "Banco Hipotecario",
+    "marca_slug": "hipotecario",
+    "nombre": "Seguro para Mascotas – RC $2.800.000",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 1,
+    "edad_max_anios": 9,
+    "zonas": [
+      {
+        "provincia": "todas",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": 12233,
+    "precio_texto_original": "$12.233",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "responsabilidad civil",
+        "valor": "$2.800.000"
+      },
+      {
+        "item": "fallecimiento por enfermedad",
+        "valor": "$280.000"
+      },
+      {
+        "item": "fallecimiento por accidente",
+        "valor": "$280.000"
+      },
+      {
+        "item": "robo de mascota",
+        "valor": "$280.000"
+      },
+      {
+        "item": "gastos veterinarios/farmacéuticos por accidente",
+        "valor": "$560.000"
+      },
+      {
+        "item": "gastos por extravío",
+        "valor": "$140.000"
+      }
+    ],
+    "carencias": [
+      {
+        "item": "baño de mascota",
+        "dias": 180
+      },
+      {
+        "item": "castración",
+        "dias": 180
+      },
+      {
+        "item": "sacrificio",
+        "dias": 90
+      },
+      {
+        "item": "internación postquirúrgica",
+        "dias": 90
+      },
+      {
+        "item": "asistencia al parto",
+        "dias": 90
+      }
+    ],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/"
+    },
+    "notas": "Requisitos: ingreso 45 días a 9 años, permanencia hasta 13 años. Asistencias MAWDY 24/365 (transporte vet, estudios, vacunas, castración, cremación, guardería, paseador). SSN 114. Nombre del plan no publicado: se identifica por suma de RC.",
+    "scraping": {
+      "url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "metodo": "html_estatico",
+      "selector": "Seguro para Mascotas – RC $2.800.000"
+    },
+    "logo": "/logos/hipotecario.svg",
+    "logo_fuente": "hipotecario.com.ar"
+  },
+  {
+    "id": "hipotecario-mascotas-2",
+    "marca": "Banco Hipotecario",
+    "marca_slug": "hipotecario",
+    "nombre": "Seguro para Mascotas – RC $3.600.000",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 1,
+    "edad_max_anios": 9,
+    "zonas": [
+      {
+        "provincia": "todas",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": 15728,
+    "precio_texto_original": "$15.728",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "responsabilidad civil",
+        "valor": "$3.600.000"
+      },
+      {
+        "item": "fallecimiento por enfermedad",
+        "valor": "$360.000"
+      },
+      {
+        "item": "fallecimiento por accidente",
+        "valor": "$360.000"
+      },
+      {
+        "item": "robo de mascota",
+        "valor": "$360.000"
+      },
+      {
+        "item": "gastos veterinarios/farmacéuticos por accidente",
+        "valor": "$720.000"
+      },
+      {
+        "item": "gastos por extravío",
+        "valor": "$180.000"
+      }
+    ],
+    "carencias": [
+      {
+        "item": "baño de mascota",
+        "dias": 180
+      },
+      {
+        "item": "castración",
+        "dias": 180
+      },
+      {
+        "item": "sacrificio",
+        "dias": 90
+      },
+      {
+        "item": "internación postquirúrgica",
+        "dias": 90
+      },
+      {
+        "item": "asistencia al parto",
+        "dias": 90
+      }
+    ],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/"
+    },
+    "notas": "Requisitos: ingreso 45 días a 9 años, permanencia hasta 13 años. Asistencias MAWDY 24/365 (transporte vet, estudios, vacunas, castración, cremación, guardería, paseador). SSN 114. Nombre del plan no publicado: se identifica por suma de RC.",
+    "scraping": {
+      "url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "metodo": "html_estatico",
+      "selector": "Seguro para Mascotas – RC $3.600.000"
+    },
+    "logo": "/logos/hipotecario.svg",
+    "logo_fuente": "hipotecario.com.ar"
+  },
+  {
+    "id": "hipotecario-mascotas-3",
+    "marca": "Banco Hipotecario",
+    "marca_slug": "hipotecario",
+    "nombre": "Seguro para Mascotas – RC $4.000.000",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 1,
+    "edad_max_anios": 9,
+    "zonas": [
+      {
+        "provincia": "todas",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": 17476,
+    "precio_texto_original": "$17.476",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "responsabilidad civil",
+        "valor": "$4.000.000"
+      },
+      {
+        "item": "fallecimiento por enfermedad",
+        "valor": "$400.000"
+      },
+      {
+        "item": "fallecimiento por accidente",
+        "valor": "$400.000"
+      },
+      {
+        "item": "robo de mascota",
+        "valor": "$400.000"
+      },
+      {
+        "item": "gastos veterinarios/farmacéuticos por accidente",
+        "valor": "$800.000"
+      },
+      {
+        "item": "gastos por extravío",
+        "valor": "$200.000"
+      }
+    ],
+    "carencias": [
+      {
+        "item": "baño de mascota",
+        "dias": 180
+      },
+      {
+        "item": "castración",
+        "dias": 180
+      },
+      {
+        "item": "sacrificio",
+        "dias": 90
+      },
+      {
+        "item": "internación postquirúrgica",
+        "dias": 90
+      },
+      {
+        "item": "asistencia al parto",
+        "dias": 90
+      }
+    ],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/"
+    },
+    "notas": "Requisitos: ingreso 45 días a 9 años, permanencia hasta 13 años. Asistencias MAWDY 24/365 (transporte vet, estudios, vacunas, castración, cremación, guardería, paseador). SSN 114. Nombre del plan no publicado: se identifica por suma de RC.",
+    "scraping": {
+      "url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "metodo": "html_estatico",
+      "selector": "Seguro para Mascotas – RC $4.000.000"
+    },
+    "logo": "/logos/hipotecario.svg",
+    "logo_fuente": "hipotecario.com.ar"
+  }
+]

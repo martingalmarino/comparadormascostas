@@ -86,6 +86,10 @@ function matchesAge(plan: Plan, meses: number) {
   return true;
 }
 
+function sinMontoPublicado(plan: Plan) {
+  return plan.precio == null || plan.estado === "consultar" || plan.estado === "sin_precio_publico";
+}
+
 function priceAsc(a: Plan, b: Plan) {
   if (a.precio == null && b.precio == null) return a.marca.localeCompare(b.marca, "es");
   if (a.precio == null) return 1;
@@ -115,6 +119,9 @@ export function applyFilters(plans: Plan[], filters: Filters) {
   });
 
   return filtered.sort((a, b) => {
+    const aSin = sinMontoPublicado(a);
+    const bSin = sinMontoPublicado(b);
+    if (aSin !== bSin) return aSin ? 1 : -1;
     if (filters.orden === "cobertura") {
       const byCoverage = b.coberturas.length - a.coberturas.length;
       return byCoverage === 0 ? priceAsc(a, b) : byCoverage;

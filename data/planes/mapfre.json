@@ -1,0 +1,64 @@
+[
+  {
+    "id": "mapfre-mascotas",
+    "marca": "MAPFRE",
+    "marca_slug": "mapfre",
+    "nombre": "Seguro para Mascotas",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min_meses": 3,
+    "edad_max_anios": 8,
+    "zonas": [
+      {
+        "provincia": "todas",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "Sin precio publicado (cotización con asesor)",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.mapfre.com.ar/seguros-mascotas/",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "gastos veterinarios por accidente"
+      },
+      {
+        "item": "robo"
+      },
+      {
+        "item": "extravío (gastos de búsqueda)"
+      },
+      {
+        "item": "estadía en residencia si el dueño es hospitalizado"
+      },
+      {
+        "item": "sacrificio necesario y eliminación del cuerpo"
+      },
+      {
+        "item": "responsabilidad civil"
+      }
+    ],
+    "carencias": [],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://forms.mapfre.com.ar/personas/seguro-de-mascotas/solicitar-asesor.html"
+    },
+    "notas": "Perros y gatos de 3 meses a menos de 9 años, compañía o vigilancia, con vacunas al día. 24 h, todo el país. Se vende por módulos; topes según plan. Venta telefónica 0810 222 0468.",
+    "scraping": {
+      "url": "https://www.mapfre.com.ar/seguros-mascotas/",
+      "metodo": "html_estatico",
+      "selector": "Seguro para Mascotas"
+    },
+    "logo": "/logos/mapfre.png",
+    "logo_fuente": "mapfre.com.ar"
+  }
+]

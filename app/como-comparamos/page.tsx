@@ -26,7 +26,7 @@ export default function Page() {
         </p>
         <h2>Qué entra en una ficha</h2>
         <p>
-          Cada plan vive en un JSON por marca: precio en pesos, especie, edad, zona, coberturas, carencias, fecha de verificación y URL de la fuente. Si no hay precio público, la ficha dice “Consultar precio”. No completamos huecos con un promedio. El relevamiento vigente es el del 24/10/2026.
+          Cada plan vive en un JSON por marca: precio en pesos, especie, edad, zona, coberturas, carencias, fecha de verificación y URL de la fuente. Si no hay precio público, la ficha dice “Precio a consultar”. No completamos huecos con un promedio. El relevamiento vigente es el del 24/10/2026.
         </p>
         <h2>Datos de ejemplo</h2>
         <p>

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "sancor-hogar-premium-mascotas",
+    "marca": "Sancor Seguros",
+    "marca_slug": "sancor-seguros",
+    "nombre": "Cobertura para mascotas en Hogar Premium",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "todas",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "Sin precio publicado (vía productor asesor)",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.sancorseguros.com.ar/personas/hogar/hogar-premium",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "atención veterinaria por accidente"
+      },
+      {
+        "item": "extravío"
+      },
+      {
+        "item": "robo"
+      },
+      {
+        "item": "guardería"
+      },
+      {
+        "item": "asistencia virtual de salud y cuidado"
+      }
+    ],
+    "carencias": [],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://www.sancorseguros.com.ar/personas/hogar/hogar-premium"
+    },
+    "notas": "Solo dentro del seguro Hogar Premium; topes no publicados. Precios de 'Sancor Mascotas' en comparadores de terceros NO verificados.",
+    "scraping": {
+      "url": "https://www.sancorseguros.com.ar/personas/hogar/hogar-premium",
+      "metodo": "html_estatico",
+      "selector": "Cobertura para mascotas en Hogar Premium"
+    },
+    "logo": "/logos/sancor-seguros.svg",
+    "logo_fuente": "sancorseguros.com.ar"
+  }
+]

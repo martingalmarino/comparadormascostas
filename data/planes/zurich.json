@@ -1,0 +1,63 @@
+[
+  {
+    "id": "zurich-hogar-mascotas",
+    "marca": "Zurich",
+    "marca_slug": "zurich",
+    "nombre": "Adicional Mascotas en Seguro de Hogar",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "todas",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "Cotización online, sin precio publicado",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://mascotas.zurich.ar.onmtc.com/",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "gastos veterinarios por accidente"
+      },
+      {
+        "item": "avisos por extravío",
+        "valor": "hasta 20% de la suma asegurada"
+      },
+      {
+        "item": "eutanasia por accidente, enfermedad o vejez",
+        "valor": "hasta 25% de la suma asegurada"
+      },
+      {
+        "item": "asistencia veterinaria (consultas, vacunas, castración, cirugía, cremación)"
+      }
+    ],
+    "carencias": [
+      {
+        "item": "varios servicios de asistencia",
+        "dias": 90
+      }
+    ],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://mascotas.zurich.ar.onmtc.com/"
+    },
+    "notas": "Adicional del Seguro de Hogar, perros y/o gatos. Condiciones: condgen asistencia mascotas ene-24.",
+    "scraping": {
+      "url": "https://mascotas.zurich.ar.onmtc.com/",
+      "metodo": "html_estatico",
+      "selector": "Adicional Mascotas en Seguro de Hogar"
+    },
+    "logo": "/logos/zurich.svg",
+    "logo_fuente": "zurich.com.ar"
+  }
+]

@@ -29,10 +29,17 @@ const sizes: Record<string, { width: number; height: number }> = {
 };
 
 const compactLogos = new Set(["/logos/naranja-x.png", "/logos/santander.png"]);
-const squareLogos = new Set(["/logos/la-caja.png"]);
+const fixedHeightLogos = new Set([
+  "/logos/hipotecario.svg",
+  "/logos/la-caja.png",
+  "/logos/mapfre.png",
+  "/logos/nacion-seguros.png",
+  "/logos/sancor-seguros.svg",
+  "/logos/zurich.svg",
+]);
 
 export function logoMaxBox(src: string, natural: { width: number; height: number }) {
-  if (squareLogos.has(src)) return { height: 44, maxWidthPx: undefined as number | undefined };
+  if (fixedHeightLogos.has(src)) return { height: 28, maxWidthPx: undefined as number | undefined };
   if (!compactLogos.has(src)) return { height: 32, maxWidthPx: undefined as number | undefined };
   return { height: Math.min(28, natural.height), maxWidthPx: natural.width };
 }

@@ -31,7 +31,7 @@ export default function VeterinariasPage() {
           <li>¿El plan cubre solo la consulta o también la medicación que sale de esa visita?</li>
         </ul>
         <p>
-          Si la ficha dice “Consultar precio”, no completamos el número. Pedile la cotización a la marca y comparala con el{" "}
+          Si la ficha dice “Precio a consultar”, no completamos el número. Pedile la cotización a la marca y comparala con el{" "}
           <Link href="/comparar">comparador</Link>.
         </p>
       </div>

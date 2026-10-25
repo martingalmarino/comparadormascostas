@@ -3,6 +3,7 @@ import { Badge } from "@/components/Badge";
 import { BrandLogo } from "@/components/BrandLogo";
 import { CompareToggle } from "@/components/compare";
 import { CoverageList } from "@/components/CoverageList";
+import { HogarNotice } from "@/components/HogarNotice";
 import { PriceTag } from "@/components/PriceTag";
 import { StatusNotice } from "@/components/StatusNotice";
 import { VerifiedLine } from "@/components/VerifiedLine";
@@ -22,6 +23,7 @@ export function PlanCard({ plan, today }: { plan: Plan; today: string }) {
               {...(plan.logo ? logoSize(plan.logo) : { width: 160, height: 32 })}
             />
             <h3 className="text-lg font-bold text-gray-900">{plan.nombre}</h3>
+            <HogarNotice slug={plan.marca_slug} />
           </div>
           <PriceTag plan={plan} today={today} />
         </div>

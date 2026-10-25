@@ -117,7 +117,7 @@ export function faqsEspecie(especie: Especie, today: string) {
     },
     {
       q: `¿Cuántos planes para ${nombre} hay en el comparador?`,
-      a: `Hay ${plans.length} planes de ${marcas} marcas que declaran cobertura para ${nombre}. ${sinPrecio} no publican un monto y figuran como consultar precio.`,
+      a: `Hay ${plans.length} planes de ${marcas} marcas que declaran cobertura para ${nombre}. ${sinPrecio} no publican un monto y figuran como precio a consultar.`,
     },
     {
       q: "¿Qué precios están vencidos?",
@@ -218,7 +218,7 @@ function precioLinea(plans: Plan[], today: string) {
     const best = masBarato(conMonto);
     return `precio vencido ${formatArs(best.precio as number)}/mes, verificado ${formatDate(best.fecha_verificacion)}`;
   }
-  return `sin precio publicado, verificado ${formatDate(newestVerification(plans))}`;
+  return `precio a consultar, verificado ${formatDate(newestVerification(plans))}`;
 }
 
 export function llmsTxt(today: string) {
@@ -264,7 +264,7 @@ function provinciasDe(plan: Plan) {
 }
 
 function precioTabla(plan: Plan, today: string) {
-  if (plan.precio == null) return "sin precio";
+  if (plan.precio == null || plan.estado === "consultar") return "precio a consultar";
   const monto = `${formatArs(plan.precio)}/mes`;
   if (daysBetween(plan.fecha_verificacion, today) > siteConfig.priceStaleDays) return `precio vencido ${monto}`;
   return monto;

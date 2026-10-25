@@ -37,6 +37,18 @@ test("elige un solo plan por marca, el de menor precio", () => {
   );
 });
 
+test("excluye precio a consultar del ranking de menor precio", () => {
+  const plans = [
+    plan({ id: "consulta", marca_slug: "consulta", precio: null, estado: "consultar", fecha_verificacion: "2026-10-24", tipo: "seguro" }),
+    plan({ id: "ok", marca_slug: "ok", precio: 9000, estado: "verificado", fecha_verificacion: "2026-10-20", tipo: "seguro" }),
+  ];
+  const result = getLowestPricePlans(plans, { today });
+  assert.deepEqual(
+    result.map((item) => item.id),
+    ["ok"],
+  );
+});
+
 test("excluye planes vencidos y los que requieren revisión", () => {
   const plans = [
     plan({ id: "viejo", marca_slug: "viejo", precio: 1000, estado: "verificado", fecha_verificacion: "2026-01-01", tipo: "seguro" }),

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "la-caja-hogar-mascotas",
+    "marca": "La Caja",
+    "marca_slug": "la-caja",
+    "nombre": "Asistencia mascotas en Seguro de Hogar",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "todas",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "Sin precio publicado (cotizador de Hogar)",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://seguros.lacaja.com.ar/personas-seguro-de-hogar",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "veterinaria online"
+      },
+      {
+        "item": "atención en centro veterinario"
+      },
+      {
+        "item": "castración"
+      },
+      {
+        "item": "reintegro de medicamentos"
+      },
+      {
+        "item": "traslados"
+      },
+      {
+        "item": "guardería"
+      }
+    ],
+    "carencias": [],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://seguros.lacaja.com.ar/personas-seguro-de-hogar"
+    },
+    "notas": "Solo como asistencia incluida en el Seguro de Hogar; topes según plan. Contratación online, app, WhatsApp. Asistencia 0800-666-2252.",
+    "scraping": {
+      "url": "https://seguros.lacaja.com.ar/personas-seguro-de-hogar",
+      "metodo": "html_estatico",
+      "selector": "Asistencia mascotas en Seguro de Hogar"
+    },
+    "logo": "/logos/la-caja.png",
+    "logo_fuente": "lacaja.com.ar"
+  }
+]

@@ -20,9 +20,10 @@ export function PriceTag({
   const alignClass = align === "center" ? "text-center" : "text-right";
   const justifyClass = align === "center" ? "justify-center" : "justify-end";
   if (plan.precio == null || estado === "consultar" || estado === "sin_precio_publico") {
+    const etiqueta = estado === "consultar" ? "Precio a consultar" : "Consultar precio";
     return (
       <div className={alignClass}>
-        <p className="text-sm font-semibold text-gray-800">Consultar precio</p>
+        <p className="text-sm font-semibold text-gray-800">{etiqueta}</p>
         {plan.precio_texto_original ? <p className="mt-1 text-xs text-gray-500">{plan.precio_texto_original}</p> : null}
       </div>
     );
