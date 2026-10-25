@@ -4,20 +4,6 @@ import type { Plan } from "@/lib/plan-schema";
 import { precioVigente } from "@/lib/plan-status";
 import { PROVINCIA_TODAS, jurisdiccionLabel } from "@/lib/zonas";
 
-const etiquetasNulas: { id: string; label: string; vacio: (marca: Marca) => boolean }[] = [
-  { id: "razon_social", label: "Razón social", vacio: (marca) => marca.empresa.razon_social == null || marca.empresa.razon_social.valor == null },
-  { id: "cuit", label: "CUIT", vacio: (marca) => marca.empresa.cuit == null || marca.empresa.cuit.valor == null },
-  { id: "ssn", label: "Número de inscripción en la SSN", vacio: (marca) => marca.empresa.ssn == null },
-  { id: "contratar", label: "Cómo se contrata", vacio: (marca) => marca.como_se_usa.contratar == null },
-  { id: "reintegro", label: "Cómo se pide el reintegro", vacio: (marca) => marca.como_se_usa.reintegro == null },
-  { id: "siniestro", label: "Cómo se denuncia un siniestro", vacio: (marca) => marca.como_se_usa.siniestro == null },
-  { id: "baja", label: "Cómo se da de baja", vacio: (marca) => marca.como_se_usa.baja == null },
-  { id: "red_veterinaria", label: "Red de veterinarias", vacio: (marca) => marca.red_veterinaria == null },
-  { id: "edad", label: "Edades de ingreso y permanencia", vacio: (marca) => marca.edad == null },
-  { id: "carencias", label: "Carencias", vacio: (marca) => marca.carencias == null },
-  { id: "otros_productos", label: "Otros productos", vacio: (marca) => marca.otros_productos == null },
-];
-
 const tipoEtiqueta: Record<string, string> = {
   aseguradora: "Aseguradora",
   aseguradora_via_productor: "Aseguradora",
@@ -87,10 +73,66 @@ export function enlaceCanal(valor: string, fuenteUrl: string) {
   return { href: undefined, externo: false };
 }
 
-export function loQueNoPublica(marca: Marca) {
-  const vistos = new Set(marca.no_publica.map((item) => item.toLocaleLowerCase("es")));
-  const extra = etiquetasNulas.filter((item) => item.vacio(marca) && !vistos.has(item.label.toLocaleLowerCase("es"))).map((item) => item.label);
-  return [...marca.no_publica, ...extra];
+export function esFraseZona(texto: string) {
+  return /^(nacional|todo el pa[ií]s)\.?$/i.test(texto.trim());
+}
+
+export function textoZona(plan: Plan) {
+  const cubreTodas = plan.zonas.some((zona) => zona.provincia === PROVINCIA_TODAS);
+  const resumenEsZona = plan.resumen ? esFraseZona(plan.resumen) : false;
+  const detalleEsZona = plan.zona_detalle ? esFraseZona(plan.zona_detalle) : false;
+  if (cubreTodas || resumenEsZona || detalleEsZona) return "Todo el país.";
+  if (plan.zonas.length) {
+    return `Disponible en ${plan.zonas.map((zona) => jurisdiccionLabel(zona.provincia) ?? zona.provincia).join(", ")}.`;
+  }
+  if (plan.zona_detalle) return plan.zona_detalle;
+  return "La fuente no confirma en qué provincias está.";
+}
+
+export function resumenVisible(plan: Plan) {
+  if (!plan.resumen || esFraseZona(plan.resumen)) return null;
+  if (plan.zona_detalle && plan.resumen.trim() === plan.zona_detalle.trim()) return null;
+  return plan.resumen;
+}
+
+export function textoEdad(plan: Plan) {
+  const partes: string[] = [];
+  if (plan.edad_min_meses != null) partes.push(`desde ${plan.edad_min_meses} meses`);
+  if (plan.edad_max_anios != null) partes.push(`hasta ${plan.edad_max_anios} años`);
+  return partes.join(" · ");
+}
+
+export function textoCarenciaMarca(valor: string) {
+  return `Carencia publicada por la marca: ${valor}`;
+}
+
+export function textoInconsistencia(descripcion: string) {
+  const abre = "“";
+  const cierra = "”";
+  const citas = [...descripcion.matchAll(/'([^']+)'/g)].map((item) => item[1].trim()).filter(Boolean);
+  let izquierda = citas[0];
+  let derecha = citas[1];
+  if (izquierda && !derecha) {
+    const resto = descripcion
+      .split(/\bindican\b|\bfigura(?:\s+a)?\b/i)
+      .pop()
+      ?.replace(/[. ]+$/g, "")
+      .replace(/^['"“”]+|['"“”]+$/g, "")
+      .trim();
+    if (resto && resto.toLocaleLowerCase("es") !== izquierda.toLocaleLowerCase("es") && !resto.includes(izquierda)) derecha = resto;
+  }
+  if (!izquierda || !derecha) {
+    const montos = [...descripcion.matchAll(/\$\s?\d[\d.]*/g)].map((item) => item[0].replace(/\s/g, ""));
+    if (montos.length >= 2) {
+      izquierda = montos[0];
+      derecha = montos[1];
+    }
+  }
+  if (izquierda && derecha) {
+    return `La web indica ${abre}${izquierda}${cierra} y también ${abre}${derecha}${cierra}. Confirmalo con la marca.`;
+  }
+  const limpio = descripcion.replace(/\.$/, "");
+  return `La web indica ${abre}${limpio}${cierra}. Confirmalo con la marca.`;
 }
 
 export function preciosVigentes(plans: Plan[], today: string) {
@@ -161,7 +203,7 @@ export function faqsDeMarca(marca: Marca, plans: Plan[], today: string, nombre: 
     faqs.push({ q: `¿Cómo se contrata ${nombre}?`, a: marca.como_se_usa.contratar.valor });
   }
   if (marca.carencias?.valor) {
-    faqs.push({ q: `¿Qué carencia publica ${nombre}?`, a: marca.carencias.valor });
+    faqs.push({ q: `¿Qué carencia publica ${nombre}?`, a: textoCarenciaMarca(marca.carencias.valor) });
   }
   if (marca.empresa.cuit?.valor) {
     faqs.push({ q: `¿Cuál es el CUIT de ${nombre}?`, a: `El CUIT publicado es ${marca.empresa.cuit.valor}.` });

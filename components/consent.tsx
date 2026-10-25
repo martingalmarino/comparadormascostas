@@ -75,7 +75,7 @@ export function ConsentProvider({ children }: { children: React.ReactNode }) {
     <ConsentContext.Provider value={choice}>
       {children}
       {ready && !choice ? (
-        <div className="fixed inset-x-0 bottom-0 z-50 border-t border-gray-200 bg-white p-4 shadow-lg">
+        <div className="fixed inset-x-0 bottom-0 z-[60] border-t border-gray-200 bg-white p-4 shadow-lg">
           <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-gray-700">
               Usamos cookies de medición si lo aceptás. Los datos del formulario se tratan aparte, según la{" "}

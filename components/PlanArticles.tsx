@@ -9,11 +9,21 @@ import { StatusNotice } from "@/components/StatusNotice";
 import { VerifiedLine } from "@/components/VerifiedLine";
 import { WaitingPeriods } from "@/components/WaitingPeriods";
 import { especieLabel } from "@/lib/format";
+import { resumenVisible, textoEdad, textoZona } from "@/lib/marca-ficha";
 import { productJsonLd } from "@/lib/seo";
 import type { Plan } from "@/lib/plan-schema";
-import { PROVINCIA_TODAS, jurisdiccionLabel } from "@/lib/zonas";
 
-export function PlanArticles({ plans, today, showPros }: { plans: Plan[]; today: string; showPros: boolean }) {
+export function PlanArticles({
+  plans,
+  today,
+  showPros,
+  carenciaMarca,
+}: {
+  plans: Plan[];
+  today: string;
+  showPros: boolean;
+  carenciaMarca?: { valor: string; fuente_url: string; fecha_verificacion: string } | null;
+}) {
   return (
     <div className="space-y-10">
       {plans.map((plan) => (
@@ -23,22 +33,12 @@ export function PlanArticles({ plans, today, showPros }: { plans: Plan[]; today:
               <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">{plan.marca}</p>
               <h2 className="text-2xl font-bold text-gray-900">{plan.nombre}</h2>
               <HogarNotice slug={plan.marca_slug} />
-              {plan.resumen ? <p className="mt-1 text-sm text-gray-600">{plan.resumen}</p> : null}
+              {resumenVisible(plan) ? <p className="mt-1 text-sm text-gray-600">{resumenVisible(plan)}</p> : null}
               <p className="mt-2 text-sm text-gray-600">
                 {plan.especies.map((especie) => especieLabel(especie)).join(", ")}
-                {plan.edad_min_meses != null ? ` · desde ${plan.edad_min_meses} meses` : ""}
-                {plan.edad_max_anios != null ? ` · hasta ${plan.edad_max_anios} años` : ""}
+                {textoEdad(plan) ? ` · ${textoEdad(plan)}` : ""}
               </p>
-              {plan.zonas.length === 0 ? (
-                <p className="mt-1 text-sm text-amber-800">La fuente no confirma en qué provincias está.</p>
-              ) : (
-                <p className="mt-1 text-sm text-gray-600">
-                  {plan.zonas.some((zona) => zona.provincia === PROVINCIA_TODAS)
-                    ? "Todo el país."
-                    : `Disponible en ${plan.zonas.map((zona) => jurisdiccionLabel(zona.provincia) ?? zona.provincia).join(", ")}.`}
-                </p>
-              )}
-              {plan.zona_detalle ? <p className="mt-1 text-sm text-gray-600">{plan.zona_detalle}</p> : null}
+              <p className={`mt-1 text-sm ${textoZona(plan).startsWith("La fuente no") ? "text-amber-800" : "text-gray-600"}`}>{textoZona(plan)}</p>
             </div>
             <PriceTag plan={plan} today={today} size="lg" tone="primary" />
           </div>
@@ -66,7 +66,7 @@ export function PlanArticles({ plans, today, showPros }: { plans: Plan[]; today:
             <section className="rounded-2xl border border-gray-200 bg-white p-5">
               <h3 className="font-bold text-amber-700">Carencias</h3>
               <div className="mt-4">
-                <WaitingPeriods plan={plan} />
+                <WaitingPeriods plan={plan} carenciaMarca={carenciaMarca} />
               </div>
             </section>
           </div>

@@ -106,7 +106,7 @@ export function LeadForm({
       <p className="mt-1 text-sm text-gray-500">
         {marca === "Consulta general" ? "Dejanos tus datos y te respondemos nosotros." : `Dejanos tus datos para que ${marca} te contacte.`}
       </p>
-      <div className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+      <div className="absolute -left-[9999px] hidden h-px w-px overflow-hidden" aria-hidden="true">
         <label>
           Empresa
           <input name="empresa_web" tabIndex={-1} autoComplete="off" />

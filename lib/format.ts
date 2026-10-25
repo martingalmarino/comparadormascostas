@@ -53,6 +53,16 @@ export function formatMonthYear(iso: string) {
   return `${name} ${year}`;
 }
 
+const mesesCortos = ["ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sep.", "oct.", "nov.", "dic."];
+
+/** «oct. 2026», a partir de una fecha de verificación. */
+export function formatMonthAbbr(iso: string) {
+  const [year, month] = iso.slice(0, 10).split("-");
+  const name = mesesCortos[Number(month) - 1];
+  if (!year || !name) return iso;
+  return `${name} ${year}`;
+}
+
 export function marcaIniciales(marcaSlug: string, marca: string) {
   if (siglas[marcaSlug]) return siglas[marcaSlug];
   const parts = marca.split(/\s+/).filter(Boolean);

@@ -122,6 +122,7 @@
       "gato"
     ],
     "edad_min_meses": 3,
+    "edad_max_anios": 8,
     "zonas": [
       {
         "provincia": "todas",
@@ -177,6 +178,7 @@
       "gato"
     ],
     "edad_min_meses": 3,
+    "edad_max_anios": 8,
     "zonas": [
       {
         "provincia": "todas",

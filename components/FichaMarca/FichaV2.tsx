@@ -20,16 +20,17 @@ import {
   faqsDeMarca,
   hostFuente,
   ingresoComun,
-  loQueNoPublica,
   maxFechaVerificacion,
   organizationMarcaJsonLd,
   preciosVigentes,
+  textoEdad,
+  textoInconsistencia,
   vigenciaComun,
 } from "@/lib/marca-ficha";
 import type { Marca } from "@/lib/marca-schema";
 import { historialVisible } from "@/lib/marcas";
 import { logoSize } from "@/lib/logo";
-import { getPlans } from "@/lib/plans";
+import { getMarcas, getPlans } from "@/lib/plans";
 import type { Plan } from "@/lib/plan-schema";
 import { precioVigente } from "@/lib/plan-status";
 import { respuestaDirecta } from "@/lib/geo";
@@ -90,7 +91,8 @@ export function FichaV2({
   const alcance = alcancePlanes(plans);
   const ingreso = ingresoComun(plans);
   const vigencia = vigenciaComun(plans);
-  const faltantes = loQueNoPublica(ficha);
+  const faltantes = ficha.no_publica;
+  const nombres = new Map(getMarcas().map((item) => [item.slug, item.nombre]));
   const alternativas = alternativasCercanas(getPlans(), marca, today);
   const historial = historialVisible(marca)
     .map((serie) => ({ ...serie, plan: plans.find((plan) => plan.id === serie.planId) }))
@@ -210,10 +212,7 @@ export function FichaV2({
                           {plan.nombre}
                           {esMenor ? <span className="ml-2 rounded bg-emerald-50 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-emerald-700">menor precio</span> : null}
                         </td>
-                        <td className="py-3 pr-3 text-slate-600">
-                          {plan.edad_min_meses != null ? `${plan.edad_min_meses} meses` : "—"}
-                          {plan.edad_max_anios != null ? ` – ${plan.edad_max_anios} años` : ""}
-                        </td>
+                        <td className="py-3 pr-3 text-slate-600">{textoEdad(plan)}</td>
                         <td className="py-3 pr-3 text-slate-600">
                           {plan.coberturas.slice(0, 3).map((item) => item.item).join(" · ") || "Sin detalle"}
                           <a href={`#${plan.id}`} className="mt-1 block text-xs font-semibold text-indigo-700">
@@ -234,7 +233,7 @@ export function FichaV2({
               </table>
             </div>
             <div className="mt-8">
-              <PlanArticles plans={plans} today={today} showPros={false} />
+              <PlanArticles plans={plans} today={today} showPros={false} carenciaMarca={ficha.carencias} />
             </div>
             {fuentesDe(plans.map((plan) => ({ fuente_url: plan.fuente_url, fecha_verificacion: plan.fecha_verificacion }))).map((fuente) => (
               <Fuente key={fuente.url} url={fuente.url} fecha={fuente.fecha} />
@@ -353,7 +352,7 @@ export function FichaV2({
                   <ul className="mt-2 space-y-3">
                     {ficha.inconsistencias.map((item) => (
                       <li key={item.descripcion} className="text-sm text-slate-700">
-                        {item.descripcion} Confirmalo con la marca.{" "}
+                        {textoInconsistencia(item.descripcion)}{" "}
                         <a href={item.fuente_url} target="_blank" rel="noopener noreferrer" className="font-semibold text-indigo-700 underline">
                           {hostFuente(item.fuente_url)}
                         </a>
@@ -434,7 +433,7 @@ export function FichaV2({
                 {related.map((pair) => (
                   <li key={pair.slug}>
                     <Link href={`/versus/${pair.slug}`} className="inline-flex rounded-full border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-700 hover:border-indigo-200">
-                      {pair.a} vs {pair.b}
+                      {nombres.get(pair.a) ?? pair.a} vs {nombres.get(pair.b) ?? pair.b}
                     </Link>
                   </li>
                 ))}

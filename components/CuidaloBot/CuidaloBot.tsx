@@ -181,9 +181,9 @@ export function CuidaloBot({ plans }: { plans: BotPlan[] }) {
       <button
         ref={launcherRef}
         type="button"
-        className={`fixed bottom-[100px] right-4 z-50 inline-flex items-center gap-2 rounded-full bg-slate-900 py-2 pl-2 pr-4 text-sm font-semibold text-white shadow-lg shadow-slate-900/25 lg:bottom-6 lg:right-6 ${open ? "pointer-events-none invisible" : ""}`}
-        tabIndex={open ? -1 : 0}
-        aria-hidden={open}
+        className={`fixed bottom-[100px] right-4 z-50 inline-flex items-center gap-2 rounded-full bg-slate-900 py-2 pl-2 pr-4 text-sm font-semibold text-white shadow-lg shadow-slate-900/25 lg:bottom-6 lg:right-6 ${open || consent === null ? "pointer-events-none invisible" : ""}`}
+        tabIndex={open || consent === null ? -1 : 0}
+        aria-hidden={open || consent === null}
         aria-expanded={open}
         aria-controls={titleId}
         onClick={() => setOpen(true)}
@@ -199,7 +199,7 @@ export function CuidaloBot({ plans }: { plans: BotPlan[] }) {
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          className="fixed inset-x-0 bottom-0 top-3 z-[60] flex flex-col overflow-hidden rounded-t-2xl border border-slate-200 bg-slate-50 shadow-2xl lg:inset-auto lg:bottom-6 lg:right-6 lg:h-[720px] lg:max-h-[calc(100dvh-3rem)] lg:w-[400px] lg:rounded-2xl"
+          className="fixed inset-x-0 bottom-0 top-3 z-[70] flex flex-col overflow-hidden rounded-t-2xl border border-slate-200 bg-slate-50 shadow-2xl lg:inset-auto lg:bottom-6 lg:right-6 lg:h-[720px] lg:max-h-[calc(100dvh-3rem)] lg:w-[400px] lg:rounded-2xl"
         >
           <div className="flex items-center gap-3 border-b border-slate-200 bg-white px-4 py-3">
             <BotAvatar px={36} icon={23} />

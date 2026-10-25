@@ -99,13 +99,25 @@ export function itemListJsonLd(plans: Plan[]) {
   };
 }
 
+function esZona(texto: string) {
+  return /^(nacional|todo el pa[ií]s)\.?$/i.test(texto.trim());
+}
+
+export function descripcionProducto(plan: Plan) {
+  const coberturas = plan.coberturas.map((item) => item.item).filter(Boolean);
+  if (coberturas.length) return coberturas.join(", ");
+  if (plan.resumen && !esZona(plan.resumen)) return plan.resumen;
+  const tipo = tipoOptions.find((item) => item.id === plan.tipo)?.label ?? plan.tipo;
+  return `${tipo} para mascotas de ${plan.marca}.`;
+}
+
 export function productNode(plan: Plan, today: string) {
   const tipo = tipoOptions.find((item) => item.id === plan.tipo)?.label ?? plan.tipo;
   const url = `${siteConfig.domain}/planes/${plan.marca_slug}#${plan.id}`;
   const data: Record<string, unknown> = {
     "@type": "Product",
     name: `${plan.marca} ${plan.nombre}`,
-    description: plan.resumen || `${tipo} para mascotas de ${plan.marca}.`,
+    description: descripcionProducto(plan),
     brand: { "@type": "Brand", name: plan.marca },
     category: tipo,
     url,

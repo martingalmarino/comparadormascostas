@@ -1,6 +1,28 @@
+import { formatDate } from "@/lib/format";
+import { hostFuente, textoCarenciaMarca } from "@/lib/marca-ficha";
 import type { Plan } from "@/lib/plan-schema";
 
-export function WaitingPeriods({ plan }: { plan: Plan }) {
+export function WaitingPeriods({
+  plan,
+  carenciaMarca,
+}: {
+  plan: Plan;
+  carenciaMarca?: { valor: string; fuente_url: string; fecha_verificacion: string } | null;
+}) {
+  if (!plan.carencias.length && !plan.carencias_texto && carenciaMarca?.valor) {
+    return (
+      <div>
+        <p className="text-sm text-gray-700">{textoCarenciaMarca(carenciaMarca.valor)}</p>
+        <p className="mt-2 text-xs text-gray-500">
+          Fuente:{" "}
+          <a href={carenciaMarca.fuente_url} className="underline decoration-gray-300 underline-offset-2 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">
+            {hostFuente(carenciaMarca.fuente_url)}
+          </a>{" "}
+          · consultado {formatDate(carenciaMarca.fecha_verificacion)}
+        </p>
+      </div>
+    );
+  }
   if (!plan.carencias.length && !plan.carencias_texto) {
     return <p className="text-sm text-gray-600">La fuente no detalla carencias.</p>;
   }

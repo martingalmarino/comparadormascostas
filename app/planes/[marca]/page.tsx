@@ -13,7 +13,7 @@ import { PlanArticles } from "@/components/PlanArticles";
 import { StickyLeadCTA } from "@/components/StickyLeadCTA";
 import { getReferenceDate } from "@/lib/dates";
 import { fichaV2 } from "@/lib/ficha-v2";
-import { formatMonthYear } from "@/lib/format";
+import { descripcionFicha, tituloFicha } from "@/lib/ficha-meta";
 import { respuestaDirecta } from "@/lib/geo";
 import { logoSize } from "@/lib/logo";
 import { getMarca } from "@/lib/marcas";
@@ -31,14 +31,13 @@ export async function generateMetadata({ params }: { params: Promise<{ marca: st
   const { marca } = await params;
   const seo = brandEntry(marca);
   if (!seo) return { title: "Marca no encontrada" };
-  if (!fichaV2(marca)) return pageMetadata({ ...seo, noindex: !seo.index });
   const today = await getReferenceDate();
   const plans = getPlansByMarca(marca);
-  const mes = formatMonthYear(newestVerification(plans));
   return pageMetadata({
-    title: `${plans[0].marca} seguro de mascotas: planes, precios y cobertura (${mes})`,
-    description: respuestaDirecta({ tipo: "marca", today, slug: marca }),
+    title: tituloFicha(marca, plans[0].marca, plans),
+    description: descripcionFicha(plans[0].marca, plans, today),
     path: seo.path,
+    absolute: true,
     noindex: !seo.index,
   });
 }
@@ -70,7 +69,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
     },
   ];
 
-  if (fichaV2(marca) && seo) {
+  if (fichaV2() && seo) {
     const ficha = getMarca(marca);
     if (ficha) {
       return <FichaV2 marca={marca} ficha={ficha} plans={plans} today={today} seo={seo} related={related} faqsBase={faqs} />;
@@ -117,7 +116,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
                 {related.map((pair) => (
                   <li key={pair.slug}>
                     <Link href={`/versus/${pair.slug}`} className="inline-flex rounded-full border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-700 hover:border-indigo-200">
-                      {pair.a} vs {pair.b}
+                      {(getMarcas().find((item) => item.slug === pair.a)?.nombre ?? pair.a)} vs {(getMarcas().find((item) => item.slug === pair.b)?.nombre ?? pair.b)}
                     </Link>
                   </li>
                 ))}
