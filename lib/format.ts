@@ -33,10 +33,20 @@ export function formatDate(iso: string) {
   return `${day}/${month}/${year}`;
 }
 
+const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+
 export function formatMonth(iso: string) {
   const [year, month] = iso.slice(0, 10).split("-");
   const date = new Date(Date.UTC(Number(year), Number(month) - 1, 1));
   return new Intl.DateTimeFormat("es-AR", { month: "long", year: "numeric", timeZone: "UTC" }).format(date);
+}
+
+/** «octubre 2026», a partir de una fecha de verificación. No usa la fecha del sistema. */
+export function formatMonthYear(iso: string) {
+  const [year, month] = iso.slice(0, 10).split("-");
+  const name = meses[Number(month) - 1];
+  if (!year || !name) return iso;
+  return `${name} ${year}`;
 }
 
 export function marcaIniciales(marcaSlug: string, marca: string) {

@@ -10,18 +10,16 @@ import { applyFilters } from "@/lib/filters";
 import { formatDate } from "@/lib/format";
 import { logoSize } from "@/lib/logo";
 import { getMarcas, getPlans, newestVerification } from "@/lib/plans";
+import { requireEntry } from "@/lib/seo-copy";
 import { organizationJsonLd, pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
 
-export const metadata = pageMetadata({
-  title: "Obra social para mascotas en Córdoba",
-  description:
-    "Compará precios actualizados de obras sociales, planes de salud y seguros para perros y gatos en Córdoba. Independiente: no vendemos seguros.",
-  path: "/",
-});
+const seo = requireEntry("/");
+
+export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 const steps = [
-  ["1", "Cargás los datos", "Especie, edad y zona de Córdoba."],
+  ["1", "Cargás los datos", "Especie, edad y, si estás en Córdoba, la zona."],
   ["2", "Comparás coberturas", "Precio, carencias, topes y qué deja afuera cada plan."],
   ["3", "Elegís sin presión", "Te derivamos a la marca. No cobramos comisión ni vendemos el seguro."],
 ];
@@ -36,8 +34,8 @@ const faqs = [
     a: "Cada precio muestra fecha de verificación y fuente. Si dice Consultar precio, la marca no lo publicó. Si está en revisión o pasaron más de 45 días, no lo tomes como tarifa cerrada. El badge EJEMPLO queda solo para un dato que todavía no tiene fuente.",
   },
   {
-    q: "¿Sirve solo para Córdoba?",
-    a: "El foco es Córdoba Capital, Gran Córdoba y algunas ciudades de la provincia. El filtro de zona muestra los planes cuya fuente declara cobertura en Córdoba. Si la presencia no está confirmada, el plan no entra en ese filtro.",
+    q: "¿Sirve en todo el país?",
+    a: "El comparador es de Argentina. Córdoba es la primera ciudad con filtro de zona: Capital, Río Cuarto, Villa María y Sierras Chicas. Si la fuente no confirma una zona, el plan no entra cuando filtrás por ese lugar.",
   },
 ];
 
@@ -51,9 +49,9 @@ export default async function HomePage() {
     <>
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-          <p className="text-center text-xs font-bold uppercase tracking-widest text-indigo-600">Córdoba, Argentina</p>
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-indigo-600">Argentina</p>
           <h1 className="mx-auto mt-3 max-w-4xl text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Compará precios actualizados de <span className="text-indigo-600">obras sociales</span> para tu mascota en Córdoba
+            Obra social para mascotas: compará <span className="text-indigo-600">planes y precios</span> en Argentina
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-gray-600 sm:text-lg">
             {siteConfig.siteName} ordena planes de salud y seguros para perros y gatos. Cada monto muestra la fecha y la fuente del relevamiento.

@@ -8,6 +8,7 @@ import { getReferenceDate } from "@/lib/dates";
 import { formatDate } from "@/lib/format";
 import { resolveComparable, versusPairs } from "@/lib/plans";
 import type { Plan } from "@/lib/plan-schema";
+import { versusEntry } from "@/lib/seo-copy";
 import { pageMetadata } from "@/lib/seo";
 import { tipoOptions } from "@/lib/zones";
 
@@ -26,14 +27,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const parsed = names(slug);
   if (!parsed) return { title: "Comparación" };
   const [left, right] = parsed;
-  const a = resolveComparable(left);
-  const b = resolveComparable(right);
-  if (!a || !b) return { title: "Comparación" };
-  return pageMetadata({
-    title: `${a.marca} vs ${b.marca}`,
-    description: `Comparación entre ${a.marca} ${a.nombre} y ${b.marca} ${b.nombre}: precio, coberturas y carencias.`,
-    path: `/versus/${[left, right].sort().join("-vs-")}`,
-  });
+  const seo = versusEntry(left, right);
+  if (!seo) return { title: "Comparación" };
+  return pageMetadata({ ...seo, noindex: !seo.index });
 }
 
 function Cell({ plan, today }: { plan: Plan; today: string }) {
@@ -64,6 +60,7 @@ async function VersusDetail({ params }: { params: Promise<{ slug: string }> }) {
   const right = resolveComparable(parsed[1]);
   if (!left || !right || left.id === right.id) notFound();
   const today = await getReferenceDate();
+  const seo = versusEntry(parsed[0], parsed[1]);
   const coverageNames = [...new Set([...left.coberturas, ...right.coberturas].map((item) => item.item))];
 
   return (
@@ -75,7 +72,7 @@ async function VersusDetail({ params }: { params: Promise<{ slug: string }> }) {
         ]}
       />
       <h1 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">
-        {left.marca} vs {right.marca}
+        {seo?.h1 ?? `${left.marca} vs ${right.marca}`}
       </h1>
       <p className="mt-2 text-gray-600">
         Comparación directa de {left.nombre} y {right.nombre}. No es una recomendación de contratación.

@@ -1,21 +1,20 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQ } from "@/components/FAQ";
+import { requireEntry } from "@/lib/seo-copy";
 import { pageMetadata } from "@/lib/seo";
 import { zones } from "@/lib/zones";
 
-export const metadata = pageMetadata({
-  title: "Obra social para mascotas en Córdoba",
-  description: "Cómo comparar planes de salud para mascotas en Córdoba Capital, Gran Córdoba, Sierras Chicas, Río Cuarto y Villa María.",
-  path: "/cordoba",
-});
+const seo = requireEntry("/cordoba");
+
+export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 export default function CordobaPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
       <Breadcrumbs items={[{ name: "Córdoba", path: "/cordoba" }]} />
       <p className="mt-4 text-xs font-bold uppercase tracking-widest text-indigo-600">Actualizado el 24/10/2026</p>
-      <h1 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">Obra social para mascotas en Córdoba</h1>
+      <h1 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">{seo.h1}</h1>
       <div className="prose-mc mt-4">
         <p>
           En Córdoba el mismo plan puede servir en Nueva Córdoba y no tener clínicas en Sierras Chicas, o al revés. Por eso el comparador filtra por zona y no mezcla Capital con el interior como si fuera la misma cartilla.

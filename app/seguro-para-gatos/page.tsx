@@ -1,12 +1,11 @@
 import { SpeciesPlans } from "@/components/SpeciesPlans";
 import { getReferenceDate } from "@/lib/dates";
+import { requireEntry } from "@/lib/seo-copy";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata({
-  title: "Seguro para gatos en Córdoba",
-  description: "Planes para gatos en Córdoba: consultas, vacunas y qué preguntar si el precio no está publicado.",
-  path: "/seguro-para-gatos",
-});
+const seo = requireEntry("/seguro-para-gatos");
+
+export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 export default async function Page() {
   const today = await getReferenceDate();
@@ -14,6 +13,8 @@ export default async function Page() {
     <SpeciesPlans
       especie="gato"
       today={today}
+      heading={seo.h1}
+      crumb="Seguro para gatos"
       intro="No todos los planes de perro aceptan gatos. En esta página quedan los que declaran cobertura para gatos. Si el precio dice “Consultar precio”, la fuente no lo publicó y el número no lo inventamos."
       faqs={[
         {

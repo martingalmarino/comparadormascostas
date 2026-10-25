@@ -19,6 +19,7 @@ import { getReferenceDate } from "@/lib/dates";
 import { logoSize } from "@/lib/logo";
 import { especieLabel } from "@/lib/format";
 import { getMarcas, getPlansByMarca, versusPairs } from "@/lib/plans";
+import { brandEntry } from "@/lib/seo-copy";
 import { pageMetadata, productJsonLd } from "@/lib/seo";
 import { tipoOptions } from "@/lib/zones";
 import { siteConfig } from "@/site.config";
@@ -29,13 +30,9 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ marca: string }> }) {
   const { marca } = await params;
-  const plans = getPlansByMarca(marca);
-  if (!plans.length) return { title: "Marca no encontrada" };
-  return pageMetadata({
-    title: `${plans[0].marca}: precio y coberturas`,
-    description: `Ficha de ${plans[0].marca}: precios relevados, fuente, carencias y cómo pedir que te contacten. No vendemos seguros.`,
-    path: `/planes/${marca}`,
-  });
+  const seo = brandEntry(marca);
+  if (!seo) return { title: "Marca no encontrada" };
+  return pageMetadata({ ...seo, noindex: !seo.index });
 }
 
 function MarcaFallback() {
@@ -48,6 +45,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
   if (!plans.length) notFound();
   const today = await getReferenceDate();
   const brand = plans[0].marca;
+  const seo = brandEntry(marca);
   const related = versusPairs().filter((pair) => pair.a === marca || pair.b === marca).slice(0, 4);
   const faqs = [
     {
@@ -81,9 +79,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
               <BrandLogo nombre={brand} logo={plans[0].logo} maxWidth="12rem" {...logoSize(plans[0].logo)} />
             </span>
           ) : null}
-          <h1 className="text-3xl font-bold sm:text-4xl">
-            {brand} · {plans[0].nombre}
-          </h1>
+          <h1 className="text-3xl font-bold sm:text-4xl">{seo?.h1 ?? brand}</h1>
         </div>
         <p className="mt-2 max-w-2xl text-sm text-indigo-100">{plans[0].resumen}</p>
       </div>

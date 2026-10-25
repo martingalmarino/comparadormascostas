@@ -1,12 +1,12 @@
+import Link from "next/link";
 import { SpeciesPlans } from "@/components/SpeciesPlans";
 import { getReferenceDate } from "@/lib/dates";
+import { requireEntry } from "@/lib/seo-copy";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata({
-  title: "Seguro para perros en Córdoba",
-  description: "Qué mirar en un seguro o plan de salud para perros en Córdoba: precio, carencias, edad máxima y cartilla veterinaria.",
-  path: "/seguro-para-perros",
-});
+const seo = requireEntry("/seguro-para-perros");
+
+export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 export default async function Page() {
   const today = await getReferenceDate();
@@ -14,17 +14,37 @@ export default async function Page() {
     <SpeciesPlans
       especie="perro"
       today={today}
-      intro="Un seguro para perros suele cubrir accidentes y, según el plan, consultas, vacunas o cirugías. En Córdoba conviene cruzar el precio publicado con la edad tope, la carencia y si la clínica de tu barrio está en la cartilla."
+      heading={seo.h1}
+      crumb="Seguro para perros"
+      intro="Un seguro o una obra social para perros suele cubrir accidentes y, según el plan, consultas, vacunas o cirugías. Conviene cruzar el precio publicado con la edad tope, la carencia y si la clínica que usás está en la cartilla."
       faqs={[
         {
           q: "¿Cubre perros mayores?",
-          a: "Depende del tope de edad que publique la fuente. En el relevamiento hay planes que cortan a los 8 o 9 años y otros que llegan más lejos. Mirá la guía de perros mayores.",
+          a: "Depende del tope de edad que publique la fuente. En el relevamiento hay planes que cortan a los 8 o 9 años y otros que llegan más lejos. Más abajo está cómo leer ese tope.",
         },
         {
           q: "¿Hay carencia en los accidentes?",
           a: "Solo si la ficha lo trae de la fuente. Si no detalla días, pedí el condicionado a la marca antes de darlo por inmediato.",
         },
       ]}
-    />
+    >
+      <section className="mt-12 max-w-3xl">
+        <h2 className="text-2xl font-bold text-gray-900">Perros mayores</h2>
+        <p className="mt-3 text-gray-600">
+          El tope de edad lo publica cada marca. Si tu perro ya lo pasó, el comparador con la edad en meses deja afuera los planes que no lo cubren. Las carencias y las preexistencias no las completamos nosotros: si la ficha no trae días, pedí el condicionado antes de anotarlo.
+        </p>
+        <p className="mt-3">
+          <Link href="/comparar?especie=perro&meses=120" className="font-bold text-indigo-700 hover:underline">
+            Ver planes para un perro de 10 años
+          </Link>
+        </p>
+      </section>
+      <section className="mt-10 max-w-3xl">
+        <h2 className="text-2xl font-bold text-gray-900">Responsabilidad civil y razas</h2>
+        <p className="mt-3 text-gray-600">
+          Algunos planes suman responsabilidad civil por daños a terceros. En la ficha de Federación Patronal el ítem de cobertura dice “RC $5M a $20M” y el precio no está publicado. Si tu perro es de una raza que la normativa de tu municipio trata como potencialmente peligrosa, confirmalo en la fuente oficial y en el condicionado de la marca. Esta página no reemplaza ese texto.
+        </p>
+      </section>
+    </SpeciesPlans>
   );
 }

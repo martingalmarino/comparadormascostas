@@ -1,22 +1,25 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQ } from "@/components/FAQ";
+import { requireEntry } from "@/lib/seo-copy";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
 
-export const metadata = pageMetadata({
-  title: "Cómo comparamos",
-  description: "Metodología de MascoCompara: fuentes, relevamiento del 24/10/2026, regla de 45 días y qué no hacemos.",
-  path: "/como-comparamos",
-});
+const seo = requireEntry("/como-comparamos");
+
+export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 export default function Page() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
       <Breadcrumbs items={[{ name: "Cómo comparamos", path: "/como-comparamos" }]} />
-      <h1 className="mt-4 text-3xl font-bold text-gray-900">Cómo comparamos</h1>
+      <h1 className="mt-4 text-3xl font-bold text-gray-900">{seo.h1}</h1>
       <div className="prose-mc mt-4" id="datos-de-ejemplo">
         <p>
-          {siteConfig.siteName} es un sitio independiente. Ordenamos obras sociales, planes de salud y seguros para perros y gatos con foco en Córdoba. No vendemos seguros ni intermediamos en la contratación. Si dejás tus datos, se los compartimos a la marca que elegiste para que ella te contacte.
+          {siteConfig.siteName} es un sitio independiente de Argentina. Ordenamos obras sociales, planes de salud y seguros para perros y gatos. Córdoba es la primera ciudad con filtro de zona. No vendemos seguros ni intermediamos en la contratación. Si dejás tus datos, se los compartimos a la marca que elegiste para que ella te contacte.
+        </p>
+        <h2>Carencias y preexistencias</h2>
+        <p>
+          Mostramos el texto de carencias que trajo la fuente. Si no hay días publicados, no inventamos un plazo ni decimos que el accidente está cubierto desde el primer día. Una preexistencia —un diagnóstico que ya tenía la mascota— suele quedar afuera o con un tope propio: eso lo define el condicionado, no esta página. Antes de contratar, pedile a la marca ese texto vigente.
         </p>
         <h2>Qué entra en una ficha</h2>
         <p>

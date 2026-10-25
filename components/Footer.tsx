@@ -1,12 +1,10 @@
 import { PawPrint } from "lucide-react";
 import Link from "next/link";
-import { getGuides } from "@/lib/guides";
 import { getMarcas } from "@/lib/plans";
 import { siteConfig } from "@/site.config";
 
 export function Footer({ year }: { year: string }) {
   const marcas = getMarcas();
-  const guides = getGuides();
 
   return (
     <footer className="border-t border-gray-200 bg-white pt-16 pb-28 lg:pb-8">
@@ -19,7 +17,7 @@ export function Footer({ year }: { year: string }) {
             <span className="font-bold text-gray-900">{siteConfig.siteName}</span>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-gray-500">
-            Comparador independiente de obras sociales, planes de salud y seguros para mascotas en Córdoba. Te derivamos a la marca: no vendemos seguros ni intermediamos en la contratación.
+            Comparador independiente de obras sociales, planes de salud y seguros para mascotas en Argentina. Te derivamos a la marca: no vendemos seguros ni intermediamos en la contratación.
           </p>
         </div>
         <div>
@@ -33,16 +31,11 @@ export function Footer({ year }: { year: string }) {
           </ul>
         </div>
         <div>
-          <h2 className="text-sm font-bold text-gray-900">Marcas y guías</h2>
+          <h2 className="text-sm font-bold text-gray-900">Marcas</h2>
           <ul className="mt-3 space-y-2 text-sm text-gray-600">
             {marcas.map((marca) => (
               <li key={marca.slug}>
                 <Link className="hover:text-indigo-700" href={`/planes/${marca.slug}`}>{marca.nombre}</Link>
-              </li>
-            ))}
-            {guides.map((guide) => (
-              <li key={guide.slug}>
-                <Link className="hover:text-indigo-700" href={`/guias/${guide.slug}`}>{guide.title}</Link>
               </li>
             ))}
           </ul>
@@ -59,7 +52,7 @@ export function Footer({ year }: { year: string }) {
       </div>
       <p className="mx-auto mt-12 max-w-7xl px-4 text-center text-[11px] uppercase tracking-widest text-gray-400 sm:px-6">
         © {year} {siteConfig.siteName}
-        {siteConfig.showProvisionalBadge ? ` (${siteConfig.siteNameNote.toLowerCase()})` : ""} · Córdoba, Argentina
+        {siteConfig.showProvisionalBadge ? ` (${siteConfig.siteNameNote.toLowerCase()})` : ""} · Argentina
       </p>
     </footer>
   );

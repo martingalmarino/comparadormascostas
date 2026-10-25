@@ -3,16 +3,15 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PriceTag } from "@/components/PriceTag";
 import { StatusNotice } from "@/components/StatusNotice";
 import { getReferenceDate } from "@/lib/dates";
-import { formatDate, formatMonth } from "@/lib/format";
+import { formatDate } from "@/lib/format";
 import { getPlans, newestVerification } from "@/lib/plans";
+import { requireEntry } from "@/lib/seo-copy";
 import { pageMetadata } from "@/lib/seo";
 import { tipoOptions } from "@/lib/zones";
 
-export const metadata = pageMetadata({
-  title: "Seguro de mascotas: precios del mes",
-  description: "Precios relevados de obras sociales y seguros para mascotas en Córdoba, con fecha de verificación y fuente.",
-  path: "/precios",
-});
+const seo = requireEntry("/precios");
+
+export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 export default async function PreciosPage() {
   const today = await getReferenceDate();
@@ -22,7 +21,7 @@ export default async function PreciosPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Precios", path: "/precios" }]} />
-      <h1 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">Precios de {formatMonth(today)}</h1>
+      <h1 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">{seo.h1}</h1>
       <p className="mt-3 max-w-3xl text-gray-600">
         Precios del relevamiento cargado el {formatDate(updated)}. Cada fila muestra la fecha de verificación. Consultar precio significa que la fuente no publicó un monto.
       </p>

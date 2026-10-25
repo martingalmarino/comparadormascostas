@@ -23,11 +23,13 @@ const mono = IBM_Plex_Mono({
   display: "swap",
 });
 
+const homeTitle = `Obra social para mascotas: compará precios | ${siteConfig.siteName}`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   title: {
-    default: `Obra social para mascotas en Córdoba`,
-    template: `%s · ${siteConfig.siteName}`,
+    default: homeTitle,
+    template: `%s | ${siteConfig.siteName}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.siteName,
@@ -35,7 +37,16 @@ export const metadata: Metadata = {
     locale: "es_AR",
     siteName: siteConfig.siteName,
     type: "website",
+    title: homeTitle,
+    description: siteConfig.description,
+    url: "/",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: homeTitle,
+    description: siteConfig.description,
+  },
+  robots: { index: true, follow: true },
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {

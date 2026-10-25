@@ -1,13 +1,12 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { LawyerBanner } from "@/components/LawyerBanner";
+import { requireEntry } from "@/lib/seo-copy";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
 
-export const metadata = pageMetadata({
-  title: "Términos y condiciones",
-  description: "Condiciones de uso del comparador de planes para mascotas. No vendemos ni intermediamos seguros.",
-  path: "/terminos",
-});
+const seo = requireEntry("/terminos");
+
+export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 export default function TerminosPage() {
   return (
@@ -21,14 +20,14 @@ export default function TerminosPage() {
         <p>Estos términos regulan el uso de {siteConfig.siteName}. Si no estás de acuerdo, no uses el sitio.</p>
         <h2>Qué es el sitio</h2>
         <p>
-          Es un comparador independiente de información sobre obras sociales, planes de salud y seguros para mascotas, con foco en Córdoba, Argentina. No somos una aseguradora, no somos productores asesores de seguros y no intermediamos en la contratación. Un pedido de contacto solo deriva tus datos a la marca que elegiste.
+          Es un comparador independiente de información sobre obras sociales, planes de salud y seguros para mascotas en Argentina. No somos una aseguradora, no somos productores asesores de seguros y no intermediamos en la contratación. Un pedido de contacto solo deriva tus datos a la marca que elegiste.
         </p>
         <h2>Precios y contenidos</h2>
         <p>
           Mientras un precio lleve el badge EJEMPLO, es ilustrativo. Una ficha puede estar desactualizada si la verificación tiene más de 45 días. La decisión de contratar es tuya y de la marca. No garantizamos que una clínica esté en cartilla ni que una cobertura se aplique a tu mascota.
         </p>
-        <h2>Guías</h2>
-        <p>Las guías son informativas. No son asesoramiento legal, veterinario ni de seguros. Las normas sobre perros potencialmente peligrosos tenés que leerlas en la fuente oficial.</p>
+        <h2>Contenido informativo</h2>
+        <p>Las páginas de perros, gatos y metodología son informativas. No son asesoramiento legal, veterinario ni de seguros. Las normas sobre perros potencialmente peligrosos tenés que leerlas en la fuente oficial.</p>
         <h2>Uso aceptable</h2>
         <p>No uses los formularios para cargar datos de otra persona sin su consentimiento, ni para automatizar envíos. Podemos rechazar una consulta que parezca abusiva.</p>
         <h2>Propiedad</h2>

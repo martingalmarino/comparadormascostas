@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQ } from "@/components/FAQ";
@@ -9,22 +10,27 @@ import type { Especie } from "@/lib/plan-schema";
 export function SpeciesPlans({
   especie,
   today,
+  heading,
+  crumb,
   intro,
   faqs,
+  children,
 }: {
   especie: Especie;
   today: string;
+  heading: string;
+  crumb: string;
   intro: string;
   faqs: { q: string; a: string }[];
+  children?: ReactNode;
 }) {
   const plans = applyFilters(getPlans(), { especie, cob: [], ids: [], orden: "precio" });
-  const title = especie === "perro" ? "Seguro para perros" : "Seguro para gatos";
   const path = especie === "perro" ? "/seguro-para-perros" : "/seguro-para-gatos";
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <Breadcrumbs items={[{ name: title, path }]} />
-      <h1 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">{title} en Córdoba</h1>
+      <Breadcrumbs items={[{ name: crumb, path }]} />
+      <h1 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">{heading}</h1>
       <p className="mt-3 max-w-3xl text-gray-600">{intro}</p>
       <p className="mt-4">
         <Link href={`/comparar?especie=${especie}`} className="font-bold text-indigo-700 hover:underline">
@@ -36,6 +42,7 @@ export function SpeciesPlans({
           <PlanCard key={plan.id} plan={plan} today={today} />
         ))}
       </div>
+      {children}
       <FAQ items={faqs} />
     </div>
   );

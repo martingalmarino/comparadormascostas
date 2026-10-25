@@ -1,13 +1,12 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { LeadForm } from "@/components/LeadForm";
+import { requireEntry } from "@/lib/seo-copy";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
 
-export const metadata = pageMetadata({
-  title: "Contacto",
-  description: "Escribile a MascoCompara por una consulta sobre el comparador. No vendemos seguros.",
-  path: "/contacto",
-});
+const seo = requireEntry("/contacto");
+
+export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 export default function ContactoPage() {
   return (

@@ -8,24 +8,32 @@ export function pageMetadata({
   description,
   path,
   noindex = false,
+  absolute = false,
 }: {
   title: string;
   description: string;
   path: string;
   noindex?: boolean;
+  absolute?: boolean;
 }): Metadata {
+  const rendered = absolute ? title : `${title} | ${siteConfig.siteName}`;
   const url = `${siteConfig.domain}${path === "/" ? "" : path}`;
   return {
-    title,
+    title: absolute ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
     openGraph: {
-      title,
+      title: rendered,
       description,
       url,
       locale: "es_AR",
       siteName: siteConfig.siteName,
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: rendered,
+      description,
     },
     robots: noindex ? { index: false, follow: true } : { index: true, follow: true },
   };
@@ -39,9 +47,8 @@ export function organizationJsonLd() {
     url: siteConfig.domain,
     description: siteConfig.description,
     areaServed: {
-      "@type": "AdministrativeArea",
-      name: "Córdoba",
-      addressCountry: "AR",
+      "@type": "Country",
+      name: "Argentina",
     },
     email: siteConfig.contactEmail,
   };
@@ -74,7 +81,7 @@ export function itemListJsonLd(plans: Plan[]) {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Planes para mascotas en Córdoba",
+    name: "Planes para mascotas en Argentina",
     itemListElement: plans.map((plan, index) => ({
       "@type": "ListItem",
       position: index + 1,

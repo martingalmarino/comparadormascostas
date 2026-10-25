@@ -1,16 +1,27 @@
 /**
- * Marca provisoria. Cambiá `siteName` y el dominio acá: el resto del sitio los lee de este archivo.
- * Todavía no hay dominio propio: definí la URL pública en NEXT_PUBLIC_SITE_URL.
+ * Marca provisoria. El nombre visible sale de SITE.name (NEXT_PUBLIC_SITE_NAME o MascoCompara).
+ * La URL pública es NEXT_PUBLIC_SITE_URL. Si no está, en Vercel se usa VERCEL_PROJECT_PRODUCTION_URL.
  */
-const domain = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
+function publicSiteUrl() {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
+  if (explicit) return explicit;
+  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim().replace(/\/$/, "");
+  if (vercel) return vercel.startsWith("http") ? vercel : `https://${vercel}`;
+  return "http://localhost:3000";
+}
+
+export const SITE = {
+  name: process.env.NEXT_PUBLIC_SITE_NAME?.trim() || "MascoCompara",
+  url: publicSiteUrl(),
+} as const;
 
 export const siteConfig = {
-  siteName: "MascoCompara",
+  siteName: SITE.name,
   siteNameNote: "Nombre provisorio",
   showProvisionalBadge: true,
-  domain,
+  domain: SITE.url,
   description:
-    "Comparador independiente de obras sociales, planes de salud y seguros para perros y gatos en Córdoba, Argentina. No vendemos seguros.",
+    "Compará obras sociales, prepagas y seguros para perros y gatos en Argentina. Precios con fecha y fuente de cada marca. Elegí tu plan en minutos, gratis.",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hola@example.com",
   priceStaleDays: 45,
   gaId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "",

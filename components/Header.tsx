@@ -9,7 +9,7 @@ import { siteConfig } from "@/site.config";
 const links = [
   { href: "/", label: "Inicio" },
   { href: "/comparar", label: "Comparador" },
-  { href: "/guias", label: "Guías" },
+  { href: "/precios", label: "Precios" },
   { href: "/cordoba", label: "Córdoba" },
 ];
 

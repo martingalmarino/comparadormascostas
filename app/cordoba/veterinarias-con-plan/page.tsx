@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQ } from "@/components/FAQ";
+import { requireEntry } from "@/lib/seo-copy";
 import { pageMetadata } from "@/lib/seo";
 
-export const metadata = pageMetadata({
-  title: "Veterinarias con plan de salud en Córdoba",
-  description: "Cómo chequear si tu veterinaria de Córdoba está en la cartilla de un plan para mascotas y qué preguntar antes de anotarte.",
-  path: "/cordoba/veterinarias-con-plan",
-});
+const seo = requireEntry("/cordoba/veterinarias-con-plan");
+
+export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 export default function VeterinariasPage() {
   return (
@@ -19,7 +18,7 @@ export default function VeterinariasPage() {
         ]}
       />
       <p className="mt-4 text-xs font-bold uppercase tracking-widest text-indigo-600">Actualizado el 24/10/2026</p>
-      <h1 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">Veterinarias con plan en Córdoba</h1>
+      <h1 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">{seo.h1}</h1>
       <div className="prose-mc mt-4">
         <p>
           Un plan barato no sirve si la guardia que usás en Cerro de las Rosas, Alberdi o el Centro no está adherida. Esta página no es un directorio de clínicas: el listado verificado lo publica cada marca y cambia seguido.

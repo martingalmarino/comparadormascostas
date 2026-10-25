@@ -103,3 +103,7 @@ export function versusPairs() {
 export function newestVerification(plans: Plan[]) {
   return plans.reduce((max, plan) => (plan.fecha_verificacion > max ? plan.fecha_verificacion : max), "1970-01-01");
 }
+
+export function hasVerifiedPrice(slug: string) {
+  return getPlansByMarca(slug).some((plan) => plan.estado === "verificado" && plan.precio != null && !plan.es_ejemplo);
+}

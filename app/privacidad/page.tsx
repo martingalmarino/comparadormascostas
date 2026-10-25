@@ -1,13 +1,12 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { LawyerBanner } from "@/components/LawyerBanner";
+import { requireEntry } from "@/lib/seo-copy";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
 
-export const metadata = pageMetadata({
-  title: "Política de privacidad",
-  description: "Cómo MascoCompara trata los datos personales según la Ley 25.326 y qué derechos podés ejercer.",
-  path: "/privacidad",
-});
+const seo = requireEntry("/privacidad");
+
+export const metadata = pageMetadata({ ...seo, noindex: !seo.index });
 
 export default function PrivacidadPage() {
   return (
