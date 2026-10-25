@@ -20,11 +20,19 @@ const sizes: Record<string, { width: number; height: number }> = {
   "/logos/macro.png": { width: 1500, height: 335 },
   "/logos/naranja-x.png": { width: 240, height: 74 },
   "/logos/santander.png": { width: 332, height: 60 },
+  "/logos/hipotecario.svg": { width: 218, height: 84 },
+  "/logos/la-caja.png": { width: 251, height: 265 },
+  "/logos/mapfre.png": { width: 258, height: 126 },
+  "/logos/nacion-seguros.png": { width: 558, height: 142 },
+  "/logos/sancor-seguros.svg": { width: 960, height: 258 },
+  "/logos/zurich.svg": { width: 604, height: 143 },
 };
 
 const compactLogos = new Set(["/logos/naranja-x.png", "/logos/santander.png"]);
+const squareLogos = new Set(["/logos/la-caja.png"]);
 
 export function logoMaxBox(src: string, natural: { width: number; height: number }) {
+  if (squareLogos.has(src)) return { height: 44, maxWidthPx: undefined as number | undefined };
   if (!compactLogos.has(src)) return { height: 32, maxWidthPx: undefined as number | undefined };
   return { height: Math.min(28, natural.height), maxWidthPx: natural.width };
 }
