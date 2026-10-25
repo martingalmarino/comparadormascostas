@@ -23,7 +23,7 @@ const sizes: Record<string, { width: number; height: number }> = {
   "/logos/hipotecario.svg": { width: 218, height: 84 },
   "/logos/la-caja.png": { width: 251, height: 265 },
   "/logos/mapfre.png": { width: 258, height: 126 },
-  "/logos/nacion-seguros.png": { width: 558, height: 142 },
+  "/logos/nacion-seguros.png": { width: 1000, height: 200 },
   "/logos/sancor-seguros.svg": { width: 960, height: 258 },
   "/logos/zurich.svg": { width: 604, height: 143 },
 };
