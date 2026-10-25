@@ -1,0 +1,58 @@
+{
+  "slug": "avsim",
+  "tipo_entidad": "obra_social_mascotas",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": null,
+    "cuit": null,
+    "ssn": null
+  },
+  "canales": [
+    {
+      "tipo": "email",
+      "valor": "info@avsim.com.ar",
+      "fuente_url": "https://www.avsim.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "whatsapp",
+      "valor": "WhatsApp (ver web)",
+      "fuente_url": "https://www.avsim.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": {
+      "valor": "Afiliación online o por WhatsApp",
+      "fuente_url": "https://www.avsim.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "reintegro": {
+      "valor": "Plan Global por reintegro",
+      "fuente_url": "https://www.avsim.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "siniestro": null,
+    "baja": {
+      "valor": "Botón de baja en la web",
+      "fuente_url": "https://www.avsim.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  },
+  "red_veterinaria": {
+    "valor": "Red de veterinarias propia",
+    "fuente_url": "https://www.avsim.com.ar/",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "edad": null,
+  "carencias": null,
+  "otros_productos": null,
+  "inconsistencias": [],
+  "no_publica": [
+    "Quién es la empresa que da la cobertura",
+    "Número de inscripción en la SSN",
+    "Cómo se denuncia un siniestro",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

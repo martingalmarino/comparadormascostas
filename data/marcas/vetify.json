@@ -1,0 +1,67 @@
+{
+  "slug": "vetify",
+  "tipo_entidad": "plan_salud",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": null,
+    "cuit": null,
+    "ssn": null
+  },
+  "canales": [
+    {
+      "tipo": "telefono",
+      "valor": "0800 122 1183",
+      "fuente_url": "https://vetify.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "whatsapp",
+      "valor": "+54 9 11 7248-7444",
+      "fuente_url": "https://vetify.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "email",
+      "valor": "info@vetify.com.ar",
+      "fuente_url": "https://vetify.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": null,
+    "reintegro": {
+      "valor": "Reintegros desde la app",
+      "fuente_url": "https://vetify.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "siniestro": null,
+    "baja": null
+  },
+  "red_veterinaria": {
+    "valor": "Red nacional + reintegros",
+    "fuente_url": "https://vetify.com.ar/",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "edad": null,
+  "carencias": {
+    "valor": "Vacunas 30 días; estudios 60 días; cirugía e internación 90 días",
+    "fuente_url": "https://vetify.com.ar/",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "otros_productos": null,
+  "inconsistencias": [
+    {
+      "descripcion": "El plan Classic muestra $66.790 y $94.790.",
+      "fuente_url": "https://vetify.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "no_publica": [
+    "Quién es la empresa que da la cobertura",
+    "Número de inscripción en la SSN",
+    "Cómo se contrata",
+    "Cómo se denuncia un siniestro",
+    "Cómo se da de baja",
+    "Edades de ingreso y permanencia"
+  ]
+}

@@ -1,7 +1,8 @@
-import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import * as cheerio from "cheerio";
 import { z } from "zod";
+import { appendPricePoint, type HistorialMarca } from "./historial";
 import { planSchema, type Plan } from "./plan-schema";
 
 const scraperSchema = z.object({
@@ -121,6 +122,31 @@ async function readPrice(url: string, selector: string, userAgent: string) {
   return { price };
 }
 
+function historialPath(slug: string) {
+  return path.join(process.cwd(), "data", "historial", `${slug}.json`);
+}
+
+function loadHistorial(slug: string): HistorialMarca {
+  const file = historialPath(slug);
+  if (!existsSync(file)) return {};
+  return JSON.parse(readFileSync(file, "utf8")) as HistorialMarca;
+}
+
+function anotarPrecioVerificado(libros: Map<string, { antes: string; data: HistorialMarca }>, plan: Plan, fecha: string) {
+  if (plan.estado !== "verificado" || plan.precio == null || plan.es_ejemplo) return;
+  let libro = libros.get(plan.marca_slug);
+  if (!libro) {
+    const data = loadHistorial(plan.marca_slug);
+    libro = { antes: JSON.stringify(data), data };
+    libros.set(plan.marca_slug, libro);
+  }
+  libro.data[plan.id] = appendPricePoint(libro.data[plan.id], {
+    fecha,
+    precio: plan.precio,
+    fuente: plan.fuente_url,
+  });
+}
+
 export async function runPriceUpdate() {
   const configPath = path.join(process.cwd(), "data", "scrapers.json");
   const config = scraperSchema.parse(JSON.parse(readFileSync(configPath, "utf8")));
@@ -128,6 +154,7 @@ export async function runPriceUpdate() {
   const today = new Date().toISOString().slice(0, 10);
   const changes: Change[] = [];
   const dirtyFiles = new Set<string>();
+  const historiales = new Map<string, { antes: string; data: HistorialMarca }>();
 
   for (const source of config.marcas) {
     if (!source.enabled || !source.url || !source.selector) {
@@ -167,10 +194,20 @@ export async function runPriceUpdate() {
       });
       continue;
     }
+    anotarPrecioVerificado(historiales, plan, plan.fecha_verificacion);
     plan.fecha_verificacion = today;
     plan.precio_detectado = result.price;
+    anotarPrecioVerificado(historiales, plan, today);
     dirtyFiles.add(holder.file);
     changes.push({ planId: plan.id, accion: "fecha_actualizada", detalle: `Coincide dentro del ${config.umbral_cambio * 100}%. es_ejemplo no se modifica.` });
+  }
+
+  const historialDir = path.join(process.cwd(), "data", "historial");
+  for (const [slug, libro] of historiales) {
+    const serializado = JSON.stringify(libro.data);
+    if (serializado === libro.antes) continue;
+    mkdirSync(historialDir, { recursive: true });
+    writeFileSync(path.join(historialDir, `${slug}.json`), `${JSON.stringify(libro.data, null, 2)}\n`);
   }
 
   for (const file of dirtyFiles) {

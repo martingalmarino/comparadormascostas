@@ -1,0 +1,69 @@
+{
+  "slug": "qualia-seguros",
+  "tipo_entidad": "aseguradora",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": {
+      "valor": "Qualia Compañía de Seguros S.A.",
+      "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "cuit": {
+      "valor": "30-71449680-4",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "ssn": {
+      "numero": "0879",
+      "registro_url": "https://seguro2.ssn.gob.ar/sujetoshabilitados",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    }
+  },
+  "canales": [
+    {
+      "tipo": "atencion",
+      "valor": "0800-333-7825",
+      "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "email",
+      "valor": "contacto@qualiaseguros.com",
+      "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": {
+      "valor": "Online; póliza en la app a las 48 h, vigente desde el día siguiente",
+      "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "reintegro": null,
+    "siniestro": {
+      "valor": "Dentro de 72 h hábiles desde Mi Qualia o la app",
+      "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "baja": null
+  },
+  "red_veterinaria": null,
+  "edad": {
+    "valor": "Permanencia hasta 10 años",
+    "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "carencias": {
+    "valor": "Preexistencias excluidas los primeros 6 meses",
+    "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "otros_productos": null,
+  "inconsistencias": [],
+  "no_publica": [
+    "Cómo se pide un reintegro",
+    "Cómo se da de baja",
+    "Red de veterinarias"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "ospan",
+  "tipo_entidad": "obra_social_mascotas",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": null,
+    "cuit": null,
+    "ssn": null
+  },
+  "canales": [
+    {
+      "tipo": "whatsapp",
+      "valor": "+54 9 11 5881 2410",
+      "fuente_url": "https://www.ospan.com.ar/planes",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "email",
+      "valor": "info@ospan.com.ar",
+      "fuente_url": "https://www.ospan.com.ar/planes",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "facturacion",
+      "valor": "+54 9 11 3098 1007",
+      "fuente_url": "https://www.ospan.com.ar/planes",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": null,
+    "reintegro": null,
+    "siniestro": null,
+    "baja": null
+  },
+  "red_veterinaria": {
+    "valor": "Red de prestadores (cartilla)",
+    "fuente_url": "https://www.ospan.com.ar/planes",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "edad": null,
+  "carencias": null,
+  "otros_productos": null,
+  "inconsistencias": [],
+  "no_publica": [
+    "Quién es la empresa que da la cobertura",
+    "Número de inscripción en la SSN",
+    "Cómo se contrata",
+    "Cómo se pide un reintegro",
+    "Cómo se denuncia un siniestro",
+    "Cómo se da de baja",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

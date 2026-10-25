@@ -1,0 +1,49 @@
+{
+  "slug": "ike-mascotas",
+  "tipo_entidad": "plan_asistencia",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": null,
+    "cuit": null,
+    "ssn": null
+  },
+  "canales": [
+    {
+      "tipo": "asistencia",
+      "valor": "0800-122-1453 (24 h)",
+      "fuente_url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "telefono",
+      "valor": "0800-122-0969",
+      "fuente_url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": null,
+    "reintegro": null,
+    "siniestro": null,
+    "baja": null
+  },
+  "red_veterinaria": {
+    "valor": "Red Iké (100%) y fuera de red con topes",
+    "fuente_url": "https://planes.ikeargentina.com.ar/mascotasonline/",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "edad": null,
+  "carencias": null,
+  "otros_productos": null,
+  "inconsistencias": [],
+  "no_publica": [
+    "Quién es la empresa que da la cobertura",
+    "Número de inscripción en la SSN",
+    "Cómo se contrata",
+    "Cómo se pide un reintegro",
+    "Cómo se denuncia un siniestro",
+    "Cómo se da de baja",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "pet-society",
+  "tipo_entidad": "club_beneficios",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": null,
+    "cuit": null,
+    "ssn": null
+  },
+  "canales": [
+    {
+      "tipo": "whatsapp",
+      "valor": "11 6579 5321",
+      "fuente_url": "https://petsociety.ar/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": {
+      "valor": "Sin costo de alta",
+      "fuente_url": "https://petsociety.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "reintegro": null,
+    "siniestro": null,
+    "baja": {
+      "valor": "'Solicitar la baja' en la web",
+      "fuente_url": "https://petsociety.ar/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  },
+  "red_veterinaria": null,
+  "edad": null,
+  "carencias": null,
+  "otros_productos": null,
+  "inconsistencias": [],
+  "no_publica": [
+    "Quién es la empresa que da la cobertura",
+    "Número de inscripción en la SSN",
+    "Cómo se pide un reintegro",
+    "Cómo se denuncia un siniestro",
+    "Red de veterinarias",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

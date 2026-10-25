@@ -1,0 +1,36 @@
+{
+  "slug": "petit-salud",
+  "tipo_entidad": "prepaga_veterinaria",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": null,
+    "cuit": null,
+    "ssn": null
+  },
+  "canales": [],
+  "como_se_usa": {
+    "contratar": null,
+    "reintegro": null,
+    "siniestro": null,
+    "baja": null
+  },
+  "red_veterinaria": {
+    "valor": "Prestadores: sección 'en mantenimiento' en la web",
+    "fuente_url": "https://petitsalud.com/",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "edad": null,
+  "carencias": null,
+  "otros_productos": null,
+  "inconsistencias": [],
+  "no_publica": [
+    "Quién es la empresa que da la cobertura",
+    "Número de inscripción en la SSN",
+    "Cómo se contrata",
+    "Cómo se pide un reintegro",
+    "Cómo se denuncia un siniestro",
+    "Cómo se da de baja",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

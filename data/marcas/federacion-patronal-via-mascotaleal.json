@@ -1,0 +1,57 @@
+{
+  "slug": "federacion-patronal-via-mascotaleal",
+  "tipo_entidad": "aseguradora_via_productor",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": {
+      "valor": "Federación Patronal Seguros S.A.U.",
+      "fuente_url": "https://mascotaleal.com/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "cuit": {
+      "valor": "33-70736658-9",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "ssn": {
+      "numero": "0726",
+      "registro_url": "https://seguro2.ssn.gob.ar/sujetoshabilitados",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    }
+  },
+  "canales": [
+    {
+      "tipo": "whatsapp_siniestros",
+      "valor": "+54 9 11 2756-4077",
+      "fuente_url": "https://mascotaleal.com/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": {
+      "valor": "Vía productor Damián G. Krzychowiec (matrícula SSN 109475)",
+      "fuente_url": "https://mascotaleal.com/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "reintegro": null,
+    "siniestro": {
+      "valor": "WhatsApp +54 9 11 2756-4077 dentro de las 24 h",
+      "fuente_url": "https://mascotaleal.com/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "baja": null
+  },
+  "red_veterinaria": null,
+  "edad": null,
+  "carencias": null,
+  "otros_productos": null,
+  "inconsistencias": [],
+  "no_publica": [
+    "Cómo se pide un reintegro",
+    "Cómo se da de baja",
+    "Red de veterinarias",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

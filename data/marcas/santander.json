@@ -1,0 +1,65 @@
+{
+  "slug": "santander",
+  "tipo_entidad": "aseguradora_via_banco",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": {
+      "valor": "Zurich Santander Seguros Argentina S.A.",
+      "fuente_url": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "cuit": null,
+    "ssn": {
+      "numero": "0692",
+      "registro_url": "https://seguro2.ssn.gob.ar/sujetoshabilitados",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    }
+  },
+  "canales": [
+    {
+      "tipo": "asistencia",
+      "valor": "0800-444-0313",
+      "fuente_url": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "consultas",
+      "valor": "0810-333-2400",
+      "fuente_url": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": {
+      "valor": "Adicional del Seguro de Vivienda (1 mascota de 1 a 10 años)",
+      "fuente_url": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "reintegro": null,
+    "siniestro": null,
+    "baja": null
+  },
+  "red_veterinaria": null,
+  "edad": {
+    "valor": "1 a 10 años",
+    "fuente_url": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "carencias": null,
+  "otros_productos": {
+    "valor": [
+      "Vivienda"
+    ],
+    "fuente_url": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "inconsistencias": [],
+  "no_publica": [
+    "Cómo se pide un reintegro",
+    "Cómo se denuncia un siniestro",
+    "Cómo se da de baja",
+    "Red de veterinarias",
+    "Carencias"
+  ]
+}

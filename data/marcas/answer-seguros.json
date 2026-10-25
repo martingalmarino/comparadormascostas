@@ -1,0 +1,74 @@
+{
+  "slug": "answer-seguros",
+  "tipo_entidad": "aseguradora",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": {
+      "valor": "Galicia Seguros S.A.U. (Answer)",
+      "fuente_url": "https://answerseguros.com.ar/new/pets/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "cuit": null,
+    "ssn": {
+      "numero": "0589",
+      "registro_url": "https://seguro2.ssn.gob.ar/sujetoshabilitados",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    }
+  },
+  "canales": [
+    {
+      "tipo": "ventas",
+      "valor": "0800-444-0352",
+      "fuente_url": "https://answerseguros.com.ar/new/pets/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "whatsapp",
+      "valor": "+54 9 11-3765-0687",
+      "fuente_url": "https://answerseguros.com.ar/new/pets/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "siniestros",
+      "valor": "0800-555-9998",
+      "fuente_url": "https://answerseguros.com.ar/new/pets/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "atencion_asegurado",
+      "valor": "011 4114 8206",
+      "fuente_url": "https://answerseguros.com.ar/new/pets/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": {
+      "valor": "Online o 0800-444-0352",
+      "fuente_url": "https://answerseguros.com.ar/new/pets/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "reintegro": {
+      "valor": "Reintegro en cualquier veterinario",
+      "fuente_url": "https://answerseguros.com.ar/new/pets/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "siniestro": null,
+    "baja": null
+  },
+  "red_veterinaria": {
+    "valor": "Cualquier veterinario (reintegro)",
+    "fuente_url": "https://answerseguros.com.ar/new/pets/",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "edad": null,
+  "carencias": null,
+  "otros_productos": null,
+  "inconsistencias": [],
+  "no_publica": [
+    "Cómo se denuncia un siniestro",
+    "Cómo se da de baja",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "naranja-x",
+  "tipo_entidad": "agente_institorio",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": {
+      "valor": "Tarjeta Naranja S.A.U. (agente institorio SSN 136)",
+      "fuente_url": "https://www.naranjax.com/seguros/mascotas",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "cuit": null,
+    "ssn": null
+  },
+  "canales": [
+    {
+      "tipo": "asistencia_ike",
+      "valor": "0800-122-0738",
+      "fuente_url": "https://www.naranjax.com/seguros/mascotas",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": null,
+    "reintegro": {
+      "valor": "Veterinario propio por reintegro con autorización previa de Iké",
+      "fuente_url": "https://www.naranjax.com/seguros/mascotas",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "siniestro": null,
+    "baja": null
+  },
+  "red_veterinaria": {
+    "valor": "Red adherida Iké",
+    "fuente_url": "https://www.naranjax.com/seguros/mascotas",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "edad": null,
+  "carencias": {
+    "valor": "Vacunación: 3 meses; castración: 6 meses",
+    "fuente_url": "https://www.naranjax.com/seguros/mascotas",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "otros_productos": null,
+  "inconsistencias": [],
+  "no_publica": [
+    "Número de inscripción en la SSN",
+    "Cómo se contrata",
+    "Cómo se denuncia un siniestro",
+    "Cómo se da de baja",
+    "Edades de ingreso y permanencia"
+  ]
+}

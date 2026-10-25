@@ -1,0 +1,58 @@
+{
+  "slug": "puppis-one",
+  "tipo_entidad": "club_beneficios",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": null,
+    "cuit": null,
+    "ssn": null
+  },
+  "canales": [
+    {
+      "tipo": "telefono",
+      "valor": "0810 220 0010",
+      "fuente_url": "https://one.puppis.com.ar/customers/plans",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "email",
+      "valor": "one@puppis.com.ar",
+      "fuente_url": "https://one.puppis.com.ar/customers/plans",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": {
+      "valor": "Débito con tarjeta de crédito",
+      "fuente_url": "https://one.puppis.com.ar/customers/plans",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "reintegro": null,
+    "siniestro": null,
+    "baja": null
+  },
+  "red_veterinaria": {
+    "valor": "Sucursales Puppis adheridas",
+    "fuente_url": "https://one.puppis.com.ar/customers/plans",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "edad": null,
+  "carencias": null,
+  "otros_productos": null,
+  "inconsistencias": [
+    {
+      "descripcion": "La web menciona '42 sucursales' y también 'nuestras 30 tiendas'.",
+      "fuente_url": "https://one.puppis.com.ar/customers/plans",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "no_publica": [
+    "Quién es la empresa que da la cobertura",
+    "Número de inscripción en la SSN",
+    "Cómo se pide un reintegro",
+    "Cómo se denuncia un siniestro",
+    "Cómo se da de baja",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

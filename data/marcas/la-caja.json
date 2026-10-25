@@ -1,0 +1,75 @@
+{
+  "slug": "la-caja",
+  "tipo_entidad": "aseguradora",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": {
+      "valor": "Caja de Seguros S.A.",
+      "fuente_url": "https://seguros.lacaja.com.ar/personas-seguro-de-hogar",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "cuit": {
+      "valor": "30-66320562-1",
+      "fuente_url": "https://seguros.lacaja.com.ar/personas-seguro-de-hogar",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "ssn": {
+      "numero": "0501",
+      "registro_url": "https://seguro2.ssn.gob.ar/sujetoshabilitados",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    }
+  },
+  "canales": [
+    {
+      "tipo": "asistencia",
+      "valor": "0800-666-2252",
+      "fuente_url": "https://seguros.lacaja.com.ar/personas-seguro-de-hogar",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "linea_unica",
+      "valor": "0810-555-2252",
+      "fuente_url": "https://seguros.lacaja.com.ar/personas-seguro-de-hogar",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "whatsapp",
+      "valor": "11-4857-7777",
+      "fuente_url": "https://seguros.lacaja.com.ar/personas-seguro-de-hogar",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": {
+      "valor": "Solo como cobertura dentro del Seguro de Hogar",
+      "fuente_url": "https://seguros.lacaja.com.ar/personas-seguro-de-hogar",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "reintegro": null,
+    "siniestro": {
+      "valor": "Centro de Operaciones Online, app, 0810 o sucursal",
+      "fuente_url": "https://seguros.lacaja.com.ar/personas-seguro-de-hogar",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "baja": null
+  },
+  "red_veterinaria": null,
+  "edad": null,
+  "carencias": null,
+  "otros_productos": {
+    "valor": [
+      "Hogar"
+    ],
+    "fuente_url": "https://seguros.lacaja.com.ar/personas-seguro-de-hogar",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "inconsistencias": [],
+  "no_publica": [
+    "Cómo se pide un reintegro",
+    "Cómo se da de baja",
+    "Red de veterinarias",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

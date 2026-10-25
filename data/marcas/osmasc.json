@@ -1,0 +1,49 @@
+{
+  "slug": "osmasc",
+  "tipo_entidad": "obra_social_mascotas",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": null,
+    "cuit": null,
+    "ssn": null
+  },
+  "canales": [
+    {
+      "tipo": "whatsapp",
+      "valor": "WhatsApp (ver web)",
+      "fuente_url": "https://www.osmasc.com/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": null,
+    "reintegro": {
+      "valor": "Reintegro nacional",
+      "fuente_url": "https://www.osmasc.com/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "siniestro": null,
+    "baja": null
+  },
+  "red_veterinaria": null,
+  "edad": null,
+  "carencias": null,
+  "otros_productos": null,
+  "inconsistencias": [
+    {
+      "descripcion": "Se muestran juntos $38.000 y $22.000 para el mismo plan.",
+      "fuente_url": "https://www.osmasc.com/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "no_publica": [
+    "Quién es la empresa que da la cobertura",
+    "Número de inscripción en la SSN",
+    "Cómo se contrata",
+    "Cómo se denuncia un siniestro",
+    "Cómo se da de baja",
+    "Red de veterinarias",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

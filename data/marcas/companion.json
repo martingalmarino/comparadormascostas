@@ -1,0 +1,49 @@
+{
+  "slug": "companion",
+  "tipo_entidad": "plan_reintegro",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": null,
+    "cuit": null,
+    "ssn": null
+  },
+  "canales": [
+    {
+      "tipo": "telefono",
+      "valor": "11 5173-9261",
+      "fuente_url": "https://companion.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": null,
+    "reintegro": {
+      "valor": "Vas al veterinario, sacás foto de la factura y recibís la transferencia en 24 h",
+      "fuente_url": "https://companion.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "siniestro": null,
+    "baja": null
+  },
+  "red_veterinaria": {
+    "valor": "Cualquier veterinario (reintegro)",
+    "fuente_url": "https://companion.com.ar/",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "edad": null,
+  "carencias": {
+    "valor": "Castración, guardería y viaje: 6 meses",
+    "fuente_url": "https://companion.com.ar/",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "otros_productos": null,
+  "inconsistencias": [],
+  "no_publica": [
+    "Quién es la empresa que da la cobertura",
+    "Número de inscripción en la SSN",
+    "Cómo se contrata",
+    "Cómo se denuncia un siniestro",
+    "Cómo se da de baja",
+    "Edades de ingreso y permanencia"
+  ]
+}

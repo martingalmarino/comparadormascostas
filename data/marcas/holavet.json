@@ -1,0 +1,71 @@
+{
+  "slug": "holavet",
+  "tipo_entidad": "aseguradora",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": {
+      "valor": "ASV Argentina Salud, Vida y Patrimoniales Cía. de Seguros S.A. (Ar Vida)",
+      "fuente_url": "https://holavet.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "cuit": null,
+    "ssn": {
+      "numero": "0540",
+      "registro_url": "https://seguro2.ssn.gob.ar/sujetoshabilitados",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    }
+  },
+  "canales": [
+    {
+      "tipo": "whatsapp_reintegros",
+      "valor": "11 6674 3287",
+      "fuente_url": "https://holavet.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "email",
+      "valor": "info@holavet.com.ar",
+      "fuente_url": "https://holavet.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "telefono",
+      "valor": "0810 220 8432",
+      "fuente_url": "https://holavet.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": null,
+    "reintegro": {
+      "valor": "Por WhatsApp 11 6674 3287 o info@holavet.com.ar",
+      "fuente_url": "https://holavet.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "siniestro": {
+      "valor": "RC: 0810 220 8432 opción 2 (L a V 10 a 16)",
+      "fuente_url": "https://holavet.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "baja": null
+  },
+  "red_veterinaria": null,
+  "edad": null,
+  "carencias": null,
+  "otros_productos": null,
+  "inconsistencias": [
+    {
+      "descripcion": "La web dice 'Desde $18.000' y el plan Básico figura a $39.674.",
+      "fuente_url": "https://holavet.com.ar/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "no_publica": [
+    "Cómo se contrata",
+    "Cómo se da de baja",
+    "Red de veterinarias",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

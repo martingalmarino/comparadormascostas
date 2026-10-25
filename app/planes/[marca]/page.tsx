@@ -1,32 +1,27 @@
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { Badge } from "@/components/Badge";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { DirectAnswer } from "@/components/DirectAnswer";
-import { CoverageList } from "@/components/CoverageList";
 import { FAQ } from "@/components/FAQ";
-import { HogarNotice } from "@/components/HogarNotice";
+import { FichaV2 } from "@/components/FichaMarca/FichaV2";
 import { JsonLd } from "@/components/JsonLd";
 import { LeadForm } from "@/components/LeadForm";
-import { PriceTag } from "@/components/PriceTag";
-import { ProsCons } from "@/components/ProsCons";
-import { StatusNotice } from "@/components/StatusNotice";
+import { PlanArticles } from "@/components/PlanArticles";
 import { StickyLeadCTA } from "@/components/StickyLeadCTA";
-import { VerifiedLine } from "@/components/VerifiedLine";
-import { WaitingPeriods } from "@/components/WaitingPeriods";
 import { getReferenceDate } from "@/lib/dates";
-import { logoSize } from "@/lib/logo";
-import { especieLabel } from "@/lib/format";
+import { fichaV2 } from "@/lib/ficha-v2";
+import { formatMonthYear } from "@/lib/format";
 import { respuestaDirecta } from "@/lib/geo";
+import { logoSize } from "@/lib/logo";
+import { getMarca } from "@/lib/marcas";
 import { getMarcas, getPlansByMarca, newestVerification, versusPairs } from "@/lib/plans";
+import { pageMetadata, webPageJsonLd } from "@/lib/seo";
 import { brandEntry } from "@/lib/seo-copy";
-import { pageMetadata, productJsonLd, webPageJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
 import { tipoOptions } from "@/lib/zones";
-import { PROVINCIA_TODAS, jurisdiccionLabel } from "@/lib/zonas";
 
 export function generateStaticParams() {
   return getMarcas().map((marca) => ({ marca: marca.slug }));
@@ -36,7 +31,16 @@ export async function generateMetadata({ params }: { params: Promise<{ marca: st
   const { marca } = await params;
   const seo = brandEntry(marca);
   if (!seo) return { title: "Marca no encontrada" };
-  return pageMetadata({ ...seo, noindex: !seo.index });
+  if (!fichaV2(marca)) return pageMetadata({ ...seo, noindex: !seo.index });
+  const today = await getReferenceDate();
+  const plans = getPlansByMarca(marca);
+  const mes = formatMonthYear(newestVerification(plans));
+  return pageMetadata({
+    title: `${plans[0].marca} seguro de mascotas: planes, precios y cobertura (${mes})`,
+    description: respuestaDirecta({ tipo: "marca", today, slug: marca }),
+    path: seo.path,
+    noindex: !seo.index,
+  });
 }
 
 function MarcaFallback() {
@@ -65,6 +69,13 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
       a: "Mostramos el texto que trajo la fuente. Antes de contratar, pedile a la marca el condicionado vigente, sobre todo si tu mascota ya tiene un diagnóstico.",
     },
   ];
+
+  if (fichaV2(marca) && seo) {
+    const ficha = getMarca(marca);
+    if (ficha) {
+      return <FichaV2 marca={marca} ficha={ficha} plans={plans} today={today} seo={seo} related={related} faqsBase={faqs} />;
+    }
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -98,69 +109,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
 
       <div className="mt-8 lg:grid lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-8">
-          <div className="space-y-10">
-            {plans.map((plan) => (
-              <article key={plan.id} id={plan.id} className="scroll-mt-24">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">{plan.marca}</p>
-                    <h2 className="text-2xl font-bold text-gray-900">{plan.nombre}</h2>
-                    <HogarNotice slug={plan.marca_slug} />
-                    {plan.resumen ? <p className="mt-1 text-sm text-gray-600">{plan.resumen}</p> : null}
-                    <p className="mt-2 text-sm text-gray-600">
-                      {plan.especies.map((especie) => especieLabel(especie)).join(", ")}
-                      {plan.edad_min_meses != null ? ` · desde ${plan.edad_min_meses} meses` : ""}
-                      {plan.edad_max_anios != null ? ` · hasta ${plan.edad_max_anios} años` : ""}
-                    </p>
-                    {plan.zonas.length === 0 ? (
-                      <p className="mt-1 text-sm text-amber-800">La fuente no confirma en qué provincias está.</p>
-                    ) : (
-                      <p className="mt-1 text-sm text-gray-600">
-                        {plan.zonas.some((zona) => zona.provincia === PROVINCIA_TODAS)
-                          ? "Todo el país."
-                          : `Disponible en ${plan.zonas.map((zona) => jurisdiccionLabel(zona.provincia) ?? zona.provincia).join(", ")}.`}
-                      </p>
-                    )}
-                    {plan.zona_detalle ? <p className="mt-1 text-sm text-gray-600">{plan.zona_detalle}</p> : null}
-                  </div>
-                  <PriceTag plan={plan} today={today} size="lg" tone="primary" />
-                </div>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {plan.badges?.map((badge) => (
-                    <Badge key={badge} kind={badge} />
-                  ))}
-                </div>
-                <div className="mt-3">
-                  <VerifiedLine plan={plan} />
-                </div>
-                <div className="mt-3">
-                  <StatusNotice plan={plan} today={today} />
-                </div>
-                <div className="mt-6 grid gap-4 md:grid-cols-2">
-                  <section className="rounded-2xl border border-gray-200 bg-white p-5">
-                    <h3 className="flex items-center gap-2 font-bold text-emerald-700">
-                      <Check className="size-4" aria-hidden="true" />
-                      Coberturas incluidas
-                    </h3>
-                    <div className="mt-2">
-                      <CoverageList plan={plan} variant="table" />
-                    </div>
-                  </section>
-                  <section className="rounded-2xl border border-gray-200 bg-white p-5">
-                    <h3 className="font-bold text-amber-700">Carencias</h3>
-                    <div className="mt-4">
-                      <WaitingPeriods plan={plan} />
-                    </div>
-                  </section>
-                </div>
-                {plan.notas ? <p className="mt-4 text-sm text-gray-700">{plan.notas}</p> : null}
-                <div className="mt-4">
-                  <ProsCons plan={plan} />
-                </div>
-                {plan.estado !== "consultar" && plan.precio != null ? <JsonLd data={productJsonLd(plan, today)} /> : null}
-              </article>
-            ))}
-          </div>
+          <PlanArticles plans={plans} today={today} showPros />
           {related.length ? (
             <section className="mt-10">
               <h2 className="text-xl font-bold text-gray-900">Comparar con otra marca</h2>

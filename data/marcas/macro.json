@@ -1,0 +1,84 @@
+{
+  "slug": "macro",
+  "tipo_entidad": "aseguradora_via_banco",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": {
+      "valor": "Life Seguros de Personas y Patrimoniales S.A.",
+      "fuente_url": "https://www.macro.com.ar/personas/seguros/mascota",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "cuit": {
+      "valor": "30-50005154-6",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "ssn": {
+      "numero": "0251",
+      "registro_url": "https://seguro2.ssn.gob.ar/sujetoshabilitados",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    }
+  },
+  "canales": [
+    {
+      "tipo": "aseguradora",
+      "valor": "0800-222-7500",
+      "fuente_url": "https://www.macro.com.ar/personas/seguros/mascota",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "asistencia",
+      "valor": "0800-999-1277 (24 h)",
+      "fuente_url": "https://www.macro.com.ar/personas/seguros/mascota",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "whatsapp",
+      "valor": "+54 9 11 3357-3926",
+      "fuente_url": "https://www.macro.com.ar/personas/seguros/mascota",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "banco",
+      "valor": "0810-555-2355",
+      "fuente_url": "https://www.macro.com.ar/personas/seguros/mascota",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": {
+      "valor": "Banca Internet o App Macro",
+      "fuente_url": "https://www.macro.com.ar/personas/seguros/mascota",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "reintegro": null,
+    "siniestro": {
+      "valor": "Dentro de 3 días corridos en autogestion.lifeseguros.com.ar/siniestros/",
+      "fuente_url": "https://www.macro.com.ar/personas/seguros/mascota",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "baja": null
+  },
+  "red_veterinaria": null,
+  "edad": null,
+  "carencias": {
+    "valor": "Fallecimiento, extravío y robo: 15 días; sacrificio: 90 días",
+    "fuente_url": "https://www.macro.com.ar/personas/seguros/mascota",
+    "fecha_verificacion": "2026-10-25"
+  },
+  "otros_productos": null,
+  "inconsistencias": [
+    {
+      "descripcion": "Macro indica 'cualquier edad'; condiciones de Life publicadas en otro canal indican 3 meses a 9 años.",
+      "fuente_url": "https://www.macro.com.ar/personas/seguros/mascota",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "no_publica": [
+    "Cómo se pide un reintegro",
+    "Cómo se da de baja",
+    "Red de veterinarias",
+    "Edades de ingreso y permanencia"
+  ]
+}

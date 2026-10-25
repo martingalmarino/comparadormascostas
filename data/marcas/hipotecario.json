@@ -1,0 +1,72 @@
+{
+  "slug": "hipotecario",
+  "tipo_entidad": "aseguradora_via_banco",
+  "fecha_verificacion": "2026-10-25",
+  "empresa": {
+    "razon_social": {
+      "valor": "BHN Seguros Generales S.A.",
+      "fuente_url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "cuit": {
+      "valor": "30-69350418-6",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "ssn": {
+      "numero": "0696",
+      "registro_url": "https://seguro2.ssn.gob.ar/sujetoshabilitados",
+      "fuente_url": "https://datosabiertos.ssn.gob.ar/dataset/f74d96ca-094f-4b3c-be8f-890214c0df91/resource/727be04d-856b-4fa0-a8f3-8b2f82ea75d3/download/entidades-activas.csv",
+      "fecha_verificacion": "2026-10-25"
+    }
+  },
+  "canales": [
+    {
+      "tipo": "contratacion",
+      "valor": "0810-666-0101 (L a V 9 a 21)",
+      "fuente_url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "aseguradora",
+      "valor": "0810-666-0066",
+      "fuente_url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "banco",
+      "valor": "0810-222-7777",
+      "fuente_url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    {
+      "tipo": "whatsapp",
+      "valor": "11-4411-7777",
+      "fuente_url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "fecha_verificacion": "2026-10-25"
+    }
+  ],
+  "como_se_usa": {
+    "contratar": {
+      "valor": "Home Banking, App BH, sucursal o 0810-666-0101",
+      "fuente_url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "fecha_verificacion": "2026-10-25"
+    },
+    "reintegro": null,
+    "siniestro": null,
+    "baja": null
+  },
+  "red_veterinaria": null,
+  "edad": null,
+  "carencias": null,
+  "otros_productos": null,
+  "inconsistencias": [],
+  "no_publica": [
+    "Cómo se pide un reintegro",
+    "Cómo se denuncia un siniestro",
+    "Cómo se da de baja",
+    "Red de veterinarias",
+    "Edades de ingreso y permanencia",
+    "Carencias"
+  ]
+}

@@ -27,4 +27,6 @@ jobs:
           title: "Precios: requiere revisión"
           body-path: scripts/out/reporte.md
           branch: bot/precios
-          add-paths: data/planes
+          add-paths: |
+            data/planes
+            data/historial
