@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { Badge } from "@/components/Badge";
+import { BrandLogo } from "@/components/BrandLogo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CoverageList } from "@/components/CoverageList";
 import { FAQ } from "@/components/FAQ";
@@ -15,6 +16,7 @@ import { StickyLeadCTA } from "@/components/StickyLeadCTA";
 import { VerifiedLine } from "@/components/VerifiedLine";
 import { WaitingPeriods } from "@/components/WaitingPeriods";
 import { getReferenceDate } from "@/lib/dates";
+import { logoSize } from "@/lib/logo";
 import { especieLabel } from "@/lib/format";
 import { getMarcas, getPlansByMarca, versusPairs } from "@/lib/plans";
 import { pageMetadata, productJsonLd } from "@/lib/seo";
@@ -73,9 +75,16 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
         <p className="mt-4 text-xs font-bold uppercase tracking-widest text-indigo-200">
           {tipoOptions.find((item) => item.id === plans[0].tipo)?.label}
         </p>
-        <h1 className="mt-1 text-3xl font-bold sm:text-4xl">
-          {brand} · {plans[0].nombre}
-        </h1>
+        <div className="mt-3 flex flex-wrap items-center gap-4">
+          {plans[0].logo ? (
+            <span className="group inline-flex items-center rounded-xl bg-white px-3 py-2">
+              <BrandLogo nombre={brand} logo={plans[0].logo} maxWidth="12rem" {...logoSize(plans[0].logo)} />
+            </span>
+          ) : null}
+          <h1 className="text-3xl font-bold sm:text-4xl">
+            {brand} · {plans[0].nombre}
+          </h1>
+        </div>
         <p className="mt-2 max-w-2xl text-sm text-indigo-100">{plans[0].resumen}</p>
       </div>
 

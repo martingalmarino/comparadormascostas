@@ -58,6 +58,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional"
+    "resumen": "Nacional",
+    "logo": "/logos/federacion-patronal-via-mascotaleal.png",
+    "logo_fuente": "https://www.fedpat.com.ar/wp-content/uploads/2025/09/Logo-FEDPAT-SEGUROS-1536x407.png"
   }
 ]

@@ -59,7 +59,12 @@ export function getMarcas() {
   for (const plan of getPlans()) {
     if (seen.has(plan.marca_slug)) continue;
     seen.add(plan.marca_slug);
-    marcas.push({ slug: plan.marca_slug, nombre: plan.marca });
+    marcas.push({
+      slug: plan.marca_slug,
+      nombre: plan.marca,
+      logo: plan.logo,
+      logoFuente: plan.logo_fuente,
+    });
   }
   return marcas;
 }

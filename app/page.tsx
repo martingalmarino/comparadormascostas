@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
 import { PlanCard } from "@/components/PlanCard";
@@ -7,6 +8,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { getReferenceDate } from "@/lib/dates";
 import { applyFilters } from "@/lib/filters";
 import { formatDate } from "@/lib/format";
+import { logoSize } from "@/lib/logo";
 import { getMarcas, getPlans, newestVerification } from "@/lib/plans";
 import { organizationJsonLd, pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
@@ -68,14 +70,17 @@ export default async function HomePage() {
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <h2 className="text-center text-xs font-bold uppercase tracking-widest text-gray-400">Comparamos estas marcas</h2>
-        <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-gray-500">
-          {getMarcas().map((marca) => (
-            <li key={marca.slug}>
-              <Link href={`/planes/${marca.slug}`} className="font-bold hover:text-indigo-700">
-                {marca.nombre}
-              </Link>
-            </li>
-          ))}
+        <ul className="mt-6 grid grid-cols-3 items-center gap-x-4 gap-y-6 sm:grid-cols-4 lg:grid-cols-7">
+          {getMarcas().map((marca) => {
+            const size = marca.logo ? logoSize(marca.logo) : undefined;
+            return (
+              <li key={marca.slug} className="flex justify-center">
+                <Link href={`/planes/${marca.slug}`} className="group flex h-12 w-full items-center justify-center">
+                  <BrandLogo nombre={marca.nombre} logo={marca.logo} width={size?.width} height={size?.height} />
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {steps.map(([number, title, text]) => (

@@ -56,6 +56,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional"
+    "resumen": "Nacional",
+    "logo": "/logos/answer-seguros.svg",
+    "logo_fuente": "https://answerseguros.com.ar/new/assets/logos/answer-logo.svg"
   }
 ]

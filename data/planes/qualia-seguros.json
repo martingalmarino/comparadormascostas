@@ -54,7 +54,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional"
+    "resumen": "Nacional",
+    "logo": "/logos/qualia-seguros.png",
+    "logo_fuente": "https://www.qualiaseguros.com.ar/images/logo.png"
   },
   {
     "id": "qualia-seguros-plan-2",
@@ -111,7 +113,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional"
+    "resumen": "Nacional",
+    "logo": "/logos/qualia-seguros.png",
+    "logo_fuente": "https://www.qualiaseguros.com.ar/images/logo.png"
   },
   {
     "id": "qualia-seguros-plan-3",
@@ -168,7 +172,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional"
+    "resumen": "Nacional",
+    "logo": "/logos/qualia-seguros.png",
+    "logo_fuente": "https://www.qualiaseguros.com.ar/images/logo.png"
   },
   {
     "id": "qualia-seguros-plan-4",
@@ -225,7 +231,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional"
+    "resumen": "Nacional",
+    "logo": "/logos/qualia-seguros.png",
+    "logo_fuente": "https://www.qualiaseguros.com.ar/images/logo.png"
   },
   {
     "id": "qualia-seguros-plan-5",
@@ -282,6 +290,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional"
+    "resumen": "Nacional",
+    "logo": "/logos/qualia-seguros.png",
+    "logo_fuente": "https://www.qualiaseguros.com.ar/images/logo.png"
   }
 ]

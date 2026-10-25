@@ -53,7 +53,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional, más de 300 prestadores"
+    "resumen": "Nacional, más de 300 prestadores",
+    "logo": "/logos/ike-mascotas.svg",
+    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg"
   },
   {
     "id": "ike-mascotas-cachorro",
@@ -113,7 +115,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional, más de 300 prestadores"
+    "resumen": "Nacional, más de 300 prestadores",
+    "logo": "/logos/ike-mascotas.svg",
+    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg"
   },
   {
     "id": "ike-mascotas-adulto",
@@ -174,7 +178,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional, más de 300 prestadores"
+    "resumen": "Nacional, más de 300 prestadores",
+    "logo": "/logos/ike-mascotas.svg",
+    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg"
   },
   {
     "id": "ike-mascotas-senior",
@@ -234,6 +240,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional, más de 300 prestadores"
+    "resumen": "Nacional, más de 300 prestadores",
+    "logo": "/logos/ike-mascotas.svg",
+    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg"
   }
 ]

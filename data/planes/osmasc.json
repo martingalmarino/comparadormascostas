@@ -56,7 +56,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional"
+    "resumen": "Nacional",
+    "logo": "/logos/osmasc.png",
+    "logo_fuente": "https://www.osmasc.com/assets/images/header/logo.png"
   },
   {
     "id": "osmasc-plan-omega-premium",
@@ -114,6 +116,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional"
+    "resumen": "Nacional",
+    "logo": "/logos/osmasc.png",
+    "logo_fuente": "https://www.osmasc.com/assets/images/header/logo.png"
   }
 ]

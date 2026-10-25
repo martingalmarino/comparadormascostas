@@ -13,6 +13,8 @@ export const planSchema = z.object({
   id: z.string().min(1),
   marca: z.string().min(1),
   marca_slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+  logo: z.string().regex(/^\/logos\/[a-z0-9-]+\.(svg|png)$/).optional(),
+  logo_fuente: z.string().url().optional(),
   nombre: z.string().min(1),
   tipo: z.enum(planTipos),
   especies: z.array(z.enum(especies)).min(1),

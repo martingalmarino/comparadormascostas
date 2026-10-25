@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Badge } from "@/components/Badge";
+import { BrandLogo } from "@/components/BrandLogo";
 import { CompareToggle } from "@/components/compare";
 import { PriceTag } from "@/components/PriceTag";
 import { StatusNotice } from "@/components/StatusNotice";
 import { VerifiedLine } from "@/components/VerifiedLine";
-import { marcaIniciales } from "@/lib/format";
+import { logoSize } from "@/lib/logo";
 import type { Plan } from "@/lib/plan-schema";
 import { tipoOptions } from "@/lib/zones";
 
@@ -39,10 +40,15 @@ export function PlanTable({ plans, today }: { plans: Plan[]; today: string }) {
           {plans.map((plan) => (
             <tr key={plan.id} id={`${plan.id}-fila`} className="align-top hover:bg-gray-50">
               <td className="px-4 py-5">
-                <div className="flex items-start gap-3">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gray-100 font-bold text-indigo-600">
-                    {marcaIniciales(plan.marca_slug, plan.marca)}
-                  </div>
+                <div className="flex items-center gap-3">
+                  <BrandLogo
+                    nombre={plan.marca}
+                    logo={plan.logo}
+                    slug={plan.marca_slug}
+                    fallback="iniciales"
+                    maxWidth="8.5rem"
+                    {...(plan.logo ? logoSize(plan.logo) : {})}
+                  />
                   <div className="min-w-0">
                     <p className="font-bold text-gray-900">{plan.marca}</p>
                     <p className="text-sm text-gray-500">{plan.nombre}</p>

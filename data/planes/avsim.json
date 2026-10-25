@@ -56,7 +56,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro"
+    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
+    "logo": "/logos/avsim.png",
+    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png"
   },
   {
     "id": "avsim-plan-210",
@@ -112,7 +114,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro"
+    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
+    "logo": "/logos/avsim.png",
+    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png"
   },
   {
     "id": "avsim-plan-315",
@@ -168,7 +172,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro"
+    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
+    "logo": "/logos/avsim.png",
+    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png"
   },
   {
     "id": "avsim-plan-global",
@@ -218,6 +224,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro"
+    "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
+    "logo": "/logos/avsim.png",
+    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png"
   }
 ]

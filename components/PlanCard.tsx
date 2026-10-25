@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { Badge } from "@/components/Badge";
+import { BrandLogo } from "@/components/BrandLogo";
 import { CompareToggle } from "@/components/compare";
 import { CoverageList } from "@/components/CoverageList";
 import { PriceTag } from "@/components/PriceTag";
 import { StatusNotice } from "@/components/StatusNotice";
 import { VerifiedLine } from "@/components/VerifiedLine";
+import { logoSize } from "@/lib/logo";
 import type { Plan } from "@/lib/plan-schema";
 
 export function PlanCard({ plan, today }: { plan: Plan; today: string }) {
@@ -12,8 +14,12 @@ export function PlanCard({ plan, today }: { plan: Plan; today: string }) {
     <article id={plan.id} className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
       <div className="p-4">
         <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-indigo-600">{plan.marca}</p>
+          <div className="min-w-0">
+            {plan.logo ? (
+              <BrandLogo nombre={plan.marca} logo={plan.logo} maxWidth="9rem" {...logoSize(plan.logo)} />
+            ) : (
+              <p className="text-[10px] font-bold uppercase tracking-widest text-indigo-600">{plan.marca}</p>
+            )}
             <h3 className="text-lg font-bold text-gray-900">{plan.nombre}</h3>
           </div>
           <PriceTag plan={plan} today={today} />

@@ -64,7 +64,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional; venta a clientes del banco"
+    "resumen": "Nacional; venta a clientes del banco",
+    "logo": "/logos/provincia-seguros-banco-provincia.png",
+    "logo_fuente": "https://www.provinciaseguros.com.ar/"
   },
   {
     "id": "provincia-seguros-banco-provincia-plan-plus",
@@ -131,7 +133,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional; venta a clientes del banco"
+    "resumen": "Nacional; venta a clientes del banco",
+    "logo": "/logos/provincia-seguros-banco-provincia.png",
+    "logo_fuente": "https://www.provinciaseguros.com.ar/"
   },
   {
     "id": "provincia-seguros-banco-provincia-plan-premium",
@@ -198,6 +202,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional; venta a clientes del banco"
+    "resumen": "Nacional; venta a clientes del banco",
+    "logo": "/logos/provincia-seguros-banco-provincia.png",
+    "logo_fuente": "https://www.provinciaseguros.com.ar/"
   }
 ]

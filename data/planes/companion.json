@@ -50,7 +50,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional; cualquier veterinario matriculado (reintegro)"
+    "resumen": "Nacional; cualquier veterinario matriculado (reintegro)",
+    "logo": "/logos/companion.png",
+    "logo_fuente": "https://companion.com.ar/wp-content/uploads/2024/12/Logo-chico.webp"
   },
   {
     "id": "companion-plan-80",
@@ -106,7 +108,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional; cualquier veterinario matriculado (reintegro)"
+    "resumen": "Nacional; cualquier veterinario matriculado (reintegro)",
+    "logo": "/logos/companion.png",
+    "logo_fuente": "https://companion.com.ar/wp-content/uploads/2024/12/Logo-chico.webp"
   },
   {
     "id": "companion-plan-100",
@@ -162,6 +166,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Nacional; cualquier veterinario matriculado (reintegro)"
+    "resumen": "Nacional; cualquier veterinario matriculado (reintegro)",
+    "logo": "/logos/companion.png",
+    "logo_fuente": "https://companion.com.ar/wp-content/uploads/2024/12/Logo-chico.webp"
   }
 ]

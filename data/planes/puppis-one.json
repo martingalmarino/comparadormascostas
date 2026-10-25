@@ -45,7 +45,9 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Locales Puppis; no se verificó presencia en Córdoba"
+    "resumen": "Locales Puppis; no se verificó presencia en Córdoba",
+    "logo": "/logos/puppis-one.svg",
+    "logo_fuente": "https://assets.one.puppis.com.ar/img/icons/logo_one.svg"
   },
   {
     "id": "puppis-one-one-plus",
@@ -93,6 +95,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Locales Puppis; no se verificó presencia en Córdoba"
+    "resumen": "Locales Puppis; no se verificó presencia en Córdoba",
+    "logo": "/logos/puppis-one.svg",
+    "logo_fuente": "https://assets.one.puppis.com.ar/img/icons/logo_one.svg"
   }
 ]
