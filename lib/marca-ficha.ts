@@ -81,7 +81,13 @@ export function textoZona(plan: Plan) {
   const cubreTodas = plan.zonas.some((zona) => zona.provincia === PROVINCIA_TODAS);
   const resumenEsZona = plan.resumen ? esFraseZona(plan.resumen) : false;
   const detalleEsZona = plan.zona_detalle ? esFraseZona(plan.zona_detalle) : false;
-  if (cubreTodas || resumenEsZona || detalleEsZona) return "Todo el país.";
+  if (cubreTodas || resumenEsZona || detalleEsZona) {
+    const frases = [plan.zona_detalle, plan.resumen].filter((texto): texto is string => Boolean(texto && esFraseZona(texto)));
+    if (frases.some((texto) => /^todo el pa/i.test(texto.trim())) && !frases.some((texto) => /^nacional/i.test(texto.trim())) && !cubreTodas) {
+      return "Todo el país.";
+    }
+    return "Nacional";
+  }
   if (plan.zonas.length) {
     return `Disponible en ${plan.zonas.map((zona) => jurisdiccionLabel(zona.provincia) ?? zona.provincia).join(", ")}.`;
   }

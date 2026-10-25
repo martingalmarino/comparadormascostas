@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ marca: st
   const today = await getReferenceDate();
   const plans = getPlansByMarca(marca);
   return pageMetadata({
-    title: tituloFicha(marca, plans[0].marca, plans),
+    title: tituloFicha(marca, plans[0].marca, today),
     description: descripcionFicha(plans[0].marca, plans, today),
     path: seo.path,
     absolute: true,

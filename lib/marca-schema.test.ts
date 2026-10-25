@@ -6,8 +6,9 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { FichaV2 } from "@/components/FichaMarca/FichaV2";
 import { descripcionFicha, tituloFicha } from "@/lib/ficha-meta";
+import { formatMonthAbbr } from "@/lib/format";
 import { appendPricePoint, seriesVisibles } from "@/lib/historial";
-import { alternativasCercanas, enlaceCanal, faqsDeMarca, organizationMarcaJsonLd, textoInconsistencia } from "@/lib/marca-ficha";
+import { alternativasCercanas, enlaceCanal, faqsDeMarca, organizationMarcaJsonLd, textoInconsistencia, textoZona } from "@/lib/marca-ficha";
 import { marcaSchema } from "@/lib/marca-schema";
 import { getMarca } from "@/lib/marcas";
 import { getPlans, getPlansByMarca } from "@/lib/plans";
@@ -64,9 +65,26 @@ test("cada ficha v2 tiene title, description y JSON-LD sin null", () => {
     const plans = getPlansByMarca(slug);
     assert.ok(ficha);
     assert.ok(plans.length);
-    const title = tituloFicha(slug, plans[0].marca, plans);
+    const title = tituloFicha(slug, plans[0].marca, today);
     const description = descripcionFicha(plans[0].marca, plans, today);
-    assert.match(title, /: seguro de mascotas(?:, precios(?: y planes)?)? \([a-z]{3}\. \d{4}\) \| Cuidalo$/);
+    const mes = formatMonthAbbr(today);
+    const meses = [mes, mes.replace(/\./g, "")];
+    assert.match(title, /: seguro de mascotas(?:, precios(?: y planes)?)? \([a-z]{3}\.? \d{4}\) \| Cuidalo$/);
+    assert.ok(meses.some((item) => title.includes(`(${item})`)), `${slug} no usa el mes de referencia: ${title}`);
+    assert.ok(title.includes(today.slice(0, 4)), title);
+    const niveles = [
+      `${title.split(":")[0]}: seguro de mascotas, precios y planes`,
+      `${title.split(":")[0]}: seguro de mascotas, precios`,
+      `${title.split(":")[0]}: seguro de mascotas`,
+    ];
+    const nivel = niveles.findIndex((item) => title.startsWith(`${item} (`));
+    assert.ok(nivel >= 0, title);
+    for (let previo = 0; previo < nivel; previo += 1) {
+      for (const item of meses) {
+        const candidato = `${niveles[previo]} (${item}) | Cuidalo`;
+        assert.ok([...candidato].length > 65, `${slug} podía usar «${candidato}»`);
+      }
+    }
     assert.ok([...title].length <= 65, `${slug} title ${[...title].length}: ${title}`);
     assert.ok([...description].length >= 140 && [...description].length <= 160, `${slug} desc ${[...description].length}: ${description}`);
     assert.equal(/\bnull\b|\bundefined\b/.test(`${title} ${description}`), false);
@@ -112,7 +130,29 @@ test("cada ficha v2 tiene title, description y JSON-LD sin null", () => {
     );
     assert.equal(/\bnull\b|\bundefined\b/.test(html), false, slug);
     if (ficha.no_publica.length === 0) assert.equal(html.includes(`Lo que ${plans[0].marca} no publica`), false);
+    if (slug === "rus-seguros") {
+      assert.equal(html.includes("Todo el país"), false, html);
+      assert.equal(html.includes("1958"), false);
+      for (const plan of plans) {
+        const zona = textoZona(plan);
+        assert.equal(zona, "Nacional");
+        assert.equal(/nacional/i.test(zona) && /todo el pa/i.test(zona), false);
+      }
+    }
   }
+  assert.match(tituloFicha("zurich", "Zurich", today), /Zurich: seguro de mascotas, precios y planes \(oct 2026\) \| Cuidalo/);
+  assert.match(tituloFicha("mapfre", "MAPFRE", today), /MAPFRE: seguro de mascotas, precios y planes \(oct 2026\) \| Cuidalo/);
+  assert.match(tituloFicha("galicia", "Galicia Seguros", today), /Galicia Seguros: seguro de mascotas, precios \(oct 2026\) \| Cuidalo/);
+  assert.match(tituloFicha("macro", "Macro \(Life Seguros\)", today), /^Macro: seguro de mascotas, precios y planes \(oct\. 2026\) \| Cuidalo$/);
+  assert.match(tituloFicha("hipotecario", "Banco Hipotecario", today), /^Hipotecario: seguro de mascotas, precios \(oct\. 2026\) \| Cuidalo$/);
+  assert.match(
+    tituloFicha("provincia-seguros-banco-provincia", "Provincia Seguros (Banco Provincia)", today),
+    /^Provincia: seguro de mascotas, precios \(oct\. 2026\) \| Cuidalo$/,
+  );
+  const petit = tituloFicha("petit-salud", "Petit Salud", today);
+  assert.match(petit, /\(oct\. 2026\)/);
+  assert.equal(petit.includes("2025"), false);
+  assert.equal(petit.includes("abr."), false);
   const rus = getPlansByMarca("rus-seguros");
   assert.equal(rus.find((plan) => plan.nombre === "PetCare Integral")?.edad_max_anios, 8);
   assert.equal(rus.find((plan) => plan.nombre === "PetCare Superior")?.edad_max_anios, 8);

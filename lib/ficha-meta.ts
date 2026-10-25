@@ -1,8 +1,9 @@
 import { formatArs, formatDate, formatMonthAbbr } from "@/lib/format";
 import { preciosVigentes } from "@/lib/marca-ficha";
 import type { Plan } from "@/lib/plan-schema";
-import { newestVerification } from "@/lib/plans";
 import { brandLabel } from "@/lib/seo-copy";
+
+const LIMITE_TITLE = 65;
 
 function especies(plans: Plan[]) {
   const presentes = new Set(plans.flatMap((plan) => plan.especies));
@@ -22,14 +23,48 @@ function ajustar(texto: string) {
   return actual;
 }
 
-export function tituloFicha(slug: string, nombre: string, plans: Plan[]) {
-  const etiqueta = brandLabel(slug, nombre);
-  const mes = formatMonthAbbr(newestVerification(plans));
-  const conPlanes = `${etiqueta}: seguro de mascotas, precios y planes (${mes}) | Cuidalo`;
-  if ([...conPlanes].length <= 65) return conPlanes;
-  const conPrecio = `${etiqueta}: seguro de mascotas, precios (${mes}) | Cuidalo`;
-  if ([...conPrecio].length <= 65) return conPrecio;
-  return `${etiqueta}: seguro de mascotas (${mes}) | Cuidalo`;
+function titulo(etiqueta: string, detalle: string, mes: string) {
+  return `${etiqueta}: seguro de mascotas${detalle} (${mes}) | Cuidalo`;
+}
+
+function cabe(texto: string) {
+  return [...texto].length <= LIMITE_TITLE;
+}
+
+/** Nombre visible, sin el paréntesis que alarga el title (vía, Life, banco). */
+function etiquetaTitle(slug: string, nombre: string) {
+  return brandLabel(slug, nombre)
+    .replace(/\s*\([^)]*\)/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function etiquetasTitle(etiqueta: string) {
+  const alternativas = [etiqueta.replace(/^Banco\s+/, ""), etiqueta.replace(/\s+Seguros$/, "")];
+  const sinAmbos = etiqueta.replace(/^Banco\s+/, "").replace(/\s+Seguros$/, "");
+  return [etiqueta, ...alternativas, sinAmbos].filter((item, index, todos) => item.length > 0 && todos.indexOf(item) === index);
+}
+
+/**
+ * Prueba, en orden, la frase completa, sin " y planes" y sin ", precios".
+ * Dentro de cada frase prueba el mes con punto y, si falta un carácter, sin punto.
+ * Recién si "precios" no entra, acorta "Banco " o " Seguros".
+ */
+export function tituloFicha(slug: string, nombre: string, hoy: string) {
+  const mes = formatMonthAbbr(hoy);
+  const meses = [mes, mes.replace(/\./g, "")];
+  const etiquetas = etiquetasTitle(etiquetaTitle(slug, nombre));
+  const detalles = [", precios y planes", ", precios"];
+  for (const [indice, detalle] of detalles.entries()) {
+    const nombres = indice === 0 ? etiquetas.slice(0, 1) : etiquetas;
+    for (const etiqueta of nombres) {
+      for (const mesTitulo of meses) {
+        const candidato = titulo(etiqueta, detalle, mesTitulo);
+        if (cabe(candidato)) return candidato;
+      }
+    }
+  }
+  return titulo(etiquetas[0], "", meses[0]);
 }
 
 export function descripcionFicha(nombre: string, plans: Plan[], today: string) {
