@@ -1,5 +1,5 @@
 import { planTipos, type Especie, type Plan, type PlanTipo } from "@/lib/plan-schema";
-import { coverageFilters, isKnownZone, zones } from "@/lib/zones";
+import { coverageFilters, foldPlace, isKnownProvincia, isKnownZone, zones } from "@/lib/zones";
 
 export type SortKey = "precio" | "cobertura" | "actualizado";
 
@@ -7,6 +7,7 @@ export type Filters = {
   especie?: Especie;
   meses?: number;
   zona?: string;
+  provincia?: string;
   tipo?: PlanTipo;
   max?: number;
   cob: string[];
@@ -29,10 +30,12 @@ export function parseFilters(search: RawSearch): Filters {
   const max = Number(first(search.max));
   const orden = first(search.orden);
   const zona = first(search.zona);
+  const provincia = first(search.provincia);
   return {
     especie: especie === "perro" || especie === "gato" ? especie : undefined,
     meses: Number.isFinite(meses) && meses > 0 ? meses : undefined,
     zona: zona && isKnownZone(zona) ? zona : undefined,
+    provincia: provincia && isKnownProvincia(provincia) ? provincia : undefined,
     tipo: planTipos.includes(tipo as PlanTipo) ? (tipo as PlanTipo) : undefined,
     max: Number.isFinite(max) && max > 0 ? max : undefined,
     cob: (first(search.cob) ?? "")
@@ -53,6 +56,7 @@ export function serializeFilters(filters: Filters) {
   if (filters.especie) params.set("especie", filters.especie);
   if (filters.meses) params.set("meses", String(filters.meses));
   if (filters.zona) params.set("zona", filters.zona);
+  if (filters.provincia) params.set("provincia", filters.provincia);
   if (filters.tipo) params.set("tipo", filters.tipo);
   if (filters.max) params.set("max", String(filters.max));
   if (filters.cob.length) params.set("cob", filters.cob.join(","));
@@ -66,6 +70,7 @@ export function hasNarrowingFilters(filters: Filters) {
     filters.especie ||
       filters.meses ||
       filters.zona ||
+      filters.provincia ||
       filters.tipo ||
       filters.max ||
       filters.cob.length ||
@@ -99,12 +104,24 @@ function descendants(slug: string) {
   return found;
 }
 
-export function zoneMatches(planZonas: string[], zona: string) {
-  if (planZonas.includes(zona)) return true;
+export function coversEverywhere(plan: Plan) {
+  return plan.zonas.some((zona) => foldPlace(zona.provincia) === "toda");
+}
+
+export function coversProvince(plan: Plan, provincia: string) {
+  if (coversEverywhere(plan)) return true;
+  const target = foldPlace(provincia);
+  return plan.zonas.some((zona) => foldPlace(zona.provincia) === target);
+}
+
+export function zoneMatches(plan: Plan, zona: string) {
+  if (coversProvince(plan, "Córdoba")) return true;
+  const names = plan.zonas.flatMap((item) => (item.ciudades === "toda" ? [item.provincia] : [item.provincia, ...item.ciudades]));
+  if (names.some((item) => foldPlace(item) === foldPlace(zona))) return true;
   const parentSlugs = ancestors(zona);
-  if (planZonas.some((item) => parentSlugs.includes(item))) return true;
+  if (names.some((item) => parentSlugs.includes(foldPlace(item)))) return true;
   const childSlugs = descendants(zona);
-  return planZonas.some((item) => childSlugs.includes(item));
+  return names.some((item) => childSlugs.includes(foldPlace(item)));
 }
 
 function matchesAge(plan: Plan, meses: number) {
@@ -126,7 +143,8 @@ export function applyFilters(plans: Plan[], filters: Filters) {
     if (filters.especie && !plan.especies.includes(filters.especie)) return false;
     if (filters.tipo && plan.tipo !== filters.tipo) return false;
     if (filters.meses != null && !matchesAge(plan, filters.meses)) return false;
-    if (filters.zona && !zoneMatches(plan.zonas, filters.zona)) return false;
+    if (filters.zona && !zoneMatches(plan, filters.zona)) return false;
+    if (filters.provincia && !coversProvince(plan, filters.provincia)) return false;
     if (filters.max != null) {
       if (plan.precio == null || plan.estado === "sin_precio_publico" || plan.estado === "consultar") return false;
       if (plan.precio > filters.max) return false;

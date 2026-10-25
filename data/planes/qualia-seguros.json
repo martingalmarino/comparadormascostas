@@ -10,13 +10,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 9700,
     "precio_texto_original": "$9.700 /mes",
     "moneda": "ARS",
@@ -56,7 +55,8 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/qualia-seguros.png",
-    "logo_fuente": "https://www.qualiaseguros.com.ar/images/new/logo.png"
+    "logo_fuente": "https://www.qualiaseguros.com.ar/images/new/logo.png",
+    "precio_por_zona": false
   },
   {
     "id": "qualia-seguros-plan-2",
@@ -69,13 +69,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 14600,
     "precio_texto_original": "$14.600 /mes",
     "moneda": "ARS",
@@ -115,7 +114,8 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/qualia-seguros.png",
-    "logo_fuente": "https://www.qualiaseguros.com.ar/images/new/logo.png"
+    "logo_fuente": "https://www.qualiaseguros.com.ar/images/new/logo.png",
+    "precio_por_zona": false
   },
   {
     "id": "qualia-seguros-plan-3",
@@ -128,13 +128,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 19400,
     "precio_texto_original": "$19.400 /mes",
     "moneda": "ARS",
@@ -174,7 +173,8 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/qualia-seguros.png",
-    "logo_fuente": "https://www.qualiaseguros.com.ar/images/new/logo.png"
+    "logo_fuente": "https://www.qualiaseguros.com.ar/images/new/logo.png",
+    "precio_por_zona": false
   },
   {
     "id": "qualia-seguros-plan-4",
@@ -187,13 +187,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 24300,
     "precio_texto_original": "$24.300 /mes",
     "moneda": "ARS",
@@ -233,7 +232,8 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/qualia-seguros.png",
-    "logo_fuente": "https://www.qualiaseguros.com.ar/images/new/logo.png"
+    "logo_fuente": "https://www.qualiaseguros.com.ar/images/new/logo.png",
+    "precio_por_zona": false
   },
   {
     "id": "qualia-seguros-plan-5",
@@ -246,13 +246,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 29100,
     "precio_texto_original": "$29.100 /mes",
     "moneda": "ARS",
@@ -292,6 +291,7 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/qualia-seguros.png",
-    "logo_fuente": "https://www.qualiaseguros.com.ar/images/new/logo.png"
+    "logo_fuente": "https://www.qualiaseguros.com.ar/images/new/logo.png",
+    "precio_por_zona": false
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "userAgent": "MascoComparaBot/0.1 (comparador independiente de planes para mascotas; +http://localhost:3000/como-comparamos)",
+  "userAgent": "CuidaloBot/0.1 (comparador independiente de planes para mascotas; +https://cuidalo.com.ar/como-comparamos)",
   "umbral_cambio": 0.15,
   "marcas": [
     {

@@ -9,13 +9,12 @@
       "perro"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": null,
     "precio_texto_original": "Prima según raza, edad, sexo y localidad",
     "moneda": "ARS",
@@ -60,6 +59,7 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/federacion-patronal-via-mascotaleal.png",
-    "logo_fuente": "https://www.fedpat.com.ar/wp-content/uploads/2025/09/Logo-FEDPAT-SEGUROS-1536x407.png"
+    "logo_fuente": "https://www.fedpat.com.ar/wp-content/uploads/2025/09/Logo-FEDPAT-SEGUROS-1536x407.png",
+    "precio_por_zona": false
   }
 ]

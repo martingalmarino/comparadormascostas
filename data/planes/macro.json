@@ -1,0 +1,66 @@
+[
+  {
+    "id": "macro-mascota",
+    "marca": "Macro (Life Seguros)",
+    "marca_slug": "macro",
+    "nombre": "Seguro Mascota",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "Sin precio; se contrata en la app",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.macro.com.ar/personas/seguros/mascota",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "fallecimiento accidental"
+      },
+      {
+        "item": "extravío"
+      },
+      {
+        "item": "robo"
+      },
+      {
+        "item": "sacrificio"
+      },
+      {
+        "item": "pack asistencia"
+      }
+    ],
+    "carencias": [
+      {
+        "item": "15 días accidente/extravío/robo",
+        "dias": 15
+      },
+      {
+        "item": "90 días sacrificio vejez/enfermedad",
+        "dias": 90
+      }
+    ],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://www.macro.com.ar/personas/seguros/mascota"
+    },
+    "notas": "1ª cuota bonificada vía app hasta 31/12/2026 (snippet; no re-verificado en página).",
+    "scraping": {
+      "url": "https://www.macro.com.ar/personas/seguros/mascota",
+      "metodo": "html_estatico",
+      "selector": "Seguro Mascota"
+    }
+  }
+]

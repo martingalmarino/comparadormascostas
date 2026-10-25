@@ -1,0 +1,54 @@
+[
+  {
+    "id": "ospan-planes",
+    "marca": "OSPAN",
+    "marca_slug": "ospan",
+    "nombre": "Planes caninos (5) y felinos (4)",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA"
+        ]
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "Sin precio publicado",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.ospan.com.ar/planes",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "+100 veterinarias CABA/GBA"
+      },
+      {
+        "item": "guardias 24h"
+      },
+      {
+        "item": "+25 especialidades"
+      }
+    ],
+    "carencias": [],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://www.ospan.com.ar/planes"
+    },
+    "notas": "Precios por WhatsApp. Sitio Wix (JS).",
+    "scraping": {
+      "url": "https://www.ospan.com.ar/planes",
+      "metodo": "manual",
+      "selector": "Planes caninos (5) y felinos (4)"
+    }
+  }
+]

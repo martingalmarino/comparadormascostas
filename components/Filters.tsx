@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { fieldClass, labelClass } from "@/components/ui";
 import type { Filters as FilterState } from "@/lib/filters";
 import { serializeFilters } from "@/lib/filters";
-import { ageOptions, coverageFilters, priceOptions, sortOptions, tipoOptions, zoneLabel, zones } from "@/lib/zones";
+import { ageOptions, coverageFilters, priceOptions, provinciaLabel, provincias, sortOptions, tipoOptions, zoneLabel, zones } from "@/lib/zones";
 
 export function Filters({ filters, total }: { filters: FilterState; total: number }) {
   const router = useRouter();
@@ -21,6 +21,7 @@ export function Filters({ filters, total }: { filters: FilterState; total: numbe
     const age = ageOptions.find((option) => option.meses === filters.meses);
     chips.push({ key: "meses", label: age?.label ?? `${filters.meses} meses`, clear: { meses: undefined } });
   }
+  if (filters.provincia) chips.push({ key: "provincia", label: provinciaLabel(filters.provincia) ?? filters.provincia, clear: { provincia: undefined } });
   if (filters.zona) chips.push({ key: "zona", label: zoneLabel(filters.zona) ?? filters.zona, clear: { zona: undefined } });
   if (filters.tipo) {
     chips.push({
@@ -128,7 +129,18 @@ function Fields({ filters, update }: { filters: FilterState; update: (partial: P
         </select>
       </label>
       <label className="block">
-        <span className={labelClass}>Zona</span>
+        <span className={labelClass}>Disponible en mi zona</span>
+        <select className={fieldClass} value={filters.provincia ?? ""} onChange={(event) => update({ provincia: event.target.value || undefined })}>
+          <option value="">Todas las provincias</option>
+          {provincias.map((provincia) => (
+            <option key={provincia.slug} value={provincia.slug}>
+              {provincia.label}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label className="block">
+        <span className={labelClass}>Zona de Córdoba</span>
         <select className={fieldClass} value={filters.zona ?? ""} onChange={(event) => update({ zona: event.target.value || undefined })}>
           <option value="">Todas las zonas</option>
           {zones.map((zone) => (

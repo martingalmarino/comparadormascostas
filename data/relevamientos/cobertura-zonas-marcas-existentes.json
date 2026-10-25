@@ -1,0 +1,193 @@
+[
+  {
+    "marca": "Companion",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Nacional por red/reintegro; precio único.",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "OSMASC",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Nacional (sede La Plata).",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "FielPet",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Nacional.",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "Qualia",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Nacional.",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "RUS",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Aseguradora nacional.",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "Answer",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Nacional.",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "Pet Society",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Online, nacional.",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "Provincia Seguros",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Nacional.",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "BBVA",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Nacional.",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "Federación Patronal",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Nacional.",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "Iké",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Nacional, 300+ prestadores; traslados solo AMBA.",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "AVSIM",
+    "cubre_caba_gba": "no_confirmado",
+    "zonas": null,
+    "precio_por_zona": true,
+    "notas": "13 zonas en 6 provincias + nacional por reintegro; precio por provincia vía selector JS. No se pudo confirmar si Buenos Aires está entre las 6.",
+    "fuente_url": "https://www.avsim.com.ar/",
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "Puppis One",
+    "cubre_caba_gba": true,
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA norte hasta Nordelta",
+          "GBA sur hasta Quilmes/Lomas de Zamora",
+          "GBA oeste hasta Ramos Mejía"
+        ]
+      }
+    ],
+    "precio_por_zona": false,
+    "notas": "Solo AMBA: CABA, zona norte hasta Nordelta, sur hasta Quilmes/Lomas, oeste hasta Ramos Mejía (sucursales y domicilio).",
+    "fuente_url": "https://one.puppis.com.ar/faqs",
+    "fecha_verificacion": "2026-10-25"
+  },
+  {
+    "marca": "Petit Salud",
+    "cubre_caba_gba": false,
+    "zonas": [],
+    "precio_por_zona": false,
+    "notas": "Solo Córdoba, Mendoza, San Juan.",
+    "fuente_url": null,
+    "fecha_verificacion": "2026-10-25"
+  }
+]

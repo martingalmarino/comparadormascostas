@@ -9,14 +9,8 @@
       "perro",
       "gato"
     ],
-    "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
-    ],
-    "zona_detalle": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
-    "incluye_cordoba": true,
+    "zonas": [],
+    "zona_detalle": "13 zonas en 6 provincias + nacional por reintegro; precio por provincia vía selector JS. No se pudo confirmar si Buenos Aires está entre las 6.",
     "precio": null,
     "precio_texto_original": "Precio por provincia en mapa interactivo",
     "moneda": "ARS",
@@ -58,7 +52,8 @@
     },
     "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
     "logo": "/logos/avsim.png",
-    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png"
+    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png",
+    "precio_por_zona": true
   },
   {
     "id": "avsim-plan-210",
@@ -70,14 +65,8 @@
       "perro",
       "gato"
     ],
-    "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
-    ],
-    "zona_detalle": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
-    "incluye_cordoba": true,
+    "zonas": [],
+    "zona_detalle": "13 zonas en 6 provincias + nacional por reintegro; precio por provincia vía selector JS. No se pudo confirmar si Buenos Aires está entre las 6.",
     "precio": null,
     "precio_texto_original": "Precio por provincia en mapa interactivo",
     "moneda": "ARS",
@@ -116,7 +105,8 @@
     },
     "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
     "logo": "/logos/avsim.png",
-    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png"
+    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png",
+    "precio_por_zona": true
   },
   {
     "id": "avsim-plan-315",
@@ -128,14 +118,8 @@
       "perro",
       "gato"
     ],
-    "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
-    ],
-    "zona_detalle": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
-    "incluye_cordoba": true,
+    "zonas": [],
+    "zona_detalle": "13 zonas en 6 provincias + nacional por reintegro; precio por provincia vía selector JS. No se pudo confirmar si Buenos Aires está entre las 6.",
     "precio": null,
     "precio_texto_original": "Precio por provincia en mapa interactivo",
     "moneda": "ARS",
@@ -174,7 +158,8 @@
     },
     "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
     "logo": "/logos/avsim.png",
-    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png"
+    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png",
+    "precio_por_zona": true
   },
   {
     "id": "avsim-plan-global",
@@ -186,14 +171,8 @@
       "perro",
       "gato"
     ],
-    "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
-    ],
-    "zona_detalle": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
-    "incluye_cordoba": true,
+    "zonas": [],
+    "zona_detalle": "13 zonas en 6 provincias + nacional por reintegro; precio por provincia vía selector JS. No se pudo confirmar si Buenos Aires está entre las 6.",
     "precio": null,
     "precio_texto_original": "Precio por provincia en mapa interactivo",
     "moneda": "ARS",
@@ -226,6 +205,7 @@
     },
     "resumen": "Red en 13 zonas de 6 provincias (incluye Córdoba); Plan Global nacional por reintegro",
     "logo": "/logos/avsim.png",
-    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png"
+    "logo_fuente": "https://www.avsim.com.ar/img/logo-avsim-ori.png",
+    "precio_por_zona": true
   }
 ]

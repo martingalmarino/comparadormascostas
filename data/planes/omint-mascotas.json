@@ -1,0 +1,48 @@
+[
+  {
+    "id": "omint-mascotas",
+    "marca": "Omint Mascotas",
+    "marca_slug": "omint-mascotas",
+    "nombre": "Planes 1500/2500/4500/8500/8510",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA"
+        ]
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "Prensa: $27.000 a $130.000 + IVA",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://cobertura.com.ar/2026/06/08/el-auge-de-la-familia-multiespecie/",
+    "estado": "requiere_revision",
+    "coberturas": [
+      {
+        "item": "red OSPAN"
+      }
+    ],
+    "carencias": [],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://cobertura.com.ar/2026/06/08/el-auge-de-la-familia-multiespecie/"
+    },
+    "notas": "Rango solo en prensa (Cobertura, Somos Pymes, 2026); no hay web oficial con precios. 8510 = con preexistencias. Abierto al público desde 07/2026 según prensa.",
+    "scraping": {
+      "url": "https://cobertura.com.ar/2026/06/08/el-auge-de-la-familia-multiespecie/",
+      "metodo": "html_estatico",
+      "selector": "Planes 1500/2500/4500/8500/8510"
+    }
+  }
+]

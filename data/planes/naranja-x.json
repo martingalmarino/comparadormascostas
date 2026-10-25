@@ -1,0 +1,52 @@
+[
+  {
+    "id": "naranjax-asistencia",
+    "marca": "Naranja X",
+    "marca_slug": "naranja-x",
+    "nombre": "Asistencia para Mascotas",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "Cotizá, sin precio",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.naranjax.com/seguros/mascotas",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "vacunación, castración, consultas por accidente/enfermedad"
+      },
+      {
+        "item": "descuentos alimento"
+      },
+      {
+        "item": "guardería"
+      }
+    ],
+    "carencias": [],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://www.naranjax.com/seguros/mascotas"
+    },
+    "notas": "Prestada por Iké (0800-122-0738). Cobertura nacional. Precio preferencial multi-mascota.",
+    "carencias_texto": "vacunación 3 meses; castración 6 meses",
+    "scraping": {
+      "url": "https://www.naranjax.com/seguros/mascotas",
+      "metodo": "html_estatico",
+      "selector": "Asistencia para Mascotas"
+    }
+  }
+]

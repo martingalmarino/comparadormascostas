@@ -12,13 +12,12 @@
     "edad_min_meses": 3,
     "edad_max_anios": 9,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional; venta a clientes del banco",
-    "incluye_cordoba": true,
     "precio": 12948,
     "precio_texto_original": "Premio mensual $ Pesos 12.948",
     "moneda": "ARS",
@@ -66,7 +65,8 @@
     },
     "resumen": "Nacional; venta a clientes del banco",
     "logo": "/logos/provincia-seguros-banco-provincia.png",
-    "logo_fuente": "https://www.provinciaseguros.com.ar/"
+    "logo_fuente": "https://www.provinciaseguros.com.ar/",
+    "precio_por_zona": false
   },
   {
     "id": "provincia-seguros-banco-provincia-plan-plus",
@@ -81,13 +81,12 @@
     "edad_min_meses": 3,
     "edad_max_anios": 9,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional; venta a clientes del banco",
-    "incluye_cordoba": true,
     "precio": 15454,
     "precio_texto_original": "Premio mensual $ Pesos 15.454",
     "moneda": "ARS",
@@ -135,7 +134,8 @@
     },
     "resumen": "Nacional; venta a clientes del banco",
     "logo": "/logos/provincia-seguros-banco-provincia.png",
-    "logo_fuente": "https://www.provinciaseguros.com.ar/"
+    "logo_fuente": "https://www.provinciaseguros.com.ar/",
+    "precio_por_zona": false
   },
   {
     "id": "provincia-seguros-banco-provincia-plan-premium",
@@ -150,13 +150,12 @@
     "edad_min_meses": 3,
     "edad_max_anios": 9,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional; venta a clientes del banco",
-    "incluye_cordoba": true,
     "precio": 20083,
     "precio_texto_original": "Premio mensual $ Pesos 20.083",
     "moneda": "ARS",
@@ -204,6 +203,7 @@
     },
     "resumen": "Nacional; venta a clientes del banco",
     "logo": "/logos/provincia-seguros-banco-provincia.png",
-    "logo_fuente": "https://www.provinciaseguros.com.ar/"
+    "logo_fuente": "https://www.provinciaseguros.com.ar/",
+    "precio_por_zona": false
   }
 ]

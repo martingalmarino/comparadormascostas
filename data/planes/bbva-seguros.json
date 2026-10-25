@@ -12,13 +12,12 @@
     "edad_min_meses": 3,
     "edad_max_anios": 14,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": null,
     "precio_texto_original": "Cotizador no disponible",
     "moneda": "ARS",
@@ -58,6 +57,7 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/bbva-seguros.svg",
-    "logo_fuente": "https://cdn-sites-assets.mziq.com/wp-content/themes/mziq_bbva_ri/img/logo.svg"
+    "logo_fuente": "https://cdn-sites-assets.mziq.com/wp-content/themes/mziq_bbva_ri/img/logo.svg",
+    "precio_por_zona": false
   }
 ]

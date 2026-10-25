@@ -10,13 +10,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 22000,
     "precio_texto_original": "Desde $38.000 / $22.000",
     "moneda": "ARS",
@@ -58,7 +57,8 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/osmasc.png",
-    "logo_fuente": "https://www.osmasc.com/assets/images/header/logo.png"
+    "logo_fuente": "https://www.osmasc.com/assets/images/header/logo.png",
+    "precio_por_zona": false
   },
   {
     "id": "osmasc-plan-omega-premium",
@@ -71,13 +71,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 75000,
     "precio_texto_original": "$75.000",
     "moneda": "ARS",
@@ -118,6 +117,7 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/osmasc.png",
-    "logo_fuente": "https://www.osmasc.com/assets/images/header/logo.png"
+    "logo_fuente": "https://www.osmasc.com/assets/images/header/logo.png",
+    "precio_por_zona": false
   }
 ]

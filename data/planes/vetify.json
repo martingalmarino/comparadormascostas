@@ -1,0 +1,188 @@
+[
+  {
+    "id": "vetify-emergencias",
+    "marca": "Vetify",
+    "marca_slug": "vetify",
+    "nombre": "Emergencias",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": 21190,
+    "precio_texto_original": "$ 21.190/mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://vetify.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "videollamadas ilimitadas"
+      },
+      {
+        "item": "guardias 24h"
+      },
+      {
+        "item": "análisis"
+      },
+      {
+        "item": "cirugía 50% hasta $500.000"
+      },
+      {
+        "item": "traslados"
+      }
+    ],
+    "carencias": [
+      {
+        "item": "imagen/análisis 60 días",
+        "dias": 60
+      },
+      {
+        "item": "cirugía/internación 90 días",
+        "dias": 90
+      }
+    ],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://vetify.com.ar/"
+    },
+    "notas": "Red nacional + reintegro. 20% dto grupo familiar. Tel CABA.",
+    "scraping": {
+      "url": "https://vetify.com.ar/",
+      "metodo": "html_estatico",
+      "selector": "Emergencias"
+    }
+  },
+  {
+    "id": "vetify-classic",
+    "marca": "Vetify",
+    "marca_slug": "vetify",
+    "nombre": "Classic",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "$ 66.790/mes y $ 94.790/mes (dos precios bajo Classic)",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://vetify.com.ar/",
+    "estado": "requiere_revision",
+    "coberturas": [
+      {
+        "item": "consultas ilimitadas en red"
+      },
+      {
+        "item": "vacunas"
+      },
+      {
+        "item": "desparasitación"
+      },
+      {
+        "item": "resonancia/periodontal 50%"
+      }
+    ],
+    "carencias": [
+      {
+        "item": "vacunas 30 días",
+        "dias": 30
+      },
+      {
+        "item": "estudios 60 días",
+        "dias": 60
+      },
+      {
+        "item": "cirugía 90 días",
+        "dias": 90
+      }
+    ],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://vetify.com.ar/"
+    },
+    "notas": "La web muestra dos precios para Classic (posible por edad o variante oculta en JS); no se puede asignar sin ver el toggle.",
+    "scraping": {
+      "url": "https://vetify.com.ar/",
+      "metodo": "html_estatico",
+      "selector": "Classic"
+    }
+  },
+  {
+    "id": "vetify-cachorros",
+    "marca": "Vetify",
+    "marca_slug": "vetify",
+    "nombre": "Cachorros",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": 84790,
+    "precio_texto_original": "$ 84.790/mes",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://vetify.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "5 vacunas/año"
+      },
+      {
+        "item": "consultas ilimitadas en red"
+      },
+      {
+        "item": "cirugía 50% hasta $500.000"
+      }
+    ],
+    "carencias": [
+      {
+        "item": "vacunas 30 días",
+        "dias": 30
+      },
+      {
+        "item": "cirugía 90 días",
+        "dias": 90
+      }
+    ],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://vetify.com.ar/"
+    },
+    "scraping": {
+      "url": "https://vetify.com.ar/",
+      "metodo": "html_estatico",
+      "selector": "Cachorros"
+    }
+  }
+]

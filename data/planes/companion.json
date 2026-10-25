@@ -10,13 +10,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional; cualquier veterinario matriculado (reintegro)",
-    "incluye_cordoba": true,
     "precio": 39000,
     "precio_texto_original": "Desde $39.000",
     "moneda": "ARS",
@@ -52,7 +51,8 @@
     },
     "resumen": "Nacional; cualquier veterinario matriculado (reintegro)",
     "logo": "/logos/companion.png",
-    "logo_fuente": "https://companion.com.ar/wp-content/uploads/2024/12/Logo-chico.webp"
+    "logo_fuente": "https://companion.com.ar/wp-content/uploads/2024/12/Logo-chico.webp",
+    "precio_por_zona": false
   },
   {
     "id": "companion-plan-80",
@@ -65,13 +65,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional; cualquier veterinario matriculado (reintegro)",
-    "incluye_cordoba": true,
     "precio": 52000,
     "precio_texto_original": "Desde $52.000",
     "moneda": "ARS",
@@ -110,7 +109,8 @@
     },
     "resumen": "Nacional; cualquier veterinario matriculado (reintegro)",
     "logo": "/logos/companion.png",
-    "logo_fuente": "https://companion.com.ar/wp-content/uploads/2024/12/Logo-chico.webp"
+    "logo_fuente": "https://companion.com.ar/wp-content/uploads/2024/12/Logo-chico.webp",
+    "precio_por_zona": false
   },
   {
     "id": "companion-plan-100",
@@ -123,13 +123,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional; cualquier veterinario matriculado (reintegro)",
-    "incluye_cordoba": true,
     "precio": 78000,
     "precio_texto_original": "Desde $78.000",
     "moneda": "ARS",
@@ -168,6 +167,7 @@
     },
     "resumen": "Nacional; cualquier veterinario matriculado (reintegro)",
     "logo": "/logos/companion.png",
-    "logo_fuente": "https://companion.com.ar/wp-content/uploads/2024/12/Logo-chico.webp"
+    "logo_fuente": "https://companion.com.ar/wp-content/uploads/2024/12/Logo-chico.webp",
+    "precio_por_zona": false
   }
 ]

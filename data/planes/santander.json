@@ -1,0 +1,48 @@
+[
+  {
+    "id": "santander-hogar-mascota",
+    "marca": "Santander",
+    "marca_slug": "santander",
+    "nombre": "Adicional mascota en Seguro de Vivienda",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "Sin precio",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "fallecimiento hasta 90% suma"
+      },
+      {
+        "item": "gastos vet hasta 10%"
+      }
+    ],
+    "carencias": [],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda"
+    },
+    "notas": "Solo como adicional del seguro de hogar; 1 perro o gato 1-10 años. Dato de snippet.",
+    "scraping": {
+      "url": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda",
+      "metodo": "html_estatico",
+      "selector": "Adicional mascota en Seguro de Vivienda"
+    }
+  }
+]

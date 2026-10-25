@@ -10,13 +10,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 6135,
     "precio_texto_original": "$6.135/mes",
     "moneda": "ARS",
@@ -58,6 +57,7 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/answer-seguros.svg",
-    "logo_fuente": "https://answerseguros.com.ar/new/assets/logos/answer-logo.svg"
+    "logo_fuente": "https://answerseguros.com.ar/new/assets/logos/answer-logo.svg",
+    "precio_por_zona": false
   }
 ]

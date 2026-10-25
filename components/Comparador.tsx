@@ -26,7 +26,7 @@ export async function Comparador({
   const raw = await searchParams;
   const filters = parseFilters(raw);
   const clean = serializeFilters(filters);
-  const allowed = ["especie", "meses", "zona", "tipo", "max", "cob", "ids", "orden"];
+  const allowed = ["especie", "meses", "zona", "provincia", "tipo", "max", "cob", "ids", "orden"];
   const incoming = new URLSearchParams();
   for (const key of allowed) {
     const value = raw[key];

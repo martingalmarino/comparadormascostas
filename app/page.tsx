@@ -27,7 +27,7 @@ const steps = [
 const faqs = [
   {
     q: "¿Venden seguros para mascotas?",
-    a: "No. MascoCompara es un comparador independiente. Si pedís que te contacten, derivamos tus datos a la marca que elegiste. No intermediamos en la contratación.",
+    a: `No. ${siteConfig.siteName} es un comparador independiente. Si pedís que te contacten, derivamos tus datos a la marca que elegiste. No intermediamos en la contratación.`,
   },
   {
     q: "¿Los precios son reales?",

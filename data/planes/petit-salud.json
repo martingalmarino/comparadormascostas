@@ -10,13 +10,20 @@
     ],
     "edad_max_anios": 5,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "Córdoba",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "Mendoza",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "San Juan",
+        "ciudades": "toda"
+      }
     ],
-    "zona_detalle": "Córdoba, Mendoza y San Juan",
-    "incluye_cordoba": true,
+    "zona_detalle": "Solo Córdoba, Mendoza, San Juan.",
     "precio": 28000,
     "precio_texto_original": "$28.000 por mes (InfoNegocios. 25/04/2025)",
     "moneda": "ARS",
@@ -45,7 +52,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Córdoba, Mendoza y San Juan"
+    "resumen": "Córdoba, Mendoza y San Juan",
+    "precio_por_zona": false
   },
   {
     "id": "petit-salud-madurando",
@@ -59,13 +67,20 @@
     "edad_min_meses": 60,
     "edad_max_anios": 10,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "Córdoba",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "Mendoza",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "San Juan",
+        "ciudades": "toda"
+      }
     ],
-    "zona_detalle": "Córdoba, Mendoza y San Juan",
-    "incluye_cordoba": true,
+    "zona_detalle": "Solo Córdoba, Mendoza, San Juan.",
     "precio": 33000,
     "precio_texto_original": "$33.000 por mes (InfoNegocios. 25/04/2025)",
     "moneda": "ARS",
@@ -94,7 +109,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Córdoba, Mendoza y San Juan"
+    "resumen": "Córdoba, Mendoza y San Juan",
+    "precio_por_zona": false
   },
   {
     "id": "petit-salud-adultos",
@@ -107,13 +123,20 @@
     ],
     "edad_min_meses": 120,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "Córdoba",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "Mendoza",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "San Juan",
+        "ciudades": "toda"
+      }
     ],
-    "zona_detalle": "Córdoba, Mendoza y San Juan",
-    "incluye_cordoba": true,
+    "zona_detalle": "Solo Córdoba, Mendoza, San Juan.",
     "precio": 38000,
     "precio_texto_original": "$38.000 por mes (InfoNegocios. 25/04/2025)",
     "moneda": "ARS",
@@ -142,7 +165,8 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Córdoba, Mendoza y San Juan"
+    "resumen": "Córdoba, Mendoza y San Juan",
+    "precio_por_zona": false
   },
   {
     "id": "petit-salud-felinos-conejos-y-aves",
@@ -156,13 +180,20 @@
       "ave"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "Córdoba",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "Mendoza",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "San Juan",
+        "ciudades": "toda"
+      }
     ],
-    "zona_detalle": "Córdoba, Mendoza y San Juan",
-    "incluye_cordoba": true,
+    "zona_detalle": "Solo Córdoba, Mendoza, San Juan.",
     "precio": 28000,
     "precio_texto_original": "$28.000 por mes (InfoNegocios. 25/04/2025)",
     "moneda": "ARS",
@@ -191,6 +222,7 @@
     "lead": {
       "modo": "form"
     },
-    "resumen": "Córdoba, Mendoza y San Juan"
+    "resumen": "Córdoba, Mendoza y San Juan",
+    "precio_por_zona": false
   }
 ]

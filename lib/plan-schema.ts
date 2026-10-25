@@ -9,6 +9,11 @@ export const scrapingSchema = z.object({
   selector: z.string(),
 });
 
+export const zonaCoberturaSchema = z.object({
+  provincia: z.string().min(1),
+  ciudades: z.union([z.literal("toda"), z.array(z.string().min(1)).min(1)]),
+});
+
 export const planSchema = z.object({
   id: z.string().min(1),
   marca: z.string().min(1),
@@ -20,9 +25,9 @@ export const planSchema = z.object({
   especies: z.array(z.enum(especies)).min(1),
   edad_min_meses: z.number().int().nonnegative().optional(),
   edad_max_anios: z.number().int().positive().optional(),
-  zonas: z.array(z.string().min(1)),
+  zonas: z.array(zonaCoberturaSchema),
   zona_detalle: z.string().optional(),
-  incluye_cordoba: z.boolean().nullable().optional(),
+  precio_por_zona: z.boolean().nullable().optional(),
   precio: z.number().int().nonnegative().nullable(),
   precio_texto_original: z.string().optional(),
   moneda: z.literal("ARS"),

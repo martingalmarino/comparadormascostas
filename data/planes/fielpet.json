@@ -11,13 +11,12 @@
     ],
     "edad_max_anios": 18,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional, cualquier veterinario",
-    "incluye_cordoba": true,
     "precio": 19047,
     "precio_texto_original": "$19.047 Mensual",
     "moneda": "ARS",
@@ -56,7 +55,8 @@
     },
     "resumen": "Nacional, cualquier veterinario",
     "logo": "/logos/fielpet.png",
-    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp"
+    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp",
+    "precio_por_zona": false
   },
   {
     "id": "fielpet-plan-2",
@@ -70,13 +70,12 @@
     ],
     "edad_max_anios": 18,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional, cualquier veterinario",
-    "incluye_cordoba": true,
     "precio": 26216,
     "precio_texto_original": "$26.216 Mensual",
     "moneda": "ARS",
@@ -115,7 +114,8 @@
     },
     "resumen": "Nacional, cualquier veterinario",
     "logo": "/logos/fielpet.png",
-    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp"
+    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp",
+    "precio_por_zona": false
   },
   {
     "id": "fielpet-plan-3",
@@ -129,13 +129,12 @@
     ],
     "edad_max_anios": 18,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional, cualquier veterinario",
-    "incluye_cordoba": true,
     "precio": 36970,
     "precio_texto_original": "$36.970 Mensual",
     "moneda": "ARS",
@@ -174,7 +173,8 @@
     },
     "resumen": "Nacional, cualquier veterinario",
     "logo": "/logos/fielpet.png",
-    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp"
+    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp",
+    "precio_por_zona": false
   },
   {
     "id": "fielpet-plan-4",
@@ -188,13 +188,12 @@
     ],
     "edad_max_anios": 18,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional, cualquier veterinario",
-    "incluye_cordoba": true,
     "precio": 54892,
     "precio_texto_original": "$54.892 Mensual",
     "moneda": "ARS",
@@ -233,7 +232,8 @@
     },
     "resumen": "Nacional, cualquier veterinario",
     "logo": "/logos/fielpet.png",
-    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp"
+    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp",
+    "precio_por_zona": false
   },
   {
     "id": "fielpet-plan-5",
@@ -247,13 +247,12 @@
     ],
     "edad_max_anios": 18,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional, cualquier veterinario",
-    "incluye_cordoba": true,
     "precio": 72815,
     "precio_texto_original": "$72.815 Mensual",
     "moneda": "ARS",
@@ -292,6 +291,7 @@
     },
     "resumen": "Nacional, cualquier veterinario",
     "logo": "/logos/fielpet.png",
-    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp"
+    "logo_fuente": "https://www.fielpet.com.ar/imagenes/logo_header.webp",
+    "precio_por_zona": false
   }
 ]

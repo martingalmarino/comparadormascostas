@@ -12,13 +12,12 @@
     "edad_min_meses": 3,
     "edad_max_anios": 17,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 7000,
     "precio_texto_original": "$ 7.000 /mes",
     "moneda": "ARS",
@@ -53,7 +52,8 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/rus-seguros.svg",
-    "logo_fuente": "https://www.rus.com.ar/assets/images/global/logo.svg"
+    "logo_fuente": "https://www.rus.com.ar/assets/images/global/logo.svg",
+    "precio_por_zona": false
   },
   {
     "id": "rus-seguros-petcare-esencial",
@@ -68,13 +68,12 @@
     "edad_min_meses": 3,
     "edad_max_anios": 8,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 15000,
     "precio_texto_original": "$ 15.000 /mes",
     "moneda": "ARS",
@@ -109,7 +108,8 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/rus-seguros.svg",
-    "logo_fuente": "https://www.rus.com.ar/assets/images/global/logo.svg"
+    "logo_fuente": "https://www.rus.com.ar/assets/images/global/logo.svg",
+    "precio_por_zona": false
   },
   {
     "id": "rus-seguros-petcare-integral",
@@ -123,13 +123,12 @@
     ],
     "edad_min_meses": 3,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 25000,
     "precio_texto_original": "$ 25.000 /mes",
     "moneda": "ARS",
@@ -164,7 +163,8 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/rus-seguros.svg",
-    "logo_fuente": "https://www.rus.com.ar/assets/images/global/logo.svg"
+    "logo_fuente": "https://www.rus.com.ar/assets/images/global/logo.svg",
+    "precio_por_zona": false
   },
   {
     "id": "rus-seguros-petcare-superior",
@@ -178,13 +178,12 @@
     ],
     "edad_min_meses": 3,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional",
-    "incluye_cordoba": true,
     "precio": 35000,
     "precio_texto_original": "$ 35.000 /mes",
     "moneda": "ARS",
@@ -222,6 +221,7 @@
     },
     "resumen": "Nacional",
     "logo": "/logos/rus-seguros.svg",
-    "logo_fuente": "https://www.rus.com.ar/assets/images/global/logo.svg"
+    "logo_fuente": "https://www.rus.com.ar/assets/images/global/logo.svg",
+    "precio_por_zona": false
   }
 ]

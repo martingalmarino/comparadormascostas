@@ -1,6 +1,7 @@
 /**
- * Marca provisoria. El nombre visible sale de SITE.name (NEXT_PUBLIC_SITE_NAME o MascoCompara).
- * La URL pública es NEXT_PUBLIC_SITE_URL. Si no está, en Vercel se usa VERCEL_PROJECT_PRODUCTION_URL.
+ * El nombre visible sale de SITE.name (NEXT_PUBLIC_SITE_NAME o Cuidalo).
+ * La URL pública es NEXT_PUBLIC_SITE_URL (dominio final: https://cuidalo.com.ar).
+ * Si no está, en Vercel se usa VERCEL_PROJECT_PRODUCTION_URL para no caer en localhost.
  */
 function publicSiteUrl() {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
@@ -11,14 +12,15 @@ function publicSiteUrl() {
 }
 
 export const SITE = {
-  name: process.env.NEXT_PUBLIC_SITE_NAME?.trim() || "MascoCompara",
+  name: process.env.NEXT_PUBLIC_SITE_NAME?.trim() || "Cuidalo",
   url: publicSiteUrl(),
+  locale: "es_AR",
 } as const;
 
 export const siteConfig = {
   siteName: SITE.name,
   siteNameNote: "Nombre provisorio",
-  showProvisionalBadge: true,
+  showProvisionalBadge: false,
   domain: SITE.url,
   description:
     "Compará obras sociales, prepagas y seguros para perros y gatos en Argentina. Precios con fecha y fuente de cada marca. Elegí tu plan en minutos, gratis.",

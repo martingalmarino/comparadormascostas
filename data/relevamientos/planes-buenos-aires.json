@@ -1,0 +1,494 @@
+[
+  {
+    "id": "holavet-1",
+    "marca": "HolaVet",
+    "marca_slug": "holavet",
+    "plan": "1 mascota",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA"
+        ]
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": 39674,
+    "moneda": "ARS",
+    "precio_texto_original": "$39.674.- Para padres de un hijo peludo",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://holavet.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      "videoconsulta 24/7",
+      "reintegro en veterinaria o a domicilio",
+      "cirugías",
+      "RC"
+    ],
+    "carencias": [],
+    "notas": "Producto de Ar Vida Seguros (SSN 0540), CABA. La web también dice 'Desde $18.000 mensuales' sin plan asociado: inconsistencia. Zona no explícita (testimonios CABA; reintegro en cualquier vet).",
+    "scraping": {
+      "url": "https://holavet.com.ar/",
+      "metodo_sugerido": "curl+grep",
+      "selector_o_pista": ""
+    }
+  },
+  {
+    "id": "holavet-2",
+    "marca": "HolaVet",
+    "marca_slug": "holavet",
+    "plan": "2 mascotas",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA"
+        ]
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": 47609,
+    "moneda": "ARS",
+    "precio_texto_original": "$47.609.- dos hijos peludos",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://holavet.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      "igual plan 1, 2 mascotas"
+    ],
+    "carencias": [],
+    "notas": "Precio por grupo de 2.",
+    "scraping": {
+      "url": "https://holavet.com.ar/",
+      "metodo_sugerido": "curl+grep",
+      "selector_o_pista": ""
+    }
+  },
+  {
+    "id": "holavet-3",
+    "marca": "HolaVet",
+    "marca_slug": "holavet",
+    "plan": "3 mascotas",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA"
+        ]
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": 52899,
+    "moneda": "ARS",
+    "precio_texto_original": "$52.899.- tres hijos peludos",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://holavet.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      "igual plan 1, 3 mascotas"
+    ],
+    "carencias": [],
+    "notas": "Precio por grupo de 3.",
+    "scraping": {
+      "url": "https://holavet.com.ar/",
+      "metodo_sugerido": "curl+grep",
+      "selector_o_pista": ""
+    }
+  },
+  {
+    "id": "vetify-emergencias",
+    "marca": "Vetify",
+    "marca_slug": "vetify",
+    "plan": "Emergencias",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": 21190,
+    "moneda": "ARS",
+    "precio_texto_original": "$ 21.190/mes",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://vetify.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      "videollamadas ilimitadas",
+      "guardias 24h",
+      "análisis",
+      "cirugía 50% hasta $500.000",
+      "traslados"
+    ],
+    "carencias": [
+      "imagen/análisis 60 días",
+      "cirugía/internación 90 días"
+    ],
+    "notas": "Red nacional + reintegro. 20% dto grupo familiar. Tel CABA.",
+    "scraping": {
+      "url": "https://vetify.com.ar/",
+      "metodo_sugerido": "curl+grep",
+      "selector_o_pista": ""
+    }
+  },
+  {
+    "id": "vetify-classic",
+    "marca": "Vetify",
+    "marca_slug": "vetify",
+    "plan": "Classic",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": null,
+    "moneda": "ARS",
+    "precio_texto_original": "$ 66.790/mes y $ 94.790/mes (dos precios bajo Classic)",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://vetify.com.ar/",
+    "estado": "requiere_revision",
+    "coberturas": [
+      "consultas ilimitadas en red",
+      "vacunas",
+      "desparasitación",
+      "resonancia/periodontal 50%"
+    ],
+    "carencias": [
+      "vacunas 30 días",
+      "estudios 60 días",
+      "cirugía 90 días"
+    ],
+    "notas": "La web muestra dos precios para Classic (posible por edad o variante oculta en JS); no se puede asignar sin ver el toggle.",
+    "scraping": {
+      "url": "https://vetify.com.ar/",
+      "metodo_sugerido": "curl+grep",
+      "selector_o_pista": ""
+    }
+  },
+  {
+    "id": "vetify-cachorros",
+    "marca": "Vetify",
+    "marca_slug": "vetify",
+    "plan": "Cachorros",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": 84790,
+    "moneda": "ARS",
+    "precio_texto_original": "$ 84.790/mes",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://vetify.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      "5 vacunas/año",
+      "consultas ilimitadas en red",
+      "cirugía 50% hasta $500.000"
+    ],
+    "carencias": [
+      "vacunas 30 días",
+      "cirugía 90 días"
+    ],
+    "notas": "",
+    "scraping": {
+      "url": "https://vetify.com.ar/",
+      "metodo_sugerido": "curl+grep",
+      "selector_o_pista": ""
+    }
+  },
+  {
+    "id": "ospan-planes",
+    "marca": "OSPAN",
+    "marca_slug": "ospan",
+    "plan": "Planes caninos (5) y felinos (4)",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA"
+        ]
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": null,
+    "moneda": "ARS",
+    "precio_texto_original": "Sin precio publicado",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.ospan.com.ar/planes",
+    "estado": "consultar",
+    "coberturas": [
+      "+100 veterinarias CABA/GBA",
+      "guardias 24h",
+      "+25 especialidades"
+    ],
+    "carencias": [],
+    "notas": "Precios por WhatsApp. Sitio Wix (JS).",
+    "scraping": {
+      "url": "https://www.ospan.com.ar/planes",
+      "metodo_sugerido": "WebFetch",
+      "selector_o_pista": ""
+    }
+  },
+  {
+    "id": "omint-mascotas",
+    "marca": "Omint Mascotas",
+    "marca_slug": "omint-mascotas",
+    "plan": "Planes 1500/2500/4500/8500/8510",
+    "tipo": "obra_social",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA"
+        ]
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": null,
+    "moneda": "ARS",
+    "precio_texto_original": "Prensa: $27.000 a $130.000 + IVA",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://cobertura.com.ar/2026/06/08/el-auge-de-la-familia-multiespecie/",
+    "estado": "requiere_revision",
+    "coberturas": [
+      "red OSPAN"
+    ],
+    "carencias": [],
+    "notas": "Rango solo en prensa (Cobertura, Somos Pymes, 2026); no hay web oficial con precios. 8510 = con preexistencias. Abierto al público desde 07/2026 según prensa.",
+    "scraping": {
+      "url": "https://cobertura.com.ar/2026/06/08/el-auge-de-la-familia-multiespecie/",
+      "metodo_sugerido": "curl+grep",
+      "selector_o_pista": ""
+    }
+  },
+  {
+    "id": "galicia-mascota",
+    "marca": "Galicia Seguros",
+    "marca_slug": "galicia",
+    "plan": "Seguro de Mascota",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": null,
+    "moneda": "ARS",
+    "precio_texto_original": "Cotización online, sin precio publicado",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.galicia.ar/personas/seguros/seguro-mascota",
+    "estado": "consultar",
+    "coberturas": [
+      "orientación vet 24h",
+      "vet online 9-21",
+      "urgencia por accidente/enfermedad grave",
+      "vacunación y castración",
+      "medicamentos",
+      "transporte veterinario"
+    ],
+    "carencias": [
+      "vacunación 90 días",
+      "castración/aseo/limpieza dental 180 días (galiciaseguros.com.ar)"
+    ],
+    "notas": "Asistencia Mawdy. Reintegro en cualquier vet. >12 años paga hasta 50%. Una póliza por mascota.",
+    "scraping": {
+      "url": "https://www.galicia.ar/personas/seguros/seguro-mascota",
+      "metodo_sugerido": "curl+grep",
+      "selector_o_pista": ""
+    }
+  },
+  {
+    "id": "macro-mascota",
+    "marca": "Macro (Life Seguros)",
+    "marca_slug": "macro",
+    "plan": "Seguro Mascota",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": null,
+    "moneda": "ARS",
+    "precio_texto_original": "Sin precio; se contrata en la app",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.macro.com.ar/personas/seguros/mascota",
+    "estado": "consultar",
+    "coberturas": [
+      "fallecimiento accidental",
+      "extravío",
+      "robo",
+      "sacrificio",
+      "pack asistencia"
+    ],
+    "carencias": [
+      "15 días accidente/extravío/robo",
+      "90 días sacrificio vejez/enfermedad"
+    ],
+    "notas": "1ª cuota bonificada vía app hasta 31/12/2026 (snippet; no re-verificado en página).",
+    "scraping": {
+      "url": "https://www.macro.com.ar/personas/seguros/mascota",
+      "metodo_sugerido": "curl+grep",
+      "selector_o_pista": ""
+    }
+  },
+  {
+    "id": "santander-hogar-mascota",
+    "marca": "Santander",
+    "marca_slug": "santander",
+    "plan": "Adicional mascota en Seguro de Vivienda",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": null,
+    "moneda": "ARS",
+    "precio_texto_original": "Sin precio",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda",
+    "estado": "consultar",
+    "coberturas": [
+      "fallecimiento hasta 90% suma",
+      "gastos vet hasta 10%"
+    ],
+    "carencias": [],
+    "notas": "Solo como adicional del seguro de hogar; 1 perro o gato 1-10 años. Dato de snippet.",
+    "scraping": {
+      "url": "https://www.santander.com.ar/personas/seguros/seguro-de-vivienda",
+      "metodo_sugerido": "curl+grep",
+      "selector_o_pista": ""
+    }
+  },
+  {
+    "id": "naranjax-asistencia",
+    "marca": "Naranja X",
+    "marca_slug": "naranja-x",
+    "plan": "Asistencia para Mascotas",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "edad_min": null,
+    "edad_max": null,
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio_mensual_ars": null,
+    "moneda": "ARS",
+    "precio_texto_original": "Cotizá, sin precio",
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.naranjax.com/seguros/mascotas",
+    "estado": "consultar",
+    "coberturas": [
+      "vacunación, castración, consultas por accidente/enfermedad",
+      "descuentos alimento",
+      "guardería"
+    ],
+    "carencias": [
+      "vacunación 3 meses",
+      "castración 6 meses"
+    ],
+    "notas": "Prestada por Iké (0800-122-0738). Cobertura nacional. Precio preferencial multi-mascota.",
+    "scraping": {
+      "url": "https://www.naranjax.com/seguros/mascotas",
+      "metodo_sugerido": "curl+grep",
+      "selector_o_pista": ""
+    }
+  }
+]

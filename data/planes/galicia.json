@@ -1,0 +1,69 @@
+[
+  {
+    "id": "galicia-mascota",
+    "marca": "Galicia Seguros",
+    "marca_slug": "galicia",
+    "nombre": "Seguro de Mascota",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": null,
+    "precio_texto_original": "Cotización online, sin precio publicado",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://www.galicia.ar/personas/seguros/seguro-mascota",
+    "estado": "consultar",
+    "coberturas": [
+      {
+        "item": "orientación vet 24h"
+      },
+      {
+        "item": "vet online 9-21"
+      },
+      {
+        "item": "urgencia por accidente/enfermedad grave"
+      },
+      {
+        "item": "vacunación y castración"
+      },
+      {
+        "item": "medicamentos"
+      },
+      {
+        "item": "transporte veterinario"
+      }
+    ],
+    "carencias": [
+      {
+        "item": "vacunación 90 días",
+        "dias": 90
+      },
+      {
+        "item": "castración/aseo/limpieza dental 180 días (galiciaseguros.com.ar)",
+        "dias": 180
+      }
+    ],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://www.galicia.ar/personas/seguros/seguro-mascota"
+    },
+    "notas": "Asistencia Mawdy. Reintegro en cualquier vet. >12 años paga hasta 50%. Una póliza por mascota.",
+    "scraping": {
+      "url": "https://www.galicia.ar/personas/seguros/seguro-mascota",
+      "metodo": "html_estatico",
+      "selector": "Seguro de Mascota"
+    }
+  }
+]

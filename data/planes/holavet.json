@@ -1,0 +1,149 @@
+[
+  {
+    "id": "holavet-1",
+    "marca": "HolaVet",
+    "marca_slug": "holavet",
+    "nombre": "1 mascota",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA"
+        ]
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": 39674,
+    "precio_texto_original": "$39.674.- Para padres de un hijo peludo",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://holavet.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "videoconsulta 24/7"
+      },
+      {
+        "item": "reintegro en veterinaria o a domicilio"
+      },
+      {
+        "item": "cirugías"
+      },
+      {
+        "item": "RC"
+      }
+    ],
+    "carencias": [],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://holavet.com.ar/"
+    },
+    "notas": "Producto de Ar Vida Seguros (SSN 0540), CABA. La web también dice 'Desde $18.000 mensuales' sin plan asociado: inconsistencia. Zona no explícita (testimonios CABA; reintegro en cualquier vet).",
+    "scraping": {
+      "url": "https://holavet.com.ar/",
+      "metodo": "html_estatico",
+      "selector": "1 mascota"
+    }
+  },
+  {
+    "id": "holavet-2",
+    "marca": "HolaVet",
+    "marca_slug": "holavet",
+    "nombre": "2 mascotas",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA"
+        ]
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": 47609,
+    "precio_texto_original": "$47.609.- dos hijos peludos",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://holavet.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "igual plan 1, 2 mascotas"
+      }
+    ],
+    "carencias": [],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://holavet.com.ar/"
+    },
+    "notas": "Precio por grupo de 2.",
+    "scraping": {
+      "url": "https://holavet.com.ar/",
+      "metodo": "html_estatico",
+      "selector": "2 mascotas"
+    }
+  },
+  {
+    "id": "holavet-3",
+    "marca": "HolaVet",
+    "marca_slug": "holavet",
+    "nombre": "3 mascotas",
+    "tipo": "seguro",
+    "especies": [
+      "perro",
+      "gato"
+    ],
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA"
+        ]
+      }
+    ],
+    "precio_por_zona": null,
+    "precio": 52899,
+    "precio_texto_original": "$52.899.- tres hijos peludos",
+    "moneda": "ARS",
+    "es_ejemplo": false,
+    "fecha_verificacion": "2026-10-25",
+    "fuente_url": "https://holavet.com.ar/",
+    "estado": "verificado",
+    "coberturas": [
+      {
+        "item": "igual plan 1, 3 mascotas"
+      }
+    ],
+    "carencias": [],
+    "pros": [],
+    "contras": [],
+    "lead": {
+      "modo": "link",
+      "destino": "https://holavet.com.ar/"
+    },
+    "notas": "Precio por grupo de 3.",
+    "scraping": {
+      "url": "https://holavet.com.ar/",
+      "metodo": "html_estatico",
+      "selector": "3 mascotas"
+    }
+  }
+]

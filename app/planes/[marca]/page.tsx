@@ -99,9 +99,13 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
                       {plan.edad_min_meses != null ? ` · desde ${plan.edad_min_meses} meses` : ""}
                       {plan.edad_max_anios != null ? ` · hasta ${plan.edad_max_anios} años` : ""}
                     </p>
-                    {plan.incluye_cordoba === false || plan.incluye_cordoba === null ? (
-                      <p className="mt-1 text-sm text-amber-800">Presencia en Córdoba no confirmada en la fuente.</p>
-                    ) : null}
+                    {plan.zonas.length === 0 ? (
+                      <p className="mt-1 text-sm text-amber-800">La fuente no confirma en qué provincias está.</p>
+                    ) : plan.zonas.some((zona) => zona.provincia.toLowerCase() === "toda") ? null : (
+                      <p className="mt-1 text-sm text-gray-600">
+                        Disponible en {plan.zonas.map((zona) => zona.provincia).join(", ")}.
+                      </p>
+                    )}
                   </div>
                   <PriceTag plan={plan} today={today} size="lg" tone="primary" />
                 </div>

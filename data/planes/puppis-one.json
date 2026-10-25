@@ -9,9 +9,18 @@
       "perro",
       "gato"
     ],
-    "zonas": [],
-    "zona_detalle": "Locales Puppis; no se verificó presencia en Córdoba",
-    "incluye_cordoba": null,
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA norte hasta Nordelta",
+          "GBA sur hasta Quilmes/Lomas de Zamora",
+          "GBA oeste hasta Ramos Mejía"
+        ]
+      }
+    ],
+    "zona_detalle": "Solo AMBA: CABA, zona norte hasta Nordelta, sur hasta Quilmes/Lomas, oeste hasta Ramos Mejía (sucursales y domicilio).",
     "precio": null,
     "precio_texto_original": "Precio a consultar (0810-220-0010)",
     "moneda": "ARS",
@@ -47,7 +56,8 @@
     },
     "resumen": "Locales Puppis; no se verificó presencia en Córdoba",
     "logo": "/logos/puppis-one.svg",
-    "logo_fuente": "https://assets.one.puppis.com.ar/img/icons/logo_one.svg"
+    "logo_fuente": "https://assets.one.puppis.com.ar/img/icons/logo_one.svg",
+    "precio_por_zona": false
   },
   {
     "id": "puppis-one-one-plus",
@@ -59,9 +69,18 @@
       "perro",
       "gato"
     ],
-    "zonas": [],
-    "zona_detalle": "Locales Puppis; no se verificó presencia en Córdoba",
-    "incluye_cordoba": null,
+    "zonas": [
+      {
+        "provincia": "Buenos Aires",
+        "ciudades": [
+          "CABA",
+          "GBA norte hasta Nordelta",
+          "GBA sur hasta Quilmes/Lomas de Zamora",
+          "GBA oeste hasta Ramos Mejía"
+        ]
+      }
+    ],
+    "zona_detalle": "Solo AMBA: CABA, zona norte hasta Nordelta, sur hasta Quilmes/Lomas, oeste hasta Ramos Mejía (sucursales y domicilio).",
     "precio": null,
     "precio_texto_original": "Precio a consultar (0810-220-0010)",
     "moneda": "ARS",
@@ -97,6 +116,7 @@
     },
     "resumen": "Locales Puppis; no se verificó presencia en Córdoba",
     "logo": "/logos/puppis-one.svg",
-    "logo_fuente": "https://assets.one.puppis.com.ar/img/icons/logo_one.svg"
+    "logo_fuente": "https://assets.one.puppis.com.ar/img/icons/logo_one.svg",
+    "precio_por_zona": false
   }
 ]

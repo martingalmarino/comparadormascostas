@@ -10,13 +10,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional, más de 300 prestadores",
-    "incluye_cordoba": true,
     "precio": 27900,
     "precio_texto_original": "$ 27.900",
     "moneda": "ARS",
@@ -55,7 +54,8 @@
     },
     "resumen": "Nacional, más de 300 prestadores",
     "logo": "/logos/ike-mascotas.svg",
-    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg"
+    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg",
+    "precio_por_zona": false
   },
   {
     "id": "ike-mascotas-cachorro",
@@ -69,13 +69,12 @@
     ],
     "edad_max_anios": 1,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional, más de 300 prestadores",
-    "incluye_cordoba": true,
     "precio": 56900,
     "precio_texto_original": "$ 56.900",
     "moneda": "ARS",
@@ -117,7 +116,8 @@
     },
     "resumen": "Nacional, más de 300 prestadores",
     "logo": "/logos/ike-mascotas.svg",
-    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg"
+    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg",
+    "precio_por_zona": false
   },
   {
     "id": "ike-mascotas-adulto",
@@ -132,13 +132,12 @@
     "edad_min_meses": 12,
     "edad_max_anios": 7,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional, más de 300 prestadores",
-    "incluye_cordoba": true,
     "precio": 51900,
     "precio_texto_original": "$ 51.900",
     "moneda": "ARS",
@@ -180,7 +179,8 @@
     },
     "resumen": "Nacional, más de 300 prestadores",
     "logo": "/logos/ike-mascotas.svg",
-    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg"
+    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg",
+    "precio_por_zona": false
   },
   {
     "id": "ike-mascotas-senior",
@@ -194,13 +194,12 @@
     ],
     "edad_min_meses": 84,
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional, más de 300 prestadores",
-    "incluye_cordoba": true,
     "precio": 70900,
     "precio_texto_original": "$ 70.900",
     "moneda": "ARS",
@@ -242,6 +241,7 @@
     },
     "resumen": "Nacional, más de 300 prestadores",
     "logo": "/logos/ike-mascotas.svg",
-    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg"
+    "logo_fuente": "https://planes.ikeargentina.com.ar/mascotasonline/assets/img/logo-ike-mascotas.svg",
+    "precio_por_zona": false
   }
 ]

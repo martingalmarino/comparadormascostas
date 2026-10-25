@@ -57,7 +57,9 @@ function unpublishedDescription(label: string, count: number) {
   const noun = count === 1 ? "plan" : "planes";
   const withGratis = `${label}: ${count} ${noun} para perros y gatos. Qué cubre, carencias y edad máxima. Precio no publicado: te contamos cómo cotizar. Compará con otras marcas gratis.`;
   const without = withGratis.replace(" gratis.", ".");
-  return pick(label, [withGratis, without]);
+  const short = `${label}: ${count} ${noun}. Qué cubre, carencias y edad máxima. Precio no publicado: te contamos cómo cotizar. Compará con otras marcas.`;
+  const shortToday = short.replace(/marcas\.$/, "marcas hoy.");
+  return pick(label, [withGratis, without, shortToday, short]);
 }
 
 function pricedDescription(label: string, count: number, price: string, fecha: string) {

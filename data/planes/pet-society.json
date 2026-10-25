@@ -10,13 +10,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional, online",
-    "incluye_cordoba": true,
     "precio": 9489,
     "precio_texto_original": "ARS 9.489 /mes",
     "moneda": "ARS",
@@ -55,7 +54,8 @@
     },
     "resumen": "Nacional, online",
     "logo": "/logos/pet-society.png",
-    "logo_fuente": "https://petsociety.ar/wp-content/uploads/2025/09/cropped-logo_mypet3.png"
+    "logo_fuente": "https://petsociety.ar/wp-content/uploads/2025/09/cropped-logo_mypet3.png",
+    "precio_por_zona": false
   },
   {
     "id": "pet-society-plan-familiar",
@@ -68,13 +68,12 @@
       "gato"
     ],
     "zonas": [
-      "cordoba-capital",
-      "gran-cordoba",
-      "rio-cuarto",
-      "villa-maria"
+      {
+        "provincia": "toda",
+        "ciudades": "toda"
+      }
     ],
     "zona_detalle": "Nacional, online",
-    "incluye_cordoba": true,
     "precio": 12398,
     "precio_texto_original": "ARS 12.398 /mes",
     "moneda": "ARS",
@@ -109,6 +108,7 @@
     },
     "resumen": "Nacional, online",
     "logo": "/logos/pet-society.png",
-    "logo_fuente": "https://petsociety.ar/wp-content/uploads/2025/09/cropped-logo_mypet3.png"
+    "logo_fuente": "https://petsociety.ar/wp-content/uploads/2025/09/cropped-logo_mypet3.png",
+    "precio_por_zona": false
   }
 ]
