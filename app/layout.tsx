@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { CuidaloBot } from "@/components/CuidaloBot/CuidaloBot";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Providers } from "@/components/Providers";
+import { toBotPlans } from "@/lib/bot/catalog";
 import { getReferenceDate } from "@/lib/dates";
 import { getPlans } from "@/lib/plans";
 import { siteConfig } from "@/site.config";
@@ -54,12 +56,14 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const today = await getReferenceDate();
-  const catalog = getPlans().map((plan) => ({
+  const plans = getPlans();
+  const catalog = plans.map((plan) => ({
     id: plan.id,
     marca: plan.marca,
     nombre: plan.nombre,
     marca_slug: plan.marca_slug,
   }));
+  const botPlans = toBotPlans(plans, today);
 
   return (
     <html lang="es-AR" className={`${sans.variable} ${mono.variable} h-full antialiased`} data-scroll-behavior="smooth">
@@ -76,6 +80,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             {children}
           </main>
           <Footer year={today.slice(0, 4)} />
+          <CuidaloBot plans={botPlans} />
         </Providers>
         <Analytics />
       </body>

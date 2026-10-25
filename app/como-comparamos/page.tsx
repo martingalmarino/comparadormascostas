@@ -20,6 +20,10 @@ export default function Page() {
           {siteConfig.siteName} es un sitio independiente de Argentina. Ordenamos obras sociales, planes de salud y seguros para perros y gatos en todo el país. El filtro de zona es la provincia: muestra los planes de esa provincia y los de cobertura nacional. No vendemos seguros ni intermediamos en la contratación. Si dejás tus datos, se los compartimos a la marca que elegiste para que ella te contacte. Quién lo hace y cómo se financia está en{" "}
           <Link href="/sobre-nosotros">sobre nosotros</Link>.
         </p>
+        <h2>CuidaloBot</h2>
+        <p>
+          CuidaloBot responde en el sitio con las fichas publicadas. No usa un modelo de lenguaje ni consulta otra fuente. Si un dato no está en esas fichas, dice “No tengo ese dato todavía” y te lleva al comparador.
+        </p>
         <h2>Carencias y preexistencias</h2>
         <p>
           Mostramos el texto de carencias que trajo la fuente. Si no hay días publicados, no inventamos un plazo ni decimos que el accidente está cubierto desde el primer día. Una preexistencia —un diagnóstico que ya tenía la mascota— suele quedar afuera o con un tope propio: eso lo define el condicionado, no esta página. Antes de contratar, pedile a la marca ese texto vigente.

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { siteConfig } from "@/site.config";
 import { createContext, useContext, useEffect, useSyncExternalStore } from "react";
 
@@ -78,9 +79,9 @@ export function ConsentProvider({ children }: { children: React.ReactNode }) {
           <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-gray-700">
               Usamos cookies de medición si lo aceptás. Los datos del formulario se tratan aparte, según la{" "}
-              <a className="font-semibold text-indigo-700 underline" href="/privacidad">
+              <Link className="font-semibold text-indigo-700 underline" href="/privacidad">
                 Política de privacidad
-              </a>
+              </Link>
               .
             </p>
             <div className="flex shrink-0 gap-2">

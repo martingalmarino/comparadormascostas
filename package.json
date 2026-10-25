@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test lib/lowest-price.test.ts",
+    "test": "tsx --test lib/lowest-price.test.ts lib/bot/bot.test.ts",
     "update-prices": "tsx scripts/update-prices.ts",
     "seo": "tsx scripts/check-seo.ts"
   },
