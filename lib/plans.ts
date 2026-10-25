@@ -55,7 +55,7 @@ export function getPlan(id: string) {
 
 export function getMarcas() {
   const seen = new Set<string>();
-  const marcas: { slug: string; nombre: string }[] = [];
+  const marcas: { slug: string; nombre: string; logo?: string; logoFuente?: string }[] = [];
   for (const plan of getPlans()) {
     if (seen.has(plan.marca_slug)) continue;
     seen.add(plan.marca_slug);
