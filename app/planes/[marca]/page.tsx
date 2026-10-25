@@ -10,6 +10,7 @@ import { FichaV2 } from "@/components/FichaMarca/FichaV2";
 import { JsonLd } from "@/components/JsonLd";
 import { LeadForm } from "@/components/LeadForm";
 import { PlanArticles } from "@/components/PlanArticles";
+import { ScrollAlInicio } from "@/components/ScrollAlInicio";
 import { StickyLeadCTA } from "@/components/StickyLeadCTA";
 import { getReferenceDate } from "@/lib/dates";
 import { fichaV2 } from "@/lib/ficha-v2";
@@ -43,7 +44,12 @@ export async function generateMetadata({ params }: { params: Promise<{ marca: st
 }
 
 function MarcaFallback() {
-  return <div className="mx-auto max-w-7xl px-4 py-10 text-gray-600">Cargando ficha…</div>;
+  return (
+    <div className="mx-auto min-h-[100dvh] max-w-7xl px-4 py-10 text-gray-600">
+      <ScrollAlInicio />
+      Cargando ficha…
+    </div>
+  );
 }
 
 async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
@@ -72,12 +78,18 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
   if (fichaV2() && seo) {
     const ficha = getMarca(marca);
     if (ficha) {
-      return <FichaV2 marca={marca} ficha={ficha} plans={plans} today={today} seo={seo} related={related} faqsBase={faqs} />;
+      return (
+        <>
+          <ScrollAlInicio />
+          <FichaV2 marca={marca} ficha={ficha} plans={plans} today={today} seo={seo} related={related} faqsBase={faqs} />
+        </>
+      );
     }
   }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+      <ScrollAlInicio />
       <Breadcrumbs items={[{ name: "Comparador", path: "/comparar" }, { name: brand, path: `/planes/${marca}` }]} />
       <DirectAnswer text={respuestaDirecta({ tipo: "marca", today, slug: marca })} />
       <JsonLd
