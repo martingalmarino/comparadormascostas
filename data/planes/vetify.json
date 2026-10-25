@@ -11,7 +11,7 @@
     ],
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],
@@ -61,7 +61,9 @@
       "url": "https://vetify.com.ar/",
       "metodo": "html_estatico",
       "selector": "Emergencias"
-    }
+    },
+    "logo": "/logos/vetify.png",
+    "logo_fuente": "https://vetify.com.ar/img/Logotipo%20positivo.png"
   },
   {
     "id": "vetify-classic",
@@ -75,7 +77,7 @@
     ],
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],
@@ -126,7 +128,9 @@
       "url": "https://vetify.com.ar/",
       "metodo": "html_estatico",
       "selector": "Classic"
-    }
+    },
+    "logo": "/logos/vetify.png",
+    "logo_fuente": "https://vetify.com.ar/img/Logotipo%20positivo.png"
   },
   {
     "id": "vetify-cachorros",
@@ -140,7 +144,7 @@
     ],
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],
@@ -183,6 +187,8 @@
       "url": "https://vetify.com.ar/",
       "metodo": "html_estatico",
       "selector": "Cachorros"
-    }
+    },
+    "logo": "/logos/vetify.png",
+    "logo_fuente": "https://vetify.com.ar/img/Logotipo%20positivo.png"
   }
 ]

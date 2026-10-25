@@ -6,7 +6,7 @@ import { PlanTable } from "@/components/PlanTable";
 import { applyFilters, hasNarrowingFilters, parseFilters, serializeFilters, type RawSearch } from "@/lib/filters";
 import { getPlans } from "@/lib/plans";
 import { itemListJsonLd } from "@/lib/seo";
-import { zoneLabel } from "@/lib/zones";
+import { jurisdiccionLabel, provinciasConPlanes } from "@/lib/zonas";
 
 export function ComparadorFallback() {
   return (
@@ -26,7 +26,7 @@ export async function Comparador({
   const raw = await searchParams;
   const filters = parseFilters(raw);
   const clean = serializeFilters(filters);
-  const allowed = ["especie", "meses", "zona", "provincia", "tipo", "max", "cob", "ids", "orden"];
+  const allowed = ["especie", "meses", "zona", "tipo", "max", "cob", "ids", "orden"];
   const incoming = new URLSearchParams();
   for (const key of allowed) {
     const value = raw[key];
@@ -39,8 +39,10 @@ export async function Comparador({
     redirect(clean ? `/comparar?${clean}` : "/comparar");
   }
 
-  const plans = applyFilters(getPlans(), filters);
-  const place = filters.zona ? zoneLabel(filters.zona) : "";
+  const catalog = getPlans();
+  const plans = applyFilters(catalog, filters);
+  const zonas = provinciasConPlanes(catalog);
+  const place = filters.zona ? jurisdiccionLabel(filters.zona) : "";
 
   return (
     <div className="mx-auto max-w-7xl px-4 pb-8 sm:px-6">
@@ -49,7 +51,7 @@ export async function Comparador({
         Compará obras sociales, planes de salud y seguros para mascotas. Cada precio muestra la fecha y la fuente. Si no hay monto publicado, la ficha dice Consultar precio.
       </p>
       <div className="mt-6 lg:grid lg:grid-cols-[16rem_minmax(0,1fr)] lg:items-start lg:gap-8">
-        <Filters filters={filters} total={plans.length} />
+        <Filters filters={filters} total={plans.length} zonas={zonas} />
         <div className="min-w-0">
           {plans.length === 0 ? (
             <p className="rounded-2xl border border-dashed border-gray-300 bg-white px-4 py-10 text-center text-gray-600">

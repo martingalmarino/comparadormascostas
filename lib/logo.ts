@@ -12,6 +12,12 @@ const sizes: Record<string, { width: number; height: number }> = {
   "/logos/fielpet.png": { width: 155, height: 58 },
   "/logos/qualia-seguros.png": { width: 141, height: 31 },
   "/logos/rus-seguros.svg": { width: 567, height: 165 },
+  "/logos/holavet.png": { width: 2560, height: 554 },
+  "/logos/vetify.png": { width: 435, height: 151 },
+  "/logos/ospan.png": { width: 601, height: 601 },
+  "/logos/omint-mascotas.svg": { width: 2000, height: 620 },
+  "/logos/galicia.png": { width: 2581, height: 367 },
+  "/logos/macro.png": { width: 1500, height: 335 },
 };
 
 export function logoSize(src: string) {

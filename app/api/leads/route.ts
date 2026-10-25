@@ -2,7 +2,7 @@ import { persistLead, notifyLead, type LeadRecord } from "@/lib/lead-store";
 import { normalizeArWhatsapp } from "@/lib/phone";
 import { getPlan } from "@/lib/plans";
 import type { Plan } from "@/lib/plan-schema";
-import { isKnownZone } from "@/lib/zones";
+import { isJurisdiccion } from "@/lib/zonas";
 import { consentTextForBrand, consentTextForContact, siteConfig } from "@/site.config";
 
 const hits = new Map<string, number[]>();
@@ -90,7 +90,7 @@ export async function POST(request: Request) {
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push("El email no es válido.");
   if (!especie) errors.push("Elegí si es perro o gato.");
   if (!Number.isFinite(edadMeses) || edadMeses < 0 || edadMeses > 360) errors.push("Ingresá la edad en meses.");
-  if (!isKnownZone(zona)) errors.push("Elegí una zona de la lista.");
+  if (!isJurisdiccion(zona)) errors.push("Elegí una provincia de la lista.");
   if (mensaje.length > 1000) errors.push("El mensaje es demasiado largo.");
   if (body.consentimiento !== true) errors.push("Tenés que aceptar el tratamiento de tus datos para seguir.");
 

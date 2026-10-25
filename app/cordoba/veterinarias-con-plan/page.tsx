@@ -43,7 +43,7 @@ export default function VeterinariasPage() {
           },
           {
             q: "¿Una clínica de barrio implica que el plan me cubre en toda la ciudad?",
-            a: "No. Preguntá por la zona exacta. En el comparador, Capital, Gran Córdoba y el interior son filtros distintos.",
+            a: "No. El comparador filtra por provincia. Si la ficha nombra una ciudad, es un dato de la fuente: preguntale a la marca si tu veterinaria está en cartilla.",
           },
         ]}
       />

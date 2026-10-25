@@ -13,7 +13,7 @@
     "edad_max_anios": 14,
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],

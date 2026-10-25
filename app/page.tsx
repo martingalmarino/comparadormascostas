@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { BrandLogo } from "@/components/BrandLogo";
+import { BrandStrip } from "@/components/BrandStrip";
 import { FAQ } from "@/components/FAQ";
+import { HomeZonaProvider } from "@/components/HomeZona";
 import { JsonLd } from "@/components/JsonLd";
 import { PlanCard } from "@/components/PlanCard";
 import { SearchBox } from "@/components/SearchBox";
@@ -8,8 +9,8 @@ import { TrustBar } from "@/components/TrustBar";
 import { getReferenceDate } from "@/lib/dates";
 import { applyFilters } from "@/lib/filters";
 import { formatDate } from "@/lib/format";
-import { logoSize } from "@/lib/logo";
-import { getMarcas, getPlans, newestVerification } from "@/lib/plans";
+import { getMarcasHome, getPlans, newestVerification } from "@/lib/plans";
+import { provinciasConPlanes } from "@/lib/zonas";
 import { requireEntry } from "@/lib/seo-copy";
 import { organizationJsonLd, pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
@@ -42,11 +43,12 @@ const faqs = [
 export default async function HomePage() {
   const today = await getReferenceDate();
   const plans = getPlans();
+  const zonas = provinciasConPlanes(plans);
   const preview = applyFilters(plans, { cob: [], ids: [], orden: "precio" }).slice(0, 3);
   const updated = newestVerification(plans);
 
   return (
-    <>
+    <HomeZonaProvider>
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-indigo-600">Argentina</p>
@@ -57,7 +59,7 @@ export default async function HomePage() {
             {siteConfig.siteName} ordena planes de salud y seguros para perros y gatos. Cada monto muestra la fecha y la fuente del relevamiento.
           </p>
           <div className="mx-auto mt-8 max-w-5xl">
-            <SearchBox />
+            <SearchBox zonas={zonas} />
           </div>
           <p className="mt-4 text-center text-sm text-gray-500">Relevamiento cargado el {formatDate(updated)}.</p>
           <div className="mt-10">
@@ -69,18 +71,7 @@ export default async function HomePage() {
       <section className="py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <h2 className="text-center text-xs font-bold uppercase tracking-widest text-gray-400">Comparamos estas marcas</h2>
-          <ul className="mt-8 grid grid-cols-3 items-center gap-x-4 gap-y-6 sm:grid-cols-4 lg:grid-cols-7">
-            {getMarcas().map((marca) => {
-              const size = marca.logo ? logoSize(marca.logo) : undefined;
-              return (
-                <li key={marca.slug} className="flex justify-center">
-                  <Link href={`/planes/${marca.slug}`} className="group flex h-12 w-full items-center justify-center">
-                    <BrandLogo nombre={marca.nombre} logo={marca.logo} width={size?.width} height={size?.height} />
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          <BrandStrip marcas={getMarcasHome()} />
         </div>
       </section>
 
@@ -128,6 +119,6 @@ export default async function HomePage() {
       </section>
       <JsonLd data={organizationJsonLd()} />
       <JsonLd data={websiteJsonLd()} />
-    </>
+    </HomeZonaProvider>
   );
 }

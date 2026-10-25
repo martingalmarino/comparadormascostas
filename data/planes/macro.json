@@ -11,7 +11,7 @@
     ],
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],
@@ -61,6 +61,8 @@
       "url": "https://www.macro.com.ar/personas/seguros/mascota",
       "metodo": "html_estatico",
       "selector": "Seguro Mascota"
-    }
+    },
+    "logo": "/logos/macro.png",
+    "logo_fuente": "https://www.macro.com.ar/imagen/macrologoheader2025/logo_macro_2025.png"
   }
 ]

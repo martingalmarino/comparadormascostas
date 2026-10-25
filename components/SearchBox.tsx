@@ -2,20 +2,23 @@
 
 import { useRouter } from "next/navigation";
 import type { FormEvent } from "react";
+import { useHomeZona } from "@/components/HomeZona";
 import { fieldClass, labelClass, primaryButtonClass } from "@/components/ui";
-import { ageOptions, tipoOptions, zones } from "@/lib/zones";
+import { ageOptions, tipoOptions } from "@/lib/zones";
 
-export function SearchBox() {
+export function SearchBox({ zonas }: { zonas: { slug: string; label: string }[] }) {
   const router = useRouter();
+  const { zona, setZona } = useHomeZona();
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const params = new URLSearchParams();
-    for (const key of ["especie", "meses", "zona", "tipo"]) {
+    for (const key of ["especie", "meses", "tipo"]) {
       const value = String(data.get(key) ?? "").trim();
       if (value) params.set(key, value);
     }
+    if (zona) params.set("zona", zona);
     const query = params.toString();
     router.push(query ? `/comparar?${query}` : "/comparar");
   }
@@ -50,10 +53,11 @@ export function SearchBox() {
         </label>
         <label>
           <span className={labelClass}>Zona</span>
-          <select name="zona" className={fieldClass} defaultValue="cordoba-capital">
-            {zones.map((zone) => (
-              <option key={zone.slug} value={zone.slug}>
-                {zone.label}
+          <select name="zona" className={fieldClass} value={zona} onChange={(event) => setZona(event.target.value)}>
+            <option value="">Todo el país</option>
+            {zonas.map((item) => (
+              <option key={item.slug} value={item.slug}>
+                {item.label}
               </option>
             ))}
           </select>

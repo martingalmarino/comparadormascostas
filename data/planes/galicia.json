@@ -11,7 +11,7 @@
     ],
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],
@@ -64,6 +64,8 @@
       "url": "https://www.galicia.ar/personas/seguros/seguro-mascota",
       "metodo": "html_estatico",
       "selector": "Seguro de Mascota"
-    }
+    },
+    "logo": "/logos/galicia.png",
+    "logo_fuente": "https://www.galiciaseguros.com.ar/media-library/Templates/images/logo.webp"
   }
 ]

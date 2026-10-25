@@ -13,7 +13,7 @@
     "edad_max_anios": 9,
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],
@@ -82,7 +82,7 @@
     "edad_max_anios": 9,
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],
@@ -151,7 +151,7 @@
     "edad_max_anios": 9,
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],

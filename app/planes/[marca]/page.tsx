@@ -22,6 +22,7 @@ import { getMarcas, getPlansByMarca, versusPairs } from "@/lib/plans";
 import { brandEntry } from "@/lib/seo-copy";
 import { pageMetadata, productJsonLd } from "@/lib/seo";
 import { tipoOptions } from "@/lib/zones";
+import { PROVINCIA_TODAS, jurisdiccionLabel } from "@/lib/zonas";
 import { siteConfig } from "@/site.config";
 
 export function generateStaticParams() {
@@ -101,11 +102,14 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
                     </p>
                     {plan.zonas.length === 0 ? (
                       <p className="mt-1 text-sm text-amber-800">La fuente no confirma en qué provincias está.</p>
-                    ) : plan.zonas.some((zona) => zona.provincia.toLowerCase() === "toda") ? null : (
+                    ) : (
                       <p className="mt-1 text-sm text-gray-600">
-                        Disponible en {plan.zonas.map((zona) => zona.provincia).join(", ")}.
+                        {plan.zonas.some((zona) => zona.provincia === PROVINCIA_TODAS)
+                          ? "Todo el país."
+                          : `Disponible en ${plan.zonas.map((zona) => jurisdiccionLabel(zona.provincia) ?? zona.provincia).join(", ")}.`}
                       </p>
                     )}
+                    {plan.zona_detalle ? <p className="mt-1 text-sm text-gray-600">{plan.zona_detalle}</p> : null}
                   </div>
                   <PriceTag plan={plan} today={today} size="lg" tone="primary" />
                 </div>

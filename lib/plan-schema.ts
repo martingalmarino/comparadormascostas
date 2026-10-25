@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { coberturaProvincias } from "@/lib/zonas";
 
 export const planTipos = ["obra_social", "plan_salud", "seguro", "plan_veterinaria", "club_beneficios"] as const;
 export const especies = ["perro", "gato", "conejo", "ave"] as const;
@@ -10,8 +11,8 @@ export const scrapingSchema = z.object({
 });
 
 export const zonaCoberturaSchema = z.object({
-  provincia: z.string().min(1),
-  ciudades: z.union([z.literal("toda"), z.array(z.string().min(1)).min(1)]),
+  provincia: z.enum(coberturaProvincias),
+  ciudades: z.union([z.literal("toda"), z.array(z.string()).length(0)]),
 });
 
 export const planSchema = z.object({

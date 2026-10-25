@@ -11,11 +11,12 @@
     ],
     "zonas": [
       {
-        "provincia": "Buenos Aires",
-        "ciudades": [
-          "CABA",
-          "GBA"
-        ]
+        "provincia": "caba",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "buenos-aires",
+        "ciudades": []
       }
     ],
     "precio_por_zona": null,
@@ -43,6 +44,9 @@
       "url": "https://cobertura.com.ar/2026/06/08/el-auge-de-la-familia-multiespecie/",
       "metodo": "html_estatico",
       "selector": "Planes 1500/2500/4500/8500/8510"
-    }
+    },
+    "zona_detalle": "CABA, GBA",
+    "logo": "/logos/omint-mascotas.svg",
+    "logo_fuente": "https://images.ctfassets.net/xp55tek00mj4/4EbHtQL0TcLJZevgtLhwKG/02d3a3343070372b9d2bfaec00c63907/logo-omint-AZUL.svg"
   }
 ]

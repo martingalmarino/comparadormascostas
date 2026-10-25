@@ -11,11 +11,12 @@
     ],
     "zonas": [
       {
-        "provincia": "Buenos Aires",
-        "ciudades": [
-          "CABA",
-          "GBA"
-        ]
+        "provincia": "caba",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "buenos-aires",
+        "ciudades": []
       }
     ],
     "precio_por_zona": null,
@@ -52,7 +53,10 @@
       "url": "https://holavet.com.ar/",
       "metodo": "html_estatico",
       "selector": "1 mascota"
-    }
+    },
+    "zona_detalle": "CABA, GBA",
+    "logo": "/logos/holavet.png",
+    "logo_fuente": "https://holavet.com.ar/wp-content/uploads/2021/09/holavet-LOGO-RGB-01.png"
   },
   {
     "id": "holavet-2",
@@ -66,11 +70,12 @@
     ],
     "zonas": [
       {
-        "provincia": "Buenos Aires",
-        "ciudades": [
-          "CABA",
-          "GBA"
-        ]
+        "provincia": "caba",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "buenos-aires",
+        "ciudades": []
       }
     ],
     "precio_por_zona": null,
@@ -98,7 +103,10 @@
       "url": "https://holavet.com.ar/",
       "metodo": "html_estatico",
       "selector": "2 mascotas"
-    }
+    },
+    "zona_detalle": "CABA, GBA",
+    "logo": "/logos/holavet.png",
+    "logo_fuente": "https://holavet.com.ar/wp-content/uploads/2021/09/holavet-LOGO-RGB-01.png"
   },
   {
     "id": "holavet-3",
@@ -112,11 +120,12 @@
     ],
     "zonas": [
       {
-        "provincia": "Buenos Aires",
-        "ciudades": [
-          "CABA",
-          "GBA"
-        ]
+        "provincia": "caba",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "buenos-aires",
+        "ciudades": []
       }
     ],
     "precio_por_zona": null,
@@ -144,6 +153,9 @@
       "url": "https://holavet.com.ar/",
       "metodo": "html_estatico",
       "selector": "3 mascotas"
-    }
+    },
+    "zona_detalle": "CABA, GBA",
+    "logo": "/logos/holavet.png",
+    "logo_fuente": "https://holavet.com.ar/wp-content/uploads/2021/09/holavet-LOGO-RGB-01.png"
   }
 ]

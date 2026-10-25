@@ -11,15 +11,15 @@
     "edad_max_anios": 5,
     "zonas": [
       {
-        "provincia": "Córdoba",
+        "provincia": "cordoba",
         "ciudades": "toda"
       },
       {
-        "provincia": "Mendoza",
+        "provincia": "mendoza",
         "ciudades": "toda"
       },
       {
-        "provincia": "San Juan",
+        "provincia": "san-juan",
         "ciudades": "toda"
       }
     ],
@@ -68,15 +68,15 @@
     "edad_max_anios": 10,
     "zonas": [
       {
-        "provincia": "Córdoba",
+        "provincia": "cordoba",
         "ciudades": "toda"
       },
       {
-        "provincia": "Mendoza",
+        "provincia": "mendoza",
         "ciudades": "toda"
       },
       {
-        "provincia": "San Juan",
+        "provincia": "san-juan",
         "ciudades": "toda"
       }
     ],
@@ -124,15 +124,15 @@
     "edad_min_meses": 120,
     "zonas": [
       {
-        "provincia": "Córdoba",
+        "provincia": "cordoba",
         "ciudades": "toda"
       },
       {
-        "provincia": "Mendoza",
+        "provincia": "mendoza",
         "ciudades": "toda"
       },
       {
-        "provincia": "San Juan",
+        "provincia": "san-juan",
         "ciudades": "toda"
       }
     ],
@@ -181,15 +181,15 @@
     ],
     "zonas": [
       {
-        "provincia": "Córdoba",
+        "provincia": "cordoba",
         "ciudades": "toda"
       },
       {
-        "provincia": "Mendoza",
+        "provincia": "mendoza",
         "ciudades": "toda"
       },
       {
-        "provincia": "San Juan",
+        "provincia": "san-juan",
         "ciudades": "toda"
       }
     ],

@@ -11,13 +11,12 @@
     ],
     "zonas": [
       {
-        "provincia": "Buenos Aires",
-        "ciudades": [
-          "CABA",
-          "GBA norte hasta Nordelta",
-          "GBA sur hasta Quilmes/Lomas de Zamora",
-          "GBA oeste hasta Ramos Mejía"
-        ]
+        "provincia": "caba",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "buenos-aires",
+        "ciudades": []
       }
     ],
     "zona_detalle": "Solo AMBA: CABA, zona norte hasta Nordelta, sur hasta Quilmes/Lomas, oeste hasta Ramos Mejía (sucursales y domicilio).",
@@ -71,13 +70,12 @@
     ],
     "zonas": [
       {
-        "provincia": "Buenos Aires",
-        "ciudades": [
-          "CABA",
-          "GBA norte hasta Nordelta",
-          "GBA sur hasta Quilmes/Lomas de Zamora",
-          "GBA oeste hasta Ramos Mejía"
-        ]
+        "provincia": "caba",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "buenos-aires",
+        "ciudades": []
       }
     ],
     "zona_detalle": "Solo AMBA: CABA, zona norte hasta Nordelta, sur hasta Quilmes/Lomas, oeste hasta Ramos Mejía (sucursales y domicilio).",

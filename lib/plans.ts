@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { planSchema, type Plan } from "@/lib/plan-schema";
+import { PROVINCIA_TODAS } from "@/lib/zonas";
 
 const plansDir = path.join(process.cwd(), "data", "planes");
 
@@ -67,6 +68,25 @@ export function getMarcas() {
     });
   }
   return marcas;
+}
+
+export function getMarcasHome() {
+  const order: { slug: string; nombre: string; logo?: string; provincias: string[]; nacional: boolean }[] = [];
+  const bySlug = new Map<string, (typeof order)[number]>();
+  for (const plan of getPlans()) {
+    let marca = bySlug.get(plan.marca_slug);
+    if (!marca) {
+      marca = { slug: plan.marca_slug, nombre: plan.marca, logo: plan.logo, provincias: [], nacional: false };
+      bySlug.set(plan.marca_slug, marca);
+      order.push(marca);
+    }
+    if (!marca.logo && plan.logo) marca.logo = plan.logo;
+    for (const zona of plan.zonas) {
+      if (zona.provincia === PROVINCIA_TODAS) marca.nacional = true;
+      else if (!marca.provincias.includes(zona.provincia)) marca.provincias.push(zona.provincia);
+    }
+  }
+  return order;
 }
 
 export function getPlansByMarca(slug: string) {

@@ -4,9 +4,18 @@ import { useRouter } from "next/navigation";
 import { fieldClass, labelClass } from "@/components/ui";
 import type { Filters as FilterState } from "@/lib/filters";
 import { serializeFilters } from "@/lib/filters";
-import { ageOptions, coverageFilters, priceOptions, provinciaLabel, provincias, sortOptions, tipoOptions, zoneLabel, zones } from "@/lib/zones";
+import { ageOptions, coverageFilters, priceOptions, sortOptions, tipoOptions } from "@/lib/zones";
+import { jurisdiccionLabel } from "@/lib/zonas";
 
-export function Filters({ filters, total }: { filters: FilterState; total: number }) {
+export function Filters({
+  filters,
+  total,
+  zonas,
+}: {
+  filters: FilterState;
+  total: number;
+  zonas: { slug: string; label: string }[];
+}) {
   const router = useRouter();
 
   function update(partial: Partial<FilterState>) {
@@ -21,8 +30,7 @@ export function Filters({ filters, total }: { filters: FilterState; total: numbe
     const age = ageOptions.find((option) => option.meses === filters.meses);
     chips.push({ key: "meses", label: age?.label ?? `${filters.meses} meses`, clear: { meses: undefined } });
   }
-  if (filters.provincia) chips.push({ key: "provincia", label: provinciaLabel(filters.provincia) ?? filters.provincia, clear: { provincia: undefined } });
-  if (filters.zona) chips.push({ key: "zona", label: zoneLabel(filters.zona) ?? filters.zona, clear: { zona: undefined } });
+  if (filters.zona) chips.push({ key: "zona", label: jurisdiccionLabel(filters.zona) ?? filters.zona, clear: { zona: undefined } });
   if (filters.tipo) {
     chips.push({
       key: "tipo",
@@ -87,7 +95,7 @@ export function Filters({ filters, total }: { filters: FilterState; total: numbe
       <details className="mb-4 rounded-2xl border border-gray-200 bg-white lg:hidden">
         <summary className="cursor-pointer px-4 py-3 font-bold text-gray-900">Filtros</summary>
         <div className="border-t border-gray-100 p-4">
-          <Fields filters={filters} update={update} />
+          <Fields filters={filters} update={update} zonas={zonas} />
         </div>
       </details>
 
@@ -100,13 +108,21 @@ export function Filters({ filters, total }: { filters: FilterState; total: numbe
             </button>
           ) : null}
         </div>
-        <Fields filters={filters} update={update} />
+        <Fields filters={filters} update={update} zonas={zonas} />
       </aside>
     </div>
   );
 }
 
-function Fields({ filters, update }: { filters: FilterState; update: (partial: Partial<FilterState>) => void }) {
+function Fields({
+  filters,
+  update,
+  zonas,
+}: {
+  filters: FilterState;
+  update: (partial: Partial<FilterState>) => void;
+  zonas: { slug: string; label: string }[];
+}) {
   return (
     <div className="space-y-5">
       <label className="block">
@@ -129,23 +145,12 @@ function Fields({ filters, update }: { filters: FilterState; update: (partial: P
         </select>
       </label>
       <label className="block">
-        <span className={labelClass}>Disponible en mi zona</span>
-        <select className={fieldClass} value={filters.provincia ?? ""} onChange={(event) => update({ provincia: event.target.value || undefined })}>
-          <option value="">Todas las provincias</option>
-          {provincias.map((provincia) => (
-            <option key={provincia.slug} value={provincia.slug}>
-              {provincia.label}
-            </option>
-          ))}
-        </select>
-      </label>
-      <label className="block">
-        <span className={labelClass}>Zona de Córdoba</span>
+        <span className={labelClass}>Zona</span>
         <select className={fieldClass} value={filters.zona ?? ""} onChange={(event) => update({ zona: event.target.value || undefined })}>
-          <option value="">Todas las zonas</option>
-          {zones.map((zone) => (
-            <option key={zone.slug} value={zone.slug}>
-              {zone.label}
+          <option value="">Todo el país</option>
+          {zonas.map((zona) => (
+            <option key={zona.slug} value={zona.slug}>
+              {zona.label}
             </option>
           ))}
         </select>

@@ -12,7 +12,7 @@
     "edad_max_anios": 18,
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],
@@ -71,7 +71,7 @@
     "edad_max_anios": 18,
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],
@@ -130,7 +130,7 @@
     "edad_max_anios": 18,
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],
@@ -189,7 +189,7 @@
     "edad_max_anios": 18,
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],
@@ -248,7 +248,7 @@
     "edad_max_anios": 18,
     "zonas": [
       {
-        "provincia": "toda",
+        "provincia": "todas",
         "ciudades": "toda"
       }
     ],

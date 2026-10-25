@@ -6,7 +6,7 @@ import { IndependenceNote } from "@/components/IndependenceNote";
 import { fieldClass, labelClass, primaryButtonClass } from "@/components/ui";
 import { normalizeArWhatsapp } from "@/lib/phone";
 import { consentTextForBrand, consentTextForContact, siteConfig } from "@/site.config";
-import { zones } from "@/lib/zones";
+import { jurisdicciones } from "@/lib/zonas";
 
 type LeadPlan = { id: string; nombre: string };
 
@@ -160,9 +160,9 @@ export function LeadForm({
             <option value="" disabled>
               Elegí una zona
             </option>
-            {zones.map((zone) => (
-              <option key={zone.slug} value={zone.slug}>
-                {zone.label}
+            {[...jurisdicciones].sort((a, b) => a.label.localeCompare(b.label, "es")).map((zona) => (
+              <option key={zona.slug} value={zona.slug}>
+                {zona.label}
               </option>
             ))}
           </select>

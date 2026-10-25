@@ -11,11 +11,12 @@
     ],
     "zonas": [
       {
-        "provincia": "Buenos Aires",
-        "ciudades": [
-          "CABA",
-          "GBA"
-        ]
+        "provincia": "caba",
+        "ciudades": "toda"
+      },
+      {
+        "provincia": "buenos-aires",
+        "ciudades": []
       }
     ],
     "precio_por_zona": null,
@@ -49,6 +50,9 @@
       "url": "https://www.ospan.com.ar/planes",
       "metodo": "manual",
       "selector": "Planes caninos (5) y felinos (4)"
-    }
+    },
+    "zona_detalle": "CABA, GBA",
+    "logo": "/logos/ospan.png",
+    "logo_fuente": "https://static.wixstatic.com/media/8fbae3_0cd53061fe434991bb0a7f1dd17b1aa5~mv2.png"
   }
 ]
