@@ -21,10 +21,8 @@ export function Footer({ year }: { year: string }) {
           </p>
         </div>
         <div>
-          <h2 className="text-sm font-bold text-gray-900">Córdoba</h2>
+          <h2 className="text-sm font-bold text-gray-900">Guías</h2>
           <ul className="mt-3 space-y-2 text-sm text-gray-600">
-            <li><Link className="hover:text-indigo-700" href="/cordoba">Obra social en Córdoba</Link></li>
-            <li><Link className="hover:text-indigo-700" href="/cordoba/veterinarias-con-plan">Veterinarias y cartilla</Link></li>
             <li><Link className="hover:text-indigo-700" href="/precios">Precios del mes</Link></li>
             <li><Link className="hover:text-indigo-700" href="/seguro-para-perros">Seguro para perros</Link></li>
             <li><Link className="hover:text-indigo-700" href="/seguro-para-gatos">Seguro para gatos</Link></li>

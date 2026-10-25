@@ -113,7 +113,6 @@ export default async function HomePage() {
           <Link className="rounded-full border border-gray-200 bg-white px-4 py-2 hover:border-indigo-200" href="/seguro-para-perros">Seguro para perros</Link>
           <Link className="rounded-full border border-gray-200 bg-white px-4 py-2 hover:border-indigo-200" href="/seguro-para-gatos">Seguro para gatos</Link>
           <Link className="rounded-full border border-gray-200 bg-white px-4 py-2 hover:border-indigo-200" href="/precios">Precios del mes</Link>
-          <Link className="rounded-full border border-gray-200 bg-white px-4 py-2 hover:border-indigo-200" href="/cordoba">Córdoba</Link>
         </div>
         <FAQ items={faqs} />
       </section>
