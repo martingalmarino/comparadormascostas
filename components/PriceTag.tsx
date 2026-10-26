@@ -19,7 +19,7 @@ export function PriceTag({
   const estado = displayEstado(plan, today);
   const alignClass = align === "center" ? "text-center" : "text-right";
   const justifyClass = align === "center" ? "justify-center" : "justify-end";
-  if (!mostrarMonto(plan, today)) {
+  if (plan.precio == null || !mostrarMonto(plan, today)) {
     return (
       <div className={alignClass}>
         <p className="text-sm font-semibold text-gray-800">Consultar precio</p>
