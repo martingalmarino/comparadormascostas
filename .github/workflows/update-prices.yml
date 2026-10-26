@@ -2,13 +2,12 @@ name: Actualizar precios
 
 on:
   schedule:
-    # Lunes 09:00 ART (UTC-3)
-    - cron: "0 12 * * 1"
+    - cron: "0 9 5 * *"
   workflow_dispatch:
 
 permissions:
   contents: write
-  pull-requests: write
+  issues: write
 
 jobs:
   precios:
@@ -20,13 +19,45 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run update-prices
-      - uses: peter-evans/create-pull-request@v7
-        with:
-          commit-message: "Marcar precios que requieren revisión"
-          title: "Precios: requiere revisión"
-          body-path: scripts/out/reporte.md
-          branch: bot/precios
-          add-paths: |
-            data/planes
-            data/historial
+      - id: actualizar
+        run: npm run update-prices
+        continue-on-error: true
+      - id: publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/planes data/historial
+          if git diff --staged --quiet; then
+            echo "Sin cambios de datos."
+            exit 0
+          fi
+          git commit -m "Actualizar los precios que la fuente publicó dentro del margen."
+          git push origin HEAD:main
+      - name: Abrir issue si hay que revisar
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FALLO: ${{ steps.actualizar.outcome }}
+          PUBLICACION: ${{ steps.publicar.outcome }}
+        run: |
+          avisar=0
+          if [ "$FALLO" != "success" ] || [ "$PUBLICACION" != "success" ]; then
+            avisar=1
+          fi
+          if [ -f scripts/out/resultado.json ]; then
+            node -e 'const r=require("./scripts/out/resultado.json"); if ((r.revisiones||[]).length || (r.errores||[]).length) process.exit(2)' || avisar=1
+          fi
+          if [ "$avisar" = "0" ]; then
+            echo "Sin avisos."
+            exit 0
+          fi
+          if [ -f scripts/out/reporte.md ]; then
+            cuerpo=scripts/out/reporte.md
+          else
+            printf '%s\n' "El script no terminó bien." > /tmp/reporte-precios.md
+            cuerpo=/tmp/reporte-precios.md
+          fi
+          gh issue create --title "Precios: hay planes para revisar" --body-file "$cuerpo"
+          if [ "$FALLO" != "success" ] || [ "$PUBLICACION" != "success" ]; then
+            exit 1
+          fi

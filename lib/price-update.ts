@@ -14,6 +14,7 @@ const scraperSchema = z.object({
       url: z.string(),
       enabled: z.boolean(),
       selector: z.string(),
+      metodo: z.enum(["html_estatico", "js_render"]).optional(),
       notas: z.string().optional(),
     }),
   ),
@@ -87,13 +88,37 @@ function loadPlans() {
   const files = new Map<string, { file: string; plans: Plan[] }>();
   for (const file of readdirSync(dir).filter((name) => name.endsWith(".json")).sort()) {
     const full = path.join(dir, file);
-    const plans = planSchema.array().parse(JSON.parse(readFileSync(full, "utf8")));
+    const plans = JSON.parse(readFileSync(full, "utf8")) as Plan[];
+    planSchema.array().parse(plans);
     for (const plan of plans) files.set(plan.id, { file: full, plans });
   }
   return files;
 }
 
-async function readPrice(url: string, selector: string, userAgent: string) {
+const rusPetcare: Record<string, string> = {
+  "rus-seguros-petcare-simple": "SIMPLE",
+  "rus-seguros-petcare-esencial": "ESENCIAL",
+  "rus-seguros-petcare-integral": "INTEGRAL",
+  "rus-seguros-petcare-superior": "SUPERIOR",
+};
+
+/** El precio mensual está en la tabla, en la línea anterior a «Plan RUS PETCARE …». */
+export function precioPetcare(html: string, planId: string) {
+  const nombre = rusPetcare[planId];
+  if (!nombre) return { error: "Ese plan de RUS no tiene parser." };
+  const text = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+  const match = text.match(new RegExp(String.raw`\$\s*([\d.]+)\s*/\s*mes\s*Plan RUS PETCARE ${nombre}\b`, "i"));
+  if (!match) return { error: `No apareció el precio mensual de PetCare ${nombre}.` };
+  const price = Number(match[1].replaceAll(".", ""));
+  if (!Number.isInteger(price) || price <= 0) return { error: "El precio leído no es un entero." };
+  return { price };
+}
+
+function textoPrecioMes(precio: number) {
+  return `$ ${new Intl.NumberFormat("es-AR").format(precio)} /mes`;
+}
+
+async function fetchHtml(url: string, userAgent: string) {
   const target = new URL(url);
   let robotsResponse: Response;
   try {
@@ -115,8 +140,22 @@ async function readPrice(url: string, selector: string, userAgent: string) {
     signal: AbortSignal.timeout(15000),
   });
   if (!response.ok) return { error: `La página respondió ${response.status}.` };
-  const html = await response.text();
-  const node = cheerio.load(html)(selector).first().text();
+  return { html: await response.text() };
+}
+
+async function readPrice(url: string, planId: string, selector: string, metodo: "html_estatico" | "js_render" | undefined, userAgent: string, cache: Map<string, Promise<{ html?: string; error?: string }>>) {
+  if (metodo === "js_render") {
+    return { error: "Esta página pide navegador. Playwright queda para una etapa posterior." };
+  }
+  let pending = cache.get(url);
+  if (!pending) {
+    pending = fetchHtml(url, userAgent);
+    cache.set(url, pending);
+  }
+  const page = await pending;
+  if (page.error || !page.html) return { error: page.error ?? "Sin HTML." };
+  if (planId in rusPetcare) return precioPetcare(page.html, planId);
+  const node = cheerio.load(page.html)(selector).first().text();
   const price = parseArs(node);
   if (price == null) return { error: "No se pudo leer un precio en el selector." };
   return { price };
@@ -155,6 +194,7 @@ export async function runPriceUpdate() {
   const changes: Change[] = [];
   const dirtyFiles = new Set<string>();
   const historiales = new Map<string, { antes: string; data: HistorialMarca }>();
+  const paginas = new Map<string, Promise<{ html?: string; error?: string }>>();
 
   for (const source of config.marcas) {
     if (!source.enabled || !source.url || !source.selector) {
@@ -168,7 +208,7 @@ export async function runPriceUpdate() {
     }
     const plan = holder.plans.find((item) => item.id === source.plan_id);
     if (!plan) continue;
-    const result = await readPrice(source.url, source.selector, config.userAgent);
+    const result = await readPrice(source.url, source.plan_id, source.selector, source.metodo, config.userAgent, paginas);
     if (result.error || result.price == null) {
       plan.estado = "requiere_revision";
       dirtyFiles.add(holder.file);
@@ -195,31 +235,54 @@ export async function runPriceUpdate() {
       continue;
     }
     anotarPrecioVerificado(historiales, plan, plan.fecha_verificacion);
+    plan.precio = result.price;
+    plan.precio_texto_original = textoPrecioMes(result.price);
     plan.fecha_verificacion = today;
-    plan.precio_detectado = result.price;
+    plan.fuente_url = source.url;
+    plan.estado = "verificado";
+    delete plan.precio_detectado;
     anotarPrecioVerificado(historiales, plan, today);
     dirtyFiles.add(holder.file);
-    changes.push({ planId: plan.id, accion: "fecha_actualizada", detalle: `Coincide dentro del ${config.umbral_cambio * 100}%. es_ejemplo no se modifica.` });
+    changes.push({
+      planId: plan.id,
+      accion: "publicado",
+      detalle: `Quedó en ${result.price}, dentro del ${Math.round(config.umbral_cambio * 100)}%.`,
+    });
+  }
+
+  const errores: string[] = [];
+  const archivosValidos = new Set<string>();
+  for (const file of dirtyFiles) {
+    const entry = [...plans.values()].find((item) => item.file === file);
+    if (!entry) continue;
+    const parsed = planSchema.array().safeParse(entry.plans);
+    if (!parsed.success) {
+      errores.push(`${path.basename(file)} no pasó el schema y no se escribió.`);
+      continue;
+    }
+    archivosValidos.add(file);
+    writeFileSync(file, `${JSON.stringify(entry.plans, null, 2)}\n`);
   }
 
   const historialDir = path.join(process.cwd(), "data", "historial");
   for (const [slug, libro] of historiales) {
+    const file = [...archivosValidos].find((item) => item.endsWith(`${slug}.json`));
+    if (!file) continue;
     const serializado = JSON.stringify(libro.data);
     if (serializado === libro.antes) continue;
     mkdirSync(historialDir, { recursive: true });
     writeFileSync(path.join(historialDir, `${slug}.json`), `${JSON.stringify(libro.data, null, 2)}\n`);
   }
 
-  for (const file of dirtyFiles) {
-    const entry = [...plans.values()].find((item) => item.file === file);
-    if (!entry) continue;
-    writeFileSync(file, `${JSON.stringify(entry.plans, null, 2)}\n`);
-  }
-
+  const revisiones = changes.filter((change) => change.accion === "requiere_revision" || change.accion === "error");
   const summary = changes.map((change) => `- ${change.planId}: ${change.accion}. ${change.detalle}`).join("\n");
-  const report = `# Actualización de precios\n\n${summary || "Sin tareas."}\n`;
+  const report = `# Actualización de precios\n\n${summary || "Sin tareas."}\n${errores.length ? `\n## No se escribió\n${errores.map((item) => `- ${item}`).join("\n")}\n` : ""}`;
   const outDir = path.join(process.cwd(), "scripts", "out");
   mkdirSync(outDir, { recursive: true });
   writeFileSync(path.join(outDir, "reporte.md"), report);
-  return { changed: dirtyFiles.size > 0, summary: report };
+  writeFileSync(
+    path.join(outDir, "resultado.json"),
+    `${JSON.stringify({ revisiones: revisiones.map((item) => item.planId), errores }, null, 2)}\n`,
+  );
+  return { changed: archivosValidos.size > 0, summary: report, fallo: errores.length > 0 };
 }

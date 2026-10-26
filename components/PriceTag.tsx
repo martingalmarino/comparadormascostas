@@ -1,7 +1,7 @@
 import { Badge } from "@/components/Badge";
 import { formatPrecioMes } from "@/lib/format";
 import type { Plan } from "@/lib/plan-schema";
-import { displayEstado } from "@/lib/plan-status";
+import { displayEstado, mostrarMonto } from "@/lib/plan-status";
 
 export function PriceTag({
   plan,
@@ -19,12 +19,10 @@ export function PriceTag({
   const estado = displayEstado(plan, today);
   const alignClass = align === "center" ? "text-center" : "text-right";
   const justifyClass = align === "center" ? "justify-center" : "justify-end";
-  if (plan.precio == null || estado === "consultar" || estado === "sin_precio_publico") {
-    const etiqueta = estado === "consultar" ? "Precio a consultar" : "Consultar precio";
+  if (!mostrarMonto(plan, today)) {
     return (
       <div className={alignClass}>
-        <p className="text-sm font-semibold text-gray-800">{etiqueta}</p>
-        {plan.precio_texto_original ? <p className="mt-1 text-xs text-gray-500">{plan.precio_texto_original}</p> : null}
+        <p className="text-sm font-semibold text-gray-800">Consultar precio</p>
       </div>
     );
   }

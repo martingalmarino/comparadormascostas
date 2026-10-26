@@ -32,7 +32,7 @@ import { historialVisible } from "@/lib/marcas";
 import { logoSize } from "@/lib/logo";
 import { getMarcas, getPlans } from "@/lib/plans";
 import type { Plan } from "@/lib/plan-schema";
-import { precioVigente } from "@/lib/plan-status";
+import { mostrarMonto } from "@/lib/plan-status";
 import { respuestaDirecta } from "@/lib/geo";
 import { webPageJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
@@ -220,11 +220,7 @@ export function FichaV2({
                           </a>
                         </td>
                         <td className="py-3 text-right font-mono font-semibold text-slate-900">
-                          {precioVigente(plan, today)
-                            ? formatPrecioMes(plan.precio as number)
-                            : plan.precio == null || plan.estado === "consultar" || plan.estado === "sin_precio_publico"
-                              ? "Precio a consultar"
-                              : "Sin precio vigente"}
+                          {mostrarMonto(plan, today) ? formatPrecioMes(plan.precio as number) : "Consultar precio"}
                         </td>
                       </tr>
                     );

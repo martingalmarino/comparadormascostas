@@ -5,6 +5,7 @@ import { runPriceUpdate } from "../lib/price-update";
 runPriceUpdate()
   .then((report) => {
     process.stdout.write(report.summary);
+    if (report.fallo) process.exit(1);
   })
   .catch((error: unknown) => {
     console.error(error);

@@ -14,6 +14,18 @@ export function displayEstado(plan: Pick<Plan, "estado" | "fecha_verificacion">,
   return plan.estado;
 }
 
+/** A partir de este plazo el monto deja de mostrarse y la ficha dice «Consultar precio». */
+export const DIAS_CONSULTAR_PRECIO = 75;
+
+export function mostrarMonto(
+  plan: Pick<Plan, "estado" | "precio" | "fecha_verificacion">,
+  todayIso: string,
+) {
+  if (plan.precio == null) return false;
+  if (plan.estado === "requiere_revision" || plan.estado === "consultar" || plan.estado === "sin_precio_publico") return false;
+  return daysBetween(plan.fecha_verificacion, todayIso) <= DIAS_CONSULTAR_PRECIO;
+}
+
 export function precioVigente(plan: Pick<Plan, "estado" | "es_ejemplo" | "precio" | "fecha_verificacion" | "precio_texto_original">, todayIso: string) {
   const desde = plan.precio_texto_original?.toLowerCase().includes("desde") ?? false;
   const stale = daysBetween(plan.fecha_verificacion, todayIso) > siteConfig.priceStaleDays;

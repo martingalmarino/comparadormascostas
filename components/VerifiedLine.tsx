@@ -17,7 +17,7 @@ export function VerifiedLine({ plan }: { plan: Plan }) {
     <p className="flex items-start gap-1.5 text-xs text-gray-500">
       <CalendarCheck className="mt-0.5 size-3.5 shrink-0 text-indigo-500" aria-hidden="true" />
       <span className="min-w-0 break-words">
-        Verificado el {formatDate(plan.fecha_verificacion)}
+        Precio verificado el {formatDate(plan.fecha_verificacion)}
         {" · "}
         Fuente:{" "}
         <a

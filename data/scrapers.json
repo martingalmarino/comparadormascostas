@@ -1,6 +1,6 @@
 {
   "userAgent": "CuidaloBot/0.1 (comparador independiente de planes para mascotas; +https://cuidalo.com.ar/como-comparamos)",
-  "umbral_cambio": 0.15,
+  "umbral_cambio": 0.25,
   "marcas": [
     {
       "plan_id": "answer-seguros-seguro-de-mascotas",
@@ -264,30 +264,34 @@
     {
       "plan_id": "rus-seguros-petcare-simple",
       "url": "https://www.rus.com.ar/productos/mascotas/",
-      "enabled": false,
-      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "enabled": true,
+      "metodo": "html_estatico",
+      "selector": "$ x /mes inmediatamente antes de Plan RUS PETCARE SIMPLE",
+      "notas": "Primera marca automática. El HTML trae la tabla de PetCare; el hogar queda afuera."
     },
     {
       "plan_id": "rus-seguros-petcare-esencial",
       "url": "https://www.rus.com.ar/productos/mascotas/",
-      "enabled": false,
-      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "enabled": true,
+      "metodo": "html_estatico",
+      "selector": "$ x /mes inmediatamente antes de Plan RUS PETCARE ESENCIAL",
+      "notas": "Primera marca automática. El HTML trae la tabla de PetCare; el hogar queda afuera."
     },
     {
       "plan_id": "rus-seguros-petcare-integral",
       "url": "https://www.rus.com.ar/productos/mascotas/",
-      "enabled": false,
-      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "enabled": true,
+      "metodo": "html_estatico",
+      "selector": "$ x /mes inmediatamente antes de Plan RUS PETCARE INTEGRAL",
+      "notas": "Primera marca automática. El HTML trae la tabla de PetCare; el hogar queda afuera."
     },
     {
       "plan_id": "rus-seguros-petcare-superior",
       "url": "https://www.rus.com.ar/productos/mascotas/",
-      "enabled": false,
-      "selector": "Tarjetas 'Plan RUS PETCARE ...' con '$ x /mes'; ojo, la página también lista planes de hogar",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "enabled": true,
+      "metodo": "html_estatico",
+      "selector": "$ x /mes inmediatamente antes de Plan RUS PETCARE SUPERIOR",
+      "notas": "Primera marca automática. El HTML trae la tabla de PetCare; el hogar queda afuera."
     }
   ]
 }
