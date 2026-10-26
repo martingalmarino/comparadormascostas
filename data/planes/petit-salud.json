@@ -24,13 +24,12 @@
       }
     ],
     "zona_detalle": "Solo Córdoba, Mendoza, San Juan.",
-    "precio": 28000,
-    "precio_texto_original": "$28.000 por mes (InfoNegocios. 25/04/2025)",
+    "precio": null,
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2025-04-25",
-    "fuente_url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
-    "estado": "requiere_revision",
+    "fecha_verificacion": "2026-10-26",
+    "fuente_url": "https://petitsalud.com/",
+    "estado": "sin_precio_publico",
     "coberturas": [
       {
         "item": "100% consultas, vacunas, urgencias y análisis de rutina"
@@ -82,13 +81,12 @@
       }
     ],
     "zona_detalle": "Solo Córdoba, Mendoza, San Juan.",
-    "precio": 33000,
-    "precio_texto_original": "$33.000 por mes (InfoNegocios. 25/04/2025)",
+    "precio": null,
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2025-04-25",
-    "fuente_url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
-    "estado": "requiere_revision",
+    "fecha_verificacion": "2026-10-26",
+    "fuente_url": "https://petitsalud.com/",
+    "estado": "sin_precio_publico",
     "coberturas": [
       {
         "item": "100% consultas, vacunas, urgencias y análisis de rutina"
@@ -139,13 +137,12 @@
       }
     ],
     "zona_detalle": "Solo Córdoba, Mendoza, San Juan.",
-    "precio": 38000,
-    "precio_texto_original": "$38.000 por mes (InfoNegocios. 25/04/2025)",
+    "precio": null,
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2025-04-25",
-    "fuente_url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
-    "estado": "requiere_revision",
+    "fecha_verificacion": "2026-10-26",
+    "fuente_url": "https://petitsalud.com/",
+    "estado": "sin_precio_publico",
     "coberturas": [
       {
         "item": "100% consultas, vacunas, urgencias y análisis de rutina"
@@ -197,13 +194,12 @@
       }
     ],
     "zona_detalle": "Solo Córdoba, Mendoza, San Juan.",
-    "precio": 28000,
-    "precio_texto_original": "$28.000 por mes (InfoNegocios. 25/04/2025)",
+    "precio": null,
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2025-04-25",
-    "fuente_url": "https://infonegocios.info/plus/las-mascotas-tambien-tienen-prepaga-3-opciones-activas-en-cordoba-con-precios-y-todo-lo-que-cubren-ike-mascotas-petit-salud-y-avsim",
-    "estado": "requiere_revision",
+    "fecha_verificacion": "2026-10-26",
+    "fuente_url": "https://petitsalud.com/",
+    "estado": "sin_precio_publico",
     "coberturas": [
       {
         "item": "100% consultas, vacunas, urgencias y análisis de rutina"

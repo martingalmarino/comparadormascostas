@@ -10,5 +10,12 @@
       "precio": 75000,
       "fuente": "https://www.osmasc.com/"
     }
+  ],
+  "osmasc-plan-alfa": [
+    {
+      "fecha": "2026-10-26",
+      "precio": 22000,
+      "fuente": "https://www.osmasc.com/"
+    }
   ]
 }

@@ -1,0 +1,33 @@
+{
+  "vetify-emergencias": [
+    {
+      "fecha": "2026-10-25",
+      "precio": 21190,
+      "fuente": "https://vetify.com.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 21190,
+      "fuente": "https://vetify.com.ar/"
+    }
+  ],
+  "vetify-classic": [
+    {
+      "fecha": "2026-10-26",
+      "precio": 66790,
+      "fuente": "https://vetify.com.ar/"
+    }
+  ],
+  "vetify-cachorros": [
+    {
+      "fecha": "2026-10-25",
+      "precio": 84790,
+      "fuente": "https://vetify.com.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 84790,
+      "fuente": "https://vetify.com.ar/"
+    }
+  ]
+}

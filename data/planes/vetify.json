@@ -17,10 +17,10 @@
     ],
     "precio_por_zona": null,
     "precio": 21190,
-    "precio_texto_original": "$ 21.190/mes",
+    "precio_texto_original": "$ 21.190 /mes",
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-25",
+    "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://vetify.com.ar/",
     "estado": "verificado",
     "coberturas": [
@@ -82,13 +82,13 @@
       }
     ],
     "precio_por_zona": null,
-    "precio": null,
-    "precio_texto_original": "$ 66.790/mes y $ 94.790/mes (dos precios bajo Classic)",
+    "precio": 66790,
+    "precio_texto_original": "$ 66.790 /mes",
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-25",
+    "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://vetify.com.ar/",
-    "estado": "requiere_revision",
+    "estado": "verificado",
     "coberturas": [
       {
         "item": "consultas ilimitadas en red"
@@ -150,10 +150,10 @@
     ],
     "precio_por_zona": null,
     "precio": 84790,
-    "precio_texto_original": "$ 84.790/mes",
+    "precio_texto_original": "$ 84.790 /mes",
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-25",
+    "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://vetify.com.ar/",
     "estado": "verificado",
     "coberturas": [

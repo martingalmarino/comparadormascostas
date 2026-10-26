@@ -58,6 +58,7 @@
     "resumen": "Nacional",
     "logo": "/logos/answer-seguros.svg",
     "logo_fuente": "https://answerseguros.com.ar/new/assets/logos/answer-logo.svg",
-    "precio_por_zona": false
+    "precio_por_zona": false,
+    "precio_tipo": "desde"
   }
 ]

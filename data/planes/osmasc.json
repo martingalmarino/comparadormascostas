@@ -17,12 +17,12 @@
     ],
     "zona_detalle": "Nacional",
     "precio": 22000,
-    "precio_texto_original": "Desde $38.000 / $22.000",
+    "precio_texto_original": "Desde $ 22.000 /mes",
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-24",
+    "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://www.osmasc.com/",
-    "estado": "requiere_revision",
+    "estado": "verificado",
     "coberturas": [
       {
         "item": "Consultas, urgencias, domicilio, especialistas (con topes)"
@@ -58,7 +58,9 @@
     "resumen": "Nacional",
     "logo": "/logos/osmasc.png",
     "logo_fuente": "https://www.osmasc.com/assets/images/header/logo.png",
-    "precio_por_zona": false
+    "precio_por_zona": false,
+    "precio_tipo": "desde",
+    "nota_precio": "Según edad, hasta $38.000/mes"
   },
   {
     "id": "osmasc-plan-omega-premium",
