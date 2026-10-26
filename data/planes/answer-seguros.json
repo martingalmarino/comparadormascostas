@@ -17,10 +17,10 @@
     ],
     "zona_detalle": "Nacional",
     "precio": 6135,
-    "precio_texto_original": "$6.135/mes",
+    "precio_texto_original": "Desde $6.135 /mes",
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-24",
+    "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://answerseguros.com.ar/new/pets/",
     "estado": "verificado",
     "coberturas": [

@@ -1,0 +1,38 @@
+{
+  "companion-plan-60": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 39000,
+      "fuente": "https://companion.com.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 39000,
+      "fuente": "https://companion.com.ar/"
+    }
+  ],
+  "companion-plan-80": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 52000,
+      "fuente": "https://companion.com.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 52000,
+      "fuente": "https://companion.com.ar/"
+    }
+  ],
+  "companion-plan-100": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 78000,
+      "fuente": "https://companion.com.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 78000,
+      "fuente": "https://companion.com.ar/"
+    }
+  ]
+}

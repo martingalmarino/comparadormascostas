@@ -1,0 +1,14 @@
+{
+  "osmasc-plan-omega-premium": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 75000,
+      "fuente": "https://www.osmasc.com/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 75000,
+      "fuente": "https://www.osmasc.com/"
+    }
+  ]
+}

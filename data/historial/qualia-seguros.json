@@ -1,0 +1,62 @@
+{
+  "qualia-seguros-plan-1": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 9700,
+      "fuente": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 9700,
+      "fuente": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas"
+    }
+  ],
+  "qualia-seguros-plan-2": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 14600,
+      "fuente": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 14600,
+      "fuente": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas"
+    }
+  ],
+  "qualia-seguros-plan-3": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 19400,
+      "fuente": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 19400,
+      "fuente": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas"
+    }
+  ],
+  "qualia-seguros-plan-4": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 24300,
+      "fuente": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 24300,
+      "fuente": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas"
+    }
+  ],
+  "qualia-seguros-plan-5": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 29100,
+      "fuente": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 29100,
+      "fuente": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas"
+    }
+  ]
+}

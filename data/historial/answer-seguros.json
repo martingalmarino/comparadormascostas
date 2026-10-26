@@ -1,0 +1,14 @@
+{
+  "answer-seguros-seguro-de-mascotas": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 6135,
+      "fuente": "https://answerseguros.com.ar/new/pets/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 6135,
+      "fuente": "https://answerseguros.com.ar/new/pets/"
+    }
+  ]
+}

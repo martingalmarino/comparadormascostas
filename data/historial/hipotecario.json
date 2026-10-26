@@ -1,0 +1,38 @@
+{
+  "hipotecario-mascotas-1": [
+    {
+      "fecha": "2026-10-25",
+      "precio": 12233,
+      "fuente": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 12233,
+      "fuente": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/"
+    }
+  ],
+  "hipotecario-mascotas-2": [
+    {
+      "fecha": "2026-10-25",
+      "precio": 15728,
+      "fuente": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 15728,
+      "fuente": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/"
+    }
+  ],
+  "hipotecario-mascotas-3": [
+    {
+      "fecha": "2026-10-25",
+      "precio": 17476,
+      "fuente": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 17476,
+      "fuente": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/"
+    }
+  ]
+}

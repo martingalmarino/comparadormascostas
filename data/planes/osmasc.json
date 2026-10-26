@@ -78,10 +78,10 @@
     ],
     "zona_detalle": "Nacional",
     "precio": 75000,
-    "precio_texto_original": "$75.000",
+    "precio_texto_original": "$ 75.000 /mes",
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-24",
+    "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://www.osmasc.com/",
     "estado": "verificado",
     "coberturas": [

@@ -1,0 +1,62 @@
+{
+  "fielpet-plan-1": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 19047,
+      "fuente": "https://www.fielpet.com.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 19047,
+      "fuente": "https://www.fielpet.com.ar/"
+    }
+  ],
+  "fielpet-plan-2": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 26216,
+      "fuente": "https://www.fielpet.com.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 26216,
+      "fuente": "https://www.fielpet.com.ar/"
+    }
+  ],
+  "fielpet-plan-3": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 36970,
+      "fuente": "https://www.fielpet.com.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 36970,
+      "fuente": "https://www.fielpet.com.ar/"
+    }
+  ],
+  "fielpet-plan-4": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 54892,
+      "fuente": "https://www.fielpet.com.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 54892,
+      "fuente": "https://www.fielpet.com.ar/"
+    }
+  ],
+  "fielpet-plan-5": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 72815,
+      "fuente": "https://www.fielpet.com.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 72815,
+      "fuente": "https://www.fielpet.com.ar/"
+    }
+  ]
+}

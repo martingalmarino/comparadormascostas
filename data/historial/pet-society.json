@@ -1,0 +1,26 @@
+{
+  "pet-society-plan-individual": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 9489,
+      "fuente": "https://petsociety.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 9489,
+      "fuente": "https://petsociety.ar/"
+    }
+  ],
+  "pet-society-plan-familiar": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 12398,
+      "fuente": "https://petsociety.ar/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 12398,
+      "fuente": "https://petsociety.ar/"
+    }
+  ]
+}
