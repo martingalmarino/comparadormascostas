@@ -1,5 +1,5 @@
 import { Badge } from "@/components/Badge";
-import { formatPrecioMes } from "@/lib/format";
+import { etiquetaPrecio } from "@/lib/format";
 import type { Plan } from "@/lib/plan-schema";
 import { displayEstado, mostrarMonto } from "@/lib/plan-status";
 
@@ -37,10 +37,11 @@ export function PriceTag({
       <div className={`flex flex-wrap items-center gap-1.5 ${justifyClass}`}>
         <p className={`font-mono font-medium tabular-nums ${sizeClass} ${color}`}>
           <span className="sr-only">{plan.es_ejemplo ? "Precio mensual de ejemplo " : "Precio mensual "}</span>
-          {formatPrecioMes(plan.precio)}
+          {etiquetaPrecio(plan.precio, plan.precio_tipo)}
         </p>
         {plan.es_ejemplo ? <Badge kind="ejemplo" /> : null}
       </div>
+      {plan.nota_precio ? <p className="mt-1 text-xs font-normal text-gray-600">{plan.nota_precio}</p> : null}
     </div>
   );
 }

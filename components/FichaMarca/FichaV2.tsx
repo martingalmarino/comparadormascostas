@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { LeadForm } from "@/components/LeadForm";
 import { PlanArticles } from "@/components/PlanArticles";
 import { StickyLeadCTA } from "@/components/StickyLeadCTA";
-import { formatArs, formatDate, formatPrecioMes } from "@/lib/format";
+import { etiquetaPrecio, formatArs, formatDate, formatPrecioMes } from "@/lib/format";
 import {
   alcancePlanes,
   alternativasCercanas,
@@ -220,7 +220,14 @@ export function FichaV2({
                           </a>
                         </td>
                         <td className="py-3 text-right font-mono font-semibold text-slate-900">
-                          {mostrarMonto(plan, today) ? formatPrecioMes(plan.precio as number) : "Consultar precio"}
+                          {mostrarMonto(plan, today) ? (
+                            <>
+                              {etiquetaPrecio(plan.precio as number, plan.precio_tipo)}
+                              {plan.nota_precio ? <span className="mt-1 block font-sans text-xs font-normal text-slate-500">{plan.nota_precio}</span> : null}
+                            </>
+                          ) : (
+                            "Consultar precio"
+                          )}
                         </td>
                       </tr>
                     );

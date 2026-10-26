@@ -41,6 +41,8 @@ export const planSchema = z.object({
   zona_detalle: z.string().optional(),
   precio_por_zona: z.boolean().nullable().optional(),
   precio: z.number().int().nonnegative().nullable(),
+  precio_tipo: z.enum(["fijo", "desde"]).optional(),
+  nota_precio: z.string().min(1).optional(),
   precio_texto_original: z.string().optional(),
   moneda: z.literal("ARS"),
   es_ejemplo: z.boolean(),

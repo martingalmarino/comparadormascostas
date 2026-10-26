@@ -151,9 +151,10 @@
     {
       "plan_id": "osmasc-plan-alfa",
       "url": "https://www.osmasc.com/",
-      "enabled": false,
-      "selector": "Bloque 'PLAN ALFA', último $ del bloque",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "enabled": true,
+      "metodo": "html_estatico",
+      "selector": "Los dos montos $x X mes de PLAN ALFA. Se publica el menor como desde.",
+      "notas": "La página publica $22.000 y $38.000 según la edad. El menor queda como desde."
     },
     {
       "plan_id": "osmasc-plan-omega-premium",
@@ -364,6 +365,30 @@
       "metodo": "html_estatico",
       "selector": "Tercer precio mensual, RC $4.000.000",
       "notas": "Los tres precios mensuales siguen el orden de la responsabilidad civil."
+    },
+    {
+      "plan_id": "vetify-emergencias",
+      "url": "https://vetify.com.ar/",
+      "enabled": true,
+      "metodo": "js_render",
+      "selector": "Emergencias, el primer $x/mes visible",
+      "notas": "Playwright lee el monto que ve el visitante. No se llama a la API de cotización."
+    },
+    {
+      "plan_id": "vetify-classic",
+      "url": "https://vetify.com.ar/",
+      "enabled": true,
+      "metodo": "js_render",
+      "selector": "Classic, los $x/mes visibles. Si hay más de uno, el menor como desde.",
+      "notas": "Playwright lee el monto que ve el visitante. No se llama a la API de cotización."
+    },
+    {
+      "plan_id": "vetify-cachorros",
+      "url": "https://vetify.com.ar/",
+      "enabled": true,
+      "metodo": "js_render",
+      "selector": "Cachorros, el primer $x/mes visible",
+      "notas": "Playwright lee el monto que ve el visitante. No se llama a la API de cotización."
     }
   ]
 }

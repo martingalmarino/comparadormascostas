@@ -35,8 +35,13 @@ function precio(fuente: string, planId: string) {
 }
 
 test("lee el precio público de cada marca y no el de otra cobertura", () => {
-  assert.equal(precio(html, "answer-seguros-seguro-de-mascotas").price, 6135);
-  assert.match(precio(html, "answer-seguros-seguro-de-mascotas").texto, /Desde/);
+  const answer = precio(html, "answer-seguros-seguro-de-mascotas");
+  assert.equal(answer.price, 6135);
+  assert.equal(answer.tipo, "desde");
+  const alfa = precio(html, "osmasc-plan-alfa");
+  assert.equal(alfa.price, 22000);
+  assert.equal(alfa.tipo, "desde");
+  assert.equal(alfa.nota, "Según edad, hasta $38.000/mes");
   assert.equal(precio(html, "companion-plan-80").price, 52000);
   assert.equal(precio(html, "fielpet-plan-1").price, 19047);
   assert.equal(precio(html, "ike-mascotas-adulto").price, 51900);
@@ -47,4 +52,17 @@ test("lee el precio público de cada marca y no el de otra cobertura", () => {
   assert.equal(precio(html, "hipotecario-mascotas-3").price, 17476);
   assert.equal(precio(qualia, "qualia-seguros-plan-5").price, 29100);
   assert.equal(precio(qualia, "qualia-seguros-plan-1").price, 9700);
+  const visible = `
+    Emergencias Exclusivo para accidentes $21.190/mes
+    Classic $66.790/mes Incluye Plan Emergencias más
+    Premium $94.790/mes
+    Cachorros Recomendado 0 a 1 año $84.790/mes
+  `;
+  assert.equal(precio(visible, "vetify-emergencias").price, 21190);
+  assert.equal(precio(visible, "vetify-classic").price, 66790);
+  assert.equal(precio(visible, "vetify-classic").tipo, undefined);
+  assert.equal(precio(visible, "vetify-cachorros").price, 84790);
+  const doble = precio("Classic $40.000/mes y $70.000/mes", "vetify-classic");
+  assert.equal(doble.price, 40000);
+  assert.equal(doble.tipo, "desde");
 });

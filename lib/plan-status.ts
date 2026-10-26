@@ -23,8 +23,8 @@ export function mostrarMonto(
   return daysBetween(plan.fecha_verificacion, todayIso) <= siteConfig.priceStaleDays;
 }
 
-export function precioVigente(plan: Pick<Plan, "estado" | "es_ejemplo" | "precio" | "fecha_verificacion" | "precio_texto_original">, todayIso: string) {
-  const desde = plan.precio_texto_original?.toLowerCase().includes("desde") ?? false;
+export function precioVigente(plan: Pick<Plan, "estado" | "es_ejemplo" | "precio" | "fecha_verificacion" | "precio_texto_original" | "precio_tipo">, todayIso: string) {
+  const desde = plan.precio_tipo === "desde" || (plan.precio_texto_original?.toLowerCase().includes("desde") ?? false);
   const stale = daysBetween(plan.fecha_verificacion, todayIso) > siteConfig.priceStaleDays;
   return plan.estado === "verificado" && !plan.es_ejemplo && plan.precio != null && !desde && !stale;
 }

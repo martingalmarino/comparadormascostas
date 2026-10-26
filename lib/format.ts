@@ -31,6 +31,11 @@ export function formatPrecioMes(value: number) {
   return `${formatArs(value)}/mes`;
 }
 
+export function etiquetaPrecio(value: number, tipo?: "fijo" | "desde") {
+  const monto = formatPrecioMes(value);
+  return tipo === "desde" ? `Desde ${monto}` : monto;
+}
+
 export function formatDate(iso: string) {
   const [year, month, day] = iso.slice(0, 10).split("-");
   if (!year || !month || !day) return iso;

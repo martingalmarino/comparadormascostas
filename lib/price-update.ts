@@ -124,16 +124,17 @@ function entero(raw: string) {
   return Number.isInteger(price) && price > 0 ? price : null;
 }
 
-type Lectura = { price: number; texto: string } | { error: string };
+type Monto = { price: number; texto: string; tipo?: "fijo" | "desde"; nota?: string };
+type Lectura = Monto | { error: string } | { vacio: true };
 
-function esMonto(value: Lectura): value is { price: number; texto: string } {
+function esMonto(value: Lectura): value is Monto {
   return "price" in value;
 }
 
-function monto(raw: string | undefined, texto: string, error: string): Lectura {
+function monto(raw: string | undefined, texto: string, error: string, tipo?: "fijo" | "desde"): Lectura {
   const price = raw ? entero(raw) : null;
   if (price == null) return { error };
-  return { price, texto };
+  return tipo ? { price, texto, tipo } : { price, texto };
 }
 
 const companionPlan: Record<string, string> = {
@@ -163,6 +164,12 @@ const qualiaPlan: Record<string, number> = {
   "qualia-seguros-plan-5": 4,
 };
 
+const vetifyPlan: Record<string, string> = {
+  "vetify-emergencias": "Emergencias",
+  "vetify-classic": "Classic",
+  "vetify-cachorros": "Cachorros",
+};
+
 const hipotecarioPlan: Record<string, number> = {
   "hipotecario-mascotas-1": 0,
   "hipotecario-mascotas-2": 1,
@@ -181,7 +188,7 @@ export function leerPrecioPublico(html: string, planId: string): Lectura | null 
   const text = plano(html);
   if (planId === "answer-seguros-seguro-de-mascotas") {
     const match = text.match(/DESDE\s*\$\s*([\d.]+)\s*\/\s*mes/i);
-    return monto(match?.[1], match ? `Desde $${match[1]} /mes` : "", "No apareció el precio de Answer.");
+    return monto(match?.[1], match ? `Desde $${match[1]} /mes` : "", "No apareció el precio de Answer.", "desde");
   }
   if (planId in companionPlan) {
     const match = text.match(new RegExp(`Plan ${companionPlan[planId]} Desde \\$([\\d.]+)\\b`));
@@ -203,6 +210,33 @@ export function leerPrecioPublico(html: string, planId: string): Lectura | null 
     const montos = [...seccion.matchAll(/\$([\d.]+) X mes/g)].map((item) => entero(item[1]));
     if (montos.length !== 1 || montos[0] == null) return { error: "OMEGA no tiene un único precio mensual." };
     return { price: montos[0], texto: textoPrecioMes(montos[0]) };
+  }
+  if (planId === "osmasc-plan-alfa") {
+    const seccion = text.split("PLAN ALFA")[1] ?? "";
+    const montos = [...new Set([...seccion.matchAll(/\$([\d.]+) X mes/g)].map((item) => entero(item[1])).filter((item) => item != null))];
+    if (montos.length < 2) return { error: "ALFA no publicó dos precios mensuales." };
+    const menor = Math.min(...montos);
+    const mayor = Math.max(...montos);
+    const hasta = `$${new Intl.NumberFormat("es-AR").format(mayor)}/mes`;
+    return { price: menor, texto: `Desde ${textoPrecioMes(menor)}`, tipo: "desde", nota: `Según edad, hasta ${hasta}` };
+  }
+  if (planId in vetifyPlan) {
+    const nombre = vetifyPlan[planId];
+    const inicio = text.indexOf(nombre);
+    if (inicio < 0) return { vacio: true };
+    const desde = inicio + nombre.length;
+    let fin = text.length;
+    for (const otro of ["Emergencias", "Classic", "Premium", "Cachorros"]) {
+      if (otro === nombre) continue;
+      const en = text.indexOf(otro, desde);
+      if (en >= 0 && en < fin) fin = en;
+    }
+    const bloque = text.slice(desde, fin);
+    const precios = [...new Set([...bloque.matchAll(/\$\s*([\d.]+)\s*\/\s*mes/g)].map((item) => entero(item[1])).filter((item) => item != null))];
+    if (!precios.length) return { vacio: true };
+    if (precios.length === 1) return { price: precios[0], texto: textoPrecioMes(precios[0]) };
+    const menor = Math.min(...precios);
+    return { price: menor, texto: `Desde ${textoPrecioMes(menor)}`, tipo: "desde" };
   }
   if (planId === "pet-society-plan-individual" || planId === "pet-society-plan-familiar") {
     const nombre = planId.endsWith("familiar") ? "Familiar" : "Individual";
@@ -298,6 +332,23 @@ async function fuenteQualia(url: string, html: string, userAgent: string) {
   return hallado;
 }
 
+async function textoVisible(url: string, userAgent: string) {
+  const permiso = await fetchHtml(url, userAgent);
+  if (permiso.error?.includes("robots")) return { error: permiso.error };
+  const { chromium } = await import("playwright");
+  const browser = await chromium.launch({ headless: true });
+  try {
+    const page = await browser.newPage({ userAgent });
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.getByText(/\$\s*[\d.]+\s*\/\s*mes/).first().waitFor({ timeout: 20000 }).catch(() => undefined);
+    return { text: await page.locator("body").innerText() };
+  } catch (error) {
+    return { error: error instanceof Error ? error.message : "No se pudo abrir la página." };
+  } finally {
+    await browser.close();
+  }
+}
+
 async function readPrice(
   url: string,
   planId: string,
@@ -305,9 +356,19 @@ async function readPrice(
   userAgent: string,
   cache: Map<string, Promise<{ html?: string; error?: string }>>,
   qualia: Map<string, Promise<string>>,
+  renders: Map<string, Promise<{ text?: string; error?: string }>>,
 ): Promise<Lectura> {
   if (metodo === "js_render") {
-    return { error: "Esta página no trae el precio en el HTML. No se inventa un monto." };
+    let visto = renders.get(url);
+    if (!visto) {
+      visto = textoVisible(url, userAgent);
+      renders.set(url, visto);
+    }
+    const pagina = await visto;
+    if (pagina.error || !pagina.text) return { error: pagina.error ?? "La página no mostró texto." };
+    const leido = leerPrecioPublico(pagina.text, planId);
+    if (!leido) return { error: "Ese plan no tiene un lector de precio público." };
+    return leido;
   }
   let pending = cache.get(url);
   if (!pending) {
@@ -366,8 +427,37 @@ export async function runPriceUpdate() {
   const historiales = new Map<string, { antes: string; data: HistorialMarca }>();
   const paginas = new Map<string, Promise<{ html?: string; error?: string }>>();
   const qualia = new Map<string, Promise<string>>();
+  const renders = new Map<string, Promise<{ text?: string; error?: string }>>();
 
   for (const source of config.marcas) {
+    if (source.plan_id.startsWith("petit-salud-")) {
+      const holder = plans.get(source.plan_id);
+      const plan = holder?.plans.find((item) => item.id === source.plan_id);
+      if (!holder || !plan) {
+        changes.push({ planId: source.plan_id, accion: "error", detalle: "No existe ese plan." });
+        continue;
+      }
+      const ya =
+        plan.precio == null &&
+        plan.estado === "sin_precio_publico" &&
+        plan.fuente_url === "https://petitsalud.com/" &&
+        !plan.precio_texto_original &&
+        !plan.precio_tipo &&
+        !plan.nota_precio;
+      if (!ya) {
+        plan.precio = null;
+        delete plan.precio_texto_original;
+        delete plan.precio_detectado;
+        delete plan.precio_tipo;
+        delete plan.nota_precio;
+        plan.estado = "sin_precio_publico";
+        plan.fecha_verificacion = today;
+        plan.fuente_url = "https://petitsalud.com/";
+        dirtyFiles.add(holder.file);
+      }
+      changes.push({ planId: plan.id, accion: "sin precio público", detalle: "El sitio oficial no publica el precio." });
+      continue;
+    }
     if (!source.enabled || !source.url || !source.selector) {
       changes.push({ planId: source.plan_id, accion: "omitido", detalle: source.notas || "Scraper desactivado." });
       continue;
@@ -379,36 +469,48 @@ export async function runPriceUpdate() {
     }
     const plan = holder.plans.find((item) => item.id === source.plan_id);
     if (!plan) continue;
-    const result = await readPrice(source.url, source.plan_id, source.metodo, config.userAgent, paginas, qualia);
+    const result = await readPrice(source.url, source.plan_id, source.metodo, config.userAgent, paginas, qualia, renders);
+    if ("vacio" in result) {
+      plan.precio = null;
+      delete plan.precio_texto_original;
+      delete plan.precio_detectado;
+      delete plan.precio_tipo;
+      delete plan.nota_precio;
+      plan.estado = "sin_precio_publico";
+      plan.fecha_verificacion = today;
+      plan.fuente_url = source.url;
+      dirtyFiles.add(holder.file);
+      changes.push({ planId: plan.id, accion: "sin precio público", detalle: "La página pública no muestra un precio." });
+      continue;
+    }
     if (!esMonto(result)) {
       plan.estado = "requiere_revision";
       dirtyFiles.add(holder.file);
       changes.push({ planId: plan.id, accion: "requiere_revision", detalle: result.error });
       continue;
     }
-    if (plan.precio == null) {
-      plan.precio_detectado = result.price;
-      plan.estado = "requiere_revision";
-      dirtyFiles.add(holder.file);
-      changes.push({ planId: plan.id, accion: "requiere_revision", detalle: `Detectado ${result.price}. No se publica porque no había precio.` });
-      continue;
-    }
-    const delta = Math.abs(result.price - plan.precio) / plan.precio;
-    if (delta > config.umbral_cambio) {
-      plan.precio_detectado = result.price;
-      plan.estado = "requiere_revision";
-      dirtyFiles.add(holder.file);
-      changes.push({
-        planId: plan.id,
-        accion: "requiere_revision",
-        detalle: `Detectado ${result.price} contra ${plan.precio} (${Math.round(delta * 100)}%). El precio publicado no se cambia.`,
-      });
-      continue;
+    if (plan.precio != null) {
+      const delta = Math.abs(result.price - plan.precio) / plan.precio;
+      if (delta > config.umbral_cambio) {
+        plan.precio_detectado = result.price;
+        plan.estado = "requiere_revision";
+        dirtyFiles.add(holder.file);
+        changes.push({
+          planId: plan.id,
+          accion: "requiere_revision",
+          detalle: `Detectado ${result.price} contra ${plan.precio} (${Math.round(delta * 100)}%). El precio publicado no se cambia.`,
+        });
+        continue;
+      }
     }
     const anterior = plan.precio;
     anotarPrecioVerificado(historiales, plan, plan.fecha_verificacion);
     plan.precio = result.price;
     plan.precio_texto_original = result.texto ?? textoPrecioMes(result.price);
+    if (result.tipo) plan.precio_tipo = result.tipo;
+    else delete plan.precio_tipo;
+    if (result.nota) plan.nota_precio = result.nota;
+    else delete plan.nota_precio;
     plan.fecha_verificacion = today;
     plan.fuente_url = source.url;
     plan.estado = "verificado";
@@ -418,7 +520,7 @@ export async function runPriceUpdate() {
     changes.push({
       planId: plan.id,
       accion: anterior === result.price ? "sin_cambios" : "actualizado",
-      detalle: anterior === result.price ? `Mismo monto ${result.price}. Se renovó la fecha.` : `Pasó de ${anterior} a ${result.price}, dentro del margen.`,
+      detalle: anterior == null ? `Primera lectura ${result.price}.` : anterior === result.price ? `Mismo monto ${result.price}. Se renovó la fecha.` : `Pasó de ${anterior} a ${result.price}, dentro del margen.`,
     });
   }
 
