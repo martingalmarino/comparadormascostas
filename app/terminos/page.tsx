@@ -24,7 +24,7 @@ export default function TerminosPage() {
         </p>
         <h2>Precios y contenidos</h2>
         <p>
-          Mientras un precio lleve el badge EJEMPLO, es ilustrativo. Una ficha puede estar desactualizada si la verificación tiene más de 45 días. La decisión de contratar es tuya y de la marca. No garantizamos que una clínica esté en cartilla ni que una cobertura se aplique a tu mascota.
+          Mientras un precio lleve el badge EJEMPLO, es ilustrativo. Una ficha puede estar desactualizada si la verificación tiene más de {siteConfig.priceStaleDays} días. La decisión de contratar es tuya y de la marca. No garantizamos que una clínica esté en cartilla ni que una cobertura se aplique a tu mascota.
         </p>
         <h2>Contenido informativo</h2>
         <p>Las páginas de perros, gatos y metodología son informativas. No son asesoramiento legal, veterinario ni de seguros. Las normas sobre perros potencialmente peligrosos tenés que leerlas en la fuente oficial.</p>

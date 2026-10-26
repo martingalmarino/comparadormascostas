@@ -14,16 +14,13 @@ export function displayEstado(plan: Pick<Plan, "estado" | "fecha_verificacion">,
   return plan.estado;
 }
 
-/** A partir de este plazo el monto deja de mostrarse y la ficha dice «Consultar precio». */
-export const DIAS_CONSULTAR_PRECIO = 75;
-
 export function mostrarMonto(
   plan: Pick<Plan, "estado" | "precio" | "fecha_verificacion">,
   todayIso: string,
 ) {
   if (plan.precio == null) return false;
   if (plan.estado === "requiere_revision" || plan.estado === "consultar" || plan.estado === "sin_precio_publico") return false;
-  return daysBetween(plan.fecha_verificacion, todayIso) <= DIAS_CONSULTAR_PRECIO;
+  return daysBetween(plan.fecha_verificacion, todayIso) <= siteConfig.priceStaleDays;
 }
 
 export function precioVigente(plan: Pick<Plan, "estado" | "es_ejemplo" | "precio" | "fecha_verificacion" | "precio_texto_original">, todayIso: string) {
@@ -36,7 +33,7 @@ export const estadoAviso: Record<Exclude<PlanEstado, "verificado">, string> = {
   requiere_revision: "Este dato está en revisión. No lo tomes como un precio vigente.",
   consultar: "La marca no publica el precio. Hay que consultarlo.",
   sin_precio_publico: "La marca no publica el precio. Podés pedir que te contacten.",
-  desactualizado: "Precio vencido: la última verificación tiene más de 45 días.",
+  desactualizado: `Precio vencido: la última verificación tiene más de ${siteConfig.priceStaleDays} días.`,
 };
 
 export function planAvisos(plan: Pick<Plan, "estado" | "fecha_verificacion">, todayIso: string) {

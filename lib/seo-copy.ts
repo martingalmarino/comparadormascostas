@@ -3,7 +3,7 @@ import { formatArs, formatDate, formatMonthYear } from "@/lib/format";
 import { getMarcas, getPlans, getPlansByMarca, hasVerifiedPrice, newestVerification, versusPairs } from "@/lib/plans";
 import type { Plan } from "@/lib/plan-schema";
 import { precioVigente } from "@/lib/plan-status";
-import { SITE } from "@/site.config";
+import { SITE, siteConfig } from "@/site.config";
 import { rutaProvincia } from "@/lib/zones";
 import { provinciasConPlanes } from "@/lib/zonas";
 
@@ -285,7 +285,7 @@ export function getSeoCatalog(): SeoEntry[] {
       path: "/como-comparamos",
       title: "Cómo comparamos los planes para mascotas",
       description: pick("metodo", [
-        "Nuestra metodología: fuentes oficiales, fecha de verificación de cada precio, regla de 45 días y por qué no vendemos seguros. Transparencia total.",
+        `Nuestra metodología: fuentes oficiales, fecha de verificación de cada precio, regla de ${siteConfig.priceStaleDays} días y por qué no vendemos seguros. Transparencia total.`,
       ]),
       h1: "Cómo comparamos los planes de salud para mascotas",
       index: true,

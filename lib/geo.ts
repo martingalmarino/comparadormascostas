@@ -48,7 +48,7 @@ function brandCount(plans: Plan[]) {
 
 const extras = [
   "Cada monto está en pesos, es mensual y sale de la ficha de la marca.",
-  "Si la verificación supera los 45 días, el precio se muestra vencido.",
+  `Si la verificación supera los ${siteConfig.priceStaleDays} días, el precio se muestra vencido.`,
   "Cuidalo no vende el seguro: deriva al usuario a la marca.",
 ];
 
@@ -87,7 +87,7 @@ export function respuestaDirecta(
       : `Comparamos ${n} ${n === 1 ? "plan" : "planes"} de ${m} ${m === 1 ? "marca" : "marcas"}.`;
   const required = best
     ? `En ${mes} de ${anio}, el plan más económico publicado ${donde} es ${best.nombre} de ${best.marca} a ${formatArs(best.precio as number)}/mes (verificado ${formatDate(best.fecha_verificacion)}). ${cierre}`
-    : `En ${mes} de ${anio} no hay un precio verificado dentro de los 45 días ${donde}. ${cierre}`;
+    : `En ${mes} de ${anio} no hay un precio verificado dentro de los ${siteConfig.priceStaleDays} días ${donde}. ${cierre}`;
   return fitParagraph(required, extras);
 }
 
@@ -112,8 +112,8 @@ export function faqsEspecie(especie: Especie, today: string) {
     {
       q: `¿Cuál es el plan más económico publicado para ${nombre}?`,
       a: best
-        ? `Entre los precios verificados hace 45 días o menos, el más bajo es ${best.nombre} de ${best.marca} a ${formatArs(best.precio as number)}/mes, verificado el ${formatDate(best.fecha_verificacion)}.`
-        : `En este relevamiento no hay un precio de ${nombre} verificado dentro de los últimos 45 días.`,
+        ? `Entre los precios verificados hace ${siteConfig.priceStaleDays} días o menos, el más bajo es ${best.nombre} de ${best.marca} a ${formatArs(best.precio as number)}/mes, verificado el ${formatDate(best.fecha_verificacion)}.`
+        : `En este relevamiento no hay un precio de ${nombre} verificado dentro de los últimos ${siteConfig.priceStaleDays} días.`,
     },
     {
       q: `¿Cuántos planes para ${nombre} hay en el comparador?`,

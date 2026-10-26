@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "¿Los precios son reales?",
-    a: "Cada precio muestra fecha de verificación y fuente. Si dice Precio a consultar, la marca no lo publicó. Si está en revisión o pasaron más de 45 días, no lo tomes como tarifa cerrada. El badge EJEMPLO queda solo para un dato que todavía no tiene fuente.",
+    a: `Cada precio muestra fecha de verificación y fuente. Si dice Precio a consultar, la marca no lo publicó. Si está en revisión o pasaron más de ${siteConfig.priceStaleDays} días, no lo tomes como tarifa cerrada. El badge EJEMPLO queda solo para un dato que todavía no tiene fuente.`,
   },
   {
     q: "¿Sirve en todo el país?",

@@ -34,11 +34,11 @@ export default function Page() {
         </p>
         <h2>Datos de ejemplo</h2>
         <p>
-          Si un monto todavía no tiene fuente, <strong>es_ejemplo</strong> queda en verdadero y la interfaz muestra el badge EJEMPLO. La carga actual no usa ese badge: cada precio verificado enlaza la página de donde salió. Un dato en revisión o más viejo que 45 días lleva aviso y no se presenta como tarifa cerrada.
+          Si un monto todavía no tiene fuente, <strong>es_ejemplo</strong> queda en verdadero y la interfaz muestra el badge EJEMPLO. La carga actual no usa ese badge: cada precio verificado enlaza la página de donde salió. Un dato en revisión o más viejo que {siteConfig.priceStaleDays} días lleva aviso y no se presenta como tarifa cerrada.
         </p>
         <h2>Cuándo un dato se pone viejo</h2>
         <p>
-          Si la fecha de verificación tiene más de 45 días, el plan se muestra como precio vencido aunque el archivo diga otra cosa. Ese monto no entra como oferta. Si un dato está en revisión o la marca no publica el precio, también hay un aviso visible.
+          Si la fecha de verificación tiene más de {siteConfig.priceStaleDays} días, el plan se muestra como precio vencido aunque el archivo diga otra cosa. Ese monto no entra como oferta. Si un dato está en revisión o la marca no publica el precio, también hay un aviso visible.
         </p>
         <h2>Actualización</h2>
         <p>

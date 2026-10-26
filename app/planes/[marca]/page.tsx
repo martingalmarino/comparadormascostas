@@ -63,7 +63,7 @@ async function MarcaDetail({ params }: { params: Promise<{ marca: string }> }) {
   const faqs = [
     {
       q: `¿${brand} publica estos precios?`,
-      a: "Cada precio muestra la fecha y el enlace a la fuente. Si dice “Precio a consultar”, no hay monto publicado. Si está en revisión o la fecha supera los 45 días, no lo tomes como tarifa cerrada.",
+      a: `Cada precio muestra la fecha y el enlace a la fuente. Si dice “Precio a consultar”, no hay monto publicado. Si está en revisión o la fecha supera los ${siteConfig.priceStaleDays} días, no lo tomes como tarifa cerrada.`,
     },
     {
       q: "¿Qué pasa si pido que me contacten?",

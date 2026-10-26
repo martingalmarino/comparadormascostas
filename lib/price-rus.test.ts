@@ -12,11 +12,17 @@ const html = `
   <p>$ 31.536 /mes</p>
 `;
 
+function precioRus(planId: string) {
+  const leido = precioPetcare(html, planId);
+  assert.ok("price" in leido);
+  return leido.price;
+}
+
 test("RUS lee el precio mensual de cada PetCare y no el del hogar", () => {
-  assert.equal(precioPetcare(html, "rus-seguros-petcare-simple").price, 7000);
-  assert.equal(precioPetcare(html, "rus-seguros-petcare-esencial").price, 15000);
-  assert.equal(precioPetcare(html, "rus-seguros-petcare-integral").price, 25000);
-  assert.equal(precioPetcare(html, "rus-seguros-petcare-superior").price, 35000);
+  assert.equal(precioRus("rus-seguros-petcare-simple"), 7000);
+  assert.equal(precioRus("rus-seguros-petcare-esencial"), 15000);
+  assert.equal(precioRus("rus-seguros-petcare-integral"), 25000);
+  assert.equal(precioRus("rus-seguros-petcare-superior"), 35000);
 });
 
 test("el monto se oculta si no hay precio, está en revisión o pasaron más de 75 días", () => {

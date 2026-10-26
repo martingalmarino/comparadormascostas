@@ -5,9 +5,10 @@
     {
       "plan_id": "answer-seguros-seguro-de-mascotas",
       "url": "https://answerseguros.com.ar/new/pets/",
-      "enabled": false,
+      "enabled": true,
       "selector": "Texto '$x/mes' en hero",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML dice DESDE $x /mes.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "avsim-plan-105",
@@ -47,23 +48,26 @@
     {
       "plan_id": "companion-plan-60",
       "url": "https://companion.com.ar/",
-      "enabled": false,
+      "enabled": true,
       "selector": "Texto 'Desde $' junto a encabezados 'Plan 60/80/100'",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML dice Plan N Desde $x. No se usa el ejemplo de reintegro.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "companion-plan-80",
       "url": "https://companion.com.ar/",
-      "enabled": false,
+      "enabled": true,
       "selector": "Texto 'Desde $' junto a encabezados 'Plan 60/80/100'",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML dice Plan N Desde $x. No se usa el ejemplo de reintegro.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "companion-plan-100",
       "url": "https://companion.com.ar/",
-      "enabled": false,
+      "enabled": true,
       "selector": "Texto 'Desde $' junto a encabezados 'Plan 60/80/100'",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML dice Plan N Desde $x. No se usa el ejemplo de reintegro.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "federacion-patronal-via-mascotaleal-mascota-protegida",
@@ -75,65 +79,74 @@
     {
       "plan_id": "fielpet-plan-1",
       "url": "https://www.fielpet.com.ar/",
-      "enabled": false,
+      "enabled": true,
       "selector": ".pricing-card; recargos por edad en modal",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML dice Plan N $x Mensual, antes de las sumas de cobertura.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "fielpet-plan-2",
       "url": "https://www.fielpet.com.ar/",
-      "enabled": false,
+      "enabled": true,
       "selector": ".pricing-card; recargos por edad en modal",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML dice Plan N $x Mensual, antes de las sumas de cobertura.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "fielpet-plan-3",
       "url": "https://www.fielpet.com.ar/",
-      "enabled": false,
+      "enabled": true,
       "selector": ".pricing-card; recargos por edad en modal",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML dice Plan N $x Mensual, antes de las sumas de cobertura.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "fielpet-plan-4",
       "url": "https://www.fielpet.com.ar/",
-      "enabled": false,
+      "enabled": true,
       "selector": ".pricing-card; recargos por edad en modal",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML dice Plan N $x Mensual, antes de las sumas de cobertura.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "fielpet-plan-5",
       "url": "https://www.fielpet.com.ar/",
-      "enabled": false,
+      "enabled": true,
       "selector": ".pricing-card; recargos por edad en modal",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML dice Plan N $x Mensual, antes de las sumas de cobertura.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "ike-mascotas-emergencias",
       "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
-      "enabled": false,
+      "enabled": true,
       "selector": "Bloques 'Plan' > h3 nombre > '$ x'",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML pone $ x inmediatamente antes de Ver cobertura.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "ike-mascotas-cachorro",
       "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
-      "enabled": false,
+      "enabled": true,
       "selector": "Bloques 'Plan' > h3 nombre > '$ x'",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML pone $ x inmediatamente antes de Ver cobertura.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "ike-mascotas-adulto",
       "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
-      "enabled": false,
+      "enabled": true,
       "selector": "Bloques 'Plan' > h3 nombre > '$ x'",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML pone $ x inmediatamente antes de Ver cobertura.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "ike-mascotas-senior",
       "url": "https://planes.ikeargentina.com.ar/mascotasonline/",
-      "enabled": false,
+      "enabled": true,
       "selector": "Bloques 'Plan' > h3 nombre > '$ x'",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML pone $ x inmediatamente antes de Ver cobertura.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "osmasc-plan-alfa",
@@ -145,23 +158,26 @@
     {
       "plan_id": "osmasc-plan-omega-premium",
       "url": "https://www.osmasc.com/",
-      "enabled": false,
+      "enabled": true,
       "selector": "Bloque 'PLAN OMEGA PREMIUM'",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "Solo OMEGA tiene un único $x X mes. ALFA publica dos montos según la edad y queda afuera.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "pet-society-plan-individual",
       "url": "https://petsociety.ar/",
-      "enabled": false,
+      "enabled": true,
       "selector": "Texto 'ARS x /mes' bajo 'Plan Individual'",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML dice Plan Individual/Familiar y después ARS x /mes.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "pet-society-plan-familiar",
       "url": "https://petsociety.ar/",
-      "enabled": false,
+      "enabled": true,
       "selector": "Texto 'ARS x /mes' bajo 'Plan Familiar'",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El HTML dice Plan Individual/Familiar y después ARS x /mes.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "petit-salud-primeros-pasos",
@@ -194,23 +210,26 @@
     {
       "plan_id": "provincia-seguros-banco-provincia-plan-esencial",
       "url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
-      "enabled": false,
+      "enabled": true,
       "selector": "Tabla fila 'Premio mensual' (no aparece en HTML de curl; usar navegador)",
-      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El premio mensual está en el HTML. No se toma la fila paquetizada.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "provincia-seguros-banco-provincia-plan-plus",
       "url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
-      "enabled": false,
+      "enabled": true,
       "selector": "Tabla fila 'Premio mensual' (no aparece en HTML de curl; usar navegador)",
-      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El premio mensual está en el HTML. No se toma la fila paquetizada.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "provincia-seguros-banco-provincia-plan-premium",
       "url": "https://www.bancoprovincia.com.ar/web/seguro_mascotas",
-      "enabled": false,
+      "enabled": true,
       "selector": "Tabla fila 'Premio mensual' (no aparece en HTML de curl; usar navegador)",
-      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "El premio mensual está en el HTML. No se toma la fila paquetizada.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "puppis-one-one",
@@ -229,37 +248,42 @@
     {
       "plan_id": "qualia-seguros-plan-1",
       "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
-      "enabled": false,
+      "enabled": true,
       "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'",
-      "notas": "html_estatico. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "Las cinco cuotas están en el JavaScript público de la página, dentro de mascotas.installments.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "qualia-seguros-plan-2",
       "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
-      "enabled": false,
+      "enabled": true,
       "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'",
-      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "Las cinco cuotas están en el JavaScript público de la página, dentro de mascotas.installments.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "qualia-seguros-plan-3",
       "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
-      "enabled": false,
+      "enabled": true,
       "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'",
-      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "Las cinco cuotas están en el JavaScript público de la página, dentro de mascotas.installments.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "qualia-seguros-plan-4",
       "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
-      "enabled": false,
+      "enabled": true,
       "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'",
-      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "Las cinco cuotas están en el JavaScript público de la página, dentro de mascotas.installments.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "qualia-seguros-plan-5",
       "url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
-      "enabled": false,
+      "enabled": true,
       "selector": "Bloques 'PLAN n' > 'Pagá $x /mes'",
-      "notas": "js_render. Desactivado hasta confirmar robots.txt y un selector CSS."
+      "notas": "Las cinco cuotas están en el JavaScript público de la página, dentro de mascotas.installments.",
+      "metodo": "html_estatico"
     },
     {
       "plan_id": "rus-seguros-petcare-simple",
@@ -267,7 +291,7 @@
       "enabled": true,
       "metodo": "html_estatico",
       "selector": "$ x /mes inmediatamente antes de Plan RUS PETCARE SIMPLE",
-      "notas": "Primera marca automática. El HTML trae la tabla de PetCare; el hogar queda afuera."
+      "notas": "El HTML trae la tabla de PetCare; el hogar queda afuera."
     },
     {
       "plan_id": "rus-seguros-petcare-esencial",
@@ -275,7 +299,7 @@
       "enabled": true,
       "metodo": "html_estatico",
       "selector": "$ x /mes inmediatamente antes de Plan RUS PETCARE ESENCIAL",
-      "notas": "Primera marca automática. El HTML trae la tabla de PetCare; el hogar queda afuera."
+      "notas": "El HTML trae la tabla de PetCare; el hogar queda afuera."
     },
     {
       "plan_id": "rus-seguros-petcare-integral",
@@ -283,7 +307,7 @@
       "enabled": true,
       "metodo": "html_estatico",
       "selector": "$ x /mes inmediatamente antes de Plan RUS PETCARE INTEGRAL",
-      "notas": "Primera marca automática. El HTML trae la tabla de PetCare; el hogar queda afuera."
+      "notas": "El HTML trae la tabla de PetCare; el hogar queda afuera."
     },
     {
       "plan_id": "rus-seguros-petcare-superior",
@@ -291,7 +315,55 @@
       "enabled": true,
       "metodo": "html_estatico",
       "selector": "$ x /mes inmediatamente antes de Plan RUS PETCARE SUPERIOR",
-      "notas": "Primera marca automática. El HTML trae la tabla de PetCare; el hogar queda afuera."
+      "notas": "El HTML trae la tabla de PetCare; el hogar queda afuera."
+    },
+    {
+      "plan_id": "holavet-1",
+      "url": "https://holavet.com.ar/",
+      "enabled": true,
+      "metodo": "html_estatico",
+      "selector": "Básico $x.- para un hijo peludo",
+      "notas": "El HTML separa Básico, Preferido y Full."
+    },
+    {
+      "plan_id": "holavet-2",
+      "url": "https://holavet.com.ar/",
+      "enabled": true,
+      "metodo": "html_estatico",
+      "selector": "Preferido $x.-",
+      "notas": "El HTML separa Básico, Preferido y Full."
+    },
+    {
+      "plan_id": "holavet-3",
+      "url": "https://holavet.com.ar/",
+      "enabled": true,
+      "metodo": "html_estatico",
+      "selector": "Full $x.- para tres hijos peludos",
+      "notas": "El HTML separa Básico, Preferido y Full."
+    },
+    {
+      "plan_id": "hipotecario-mascotas-1",
+      "url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "enabled": true,
+      "metodo": "html_estatico",
+      "selector": "Primer precio mensual, RC $2.800.000",
+      "notas": "Los tres precios mensuales siguen el orden de la responsabilidad civil."
+    },
+    {
+      "plan_id": "hipotecario-mascotas-2",
+      "url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "enabled": true,
+      "metodo": "html_estatico",
+      "selector": "Segundo precio mensual, RC $3.600.000",
+      "notas": "Los tres precios mensuales siguen el orden de la responsabilidad civil."
+    },
+    {
+      "plan_id": "hipotecario-mascotas-3",
+      "url": "https://www.hipotecario.com.ar/personas/seguros/seguro-para-mascotas/",
+      "enabled": true,
+      "metodo": "html_estatico",
+      "selector": "Tercer precio mensual, RC $4.000.000",
+      "notas": "Los tres precios mensuales siguen el orden de la responsabilidad civil."
     }
   ]
 }

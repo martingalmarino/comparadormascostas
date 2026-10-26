@@ -35,9 +35,9 @@ La app lee una sola fuente: **`data/planes/*.json`**, un archivo por marca. Son 
 
 - `estado`: `"verificado"`, `"requiere_revision"` o `"consultar"`. Si el precio es `null`, la ficha dice “Consultar precio”.
 - `es_ejemplo: true` muestra el badge EJEMPLO. La carga actual está en `false`: el número sale de la fuente citada.
-- Si `fecha_verificacion` supera los 45 días, la interfaz avisa que está desactualizado.
+- Si `fecha_verificacion` supera `siteConfig.priceStaleDays` (75), la interfaz deja de mostrar el monto.
 
-El workflow `.github/workflows/update-prices.yml` no publica cambios grandes automáticamente: los deja en `requiere_revision` y abre un pull request.
+El workflow `.github/workflows/update-prices.yml` publica en `main` solo los cambios dentro del margen. Si algo queda en `requiere_revision`, abre un issue.
 
 ## Tecnologías
 
