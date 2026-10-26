@@ -1,0 +1,50 @@
+{
+  "rus-seguros-petcare-simple": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 7000,
+      "fuente": "https://www.rus.com.ar/productos/mascotas/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 7000,
+      "fuente": "https://www.rus.com.ar/productos/mascotas/"
+    }
+  ],
+  "rus-seguros-petcare-esencial": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 15000,
+      "fuente": "https://www.rus.com.ar/productos/mascotas/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 15000,
+      "fuente": "https://www.rus.com.ar/productos/mascotas/"
+    }
+  ],
+  "rus-seguros-petcare-integral": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 25000,
+      "fuente": "https://www.rus.com.ar/productos/mascotas/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 25000,
+      "fuente": "https://www.rus.com.ar/productos/mascotas/"
+    }
+  ],
+  "rus-seguros-petcare-superior": [
+    {
+      "fecha": "2026-10-24",
+      "precio": 35000,
+      "fuente": "https://www.rus.com.ar/productos/mascotas/"
+    },
+    {
+      "fecha": "2026-10-26",
+      "precio": 35000,
+      "fuente": "https://www.rus.com.ar/productos/mascotas/"
+    }
+  ]
+}
