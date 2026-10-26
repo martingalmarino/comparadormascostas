@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { answerIntent } from "@/lib/bot/answers";
+import { respuestaDirecta } from "@/lib/geo";
 import { toBotPlans } from "@/lib/bot/catalog";
 import { botEvent } from "@/lib/bot/event";
 import { matchText } from "@/lib/bot/match";
@@ -152,6 +153,39 @@ test("sin ficha de la marca no inventa cobertura y el contacto abre esa marca", 
   const lead = answerIntent("contacto_marca", { marca: "la-caja" }, plans);
   assert.equal(lead.lead?.marca, "La Caja");
   assert.ok(lead.lead && lead.lead.planes.length > 0);
+});
+
+test("el resumen de Answer cita el desde verificado", () => {
+  const texto = respuestaDirecta({ tipo: "marca", today: "2026-10-26", slug: "answer-seguros" });
+  assert.match(texto, /Desde \$6\.135\/mes \(verificado 26\/10\/2026\)/);
+  assert.doesNotMatch(texto, /no hay un precio verificado/);
+});
+
+test("un precio desde verificado se cita como Desde y no como dato faltante", () => {
+  const plans = toBotPlans(
+    [
+      plan({
+        id: "answer",
+        marca_slug: "answer-seguros",
+        marca: "Answer Seguros",
+        nombre: "Seguro de Mascotas",
+        precio: 6135,
+        estado: "verificado",
+        fecha_verificacion: "2026-10-26",
+        precio_tipo: "desde",
+      }),
+    ],
+    "2026-10-26",
+  );
+  assert.equal(plans[0]?.precioVigente, false);
+  assert.equal(plans[0]?.precioTipo, "desde");
+  const precio = answerIntent("precio_aprox", { especie: "perro", provincia: "caba", marca: "answer-seguros" }, plans);
+  assert.equal(precio.sinDato, undefined);
+  assert.match(precio.texto, /Desde \$6\.135\/mes \(verificado 26\/10\/2026\)/);
+  const ficha = answerIntent("cobertura_marca", { marca: "answer-seguros" }, plans);
+  assert.match(ficha.texto, /Desde \$6\.135\/mes \(verificado 26\/10\/2026\)/);
+  assert.equal(ficha.cards?.[0]?.precioLabel, "Desde $6.135/mes");
+  assert.equal(ficha.cards?.[0]?.precio, null);
 });
 
 test("responsabilidad civil y teleconsulta salen de las coberturas publicadas", () => {

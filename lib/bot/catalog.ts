@@ -1,4 +1,4 @@
-import { precioVigente } from "@/lib/plan-status";
+import { precioCitado, precioVigente } from "@/lib/plan-status";
 import type { Plan } from "@/lib/plan-schema";
 import type { BotPlan } from "@/lib/bot/types";
 
@@ -15,6 +15,7 @@ export function toBotPlans(plans: Plan[], today: string): BotPlan[] {
     zonas: plan.zonas.map((zona) => zona.provincia),
     precio: plan.precio,
     precioVigente: precioVigente(plan, today),
+    precioTipo: plan.precio_tipo === "desde" && precioCitado(plan, today) ? "desde" : undefined,
     estado: plan.estado,
     fechaVerificacion: plan.fecha_verificacion,
     fuenteUrl: plan.fuente_url,

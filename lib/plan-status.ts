@@ -29,6 +29,13 @@ export function precioVigente(plan: Pick<Plan, "estado" | "es_ejemplo" | "precio
   return plan.estado === "verificado" && !plan.es_ejemplo && plan.precio != null && !desde && !stale;
 }
 
+/** Precio que se puede citar: uno cerrado vigente, o uno marcado como «desde» y verificado. */
+export function precioCitado(plan: Pick<Plan, "estado" | "es_ejemplo" | "precio" | "fecha_verificacion" | "precio_texto_original" | "precio_tipo">, todayIso: string) {
+  if (precioVigente(plan, todayIso)) return true;
+  if (plan.precio_tipo !== "desde" || plan.estado !== "verificado" || plan.es_ejemplo || plan.precio == null) return false;
+  return daysBetween(plan.fecha_verificacion, todayIso) <= siteConfig.priceStaleDays;
+}
+
 export const estadoAviso: Record<Exclude<PlanEstado, "verificado">, string> = {
   requiere_revision: "Este dato está en revisión. No lo tomes como un precio vigente.",
   consultar: "La marca no publica el precio. Hay que consultarlo.",

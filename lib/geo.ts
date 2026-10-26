@@ -2,7 +2,7 @@ import { coversZona } from "@/lib/filters";
 import { formatArs, formatDate, formatMonthYear } from "@/lib/format";
 import { getMarcas, getPlans, newestVerification } from "@/lib/plans";
 import type { Especie, Plan } from "@/lib/plan-schema";
-import { daysBetween, precioVigente } from "@/lib/plan-status";
+import { daysBetween, precioCitado, precioVigente } from "@/lib/plan-status";
 import { siteConfig } from "@/site.config";
 import { jurisdiccionLabel, provinciasConPlanes, type JurisdiccionSlug } from "@/lib/zonas";
 
@@ -78,15 +78,29 @@ export function respuestaDirecta(
         : scope.tipo === "especie"
           ? `para ${scope.especie === "perro" ? "perros" : "gatos"} en Argentina`
           : "en Argentina";
-  const best = cheapest(plans, scope.today);
+  const cerrado = cheapest(plans, scope.today);
+  const desde = plans
+    .filter((plan) => plan.precio_tipo === "desde" && precioCitado(plan, scope.today))
+    .sort(
+      (a, b) =>
+        (a.precio as number) - (b.precio as number) ||
+        a.marca.localeCompare(b.marca, "es") ||
+        a.nombre.localeCompare(b.nombre, "es"),
+    )[0];
+  const best = cerrado ?? desde;
   const n = plans.length;
   const m = brandCount(plans);
   const cierre =
     scope.tipo === "marca"
       ? `Comparamos ${n} ${n === 1 ? "plan" : "planes"} de esta marca.`
       : `Comparamos ${n} ${n === 1 ? "plan" : "planes"} de ${m} ${m === 1 ? "marca" : "marcas"}.`;
+  const monto = best
+    ? best.precio_tipo === "desde"
+      ? `Desde ${formatArs(best.precio as number)}/mes`
+      : `a ${formatArs(best.precio as number)}/mes`
+    : "";
   const required = best
-    ? `En ${mes} de ${anio}, el plan más económico publicado ${donde} es ${best.nombre} de ${best.marca} a ${formatArs(best.precio as number)}/mes (verificado ${formatDate(best.fecha_verificacion)}). ${cierre}`
+    ? `En ${mes} de ${anio}, el plan más económico publicado ${donde} es ${best.nombre} de ${best.marca} ${monto} (verificado ${formatDate(best.fecha_verificacion)}). ${cierre}`
     : `En ${mes} de ${anio} no hay un precio verificado dentro de los ${siteConfig.priceStaleDays} días ${donde}. ${cierre}`;
   return fitParagraph(required, extras);
 }

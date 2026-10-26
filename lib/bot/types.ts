@@ -33,6 +33,7 @@ export type BotPlan = {
   zonas: string[];
   precio: number | null;
   precioVigente: boolean;
+  precioTipo?: "fijo" | "desde";
   estado: string;
   fechaVerificacion: string;
   fuenteUrl: string;

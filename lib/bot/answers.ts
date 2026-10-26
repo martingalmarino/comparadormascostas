@@ -1,5 +1,5 @@
 import { esAdicionalHogar } from "@/lib/hogar-adicional";
-import { formatArs } from "@/lib/format";
+import { formatArs, formatDate } from "@/lib/format";
 import { compararHref } from "@/lib/filters";
 import { intentById } from "@/lib/bot/intents";
 import { contactoTexto, sinDato, slotPregunta, tiposTexto, vendeTexto } from "@/lib/bot/static";
@@ -49,11 +49,21 @@ function fuenteDe(url: string) {
 }
 
 function precioVisible(plan: BotPlan) {
+  if (plan.precioTipo === "desde" && plan.precio != null) {
+    return { precio: null, precioLabel: `Desde ${formatArs(plan.precio)}/mes` };
+  }
   if (plan.precioVigente && plan.precio != null) return { precio: plan.precio };
   if (plan.precio == null || plan.estado === "consultar" || plan.estado === "sin_precio_publico") {
     return { precio: null, precioLabel: "Precio a consultar" };
   }
   return { precio: null, precioLabel: "Sin precio vigente" };
+}
+
+function textoDesde(plans: BotPlan[]) {
+  const desde = plans.filter((plan) => plan.precioTipo === "desde" && plan.precio != null);
+  if (!desde.length) return null;
+  const best = [...desde].sort((a, b) => (a.precio as number) - (b.precio as number) || a.nombre.localeCompare(b.nombre, "es"))[0];
+  return `Desde ${formatArs(best.precio as number)}/mes (verificado ${formatDate(best.fechaVerificacion)}).`;
 }
 
 function toCard(plan: BotPlan, menor: boolean, cobertura: number): BotCard {
@@ -135,6 +145,10 @@ function precioAprox(slots: BotSlots, plans: BotPlan[]): BotAnswer {
   const scoped = acotar(plans, slots);
   const href = hrefDe(slots);
   const datos = rango(scoped);
+  if (!datos) {
+    const citado = textoDesde(scoped);
+    if (citado) return { texto: citado, ctas: seguimientos(scoped.length, href) };
+  }
   if (!datos || !slots.especie || !slots.provincia) {
     const extra = scoped.length ? "Hay fichas para esa búsqueda con precio a consultar." : undefined;
     return sinDatoRespuesta(scoped.length, href, extra);
@@ -161,6 +175,10 @@ function masBarato(slots: BotSlots, plans: BotPlan[]): BotAnswer {
   const scoped = acotar(plans, slots);
   const href = hrefDe(slots);
   const datos = rango(scoped);
+  if (!datos) {
+    const citado = textoDesde(scoped);
+    if (citado) return { texto: citado, ctas: seguimientos(scoped.length, href) };
+  }
   if (!datos || !slots.provincia) {
     const extra = scoped.length ? "Hay fichas para esa búsqueda con precio a consultar." : undefined;
     return sinDatoRespuesta(scoped.length, href, extra);
@@ -182,8 +200,10 @@ function cobertura(slots: BotSlots, plans: BotPlan[]): BotAnswer {
   if (!marca) return sinDatoRespuesta(0, "/comparar");
   const propios = plans.filter((plan) => plan.marcaSlug === marca.marcaSlug).sort(porPrecio);
   const href = `/planes/${marca.marcaSlug}`;
+  const base = `${marca.marca} publica ${propios.length === 1 ? "1 plan" : `${propios.length} planes`}. Esto es lo que figura en las fichas.`;
+  const citado = propios.some((plan) => plan.precioVigente) ? null : textoDesde(propios);
   return {
-    texto: `${marca.marca} publica ${propios.length === 1 ? "1 plan" : `${propios.length} planes`}. Esto es lo que figura en las fichas.`,
+    texto: citado ? `${base} ${citado}` : base,
     cards: propios.slice(0, 3).map((plan) => toCard(plan, false, 3)),
     notaPrecio: notaDe(propios),
     ctas: seguimientos(propios.length, href),

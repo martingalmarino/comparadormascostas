@@ -3,6 +3,15 @@ import { formatDate } from "@/lib/format";
 import type { Plan } from "@/lib/plan-schema";
 
 export function VerifiedLine({ plan }: { plan: Plan }) {
+  if (plan.precio == null && (plan.estado === "sin_precio_publico" || plan.estado === "consultar")) {
+    return (
+      <p className="flex items-start gap-1.5 text-xs text-gray-500">
+        <CalendarCheck className="mt-0.5 size-3.5 shrink-0 text-indigo-500" aria-hidden="true" />
+        <span className="min-w-0 break-words">Revisado el {formatDate(plan.fecha_verificacion)} · la marca no publica precio</span>
+      </p>
+    );
+  }
+
   const external = plan.fuente_url.startsWith("http");
   let sourceLabel = "fuente";
   if (plan.es_ejemplo) sourceLabel = "dato de ejemplo";
