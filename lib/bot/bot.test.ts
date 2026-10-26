@@ -146,7 +146,8 @@ test("sin ficha de la marca no inventa cobertura y el contacto abre esa marca", 
 
   const caja = answerIntent("cobertura_marca", { marca: "la-caja" }, plans);
   assert.equal(caja.sinDato, undefined);
-  assert.match(caja.texto, /La Caja/);
+  assert.match(caja.texto, /La Caja no publica precios en su sitio oficial; consultá directamente con la marca\./);
+  assert.doesNotMatch(caja.texto, /75 días/);
   assert.ok(caja.cards?.some((card) => card.precioLabel === "Precio a consultar"));
   assert.equal(caja.cards?.some((card) => card.precio != null), false);
 
@@ -155,6 +156,13 @@ test("sin ficha de la marca no inventa cobertura y el contacto abre esa marca", 
   assert.ok(lead.lead && lead.lead.planes.length > 0);
 });
 
+test("el resumen de una marca sin precio público no usa la regla de 75 días", () => {
+  const texto = respuestaDirecta({ tipo: "marca", today: "2026-10-26", slug: "zurich" });
+  assert.match(texto, /Zurich no publica precios en su sitio oficial; consultá directamente con la marca\./);
+  assert.doesNotMatch(texto, /75 días/);
+  const bot = answerIntent("cobertura_marca", { marca: "zurich" }, toBotPlans(getPlans(), "2026-10-26"));
+  assert.match(bot.texto, /Zurich no publica precios en su sitio oficial; consultá directamente con la marca\./);
+});
 test("el resumen de Answer cita el desde verificado", () => {
   const texto = respuestaDirecta({ tipo: "marca", today: "2026-10-26", slug: "answer-seguros" });
   assert.match(texto, /Desde \$6\.135\/mes \(verificado 26\/10\/2026\)/);

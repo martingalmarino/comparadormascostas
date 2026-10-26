@@ -15,7 +15,7 @@
     "precio_texto_original": "Precio por provincia en mapa interactivo",
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-24",
+    "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://www.avsim.com.ar/",
     "estado": "consultar",
     "coberturas": [
@@ -71,7 +71,7 @@
     "precio_texto_original": "Precio por provincia en mapa interactivo",
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-24",
+    "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://www.avsim.com.ar/",
     "estado": "consultar",
     "coberturas": [
@@ -124,7 +124,7 @@
     "precio_texto_original": "Precio por provincia en mapa interactivo",
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-24",
+    "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://www.avsim.com.ar/",
     "estado": "consultar",
     "coberturas": [
@@ -177,7 +177,7 @@
     "precio_texto_original": "Precio por provincia en mapa interactivo",
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-24",
+    "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://www.avsim.com.ar/",
     "estado": "consultar",
     "coberturas": [

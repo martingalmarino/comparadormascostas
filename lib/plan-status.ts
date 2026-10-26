@@ -8,6 +8,10 @@ export function daysBetween(fromIso: string, toIso: string) {
   return Math.round((to - from) / 86_400_000);
 }
 
+export function sinPrecioPublico(plan: { precio: number | null; estado: string }) {
+  return plan.precio == null && (plan.estado === "consultar" || plan.estado === "sin_precio_publico");
+}
+
 export function displayEstado(plan: Pick<Plan, "estado" | "fecha_verificacion">, todayIso: string): PlanEstado {
   if (plan.estado === "consultar" || plan.estado === "sin_precio_publico") return plan.estado;
   if (daysBetween(plan.fecha_verificacion, todayIso) > siteConfig.priceStaleDays) return "desactualizado";

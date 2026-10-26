@@ -2,7 +2,7 @@ import { coversZona } from "@/lib/filters";
 import { formatArs, formatDate, formatMonthYear } from "@/lib/format";
 import { getMarcas, getPlans, newestVerification } from "@/lib/plans";
 import type { Especie, Plan } from "@/lib/plan-schema";
-import { daysBetween, precioCitado, precioVigente } from "@/lib/plan-status";
+import { daysBetween, precioCitado, precioVigente, sinPrecioPublico } from "@/lib/plan-status";
 import { siteConfig } from "@/site.config";
 import { jurisdiccionLabel, provinciasConPlanes, type JurisdiccionSlug } from "@/lib/zonas";
 
@@ -99,10 +99,15 @@ export function respuestaDirecta(
       ? `Desde ${formatArs(best.precio as number)}/mes`
       : `a ${formatArs(best.precio as number)}/mes`
     : "";
+  const marca = plans[0]?.marca ?? "Esta marca";
+  const noPublica = scope.tipo === "marca" && plans.length > 0 && plans.every((plan) => sinPrecioPublico(plan));
   const required = best
     ? `En ${mes} de ${anio}, el plan más económico publicado ${donde} es ${best.nombre} de ${best.marca} ${monto} (verificado ${formatDate(best.fecha_verificacion)}). ${cierre}`
-    : `En ${mes} de ${anio} no hay un precio verificado dentro de los ${siteConfig.priceStaleDays} días ${donde}. ${cierre}`;
-  return fitParagraph(required, extras);
+    : noPublica
+      ? `${marca} no publica precios en su sitio oficial; consultá directamente con la marca. ${cierre}`
+      : `En ${mes} de ${anio} no hay un precio verificado dentro de los ${siteConfig.priceStaleDays} días ${donde}. ${cierre}`;
+  const relleno = noPublica ? extras.filter((sentence) => !sentence.includes("días")) : extras;
+  return fitParagraph(required, relleno);
 }
 
 function listar(nombres: string[]) {

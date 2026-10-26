@@ -3,6 +3,7 @@ import path from "node:path";
 import { z } from "zod";
 import { appendPricePoint, type HistorialMarca } from "./historial";
 import { planSchema, type Plan } from "./plan-schema";
+import { sinPrecioPublico } from "./plan-status";
 
 const scraperSchema = z.object({
   userAgent: z.string().min(8),
@@ -444,7 +445,7 @@ export async function runPriceUpdate() {
         !plan.precio_texto_original &&
         !plan.precio_tipo &&
         !plan.nota_precio;
-      if (!ya) {
+      if (!ya || plan.fecha_verificacion !== today) {
         plan.precio = null;
         delete plan.precio_texto_original;
         delete plan.precio_detectado;
@@ -455,10 +456,20 @@ export async function runPriceUpdate() {
         plan.fuente_url = "https://petitsalud.com/";
         dirtyFiles.add(holder.file);
       }
-      changes.push({ planId: plan.id, accion: "sin precio público", detalle: "El sitio oficial no publica el precio." });
+      changes.push({ planId: plan.id, accion: "sin precio público", detalle: "El sitio oficial no publica el precio. Se renovó la fecha de revisión." });
       continue;
     }
     if (!source.enabled || !source.url || !source.selector) {
+      const holder = plans.get(source.plan_id);
+      const plan = holder?.plans.find((item) => item.id === source.plan_id);
+      if (holder && plan && sinPrecioPublico(plan)) {
+        if (plan.fecha_verificacion !== today) {
+          plan.fecha_verificacion = today;
+          dirtyFiles.add(holder.file);
+        }
+        changes.push({ planId: plan.id, accion: "sin precio público", detalle: "Sigue sin precio público. Se renovó la fecha de revisión." });
+        continue;
+      }
       changes.push({ planId: source.plan_id, accion: "omitido", detalle: source.notas || "Scraper desactivado." });
       continue;
     }
@@ -522,6 +533,18 @@ export async function runPriceUpdate() {
       accion: anterior === result.price ? "sin_cambios" : "actualizado",
       detalle: anterior == null ? `Primera lectura ${result.price}.` : anterior === result.price ? `Mismo monto ${result.price}. Se renovó la fecha.` : `Pasó de ${anterior} a ${result.price}, dentro del margen.`,
     });
+  }
+
+  const cubiertos = new Set(config.marcas.map((source) => source.plan_id));
+  for (const [planId, holder] of plans) {
+    if (cubiertos.has(planId)) continue;
+    const plan = holder.plans.find((item) => item.id === planId);
+    if (!plan || !sinPrecioPublico(plan)) continue;
+    if (plan.fecha_verificacion !== today) {
+      plan.fecha_verificacion = today;
+      dirtyFiles.add(holder.file);
+    }
+    changes.push({ planId, accion: "sin precio público", detalle: "Sigue sin precio público. Se renovó la fecha de revisión." });
   }
 
   const errores: string[] = [];

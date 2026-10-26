@@ -4,6 +4,7 @@ import { compararHref } from "@/lib/filters";
 import { intentById } from "@/lib/bot/intents";
 import { contactoTexto, sinDato, slotPregunta, tiposTexto, vendeTexto } from "@/lib/bot/static";
 import type { BotAnswer, BotCard, BotCta, BotPlan, BotSlots, IntentId } from "@/lib/bot/types";
+import { sinPrecioPublico } from "@/lib/plan-status";
 import { jurisdiccionLabel, isJurisdiccion, PROVINCIA_TODAS } from "@/lib/zonas";
 
 const teleconsulta =
@@ -64,6 +65,13 @@ function textoDesde(plans: BotPlan[]) {
   if (!desde.length) return null;
   const best = [...desde].sort((a, b) => (a.precio as number) - (b.precio as number) || a.nombre.localeCompare(b.nombre, "es"))[0];
   return `Desde ${formatArs(best.precio as number)}/mes (verificado ${formatDate(best.fechaVerificacion)}).`;
+}
+
+function fraseSinPrecio(plans: BotPlan[]) {
+  if (!plans.length || !plans.every((plan) => sinPrecioPublico(plan))) return null;
+  const marcas = [...new Set(plans.map((plan) => plan.marca))];
+  if (marcas.length !== 1) return null;
+  return `${marcas[0]} no publica precios en su sitio oficial; consultá directamente con la marca.`;
 }
 
 function toCard(plan: BotPlan, menor: boolean, cobertura: number): BotCard {
@@ -148,6 +156,8 @@ function precioAprox(slots: BotSlots, plans: BotPlan[]): BotAnswer {
   if (!datos) {
     const citado = textoDesde(scoped);
     if (citado) return { texto: citado, ctas: seguimientos(scoped.length, href) };
+    const noPublica = fraseSinPrecio(scoped);
+    if (noPublica) return { texto: noPublica, ctas: seguimientos(scoped.length, href) };
   }
   if (!datos || !slots.especie || !slots.provincia) {
     const extra = scoped.length ? "Hay fichas para esa búsqueda con precio a consultar." : undefined;
@@ -178,6 +188,8 @@ function masBarato(slots: BotSlots, plans: BotPlan[]): BotAnswer {
   if (!datos) {
     const citado = textoDesde(scoped);
     if (citado) return { texto: citado, ctas: seguimientos(scoped.length, href) };
+    const noPublica = fraseSinPrecio(scoped);
+    if (noPublica) return { texto: noPublica, ctas: seguimientos(scoped.length, href) };
   }
   if (!datos || !slots.provincia) {
     const extra = scoped.length ? "Hay fichas para esa búsqueda con precio a consultar." : undefined;
@@ -200,10 +212,11 @@ function cobertura(slots: BotSlots, plans: BotPlan[]): BotAnswer {
   if (!marca) return sinDatoRespuesta(0, "/comparar");
   const propios = plans.filter((plan) => plan.marcaSlug === marca.marcaSlug).sort(porPrecio);
   const href = `/planes/${marca.marcaSlug}`;
+  const noPublica = fraseSinPrecio(propios);
   const base = `${marca.marca} publica ${propios.length === 1 ? "1 plan" : `${propios.length} planes`}. Esto es lo que figura en las fichas.`;
   const citado = propios.some((plan) => plan.precioVigente) ? null : textoDesde(propios);
   return {
-    texto: citado ? `${base} ${citado}` : base,
+    texto: noPublica ?? (citado ? `${base} ${citado}` : base),
     cards: propios.slice(0, 3).map((plan) => toCard(plan, false, 3)),
     notaPrecio: notaDe(propios),
     ctas: seguimientos(propios.length, href),
