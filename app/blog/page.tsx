@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { BlogListing } from "@/components/BlogListing";
 import { blogIndexDescription } from "@/lib/blog";
+import { defaultOgImage } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
 
 const title = "Guías para cuidar a tu mascota";
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_AR",
     siteName: siteConfig.siteName,
+    images: [defaultOgImage],
   },
 };
 

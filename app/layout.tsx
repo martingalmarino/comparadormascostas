@@ -8,6 +8,7 @@ import { Providers } from "@/components/Providers";
 import { toBotPlans } from "@/lib/bot/catalog";
 import { getReferenceDate } from "@/lib/dates";
 import { getPlans } from "@/lib/plans";
+import { defaultOgImage, publicRobots } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
 import "./globals.css";
 
@@ -42,13 +43,15 @@ export const metadata: Metadata = {
     title: homeTitle,
     description: siteConfig.description,
     url: "/",
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
     title: homeTitle,
     description: siteConfig.description,
+    images: [defaultOgImage],
   },
-  robots: { index: true, follow: true },
+  robots: publicRobots,
   verification: {
     google: "Ixz4fBbhOAoXGaIqR18Fq783gcWADQaXWsQcY5DIb4c",
   },

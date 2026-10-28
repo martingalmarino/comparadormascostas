@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { parseBlocks, splitForCta } from "@/lib/blog-body";
-import { assertNoLoosePrice, isPublic, loadPosts, parseFrontmatter, readingMinutes, rssXml, selectPosts } from "@/lib/blog";
+import { articleJsonLd, assertNoLoosePrice, isPublic, loadPosts, parseFrontmatter, readingMinutes, rssXml, selectPosts } from "@/lib/blog";
 
 const base = {
   title: "Título de prueba",
@@ -23,16 +23,27 @@ test("la bajada no puede pasar de 160 caracteres", () => {
   assert.throws(() => parseFrontmatter("largo.md", { ...base, description: "a".repeat(161) }), /description: tiene más de 160 caracteres/);
 });
 
+test("una portada sin texto alternativo no pasa", () => {
+  assert.throws(
+    () => parseFrontmatter("sin-alt.md", { ...base, image: "/blog/sin-alt-portada.webp" }),
+    /content\/blog\/sin-alt\.md inválido: image_alt: es obligatorio si hay image/,
+  );
+});
+
 test("el borrador y la fecha futura no se publican", () => {
   const posts = loadPosts();
   const post = posts.find((item) => item.slug === "golpe-de-calor-en-perros");
   assert.ok(post);
-  assert.equal(post.draft, true);
+  assert.equal(post.draft, undefined);
+  assert.equal(post.image, "/blog/golpe-de-calor-en-perros-portada.webp");
+  assert.equal(post.imageWidth, 1600);
+  assert.equal(post.imageHeight, 900);
   assert.equal(post.title, "Golpe de calor en perros: síntomas, qué hacer y cuándo ir a la guardia");
-  assert.equal(isPublic(post, "2026-10-27"), false);
-  assert.equal(isPublic({ ...post, draft: false }, "2026-10-27"), false);
-  assert.equal(isPublic({ ...post, draft: false }, "2026-11-03"), true);
-  assert.equal(selectPosts("2026-10-27", false).some((item) => item.slug === post.slug), false);
+  assert.equal(isPublic(post, "2026-10-26"), false);
+  assert.equal(isPublic(post, "2026-10-27"), true);
+  assert.equal(isPublic({ ...post, draft: true }, "2026-10-27"), false);
+  assert.equal(isPublic({ ...post, date: "2026-11-03" }, "2026-10-27"), false);
+  assert.equal(selectPosts("2026-10-26", false).some((item) => item.slug === post.slug), false);
 });
 
 test("el tiempo de lectura sale del texto", () => {
@@ -52,10 +63,22 @@ test("el índice usa los h2 y el llamado va después de la mitad", () => {
   assert.equal(split.after[0]?.type, "h2");
 });
 
-test("el RSS no incluye el borrador", () => {
+test("el RSS publica la guía vigente con su portada y deja afuera la fecha futura", () => {
   const xml = rssXml("2026-10-27");
   assert.match(xml, /<title>Blog de Cuidalo<\/title>/);
-  assert.equal(xml.includes("golpe-de-calor-en-perros"), false);
+  assert.match(xml, /golpe-de-calor-en-perros-portada\.webp/);
+  assert.match(xml, /<enclosure url="[^"]+golpe-de-calor-en-perros-portada\.webp" length="\d+" type="image\/webp" \/>/);
+  assert.equal(xml.includes("cuanto-cuesta-seguro-para-perros"), false);
+});
+
+test("el JSON-LD del equipo usa la portada y la organización", () => {
+  const post = loadPosts().find((item) => item.slug === "golpe-de-calor-en-perros");
+  assert.ok(post);
+  const data = articleJsonLd(post);
+  assert.deepEqual(data.author, { "@type": "Organization", name: "Cuidalo", url: "https://www.cuidalo.com.ar" });
+  assert.ok(Array.isArray(data.image));
+  assert.match(data.image[0] ?? "", /\/blog\/golpe-de-calor-en-perros-portada\.webp$/);
+  assert.equal(data.mainEntityOfPage["@id"].endsWith("/blog/golpe-de-calor-en-perros"), true);
 });
 
 test("un precio sin enlace a /precios no pasa", () => {

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { BlogListing } from "@/components/BlogListing";
 import { blogCategories, categoryFromSlug, categorySlug, type BlogCategory } from "@/lib/blog-schema";
+import { defaultOgImage } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
 
 export function generateStaticParams() {
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "website",
       locale: "es_AR",
       siteName: siteConfig.siteName,
+      images: [defaultOgImage],
     },
   };
 }

@@ -13,7 +13,11 @@ export type BlogPost = BlogFrontmatter & {
   file: string;
   body: string;
   minutes: number;
+  imageWidth?: number;
+  imageHeight?: number;
 };
+
+export const defaultOgPath = "/og-default.png";
 
 let cache: { stamp: string; posts: BlogPost[] } | undefined;
 
@@ -102,7 +106,79 @@ function loadFile(file: string): BlogPost {
   const frontmatter = parseFrontmatter(file, parsed.data);
   const body = parsed.content.replace(/^\n+/, "").replace(/\s+$/, "");
   assertNoLoosePrice(file, body);
-  return { ...frontmatter, slug, file, body, minutes: readingMinutes(body) };
+  const cover = frontmatter.image ? measureCover(file, frontmatter.image) : null;
+  return {
+    ...frontmatter,
+    slug,
+    file,
+    body,
+    minutes: readingMinutes(body),
+    imageWidth: cover?.width,
+    imageHeight: cover?.height,
+  };
+}
+
+function measureCover(file: string, image: string) {
+  const absolute = path.join(process.cwd(), "public", image.replace(/^\/+/, ""));
+  let buffer: Buffer;
+  try {
+    buffer = fs.readFileSync(absolute);
+  } catch (error) {
+    console.warn(`content/blog/${file}: la portada ${image} no se pudo leer (${error instanceof Error ? error.message : "error"})`);
+    return null;
+  }
+  const size = readImageSize(buffer);
+  if (!size) {
+    console.warn(`content/blog/${file}: no pude medir ${image}`);
+    return null;
+  }
+  if (size.width < 1200 || size.width * 9 !== size.height * 16) {
+    console.warn(
+      `content/blog/${file}: ${image} mide ${size.width}x${size.height}. Discover pide 16:9 y al menos 1200 px de ancho.`,
+    );
+  }
+  return size;
+}
+
+function readImageSize(buffer: Buffer) {
+  return pngSize(buffer) ?? jpegSize(buffer) ?? webpSize(buffer);
+}
+
+function pngSize(buffer: Buffer) {
+  if (buffer.length < 24 || buffer.toString("ascii", 1, 4) !== "PNG") return null;
+  return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+}
+
+function jpegSize(buffer: Buffer) {
+  if (buffer.length < 4 || buffer[0] !== 0xff || buffer[1] !== 0xd8) return null;
+  let offset = 2;
+  while (offset + 8 < buffer.length) {
+    if (buffer[offset] !== 0xff) return null;
+    const marker = buffer[offset + 1] ?? 0;
+    const length = buffer.readUInt16BE(offset + 2);
+    if (marker >= 0xc0 && marker <= 0xc2) {
+      return { height: buffer.readUInt16BE(offset + 5), width: buffer.readUInt16BE(offset + 7) };
+    }
+    if (length < 2) return null;
+    offset += 2 + length;
+  }
+  return null;
+}
+
+function webpSize(buffer: Buffer) {
+  if (buffer.length < 30 || buffer.toString("ascii", 0, 4) !== "RIFF" || buffer.toString("ascii", 8, 12) !== "WEBP") return null;
+  const chunk = buffer.toString("ascii", 12, 16);
+  if (chunk === "VP8X") {
+    return { width: 1 + buffer.readUIntLE(24, 3), height: 1 + buffer.readUIntLE(27, 3) };
+  }
+  if (chunk === "VP8 ") {
+    return { width: buffer.readUInt16LE(26) & 0x3fff, height: buffer.readUInt16LE(28) & 0x3fff };
+  }
+  if (chunk === "VP8L" && buffer.length >= 25) {
+    const bits = buffer.readUInt32LE(21);
+    return { width: (bits & 0x3fff) + 1, height: ((bits >> 14) & 0x3fff) + 1 };
+  }
+  return null;
 }
 
 export function loadPosts() {
@@ -162,7 +238,7 @@ export function rssXml(today: string) {
       <link>${xml(link)}</link>
       <guid>${xml(link)}</guid>
       <description>${xml(post.description)}</description>
-      <pubDate>${new Date(`${post.date}T12:00:00.000Z`).toUTCString()}</pubDate>
+      <pubDate>${new Date(`${post.date}T12:00:00.000Z`).toUTCString()}</pubDate>${enclosure(post)}
     </item>`;
     })
     .join("\n");
@@ -189,23 +265,52 @@ export function formatBlogDate(iso: string) {
   return `${weekday} ${String(day).padStart(2, "0")}/${String(month).padStart(2, "0")}/${year}`;
 }
 
+function enclosure(post: BlogPost) {
+  if (!post.image) return "";
+  const absolute = path.join(process.cwd(), "public", post.image.replace(/^\/+/, ""));
+  let length = 0;
+  try {
+    length = fs.statSync(absolute).size;
+  } catch {
+    return "";
+  }
+  const type = post.image.endsWith(".png")
+    ? "image/png"
+    : post.image.endsWith(".jpg") || post.image.endsWith(".jpeg")
+      ? "image/jpeg"
+      : "image/webp";
+  return `\n      <enclosure url="${xml(`${siteConfig.domain}${post.image}`)}" length="${length}" type="${type}" />`;
+}
+
+export function articleImage(post: Pick<BlogPost, "image" | "image_alt" | "title">) {
+  if (post.image) {
+    return { url: post.image, width: 1200, height: 675, alt: post.image_alt ?? post.title };
+  }
+  return { url: defaultOgPath, width: 1200, height: 630, alt: post.title };
+}
+
 export function articleJsonLd(post: BlogPost) {
   const url = `${siteConfig.domain}/blog/${post.slug}`;
+  const author =
+    post.author === "Equipo Cuidalo"
+      ? { "@type": "Organization", name: "Cuidalo", url: "https://www.cuidalo.com.ar" }
+      : { "@type": "Person", name: post.author };
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.description,
+    image: [`${siteConfig.domain}${post.image ?? defaultOgPath}`],
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
-    author: { "@type": "Person", name: post.author },
+    author,
     publisher: {
       "@type": "Organization",
       name: siteConfig.siteName,
       url: siteConfig.domain,
       logo: { "@type": "ImageObject", url: `${siteConfig.domain}/logo.svg` },
     },
-    mainEntityOfPage: url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
 }
 

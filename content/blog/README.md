@@ -22,6 +22,8 @@ category: "Cuidados"
 keywords:
   - palabra
 author: "Nombre"
+image: "/blog/ejemplo-portada.webp"
+image_alt: "Descripción de lo que se ve en la portada."
 reviewed_by: "Nombre, M.P."
 direct_answer: "Dos o tres oraciones que responden la pregunta, con el dato atribuido."
 faq:
@@ -42,4 +44,6 @@ draft: true
 Texto de la guía.
 ```
 
-`sources` tiene que traer al menos una fuente. `faq` tiene que estar (puede ser `[]`). `direct_answer`, `updated`, `reviewed_by`, `related` y `draft` son opcionales.
+`sources` tiene que traer al menos una fuente. `faq` tiene que estar (puede ser `[]`). `direct_answer`, `updated`, `reviewed_by`, `related`, `image` y `draft` son opcionales.
+
+`image` es la ruta de la portada en `public`, por ejemplo `/blog/<slug>-portada.webp`. El archivo va en `public/blog/`, en 16:9 y con al menos 1200 px de ancho. Si es más chica o no es 16:9, el build avisa y sigue. Si hay `image`, `image_alt` es obligatorio: describí lo que se ve. Sin portada, la guía se publica igual y las redes usan la imagen por defecto del sitio.

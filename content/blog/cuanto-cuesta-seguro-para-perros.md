@@ -11,6 +11,8 @@ keywords:
 - seguro de perro barato
 - comparar seguros mascotas
 author: Equipo Cuidalo
+image: /blog/cuanto-cuesta-seguro-para-perros-portada.webp
+image_alt: Una mujer en una cocina mira una notebook con su perro apoyado en la mesa, junto a un mate.
 direct_answer: 'Depende del plan: lo que cubre, los topes, la edad de tu perro, la zona y si usás cartilla o reintegro. Un plan solo de teleconsulta no cuesta lo mismo que uno con guardias. Los precios actualizados, con fecha y fuente de cada marca, están en cuidalo.com.ar/precios.'
 faq:
 - q: ¿Cuál es el seguro para perros más barato?

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { BlogBody } from "@/components/BlogBody";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -46,6 +47,17 @@ export function BlogArticle({ post, preview }: { post: BlogPost; preview: boolea
       <div className="mt-6 lg:grid lg:grid-cols-[220px_minmax(0,42rem)] lg:gap-12">
         <BlogBody post={post} />
         <article>
+          {post.image && post.image_alt ? (
+            <Image
+              src={post.image}
+              alt={post.image_alt}
+              width={post.imageWidth ?? 1600}
+              height={post.imageHeight ?? 900}
+              priority
+              sizes="(min-width: 1024px) 42rem, calc(100vw - 2rem)"
+              className="mb-5 aspect-video w-full rounded-2xl object-cover"
+            />
+          ) : null}
           <p className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-600">{post.category}</p>
           <h1 className="mt-2 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">{post.title}</h1>
           <div className="mt-4 flex items-center gap-3 border-y border-gray-200 py-3 text-sm text-gray-600">

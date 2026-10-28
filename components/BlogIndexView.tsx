@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -47,17 +48,29 @@ export function BlogIndexView({ posts, active, today }: { posts: BlogPost[]; act
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="flex flex-col gap-2 rounded-2xl border border-gray-200 bg-white p-5 hover:border-indigo-200"
+              className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-indigo-200"
             >
-              <span className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-600">{post.category}</span>
-              <h2 className="text-lg font-bold leading-snug text-gray-900">{post.title}</h2>
-              <p className="text-sm leading-relaxed text-gray-500">{post.description}</p>
-              {post.draft ? (
-                <span className="w-fit rounded-md bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-800">Borrador</span>
+              {post.image && post.image_alt ? (
+                <Image
+                  src={post.image}
+                  alt={post.image_alt}
+                  width={post.imageWidth ?? 1600}
+                  height={post.imageHeight ?? 900}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="aspect-video w-full object-cover"
+                />
               ) : null}
-              <p className="mt-auto pt-3 text-xs text-gray-500">
-                {formatBlogDate(post.date)} · {post.minutes} min de lectura
-              </p>
+              <div className="flex flex-1 flex-col gap-2 p-5">
+                <span className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-600">{post.category}</span>
+                <h2 className="text-lg font-bold leading-snug text-gray-900">{post.title}</h2>
+                <p className="text-sm leading-relaxed text-gray-500">{post.description}</p>
+                {post.draft ? (
+                  <span className="w-fit rounded-md bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-800">Borrador</span>
+                ) : null}
+                <p className="mt-auto pt-3 text-xs text-gray-500">
+                  {formatBlogDate(post.date)} · {post.minutes} min de lectura
+                </p>
+              </div>
             </Link>
           ))}
         </div>

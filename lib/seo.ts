@@ -5,6 +5,24 @@ import { precioVigente } from "@/lib/plan-status";
 import { tipoOptions } from "@/lib/zones";
 import { siteConfig } from "@/site.config";
 
+export const defaultOgImage = {
+  url: "/og-default.png",
+  width: 1200,
+  height: 630,
+  alt: siteConfig.siteName,
+};
+
+export const publicRobots: Metadata["robots"] = {
+  index: true,
+  follow: true,
+  "max-image-preview": "large",
+  googleBot: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+  },
+};
+
 export function pageMetadata({
   title,
   description,
@@ -31,13 +49,15 @@ export function pageMetadata({
       locale: "es_AR",
       siteName: siteConfig.siteName,
       type: "website",
+      images: [defaultOgImage],
     },
     twitter: {
       card: "summary_large_image",
       title: rendered,
       description,
+      images: [defaultOgImage],
     },
-    robots: noindex ? { index: false, follow: true } : { index: true, follow: true },
+    robots: noindex ? { index: false, follow: true } : publicRobots,
   };
 }
 

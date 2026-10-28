@@ -3,8 +3,9 @@ import { cacheLife } from "next/cache";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { BlogArticle } from "@/components/BlogArticle";
-import { isPublic, loadPosts, selectPosts } from "@/lib/blog";
+import { articleImage, isPublic, loadPosts, selectPosts } from "@/lib/blog";
 import { getReferenceDate } from "@/lib/dates";
+import { publicRobots } from "@/lib/seo";
 import { siteConfig } from "@/site.config";
 
 export const instant = false;
@@ -37,6 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) return { title: "Guía no encontrada", robots: { index: false, follow: false } };
   const path = `/blog/${post.slug}`;
   const title = `${post.title} | ${siteConfig.siteName}`;
+  const image = articleImage(post);
   return {
     title: { absolute: title },
     description: post.description,
@@ -48,11 +50,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "article",
       publishedTime: post.date,
       modifiedTime: post.updated ?? post.date,
+      section: post.category,
       locale: "es_AR",
       siteName: siteConfig.siteName,
+      images: [image],
     },
-    twitter: { card: "summary_large_image", title, description: post.description },
-    robots: post.draft || post.date > today ? { index: false, follow: false } : { index: true, follow: true },
+    twitter: { card: "summary_large_image", title, description: post.description, images: [image] },
+    robots: post.draft || post.date > today ? { index: false, follow: false } : publicRobots,
   };
 }
 

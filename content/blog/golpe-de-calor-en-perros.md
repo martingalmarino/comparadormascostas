@@ -11,6 +11,8 @@ keywords:
 - guardia veterinaria
 - prevenir golpe de calor
 author: Equipo Cuidalo
+image: /blog/golpe-de-calor-en-perros-portada.webp
+image_alt: Un perro acostado a la sombra en una plaza, junto a un bowl de agua, mientras una persona le acerca una botella.
 direct_answer: 'Un golpe de calor es una urgencia: si tu perro jadea en exceso, está decaído, tiene las mucosas azuladas o vomita después de estar al calor, llevalo ya a la veterinaria. En el camino, mojalo con agua a temperatura ambiente, nunca con hielo ni agua helada.'
 faq:
 - q: ¿Puedo bañar a mi perro con agua fría si tiene mucho calor?

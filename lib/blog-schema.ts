@@ -32,11 +32,23 @@ export const blogFrontmatterSchema = z
     related: z
       .array(z.string().refine((value) => value.startsWith("/") && !value.startsWith("//"), "tiene que ser una ruta interna"))
       .optional(),
+    image: z
+      .string()
+      .min(1, "está vacía")
+      .refine(
+        (value) => value.startsWith("/blog/") && !value.includes("..") && /\.(webp|png|jpe?g)$/i.test(value),
+        "tiene que ser una imagen en /blog",
+      )
+      .optional(),
+    image_alt: z.string().min(1, "falta el texto alternativo").optional(),
     draft: z.boolean().optional(),
   })
   .superRefine((data, ctx) => {
     if (data.updated && data.updated < data.date) {
       ctx.addIssue({ code: "custom", path: ["updated"], message: "no puede ser anterior a date" });
+    }
+    if (data.image && !data.image_alt) {
+      ctx.addIssue({ code: "custom", path: ["image_alt"], message: "es obligatorio si hay image" });
     }
   });
 
