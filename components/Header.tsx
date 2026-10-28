@@ -10,6 +10,7 @@ const links = [
   { href: "/", label: "Inicio" },
   { href: "/comparar", label: "Comparador" },
   { href: "/precios", label: "Precios" },
+  { href: "/blog", label: "Blog" },
 ];
 
 function Logo() {

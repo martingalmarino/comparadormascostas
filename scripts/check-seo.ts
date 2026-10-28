@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process";
+import { blogSitemapItems } from "@/lib/blog";
 import { getSeoCatalog, indexableEntries, renderedTitle } from "@/lib/seo-copy";
 import { siteConfig } from "@/site.config";
 
@@ -69,7 +70,11 @@ async function assertRendered(base: string) {
   if (sitemap.includes("/guias")) fail("sitemap incluye /guias");
 
   const locs = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1] ?? "");
-  const expected = new Set(indexableEntries().map((entry) => `${siteConfig.domain}${entry.path}`));
+  const today = new Date().toISOString().slice(0, 10);
+  const expected = new Set([
+    ...indexableEntries().map((entry) => `${siteConfig.domain}${entry.path}`),
+    ...blogSitemapItems(today).map((entry) => `${siteConfig.domain}${entry.path}`),
+  ]);
   if (locs.length !== expected.size) fail(`sitemap ${locs.length} urls, catálogo ${expected.size}`);
   for (const loc of locs) {
     if (!expected.has(loc)) fail(`url inesperada en sitemap: ${loc}`);

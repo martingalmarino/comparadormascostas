@@ -13,6 +13,7 @@ const comparar = [
 ];
 
 const cuidalo = [
+  { label: "Blog", href: "/blog" },
   { label: "Sobre nosotros", href: "/sobre-nosotros" },
   { label: "Cómo comparamos", href: "/como-comparamos" },
   { label: "Contacto", href: "/contacto" },

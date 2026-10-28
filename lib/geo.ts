@@ -1,3 +1,4 @@
+import { blogLlmsLines } from "@/lib/blog";
 import { coversZona } from "@/lib/filters";
 import { formatArs, formatDate, formatMonthYear } from "@/lib/format";
 import { getMarcas, getPlans, newestVerification } from "@/lib/plans";
@@ -260,6 +261,7 @@ export function llmsTxt(today: string) {
     `- [Sobre nosotros](${domain}/sobre-nosotros)`,
     "## Marcas",
     ...lineas,
+    ...blogLlmsLines(today),
     "## Notas",
     "- Precios en pesos argentinos, mensuales y referenciales; confirmar con la marca.",
     `- Desarrollado por ${founder.name} (${founder.email}).`,
@@ -310,6 +312,8 @@ export function llmsFullTxt(today: string) {
     "| Marca | Plan | Precio | Cobertura | Provincia | Fecha de verificación | Fuente |",
     "| --- | --- | --- | --- | --- | --- | --- |",
     ...filas.map((fila) => `| ${fila} |`),
+    "",
+    ...blogLlmsLines(today),
     "",
   ].join("\n");
 }
