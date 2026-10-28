@@ -79,7 +79,7 @@ export function BlogArticle({ post, preview }: { post: BlogPost; preview: boolea
           </div>
           {post.direct_answer ? (
             <div className="mt-6 rounded-2xl border-2 border-indigo-600 bg-indigo-50 p-5">
-              <p className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-800">Respuesta directa</p>
+              <p className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-800">En pocas palabras</p>
               <p className="mt-2 leading-relaxed text-gray-800">{post.direct_answer}</p>
             </div>
           ) : null}
