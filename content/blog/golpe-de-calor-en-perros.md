@@ -1,7 +1,7 @@
 ---
 title: 'Golpe de calor en perros: síntomas, qué hacer y cuándo ir a la guardia'
 description: Cómo reconocer un golpe de calor en tu perro, qué hacer camino a la veterinaria y cómo prevenirlo este verano, con fuentes oficiales.
-date: '2026-11-03'
+date: '2026-10-27'
 category: Cuidados
 keywords:
 - golpe de calor en perros
