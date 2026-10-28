@@ -45,13 +45,13 @@ Se vienen los días de calor y con ellos una duda que a muchos nos agarra despre
 
 ## ¿Qué es un golpe de calor en perros?
 
-**Respuesta corta:** es una suba de la temperatura corporal que el organismo del perro no logra compensar, y requiere atención veterinaria inmediata.
+Es una urgencia: el cuerpo del perro sube de temperatura y no logra bajarla solo, así que necesita atención veterinaria inmediata.
 
 Los perros tienen pocas glándulas sudoríparas (están en las almohadillas) y eliminan calor sobre todo jadeando. Cuando el ambiente está muy caluroso o húmedo, ese mecanismo no alcanza y la temperatura sube hasta afectar el funcionamiento del cuerpo ([GCBA](https://buenosaires.gob.ar/gcaba_historico/noticias/como-proteger-las-mascotas-de-las-altas-temperaturas)).
 
 ## Síntomas del golpe de calor
 
-**Respuesta corta:** jadeo excesivo, decaimiento, mucosas azuladas, taquicardia, vómitos o diarrea. Pueden aparecer algunos o todos.
+Lo primero que vas a notar suele ser un jadeo excesivo, y después pueden sumarse decaimiento, mucosas azuladas, taquicardia, vómitos o diarrea. No siempre aparecen todos juntos.
 
 Según el [Gobierno de la Ciudad de Buenos Aires](https://buenosaires.gob.ar/gcaba_historico/noticias/prevencion-del-golpe-de-calor-en-perros-y-gatos), prestá atención a:
 
@@ -71,7 +71,7 @@ Una veterinaria municipal de Berazategui suma señales fáciles de notar en casa
 
 ## Qué hacer si tu perro tiene un golpe de calor
 
-**Respuesta corta:** llevalo ya a la veterinaria y, en el camino, refrescalo de a poco con agua a temperatura ambiente. Nada de hielo ni agua helada.
+Llevalo ya a la veterinaria y, mientras van, refrescalo de a poco con agua a temperatura ambiente, nunca con hielo ni agua helada.
 
 ### Paso a paso mientras vas a la veterinaria
 
@@ -90,7 +90,7 @@ Una veterinaria municipal de Berazategui suma señales fáciles de notar en casa
 
 ## ¿Qué perros tienen más riesgo?
 
-**Respuesta corta:** los de hocico chato, los cachorros y los mayores, los que tienen sobrepeso y los que tienen enfermedades previas.
+Los que más riesgo corren son los de hocico chato, los cachorros, los perros mayores, los que tienen sobrepeso y los que ya tienen alguna enfermedad.
 
 El [GCBA](https://buenosaires.gob.ar/gcaba_historico/noticias/como-proteger-las-mascotas-de-las-altas-temperaturas) menciona:
 
@@ -102,7 +102,7 @@ El [GCBA](https://buenosaires.gob.ar/gcaba_historico/noticias/como-proteger-las-
 
 ## Cómo prevenirlo este verano
 
-**Respuesta corta:** sombra, agua fresca siempre, paseos temprano o al anochecer y jamás dejarlo en el auto.
+Prevenirlo es más simple de lo que parece: sombra, agua fresca siempre a mano, paseos temprano o al anochecer y nunca, por ningún motivo, dejarlo en el auto.
 
 ### Checklist de verano
 
@@ -127,7 +127,7 @@ No es recomendable pelarlo: según la veterinaria municipal de Berazategui, el p
 
 ## ¿Un seguro u obra social cubre una guardia por golpe de calor?
 
-**Respuesta corta:** depende del plan. Algunos incluyen guardias o accidentes; otros, solo teleconsulta. Hay que mirar la ficha de cada uno.
+Depende del plan que tengas: algunos incluyen guardias o accidentes y otros solo teleconsulta, así que conviene mirar la ficha de cada uno.
 
 Antes de que llegue el pico del verano, conviene revisar:
 

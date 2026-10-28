@@ -40,7 +40,7 @@ Si estás pensando en un seguro o una obra social para tu perro, lo primero que 
 
 ## ¿Cuánto sale un seguro para perros hoy?
 
-**Respuesta corta:** depende del plan, y la diferencia entre uno básico y uno con guardias puede ser grande. Para ver los precios actualizados, con fecha de verificación y fuente de cada marca, entrá a [cuidalo.com.ar/precios](/precios).
+Depende mucho del plan, y entre uno básico y uno con guardias la diferencia puede ser grande. Para ver los precios actualizados, con fecha de verificación y fuente de cada marca, entrá a [cuidalo.com.ar/precios](/precios).
 
 Qué mueve el precio:
 
@@ -55,7 +55,7 @@ Algunas fichas que te pueden servir de punto de partida: [RUS Seguros](/planes/r
 
 ## Seguro, obra social o plan de beneficios: no es lo mismo
 
-**Respuesta corta:** un seguro suele cubrir eventos (responsabilidad civil, accidentes, fallecimiento); una "obra social" o plan de salud apunta a la atención veterinaria; otros planes ofrecen sobre todo teleconsulta y descuentos.
+No todo lo que se ofrece como "seguro para perros" es lo mismo: un seguro suele cubrir eventos (responsabilidad civil, accidentes, fallecimiento), una "obra social" o plan de salud apunta a la atención veterinaria, y otros planes ofrecen sobre todo teleconsulta y descuentos.
 
 ### Seguro con responsabilidad civil
 Cubre, hasta un tope, los daños que tu perro le cause a terceros. En las fichas lo vas a ver como "RC", con su tope.
@@ -68,7 +68,7 @@ Veterinario virtual, recordatorios o reintegros en alimento. Sirve para dudas de
 
 ## ¿De qué depende el precio?
 
-**Respuesta corta:** de lo que cubre el plan, los topes, la edad y la zona de tu perro, y de si usás cartilla o reintegro.
+El precio sale de lo que cubre el plan, sus topes, la edad y la zona de tu perro, y de si usás cartilla o reintegro.
 
 - **Coberturas incluidas:** no cuesta lo mismo un plan solo de teleconsulta que uno con guardias.
 - **Topes y suma asegurada:** cuánto cubre por evento o por año.
@@ -78,7 +78,7 @@ Veterinario virtual, recordatorios o reintegros en alimento. Sirve para dudas de
 
 ## Qué mirar antes de elegir: checklist
 
-**Respuesta corta:** además del precio, revisá carencias, topes, exclusiones, edad y zona.
+Más allá del precio, lo que de verdad importa es revisar carencias, topes, exclusiones, edad y zona.
 
 1. **Carencia:** cuánto tenés que esperar para usar cada cobertura.
 2. **Enfermedades preexistentes:** muchos planes las excluyen. Leé la letra chica.
@@ -90,7 +90,7 @@ Veterinario virtual, recordatorios o reintegros en alimento. Sirve para dudas de
 
 ## Cómo comparar planes en 3 pasos
 
-**Respuesta corta:** cargá los datos de tu perro, compará coberturas lado a lado y recién ahí mirá el precio.
+Lo más práctico es cargar los datos de tu perro, comparar las coberturas lado a lado y recién al final mirar el precio.
 
 1. **Cargá especie, edad y zona.** Así descartás de entrada los planes que no aceptan a tu perro o que no están donde vivís.
 2. **Compará coberturas, no solo el precio.** Poné lado a lado guardias, teleconsulta, responsabilidad civil, topes y carencias. Fijate qué deja afuera cada plan.
@@ -98,7 +98,7 @@ Veterinario virtual, recordatorios o reintegros en alimento. Sirve para dudas de
 
 ## Errores comunes al elegir solo por precio
 
-**Respuesta corta:** elegir el más barato sin mirar qué cubre puede salir caro justo cuando lo necesitás.
+El error más común es elegir el más barato sin mirar qué cubre, y eso puede salir caro justo cuando lo necesitás.
 
 - **Confundir teleconsulta con atención presencial.** Un veterinario virtual ayuda con dudas, pero si tu perro necesita una guardia, fijate que el plan la incluya.
 - **No mirar la carencia.** Si contratás pensando en el verano, tené en cuenta cuánto tarda en activarse cada cobertura. Es una de las razones para comparar antes de que lleguen los días de más calor (te contamos cómo reconocer un [golpe de calor en perros](/blog/golpe-de-calor-en-perros)).
