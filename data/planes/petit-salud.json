@@ -27,7 +27,7 @@
     "precio": null,
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-26",
+    "fecha_verificacion": "2026-11-05",
     "fuente_url": "https://petitsalud.com/",
     "estado": "sin_precio_publico",
     "coberturas": [
@@ -84,7 +84,7 @@
     "precio": null,
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-26",
+    "fecha_verificacion": "2026-11-05",
     "fuente_url": "https://petitsalud.com/",
     "estado": "sin_precio_publico",
     "coberturas": [
@@ -140,7 +140,7 @@
     "precio": null,
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-26",
+    "fecha_verificacion": "2026-11-05",
     "fuente_url": "https://petitsalud.com/",
     "estado": "sin_precio_publico",
     "coberturas": [
@@ -197,7 +197,7 @@
     "precio": null,
     "moneda": "ARS",
     "es_ejemplo": false,
-    "fecha_verificacion": "2026-10-26",
+    "fecha_verificacion": "2026-11-05",
     "fuente_url": "https://petitsalud.com/",
     "estado": "sin_precio_publico",
     "coberturas": [

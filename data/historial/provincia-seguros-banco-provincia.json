@@ -9,6 +9,11 @@
       "fecha": "2026-10-26",
       "precio": 12948,
       "fuente": "https://www.bancoprovincia.com.ar/web/seguro_mascotas"
+    },
+    {
+      "fecha": "2026-11-05",
+      "precio": 12948,
+      "fuente": "https://www.bancoprovincia.com.ar/web/seguro_mascotas"
     }
   ],
   "provincia-seguros-banco-provincia-plan-plus": [
@@ -21,6 +26,11 @@
       "fecha": "2026-10-26",
       "precio": 15454,
       "fuente": "https://www.bancoprovincia.com.ar/web/seguro_mascotas"
+    },
+    {
+      "fecha": "2026-11-05",
+      "precio": 15454,
+      "fuente": "https://www.bancoprovincia.com.ar/web/seguro_mascotas"
     }
   ],
   "provincia-seguros-banco-provincia-plan-premium": [
@@ -31,6 +41,11 @@
     },
     {
       "fecha": "2026-10-26",
+      "precio": 20083,
+      "fuente": "https://www.bancoprovincia.com.ar/web/seguro_mascotas"
+    },
+    {
+      "fecha": "2026-11-05",
       "precio": 20083,
       "fuente": "https://www.bancoprovincia.com.ar/web/seguro_mascotas"
     }

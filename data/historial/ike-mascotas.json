@@ -9,6 +9,11 @@
       "fecha": "2026-10-26",
       "precio": 27900,
       "fuente": "https://planes.ikeargentina.com.ar/mascotasonline/"
+    },
+    {
+      "fecha": "2026-11-05",
+      "precio": 27900,
+      "fuente": "https://planes.ikeargentina.com.ar/mascotasonline/"
     }
   ],
   "ike-mascotas-cachorro": [
@@ -19,6 +24,11 @@
     },
     {
       "fecha": "2026-10-26",
+      "precio": 56900,
+      "fuente": "https://planes.ikeargentina.com.ar/mascotasonline/"
+    },
+    {
+      "fecha": "2026-11-05",
       "precio": 56900,
       "fuente": "https://planes.ikeargentina.com.ar/mascotasonline/"
     }
@@ -33,6 +43,11 @@
       "fecha": "2026-10-26",
       "precio": 51900,
       "fuente": "https://planes.ikeargentina.com.ar/mascotasonline/"
+    },
+    {
+      "fecha": "2026-11-05",
+      "precio": 51900,
+      "fuente": "https://planes.ikeargentina.com.ar/mascotasonline/"
     }
   ],
   "ike-mascotas-senior": [
@@ -43,6 +58,11 @@
     },
     {
       "fecha": "2026-10-26",
+      "precio": 70900,
+      "fuente": "https://planes.ikeargentina.com.ar/mascotasonline/"
+    },
+    {
+      "fecha": "2026-11-05",
       "precio": 70900,
       "fuente": "https://planes.ikeargentina.com.ar/mascotasonline/"
     }

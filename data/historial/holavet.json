@@ -9,6 +9,11 @@
       "fecha": "2026-10-26",
       "precio": 39674,
       "fuente": "https://holavet.com.ar/"
+    },
+    {
+      "fecha": "2026-11-05",
+      "precio": 39674,
+      "fuente": "https://holavet.com.ar/"
     }
   ],
   "holavet-2": [
@@ -21,6 +26,11 @@
       "fecha": "2026-10-26",
       "precio": 47609,
       "fuente": "https://holavet.com.ar/"
+    },
+    {
+      "fecha": "2026-11-05",
+      "precio": 47609,
+      "fuente": "https://holavet.com.ar/"
     }
   ],
   "holavet-3": [
@@ -31,6 +41,11 @@
     },
     {
       "fecha": "2026-10-26",
+      "precio": 52899,
+      "fuente": "https://holavet.com.ar/"
+    },
+    {
+      "fecha": "2026-11-05",
       "precio": 52899,
       "fuente": "https://holavet.com.ar/"
     }

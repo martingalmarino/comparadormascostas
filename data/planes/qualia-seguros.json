@@ -22,7 +22,7 @@
     "es_ejemplo": false,
     "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
-    "estado": "verificado",
+    "estado": "requiere_revision",
     "coberturas": [
       {
         "item": "Responsabilidad civil $2.595.000"
@@ -81,7 +81,7 @@
     "es_ejemplo": false,
     "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
-    "estado": "verificado",
+    "estado": "requiere_revision",
     "coberturas": [
       {
         "item": "Responsabilidad civil $3.892.500"
@@ -140,7 +140,7 @@
     "es_ejemplo": false,
     "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
-    "estado": "verificado",
+    "estado": "requiere_revision",
     "coberturas": [
       {
         "item": "Responsabilidad civil $5.190.000"
@@ -199,7 +199,7 @@
     "es_ejemplo": false,
     "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
-    "estado": "verificado",
+    "estado": "requiere_revision",
     "coberturas": [
       {
         "item": "Responsabilidad civil $6.487.500"
@@ -258,7 +258,7 @@
     "es_ejemplo": false,
     "fecha_verificacion": "2026-10-26",
     "fuente_url": "https://contrata.qualiaseguros.com.ar/seguro-de-mascotas",
-    "estado": "verificado",
+    "estado": "requiere_revision",
     "coberturas": [
       {
         "item": "Responsabilidad civil $7.785.000"

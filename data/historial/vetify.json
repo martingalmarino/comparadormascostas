@@ -9,11 +9,21 @@
       "fecha": "2026-10-26",
       "precio": 21190,
       "fuente": "https://vetify.com.ar/"
+    },
+    {
+      "fecha": "2026-11-05",
+      "precio": 21190,
+      "fuente": "https://vetify.com.ar/"
     }
   ],
   "vetify-classic": [
     {
       "fecha": "2026-10-26",
+      "precio": 66790,
+      "fuente": "https://vetify.com.ar/"
+    },
+    {
+      "fecha": "2026-11-05",
       "precio": 66790,
       "fuente": "https://vetify.com.ar/"
     }
@@ -26,6 +36,11 @@
     },
     {
       "fecha": "2026-10-26",
+      "precio": 84790,
+      "fuente": "https://vetify.com.ar/"
+    },
+    {
+      "fecha": "2026-11-05",
       "precio": 84790,
       "fuente": "https://vetify.com.ar/"
     }
