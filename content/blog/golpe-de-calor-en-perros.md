@@ -129,13 +129,15 @@ No es recomendable pelarlo: según la veterinaria municipal de Berazategui, el p
 
 ## ¿Un seguro u obra social cubre una guardia por golpe de calor?
 
-Depende del plan que tengas: algunos incluyen guardias o accidentes y otros solo teleconsulta, así que conviene mirar la ficha de cada uno.
+Depende del plan que tengas: algunos incluyen guardias o accidentes y otros solo teleconsulta, así que conviene mirar la ficha de cada uno en el [comparador de Cuidalo](/comparar).
 
 Antes de que llegue el pico del verano, conviene revisar:
 
 - **Si incluye guardias 24 h o urgencias**, o solo veterinario virtual.
 - **Carencia:** cuánto tiempo tiene que pasar desde que contratás hasta poder usarlo.
 - **Topes:** cuánto cubre por evento o por año.
-- **Cartilla o reintegro:** si podés ir a la veterinaria más cercana o solo a las de la red.
+- **[Cartilla o reintegro](/blog/reintegro-seguro-mascotas):** si podés ir a la veterinaria más cercana o solo a las de la red.
 
-En Cuidalo no vendemos seguros: te mostramos lo que publica cada marca, con fecha y fuente, para que compares tranquilo. Podés empezar por los [seguros para perros](/seguro-para-perros), si estás en Córdoba, las [veterinarias con plan](/cordoba/veterinarias-con-plan).
+En Cuidalo no vendemos seguros: te mostramos lo que publica cada marca, con fecha y fuente, para que compares tranquilo. Podés empezar por los [seguros para perros](/seguro-para-perros). Si estás en Córdoba, mirá las [veterinarias con plan](/cordoba/veterinarias-con-plan).
+
+Qué define el precio está en [cuánto cuesta un seguro para perros](/blog/cuanto-cuesta-seguro-para-perros). Los montos, con fecha y fuente, están en los [precios actualizados](/precios).
