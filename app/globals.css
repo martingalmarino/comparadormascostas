@@ -86,3 +86,31 @@ body {
   padding-left: 0.9rem;
   color: #4b5563;
 }
+
+/* Cuerpo del blog. .prose-mc también cambia títulos, listas y citas. El hijo directo deja afuera el botón, las fuentes y el índice. */
+.blog-body > p a,
+.blog-body > ul a,
+.blog-body > ol a,
+.blog-body > blockquote a {
+  color: #4338ca;
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.blog-body > p a:hover,
+.blog-body > ul a:hover,
+.blog-body > ol a:hover,
+.blog-body > blockquote a:hover {
+  color: #3730a3;
+  text-decoration-line: underline;
+}
+
+.blog-body > p a:focus-visible,
+.blog-body > ul a:focus-visible,
+.blog-body > ol a:focus-visible,
+.blog-body > blockquote a:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
