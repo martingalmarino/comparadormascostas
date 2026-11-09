@@ -13,10 +13,10 @@ keywords:
 author: Equipo Cuidalo
 image: /blog/cuanto-cuesta-seguro-para-perros-portada.webp
 image_alt: Una mujer en una cocina mira una notebook con su perro apoyado en la mesa, junto a un mate.
-direct_answer: 'Depende del plan: lo que cubre, los topes, la edad de tu perro, la zona y si usás cartilla o reintegro. Un plan solo de teleconsulta no cuesta lo mismo que uno con guardias. Los precios actualizados, con fecha y fuente de cada marca, están en cuidalo.com.ar/precios.'
+direct_answer: 'Depende del plan: lo que cubre, los topes, la edad de tu perro, la zona y si usás cartilla o reintegro. Un plan solo de teleconsulta no cuesta lo mismo que uno con guardias. Los precios actualizados, con fecha y fuente de cada marca, están en la página de precios.'
 faq:
 - q: ¿Cuál es el seguro para perros más barato?
-  a: 'Va cambiando. Mirá los precios actualizados en cuidalo.com.ar/precios: cada precio tiene fecha y fuente.'
+  a: 'Va cambiando. Mirá los precios actualizados en la página de precios: cada precio tiene fecha y fuente.'
 - q: ¿Puedo asegurar a un perro mayor?
   a: 'Depende de la marca: cada una fija sus edades de ingreso y permanencia. Revisalo en la ficha de cada plan.'
 - q: ¿Cubren enfermedades que mi perro ya tiene?
@@ -42,7 +42,7 @@ Si estás pensando en un seguro o una obra social para tu perro, lo primero que 
 
 ## ¿Cuánto sale un seguro para perros hoy?
 
-Depende mucho del plan, y entre uno básico y uno con guardias la diferencia puede ser grande. Para ver los precios actualizados, con fecha de verificación y fuente de cada marca, entrá a [cuidalo.com.ar/precios](/precios).
+Depende mucho del plan, y entre uno básico y uno con guardias la diferencia puede ser grande. Para ver los precios actualizados, con fecha de verificación y fuente de cada marca, entrá a la [página de precios](/precios).
 
 Qué mueve el precio:
 
@@ -75,8 +75,8 @@ El precio sale de lo que cubre el plan, sus topes, la edad y la zona de tu perro
 - **Coberturas incluidas:** no cuesta lo mismo un plan solo de teleconsulta que uno con guardias.
 - **Topes y suma asegurada:** cuánto cubre por evento o por año.
 - **Edad de ingreso:** muchas marcas fijan edades mínimas y máximas para contratar. Revisalo en cada ficha.
-- **Zona:** no todos los planes están en todo el país. En el comparador podés filtrar por tu zona y ver solo los planes que la fuente confirma ahí.
-- **Cartilla vs. reintegro:** si podés ir a tu veterinaria de siempre o solo a las de la red.
+- **Zona:** no todos los planes están en todo el país. En el [comparador de planes](/comparar) podés filtrar por tu zona y ver solo los planes que la fuente confirma ahí.
+- **[Cartilla vs. reintegro](/blog/reintegro-seguro-mascotas):** si podés ir a tu veterinaria de siempre o solo a las de la red.
 
 ## Qué mirar antes de elegir: checklist
 
@@ -88,7 +88,7 @@ Más allá del precio, lo que de verdad importa es revisar carencias, topes, exc
 4. **Guardias 24 h:** si están incluidas o es solo atención virtual.
 5. **Edad máxima** para contratar y para mantener el plan.
 6. **Zona y cartilla** cerca de tu casa.
-7. **Precio actualizado:** consultalo en [cuidalo.com.ar/precios](/precios) y confirmalo con la marca.
+7. **Precio actualizado:** consultalo en la [página de precios](/precios) y confirmalo con la marca.
 
 ## Cómo comparar planes en 3 pasos
 
@@ -107,8 +107,8 @@ El error más común es elegir el más barato sin mirar qué cubre, y eso puede 
 - **Pasar por alto los topes.** Dos planes pueden tener la misma cobertura en el papel y topes muy distintos.
 - **Suponer que cubre lo que tu perro ya tiene.** Las enfermedades preexistentes suelen quedar excluidas.
 - **No revisar la cartilla.** Si la veterinaria más cercana no está en la red, quizás te convenga un plan con reintegro.
-- **Quedarte con un precio viejo.** Los valores se actualizan; mirá siempre la fecha de verificación en [cuidalo.com.ar/precios](/precios).
+- **Quedarte con un precio viejo.** Los valores se actualizan; mirá siempre la fecha de verificación en la [página de precios](/precios).
 
 ## ¿Y si tenés gato?
 
-Los precios y coberturas pueden cambiar según la especie. En el comparador podés elegir la especie y ver los planes para gatos.
+Los precios y coberturas pueden cambiar según la especie. En el [comparador de planes](/comparar) podés elegir la especie y ver los planes para gatos.

@@ -105,7 +105,7 @@ Así lo publican algunas marcas:
 
 **Companion.** Subís al portal la foto de la factura o del comprobante —con los datos de la clínica— dentro de los 90 días corridos; si piden más papeles hay 30 días corridos, y la transferencia va a una cuenta a tu nombre ([FAQs](https://companion.com.ar/faqs/) y [términos](https://companion.com.ar/terminos-y-condiciones/)). Más detalle en la [ficha de Companion en Cuidalo](/planes/companion).
 
-**FielPet.** Por la app: atención, contacto del veterinario para la historia clínica online, factura o comprobante, DNI, CBU y libreta de vacunas; 10 días hábiles desde que está completo ([preguntas frecuentes de FielPet](https://www.fielpet.com.ar/preguntas-frecuentes)). No dice hasta cuándo iniciar el pedido.
+**[FielPet](/planes/fielpet).** Por la app: atención, contacto del veterinario para la historia clínica online, factura o comprobante, DNI, CBU y libreta de vacunas; 10 días hábiles desde que está completo ([preguntas frecuentes de FielPet](https://www.fielpet.com.ar/preguntas-frecuentes)). No dice hasta cuándo iniciar el pedido.
 
 **HolaVet.** Factura o ticket por WhatsApp (11 6674 3287), mail (info@holavet.com.ar) o 0810 220 8432 opción 1, dentro de los 30 días desde el gasto; la RC se denuncia en la opción 2 ([FAQs de HolaVet](https://holavet.com.ar/preguntas-frecuentes/)). No publica plazo de acreditación.
 
@@ -139,7 +139,7 @@ El porcentaje dice qué parte del gasto te devuelven; el tope dice hasta dónde,
 
 Companion publica reintegros del 60, 80 o 100 % en servicios veterinarios, según plan, y del 40 % en medicamentos y servicios adicionales. Sus términos establecen un límite anual y, si el comprobante supera el arancel recomendado por el Consejo de Profesionales de Médicos Veterinarios (CPMV) de CABA, un reintegro “hasta el monto recomendado por el CPMV”, con el exceso a cargo del cliente. El contrato no explicita si ese arancel limita la base antes de aplicar el porcentaje o el resultado: pedí una liquidación explicada antes de estimar cuánto recuperarías. No prometemos un importe.
 
-No mires solo el porcentaje: un 100 % con un tope bajo puede rendirte menos que un 80 % con un tope más holgado. Acá no ponemos montos en pesos: están en [cuidalo.com.ar/precios](/precios).
+No mires solo el porcentaje: un 100 % con un tope bajo puede rendirte menos que un 80 % con un tope más holgado. Acá no ponemos montos en pesos: están en la [página de precios](/precios).
 
 HolaVet publica topes por evento y una cantidad máxima de eventos por año. FielPet cubre enfermedad o accidente hasta el alta médica, con el límite de la suma asegurada. Se repiten como exclusiones las preexistentes, los chequeos de rutina (FielPet), los traslados (Companion) y los tratamientos no prescriptos o reproductivos (HolaVet).
 
@@ -153,6 +153,6 @@ Revisá estos puntos antes de gastar y otra vez antes de enviar el pedido:
 - La cuenta está a mi nombre y presento el pedido dentro del plazo (90 días corridos en Companion, 30 días desde el gasto en HolaVet; en el resto, confirmalo).
 - Distingo un reintegro de un plan de la denuncia de un siniestro, y guardé copias.
 
-Si estás comparando coberturas para un perro, podés empezar por la guía de [seguro para perros](/seguro-para-perros).
+Si estás comparando coberturas para un perro, podés empezar por la guía de [seguro para perros](/seguro-para-perros) o [comparar planes](/comparar) lado a lado.
 
 **¿Querés ver qué planes funcionan por reintegro y cuáles por cartilla?** Cargá especie, edad y zona y compará coberturas. [Compará planes](/comparar)
