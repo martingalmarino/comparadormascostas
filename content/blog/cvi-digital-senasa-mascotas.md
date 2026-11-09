@@ -1,7 +1,7 @@
 ---
 title: 'Viajar a países limítrofes con tu mascota: el CVI digital del SENASA paso a paso'
 description: 'Cómo sacar el CVI digital del SENASA para viajar con tu perro o gato a Uruguay, Brasil, Chile o Paraguay: requisitos, plazos y errores que demoran el trámite.'
-date: '2026-11-17'
+date: '2026-11-12'
 image: /blog/cvi-digital-senasa-mascotas-portada.webp
 image_alt: Un perro mestizo con arnés sentado en el asiento trasero de un auto, junto a una transportadora y una mesa plegable con una notebook, una libreta sanitaria y una correa.
 category: Cuidados
