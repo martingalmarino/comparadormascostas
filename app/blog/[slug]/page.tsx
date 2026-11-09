@@ -3,6 +3,7 @@ import { cacheLife } from "next/cache";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { BlogArticle } from "@/components/BlogArticle";
+import "../links.css";
 import { articleImage, isPublic, loadPosts, selectPosts } from "@/lib/blog";
 import { getReferenceDate } from "@/lib/dates";
 import { publicRobots } from "@/lib/seo";
