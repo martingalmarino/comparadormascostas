@@ -92,7 +92,12 @@ test("las tablas publicadas salen como tabla y no como párrafo", () => {
   assert.equal(cviTables.length, 2);
   assert.equal(gatosTables[0]?.type === "table" && gatosTables[0].rows.length, 8);
   assert.equal(gatosTables[1]?.type === "table" && gatosTables[1].rows.length, 4);
-  assert.match(gatosTables[1]?.type === "table" ? gatosTables[1].rows[0]?.[1] ?? "" : "", /href="https:\/\/buenosaires.gob.ar\//);
+  assert.equal(gatosTables[1]?.type === "table" && gatosTables[1].rows[0]?.[1], "Puede empeorar el cuadro (GCBA)");
+  assert.equal(gatos.body.includes("http"), false);
+  assert.deepEqual(
+    [...gatos.body.matchAll(/\]\(([^)]+)\)/g)].map((match) => match[1]),
+    ["/blog/golpe-de-calor-en-perros", "/blog/obra-social-para-mascotas-que-cubre", "/seguro-para-gatos", "/comparar", "/precios"],
+  );
   assert.equal(cviTables[0]?.type === "table" && cviTables[0].rows.length, 5);
   assert.equal(cviTables[1]?.type === "table" && cviTables[1].rows.length, 5);
 });

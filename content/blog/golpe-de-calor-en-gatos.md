@@ -2,9 +2,9 @@
 title: 'Golpe de calor en gatos: las señales que pasan desapercibidas y qué hacer'
 description: 'Un gato que jadea no está ''cansado'': puede ser calor de más. Cómo reconocer un golpe de calor en tu gato, qué hacer y cómo prevenirlo.'
 date: '2026-11-13'
+category: Cuidados
 image: /blog/golpe-de-calor-en-gatos-portada.webp
 image_alt: Un gato atigrado naranja y blanco recostado sobre baldosas frescas a la sombra, junto a una ventana, una planta y un bowl con agua.
-category: Cuidados
 keywords:
 - golpe de calor en gatos
 - gato jadeando
@@ -26,34 +26,44 @@ faq:
 - q: ¿El seguro para gatos cubre urgencias?
   a: Depende de cada plan. Algunos incluyen guardias o urgencias y otros solo teleconsulta o reintegros. Mirá carencia, topes y cartilla en el comparador de Cuidalo.
 sources:
-- title: GCBA, "Prevención del golpe de calor en perros y gatos" (15/01/2025)
+- title: Prevención del golpe de calor en perros y gatos
   url: https://buenosaires.gob.ar/gcaba_historico/noticias/prevencion-del-golpe-de-calor-en-perros-y-gatos
+  publisher: Gobierno de la Ciudad de Buenos Aires
   accessed: '2026-11-01'
-- title: Fundación Vidanimal, "Perros y gatos ¿Qué hacer si sufren un golpe de calor?" (09/12/2022, cita a la veterinaria Solange De Luca; fuente original Los Andes)
+- title: 'Perros y gatos ¿Qué hacer si sufren un golpe de calor?'
   url: https://www.vidanimal.org.ar/perros-y-gatos-que-hacer-si-sufren-un-golpe-de-calor/
+  publisher: Fundación Vidanimal
   accessed: '2026-11-01'
-- title: 'Fundación Vidanimal, "Golpe de calor en mascotas: guía completa…" (cita al veterinario Romero)'
+- title: 'Golpe de calor en mascotas: guía completa de síntomas y tratamientos para perros y gatos'
   url: https://www.vidanimal.org.ar/golpe-de-calor-en-mascotas-guia-completa-de-sintomas-y-tratamientos-para-perros-y-gatos/
+  publisher: Fundación Vidanimal
   accessed: '2026-11-01'
-- title: Cornell Feline Health Center, "Feline Heat Safety"
+- title: Feline Heat Safety
   url: https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-heat-safety
+  publisher: Cornell Feline Health Center
   accessed: '2026-11-01'
-- title: International Cat Care, "Hazardous weather and your cat"
+- title: Hazardous weather and your cat
   url: https://icatcare.org/articles/hazardous-weather-and-your-cat
+  publisher: International Cat Care
   accessed: '2026-11-01'
-- title: Virginia Tech Veterinary Teaching Hospital, "Heatstroke in pets"
+- title: Heatstroke in pets
   url: https://vth.vetmed.vt.edu/animal-care-tips/vetmed-pet-heatstroke.html
+  publisher: Virginia Tech Veterinary Teaching Hospital
   accessed: '2026-11-01'
-- title: AAHA, "Heatstroke in Pets"
+- title: Heatstroke in Pets
   url: https://www.aaha.org/resources/heatstroke-in-pets/
+  publisher: AAHA
   accessed: '2026-11-01'
-- title: AVMA, folleto "Pet First Aid" (PDF)
+- title: 'Pet First Aid (folleto PDF)'
   url: https://ebusiness.avma.org/files/productdownloads/mcm-client-brochures-pet-first-aid-2025.pdf
+  publisher: AVMA
   accessed: '2026-11-01'
 related:
-- /blog/golpe-de-calor-en-perros
 - /seguro-para-gatos
+- /blog/golpe-de-calor-en-perros
 - /blog/obra-social-para-mascotas-que-cubre
+- /precios
+- /comparar
 ---
 
 Es la siesta de un día de mucho calor. Tu gato, que suele dormir hecho un rollo en el sillón, está estirado en las baldosas del baño. Casi siempre es solo eso: un gato buscando el lugar más fresco de la casa. Pero si además lo ves respirando con la boca abierta, algo cambió.
@@ -66,7 +76,7 @@ Los gatos disimulan muy bien cuando se sienten mal, y por eso el golpe de calor 
 
 Un golpe de calor es una urgencia: la temperatura del cuerpo del gato sube y sus mecanismos para enfriarse dejan de alcanzar, así que necesita atención veterinaria inmediata.
 
-Según el [Gobierno de la Ciudad de Buenos Aires](https://buenosaires.gob.ar/gcaba_historico/noticias/prevencion-del-golpe-de-calor-en-perros-y-gatos), perros y gatos son mucho más sensibles al calor que las personas porque tienen pocas glándulas sudoríparas, y están solo en las almohadillas. Eliminan calor jadeando, apoyándose en superficies frías y, en el caso de los gatos, lamiéndose: la saliva que dejan en el pelo los ayuda a refrescarse cuando se evapora.
+Según el Gobierno de la Ciudad de Buenos Aires, perros y gatos son mucho más sensibles al calor que las personas porque tienen pocas glándulas sudoríparas, y están solo en las almohadillas. Eliminan calor jadeando, apoyándose en superficies frías y, en el caso de los gatos, lamiéndose: la saliva que dejan en el pelo los ayuda a refrescarse cuando se evapora.
 
 Cuando eso no alcanza, la temperatura sube hasta afectar todo el organismo, con efectos que según el GCBA pueden ser temporales, irreversibles o incluso fatales.
 
@@ -76,15 +86,15 @@ En los gatos cuesta más porque su forma normal de enfriarse no se ve: no salen 
 
 Tres cosas hacen la diferencia con los perros:
 
-- **El jadeo no es normal en un gato.** En los perros es parte del día a día; en los gatos no. El Hospital Veterinario de Virginia Tech explica que los gatos no suelen jadear para enfriarse, así que cuando jadean es una señal de estrés o de sobrecalentamiento ([Virginia Tech](https://vth.vetmed.vt.edu/animal-care-tips/vetmed-pet-heatstroke.html)).
-- **Se lamen más.** La Fundación Vidanimal recoge que los gatos con calor se lamen mucho más, porque cubrirse de saliva es su manera de "ducharse" ([Vidanimal](https://www.vidanimal.org.ar/golpe-de-calor-en-mascotas-guia-completa-de-sintomas-y-tratamientos-para-perros-y-gatos/)).
-- **Se quedan quietos y aislados.** Buscar las baldosas o la bañera es normal: International Cat Care cuenta que los gatos suelen ir a esas superficies porque se mantienen frescas ([iCatCare](https://icatcare.org/articles/hazardous-weather-and-your-cat)). Lo que no es normal es que no responda, no quiera levantarse o se tambalee.
+- **El jadeo no es normal en un gato.** En los perros es parte del día a día; en los gatos no. El Hospital Veterinario de Virginia Tech explica que los gatos no suelen jadear para enfriarse, así que cuando jadean es una señal de estrés o de sobrecalentamiento.
+- **Se lamen más.** La Fundación Vidanimal recoge que los gatos con calor se lamen mucho más, porque cubrirse de saliva es su manera de "ducharse".
+- **Se quedan quietos y aislados.** Buscar las baldosas o la bañera es normal: International Cat Care cuenta que los gatos suelen ir a esas superficies porque se mantienen frescas. Lo que no es normal es que no responda, no quiera levantarse o se tambalee.
 
 ## Síntomas del golpe de calor en gatos
 
 La señal más clara es un jadeo intenso con respiración acelerada aunque el gato esté quieto, y a eso pueden sumarse babeo, decaimiento, vómitos o dificultad para mantenerse en pie.
 
-La veterinaria Solange De Luca, citada por [Vidanimal](https://www.vidanimal.org.ar/perros-y-gatos-que-hacer-si-sufren-un-golpe-de-calor/), describe justamente eso como la señal más evidente: jadeo excesivo con respiración acelerada en reposo. Para tenerlo a mano, juntamos lo que listan el GCBA y centros veterinarios como el [Cornell Feline Health Center](https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-heat-safety):
+La veterinaria Solange De Luca, citada por Vidanimal, describe justamente eso como la señal más evidente: jadeo excesivo con respiración acelerada en reposo. Para tenerlo a mano, juntamos lo que listan el GCBA y centros veterinarios como el Cornell Feline Health Center:
 
 | Señal | Cómo se ve en casa |
 |---|---|
@@ -103,13 +113,13 @@ El GCBA aclara que pueden aparecer algunos o todos los síntomas. No hace falta 
 
 Llevalo cuanto antes a la veterinaria más cercana y, mientras tanto, sacalo del calor y mojalo suavemente con agua a temperatura ambiente, nunca con hielo ni agua helada.
 
-Vidanimal cita al veterinario Romero con una frase que conviene recordar: "No hay que ir al veterinario de confianza, sino al primero que se pueda encontrar" ([Vidanimal](https://www.vidanimal.org.ar/golpe-de-calor-en-mascotas-guia-completa-de-sintomas-y-tratamientos-para-perros-y-gatos/)).
+Vidanimal cita al veterinario Romero con una frase que conviene recordar: "No hay que ir al veterinario de confianza, sino al primero que se pueda encontrar."
 
 ### Paso a paso mientras vas a la veterinaria
 
-1. **Llamá a la veterinaria** y avisá que vas con una posible urgencia por calor, así te esperan preparados (lo recomienda la [AVMA](https://ebusiness.avma.org/files/productdownloads/mcm-client-brochures-pet-first-aid-2025.pdf), la asociación veterinaria de Estados Unidos).
+1. **Llamá a la veterinaria** y avisá que vas con una posible urgencia por calor, así te esperan preparados (lo recomienda la AVMA, la asociación veterinaria de Estados Unidos).
 2. **Llevalo a un lugar fresco, ventilado y a la sombra.**
-3. **Mojale el pelo con suavidad** con agua fresca, no muy fría ([Cornell](https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-heat-safety)). El GCBA indica mantenerlo mojado hasta llegar al consultorio, siempre con agua a temperatura ambiente.
+3. **Mojale el pelo con suavidad** con agua fresca, no muy fría (Cornell). El GCBA indica mantenerlo mojado hasta llegar al consultorio, siempre con agua a temperatura ambiente.
 4. **Si tenés un ventilador, usalo.** El aire en movimiento ayuda a que el agua se evapore.
 5. **Humedecele los labios** con agua fresca, nunca helada, como sugiere Vidanimal. No lo obligues a tomar.
 6. **Usá una transportadora ventilada** para el viaje y no lo tapes.
@@ -118,16 +128,16 @@ Vidanimal cita al veterinario Romero con una frase que conviene recordar: "No ha
 
 | No hagas esto | Por qué |
 |---|---|
-| Usar hielo o agua helada | Puede empeorar el cuadro ([GCBA](https://buenosaires.gob.ar/gcaba_historico/noticias/prevencion-del-golpe-de-calor-en-perros-y-gatos)) |
-| Sumergirlo en una bañera con agua | Puede provocar un shock ([Virginia Tech](https://vth.vetmed.vt.edu/animal-care-tips/vetmed-pet-heatstroke.html)) |
-| Envolverlo en una toalla mojada | Retiene el calor y no deja que el agua se evapore ([AAHA](https://www.aaha.org/resources/heatstroke-in-pets/)) |
+| Usar hielo o agua helada | Puede empeorar el cuadro (GCBA) |
+| Sumergirlo en una bañera con agua | Puede provocar un shock (Virginia Tech) |
+| Envolverlo en una toalla mojada | Retiene el calor y no deja que el agua se evapore (AAHA) |
 | Esperar a ver si se le pasa | Aunque mejore, puede haber daño en órganos que solo detecta el veterinario |
 
 ## ¿Qué gatos tienen más riesgo?
 
 Los que más riesgo corren son los gatos de cara chata, como el persa o el exótico, los muy jóvenes o muy mayores, los que tienen sobrepeso y los que ya tienen alguna enfermedad.
 
-El [GCBA](https://buenosaires.gob.ar/gcaba_historico/noticias/prevencion-del-golpe-de-calor-en-perros-y-gatos) menciona estos factores:
+El GCBA menciona estos factores:
 
 - **Razas braquicéfalas**, de "hocico achatado", como el persa o el exótico: les cuesta más disipar el calor.
 - **Edad:** gatitos y gatos mayores son más sensibles.
@@ -143,7 +153,7 @@ Prevenirlo pasa por tres cosas: agua fresca siempre disponible, lugares frescos 
 
 ### Checklist de verano para la casa
 
-- Agua limpia y fresca en más de un lugar de la casa (Vidanimal sugiere ofrecerla "en varias ofertas"). Una fuente de agua en movimiento puede animar a algunos gatos a tomar más ([Cornell](https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-heat-safety)).
+- Agua limpia y fresca en más de un lugar de la casa (Vidanimal sugiere ofrecerla "en varias ofertas"). Una fuente de agua en movimiento puede animar a algunos gatos a tomar más (Cornell).
 - Al menos un ambiente fresco, ventilado y con sombra al que pueda llegar siempre.
 - Persianas bajas en las horas de sol y puertas abiertas, para que no quede encerrado en una habitación que se calienta.
 - Una superficie fresca para echarse: baldosas, la bañera o una manta refrescante.
@@ -151,7 +161,7 @@ Prevenirlo pasa por tres cosas: agua fresca siempre disponible, lugares frescos 
 
 ### Nunca lo dejes en el auto ni en lugares cerrados
 
-El GCBA advierte que un perro o un gato pueden morir en apenas 15 minutos dentro de un auto ([fuente](https://buenosaires.gob.ar/gcaba_historico/noticias/prevencion-del-golpe-de-calor-en-perros-y-gatos)). Y antes de cerrar un galpón, un depósito o el auto, fijate que no se haya metido buscando sombra, como recomienda International Cat Care.
+El GCBA advierte que un perro o un gato pueden morir en apenas 15 minutos dentro de un auto. Y antes de cerrar un galpón, un depósito o el auto, fijate que no se haya metido buscando sombra, como recomienda International Cat Care.
 
 ### ¿Hay que cortarle el pelo?
 
@@ -170,8 +180,4 @@ Antes del pico del verano, revisá cuatro cosas:
 - **Topes** por evento o por año.
 - **Cartilla o reintegro:** si podés ir a la veterinaria más cercana o solo a las de la red.
 
-Tenés el detalle de cada punto en nuestra guía de [qué cubre una obra social para mascotas](/blog/obra-social-para-mascotas-que-cubre). En Cuidalo no vendemos seguros: te mostramos lo que publica cada marca, con fecha y fuente, y te explicamos [cómo comparamos](/como-comparamos). Podés empezar por los [seguros y planes para gatos](/seguro-para-gatos) y ver los valores actualizados en [nuestra página de precios](/precios).
-
----
-
-**¿Tu plan para gatos cubre una urgencia?** Compará coberturas, carencias y topes de distintas marcas, sin que te vendan nada → [Compará planes](/comparar) · Precios actualizados en [nuestra página de precios](/precios)
+Tenés el detalle de cada punto en nuestra guía de [qué cubre una obra social para mascotas](/blog/obra-social-para-mascotas-que-cubre). En Cuidalo no vendemos seguros: te mostramos lo que publica cada marca, con fecha y fuente. Podés empezar por los [seguros y planes para gatos](/seguro-para-gatos), [comparar planes](/comparar) lado a lado o consultar los [precios actualizados](/precios).
