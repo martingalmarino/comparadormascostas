@@ -3,7 +3,8 @@ export type BlogBlock =
   | { type: "p"; html: string }
   | { type: "ul" | "ol"; items: string[] }
   | { type: "quote"; html: string; source?: string }
-  | { type: "code"; text: string };
+  | { type: "code"; text: string }
+  | { type: "table"; headers: string[]; rows: string[][] };
 
 function escapeHtml(value: string) {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
@@ -43,6 +44,45 @@ export function headingId(text: string) {
 function isBlockStart(line: string) {
   const trimmed = line.trim();
   return trimmed.startsWith("```") || trimmed.startsWith(">") || /^#{1,3}\s+/.test(trimmed) || /^[-*]\s+/.test(trimmed) || /^\d+\.\s+/.test(trimmed);
+}
+
+function splitCells(line: string) {
+  let value = line.trim();
+  if (value.startsWith("|")) value = value.slice(1);
+  if (value.endsWith("|")) value = value.slice(0, -1);
+  const cells: string[] = [];
+  let current = "";
+  for (let index = 0; index < value.length; index += 1) {
+    const char = value[index];
+    if (char === "\\" && value[index + 1] === "|") {
+      current += "|";
+      index += 1;
+      continue;
+    }
+    if (char === "|") {
+      cells.push(current.trim());
+      current = "";
+      continue;
+    }
+    current += char;
+  }
+  cells.push(current.trim());
+  return cells;
+}
+
+function looksLikeTableRow(line: string) {
+  const trimmed = line.trim();
+  return trimmed.startsWith("|") && trimmed.endsWith("|") && (trimmed.match(/\|/g)?.length ?? 0) >= 2;
+}
+
+function isSeparatorRow(line: string) {
+  if (!looksLikeTableRow(line)) return false;
+  const cells = splitCells(line);
+  return cells.length >= 2 && cells.every((cell) => /^:?-{3,}:?$/.test(cell));
+}
+
+function isUpcomingTable(line: string, next: string | undefined) {
+  return looksLikeTableRow(line) && next !== undefined && isSeparatorRow(next);
 }
 
 export function parseBlocks(source: string): BlogBlock[] {
@@ -119,9 +159,20 @@ export function parseBlocks(source: string): BlogBlock[] {
       blocks.push({ type: "ol", items });
       continue;
     }
+    if (isUpcomingTable(line, lines[index + 1])) {
+      const headers = splitCells(line).map(inline);
+      index += 2;
+      const rows: string[][] = [];
+      while (index < lines.length && looksLikeTableRow(lines[index] ?? "") && !isSeparatorRow(lines[index] ?? "")) {
+        rows.push(splitCells(lines[index] ?? "").map(inline));
+        index += 1;
+      }
+      blocks.push({ type: "table", headers, rows });
+      continue;
+    }
     const buffer = [line.trim()];
     index += 1;
-    while (index < lines.length && (lines[index] ?? "").trim() && !isBlockStart(lines[index] ?? "")) {
+    while (index < lines.length && (lines[index] ?? "").trim() && !isBlockStart(lines[index] ?? "") && !isUpcomingTable(lines[index] ?? "", lines[index + 1])) {
       buffer.push((lines[index] ?? "").trim());
       index += 1;
     }
@@ -144,6 +195,8 @@ function blockText(block: BlogBlock) {
     case "ul":
     case "ol":
       return block.items.join(" ");
+    case "table":
+      return [...block.headers, ...block.rows.flat()].join(" ");
   }
 }
 

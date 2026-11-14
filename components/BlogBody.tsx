@@ -33,6 +33,30 @@ function BlockView({ block }: { block: BlogBlock }) {
   if (block.type === "code") {
     return <pre className="my-4 overflow-x-auto rounded-xl bg-gray-900 p-4 text-sm text-gray-100">{block.text}</pre>;
   }
+  if (block.type === "table") {
+    return (
+      <div className="my-4 overflow-x-auto">
+        <table className="w-full min-w-[36rem] border-collapse text-left text-sm leading-relaxed text-gray-700">
+          <thead>
+            <tr>
+              {block.headers.map((header, index) => (
+                <th key={index} className="border border-gray-200 bg-gray-50 px-3 py-2 font-semibold text-gray-900" dangerouslySetInnerHTML={{ __html: header }} />
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {block.rows.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {row.map((cell, cellIndex) => (
+                  <td key={cellIndex} className="border border-gray-200 px-3 py-2 align-top" dangerouslySetInnerHTML={{ __html: cell }} />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
   return null;
 }
 

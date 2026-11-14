@@ -52,6 +52,51 @@ test("el tiempo de lectura sale del texto", () => {
   assert.equal(readingMinutes(Array.from({ length: 201 }, () => "palabra").join(" ")), 2);
 });
 
+test("una tabla GFM conserva encabezado, filas y el enlace de la celda", () => {
+  const blocks = parseBlocks(
+    ["Antes.", "", "| Señal | Cómo se ve |", "|---|---|", "| Jadeo | Respira ([GCBA](https://buenosaires.gob.ar/ejemplo)) |", "", "Después."].join("\n"),
+  );
+  assert.deepEqual(
+    blocks.map((block) => block.type),
+    ["p", "table", "p"],
+  );
+  const table = blocks[1];
+  assert.equal(table?.type, "table");
+  if (table?.type !== "table") return;
+  assert.deepEqual(table.headers, ["Señal", "Cómo se ve"]);
+  assert.equal(table.rows.length, 1);
+  assert.match(table.rows[0]?.[1] ?? "", /href="https:\/\/buenosaires.gob.ar\/ejemplo"/);
+  assert.equal((table.rows[0]?.[1] ?? "").includes("|"), false);
+});
+
+test("los posts sin tablas no ganan una tabla ni barras sueltas", () => {
+  for (const slug of ["golpe-de-calor-en-perros", "cuanto-cuesta-seguro-para-perros", "reintegro-seguro-mascotas"]) {
+    const post = loadPosts().find((item) => item.slug === slug);
+    assert.ok(post);
+    const blocks = parseBlocks(post.body);
+    assert.equal(blocks.some((block) => block.type === "table"), false);
+    for (const block of blocks) {
+      if (block.type === "p") assert.equal(block.html.includes("|"), false);
+    }
+  }
+});
+
+test("las tablas publicadas salen como tabla y no como párrafo", () => {
+  const gatos = loadPosts().find((item) => item.slug === "golpe-de-calor-en-gatos");
+  const cvi = loadPosts().find((item) => item.slug === "cvi-digital-senasa-mascotas");
+  assert.ok(gatos);
+  assert.ok(cvi);
+  const gatosTables = parseBlocks(gatos.body).filter((block) => block.type === "table");
+  const cviTables = parseBlocks(cvi.body).filter((block) => block.type === "table");
+  assert.equal(gatosTables.length, 2);
+  assert.equal(cviTables.length, 2);
+  assert.equal(gatosTables[0]?.type === "table" && gatosTables[0].rows.length, 8);
+  assert.equal(gatosTables[1]?.type === "table" && gatosTables[1].rows.length, 4);
+  assert.match(gatosTables[1]?.type === "table" ? gatosTables[1].rows[0]?.[1] ?? "" : "", /href="https:\/\/buenosaires.gob.ar\//);
+  assert.equal(cviTables[0]?.type === "table" && cviTables[0].rows.length, 5);
+  assert.equal(cviTables[1]?.type === "table" && cviTables[1].rows.length, 5);
+});
+
 test("el índice usa los h2 y el llamado va después de la mitad", () => {
   const blocks = parseBlocks("## Primera sección\n\n" + "uno ".repeat(20) + "\n\n## Segunda\n\n" + "dos ".repeat(20));
   assert.deepEqual(

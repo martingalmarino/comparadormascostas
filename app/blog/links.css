@@ -1,8 +1,9 @@
-/* Hijo directo: no alcanza al botón, al índice ni a las fuentes. */
+/* Hijo directo del cuerpo, y los enlaces dentro de una tabla. No alcanza al botón, al índice ni a las fuentes. */
 .blog-body > p a,
 .blog-body > ul a,
 .blog-body > ol a,
-.blog-body > blockquote a {
+.blog-body > blockquote a,
+.blog-body table a {
   color: #4338ca;
   font-weight: 600;
   text-decoration-line: underline;
@@ -13,7 +14,8 @@
 .blog-body > p a:hover,
 .blog-body > ul a:hover,
 .blog-body > ol a:hover,
-.blog-body > blockquote a:hover {
+.blog-body > blockquote a:hover,
+.blog-body table a:hover {
   color: #3730a3;
   text-decoration-line: underline;
 }
@@ -21,7 +23,8 @@
 .blog-body > p a:focus-visible,
 .blog-body > ul a:focus-visible,
 .blog-body > ol a:focus-visible,
-.blog-body > blockquote a:focus-visible {
+.blog-body > blockquote a:focus-visible,
+.blog-body table a:focus-visible {
   outline: 2px solid #4f46e5;
   outline-offset: 2px;
 }
