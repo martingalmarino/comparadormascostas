@@ -1,7 +1,7 @@
 ---
 title: 'Pirotecnia Cero: qué dice la ley en tu provincia y qué podés hacer si tiran cerca de tu mascota'
 description: 'Dónde está prohibida la pirotecnia sonora en el país: Buenos Aires, CABA, Córdoba, Mendoza, Neuquén, Río Negro y La Pampa. Qué dice cada norma y cómo denunciar.'
-date: '2026-12-04'
+date: '2026-11-27'
 category: Cuidados
 image: /blog/ley-pirotecnia-cero-por-provincia-portada.webp
 image_alt: Perro mestizo acostado sobre una manta junto a la ventana de un departamento, mientras su tutora sentada a su lado lo acaricia, con luces de la ciudad de fondo
