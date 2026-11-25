@@ -1,7 +1,7 @@
 ---
 title: 'Certificado de salud y antirrábica para viajar con tu perro o gato: qué son, cuánto duran y cómo sacarlos'
 description: 'Qué tiene que decir el certificado de salud, cuántos días dura, desde qué edad es obligatoria la antirrábica y dónde sacarlos antes de viajar con tu mascota.'
-date: '2026-12-01'
+date: '2026-11-26'
 category: Cuidados
 image: /blog/certificado-de-salud-y-antirrabica-para-viajar-portada.webp
 image_alt: Perro mestizo sentado junto a una mesa de consultorio mientras su tutor sostiene una libreta sanitaria abierta y un formulario, con un transportín y un bolso de viaje en el piso

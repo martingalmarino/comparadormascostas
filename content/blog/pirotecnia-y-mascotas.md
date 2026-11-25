@@ -1,7 +1,7 @@
 ---
 title: 'Pirotecnia y mascotas: cómo cuidar a tu perro o gato cuando empiezan los estruendos'
 description: 'Qué hacer antes, durante y después de la pirotecnia para que tu perro o gato no se escape ni se lastime, y cuándo consultar al veterinario.'
-date: '2026-11-27'
+date: '2026-11-25'
 category: Cuidados
 image: /blog/pirotecnia-y-mascotas-portada.webp
 image_alt: Perro mestizo acostado sobre su manta debajo de una mesa en un living en penumbras, con un gato asomado desde una caja de cartón y un bebedero al lado, mientras afuera se ven fuegos artificiales lejanos
